@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 2.5rem auto;
+  height: 100vh;
+}
+.header {
+  width: 100%;
+  display: flex;
+}
+h1,
+h4 {
+  margin: 0;
+}
+.level {
+  width: 10%;
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: beige;
+  border-radius: 18px;
+}
+.title {
+  margin-bottom: 3px;
+}
+.wrapper {
+  margin-top: 40px;
+  border: 1px solid red;
+  display: flex;
+  padding: 48px 24px;
+  position: relative;
+  justify-content: space-around;
+  align-items: center;
+}
+.recipe {
+  background-color: orange;
+  position: absolute;
+  padding: 20px 60px;
+  border-radius: 16px;
+  top: -30px;
+  left: 38%;
+}
+.ingredient {
+  text-align: center;
+}
+.play-game {
+  margin-top: 80px;
+}
+.sandwich-ingredients {
+  display: flex;
+  justify-content: space-between;
+}
+.plate {
+  margin-top: 80px;
+  margin-left: 70px;
+}
