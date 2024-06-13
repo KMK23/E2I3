@@ -233,40 +233,56 @@
     </div>
   </body>
   <script>
-    // 메뉴에서 class 넣고 빼서 움직이기
-    const navBarLinks = document.querySelectorAll(".nav-link");
+        // 메뉴에서 class 넣고 빼서 움직이기
+        const navBarLinks = document.querySelectorAll(".nav-link");
 
-    navBarLinks.forEach((link) => {
-      link.addEventListener("click", function (e) {
-        navBarLinks.forEach((navLink) => navLink.classList.remove("active")); // 다른 링크에서 'active' 클래스 제거
-        link.classList.add("active"); // 클릭된 링크에 'active' 클래스 추가
-      });
-    });
-
-    // 게임 종류 버튼 눌러서 게임 이동
-    const gameNames = document.querySelectorAll(".gameName");
-    //gameName을 가진 li(버튼)들을 다 가져왔어
-    const gameImgs = document.querySelectorAll(".gameImg");
-    //gameImg 를 가진 div 들 가져옴
-
-    gameNames.forEach((gameName, index) => {
-      gameName.addEventListener("click", function (e) {
-        e.preventDefault();
-        gameImgs.forEach((img, imgIndex) => {
-          if (index === imgIndex) {
-            if (img.style.display === "none") {
-              img.style.display = "block";
-            } else {
-              img.style.display = "block"; // 두 번 눌렀을 때 이미지를 계속 보여줍니다.
-            }
-          } else {
-            img.style.display = "none";
-          }
+        navBarLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            navBarLinks.forEach((navLink) => navLink.classList.remove("active")); // 다른 링크에서 'active' 클래스 제거
+            link.classList.add("active"); // 클릭된 링크에 'active' 클래스 추가
+          });
         });
-      });
-    });
 
-    // 게임하기 버튼
-    const gameBtn = document.querySelector(".gameBtn");
+        // 게임 종류 버튼 눌러서 게임 이동
+        const gameNames = document.querySelectorAll(".gameName");
+        //gameName을 가진 li(버튼)들을 다 가져왔어
+        const gameImgs = document.querySelectorAll(".gameImg");
+        //gameImg 를 가진 div 들 가져옴
+
+        gameNames.forEach((gameName, index) => {
+          gameName.addEventListener("click", function (e) {
+            e.preventDefault();
+            gameImgs.forEach((img, imgIndex) => {
+              if (index === imgIndex) {
+                if (img.style.display === "none") {
+                  img.style.display = "block";
+                } else {
+                  img.style.display = "block"; // 두 번 눌렀을 때 이미지를 계속 보여줍니다.
+                }
+              } else {
+                img.style.display = "none";
+              }
+            });
+          });
+        });
+
+        // 게임하기 버튼
+        const gameBtn = document.querySelector(".gameBtn");
+    <<<<<<< HEAD
+    =======
+        const game1 = document.querySelector("#game1");
+        const game2 = document.querySelector("#game2");
+        const game3 = document.querySelector("#game3");
+
+        game1.addEventListener("click", function () {
+          location.href = "3_1_game1.html";
+        });
+        game2.addEventListener("click", function () {
+          location.href = "../game/game_sandwich.html";
+        });
+        game3.addEventListener("click", function () {
+          location.href = "";
+        });
+    >>>>>>> f414e632de60a54100387c0538026b0cbd929ef8
   </script>
 </html>
