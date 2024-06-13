@@ -132,17 +132,15 @@
         <div class="nav-bar">
           <ul class="nav nav-pills">
             <li class="nav-item">
-              <a id="basic-coding" class="nav-link" aria-current="page" href="#"
+              <a class="nav-link" aria-current="page" href="#"
                 >블록 코딩 기초 학습</a
               >
             </li>
             <li class="nav-item">
-              <a id="AI-coding" class="nav-link" href="#">AI학습 리포트</a>
+              <a class="nav-link" href="#basic-coding">AI학습 리포트</a>
             </li>
             <li class="nav-item">
-              <a id="digital-emotion" class="nav-link" href="#"
-                >디지털 감성 학습</a
-              >
+              <a class="nav-link" href="#">디지털 감성 학습</a>
             </li>
           </ul>
         </div>
@@ -192,7 +190,7 @@
               </div>
             </div>
           </div>
-          <div class="gameStart">
+          <div class="gameStart1">
             <button class="gameBtn">
               게임<br />
               체험하기
@@ -201,7 +199,37 @@
         </div>
       </section>
       <!-- AI코딩 -->
-      <section></section>
+      <section>
+        <div id="basic-coding"></div>
+        <h1>디지털 시대에 필요한 감성을 배워보세요!</h1>
+        <h3>
+          AI학습 리포트는 여러분이 디지털 세상에서 올바르게 살아가는 법을 배울
+          수 있는 특별한 기회를 제공합니다.
+        </h3>
+        <ul>
+          <li>
+            디지털 시대의 매너: 사이버 공간에서의 예의와 적절한 행동의 중요성을
+            배우세요.
+          </li>
+          <li>
+            디지털 감성: 온라인에서의 자신감을 키우고, 다른 사람과의 존중과
+            소통의 방법을 익히세요.
+          </li>
+          <li>
+            사이버 보안: 개인정보 보호와 온라인 안전에 대한 필수적인 지식을
+            습득하세요.
+          </li>
+          <li>
+            디지털 예절: 올바른 온라인 행동 규범을 익히며, 다양한 상황에서의
+            적절한 반응 방법을 배웁니다.
+          </li>
+          <p>
+            애니메이션과 퀴즈를 통해 이 모든 학습이 쉽고 재미있게 전달됩니다.
+            AI학습 리포트는 여러분이 디지털 세상에서 스마트하고 안전하게 길을
+            잡을 수 있도록 도와줍니다.
+          </p>
+        </ul>
+      </section>
     </div>
   </body>
   <script>
@@ -209,8 +237,7 @@
     const navBarLinks = document.querySelectorAll(".nav-link");
 
     navBarLinks.forEach((link) => {
-      link.addEventListener("click", function (event) {
-        event.preventDefault(); // 링크의 기본 동작을 막음
+      link.addEventListener("click", function (e) {
         navBarLinks.forEach((navLink) => navLink.classList.remove("active")); // 다른 링크에서 'active' 클래스 제거
         link.classList.add("active"); // 클릭된 링크에 'active' 클래스 추가
       });
@@ -241,18 +268,5 @@
 
     // 게임하기 버튼
     const gameBtn = document.querySelector(".gameBtn");
-    const game1 = document.querySelector("#game1");
-    const game2 = document.querySelector("#game2");
-    const game3 = document.querySelector("#game3");
-
-    game1.addEventListener("click", function () {
-      location.href = "3_1_game1.html";
-    });
-    game2.addEventListener("click", function () {
-      location.href = "";
-    });
-    game3.addEventListener("click", function () {
-      location.href = "";
-    });
   </script>
 </html>
