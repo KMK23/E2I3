@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      #join_form {
+        width: 700px;
+        margin: auto;
+      }
+      #join_form div {
+        margin-top: 10px;
+      }
+      fieldset {
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        padding: 50px;
+      }
+      legend {
+        font-size: 1.8rem;
+        text-align: center;
+        font-weight: 700;
+      }
+      form div span {
+        font-size: 13px;
+        color: rgb(107, 130, 197);
+        font-style: italic;
+        display: none;
+      }
+      form p {
+        display: inline-block;
+        margin: 0;
+        padding-right: 10px;
+      }
+      .errorMessage {
+        font-size: 13px;
+        color: red;
+        display: block;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form id="join_form">
+        <fieldset>
+          <legend>회원가입</legend>
+          <div class="name box">
+            <p class="name-label">이름 :</p>
+            <input
+              class="name-input"
+              type="text"
+              placeholder="이름을 입력하세요."
+            />
+          </div>
+          <div class="joinId box">
+            <p class="id-label">아이디 :</p>
+            <input
+              class="id-input"
+              type="text"
+              placeholder="아이디를 입력하세요."
+            />
+            <button class="idBtn">아이디 중복확인</button><br />
+            <span class="err-id">* ID 사용이 가능합니다.</span>
+          </div>
+          <div class="password box">
+            <p class="password-label">비밀번호 :</p>
+            <input
+              class="password-input"
+              type="password"
+              placeholder="비밀번호를 입력하세요"
+            /><br />
+            <span class="err-pwd">* 4~12글자까지만 입력 가능합니다.</span>
+          </div>
+          <div class="password2 box">
+            <p class="password2-label">비밀번호 확인 :</p>
+            <input class="password2-input" type="password" /><br />
+            <span class="err-repwd"></span>
+          </div>
+          <div class="birth box">
+            <p class="birth-label">생년월일 :</p>
+            <input class="birth-input" type="date" /><br />
+          </div>
+          <div class="addrNum box">
+            <p class="addrNum-label">주소 검색:</p>
+            <input class="addrNum-input" type="text" placeholder="우편번호" />
+            <button class="addrNum" id="addrBtn" onclick="findAddr()">
+              주소검색
+            </button>
+          </div>
+          <div class="addr box">
+            <p class="addr-label">주소 :</p>
+            <input class="addr-input" type="text" placeholder="기본주소" />
+            <input class="addr2-input" type="text" placeholder="상세주소" />
+          </div>
+          <div class="email box">
+            <p class="email-label">이메일 :</p>
+            <input class="email-input" type="text" />@
+            <input class="email2-input" type="text" />
+            <select class="emailaddr" id="emailaddr">
+              <option value="">직접입력</option>
+              <option value="naver.com">NAVER</option>
+              <option value="gmail.com">GOOGLE</option>
+              <option value="daum.net">DAUM</option>
+            </select>
+          </div>
+          <div class="tel box">
+            <p class="tel-label">전화번호 :</p>
+            <input class="tel-input" type="text" name="tel" /> <br />
+            <span type="hidden" class="err-mobile">* '-'없이 숫자만 입력</span>
+          </div>
+          <div class="set box">
+            <input class="agree-input" type="checkbox" name="agree" />
+            <p class="agree-label">약관 동의</p>
+            <br />
+            <span class="err-agree">* 필수</span>
+          </div>
+          <br /><br />
+          <button class="history Btn">이전으로</button>
+          <button class="join Btn">회원가입</button>
+        </fieldset>
+      </form>
+    </div>
+  </body>
+  <script>
+    // 여기서부터 아이디 중복확인 버튼 만든것
+    const idinput = document.querySelector(".id-input");
+    const idBtn = document.querySelector(".idBtn");
+    const errid = document.querySelector(".err-id");
+    idBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const ErrorSpan = document.querySelector(".errorMessage");
+      if (ErrorSpan) {
+        ErrorSpan.remove();
+      }
+
+      if (idinput.value === "") {
+        idBtn.insertAdjacentHTML(
+          "afterend",
+          " <span class='errorMessage'>아이디를 입력하세요</span>"
+        );
+      } else if (idinput.value != "") {
+        errid.style.display = "block";
+      }
+
+      // idinput.value === ""
+      //   ? idBtn.insertAdjacentHTML(
+      //       "afterend",
+      //       "<span class='errorMessage'>아이디를 입력하세요</span>"
+      //     )
+      //   : (errid.style.display = "block");
+
+      idBtn.addEventListener("click", function () {
+        const errordouble = document.querySelector(".errorMessage");
+        if (errordouble) {
+          errordouble.remove();
+        }
+      });
+    });
+    const addr = document.querySelector("#addrBtn");
+    // addr.addEventListener("click", function () {
+
+    // });
+    function findAddr() {
+      new daum.Postcode({
+        oncomplete: function (data) {
+          // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분입니다.
+          // 예제를 참고하여 다양한 활용법을 확인해 보세요.
+          console.log(data);
+
+          // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+          // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+          // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+          var addr = ""; // 주소 변수
+          var extraAddr = ""; // 참고항목 변수
+
+          //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+          if (data.userSelectedType === "R") {
+            // 사용자가 도로명 주소를 선택했을 경우
+            addr = data.roadAddress;
+          } else {
+            // 사용자가 지번 주소를 선택했을 경우(J)
+            addr = data.jibunAddress;
+          }
+
+          // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+          if (data.userSelectedType === "R") {
+            // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+            // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+            if (data.bname !== "" && /[동|로|가]$/g.test(data.bname)) {
+              extraAddr += data.bname;
+            }
+            // 건물명이 있고, 공동주택일 경우 추가한다.
+            if (data.buildingName !== "" && data.apartment === "Y") {
+              extraAddr +=
+                extraAddr !== "" ? ", " + data.buildingName : data.buildingName;
+            }
+            // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+            if (extraAddr !== "") {
+              extraAddr = " (" + extraAddr + ")";
+            }
+            // 조합된 참고항목을 해당 필드에 넣는다.
+            document.getElementById("sample6_extraAddress").value = extraAddr;
+          } else {
+            document.getElementById("sample6_extraAddress").value = "";
+          }
+
+          // 우편번호와 주소 정보를 해당 필드에 넣는다.
+          document.getElementById("sample6_postcode").value = data.zonecode;
+          document.getElementById("sample6_address").value = addr;
+          // 커서를 상세주소 필드로 이동한다.
+          document.getElementById("sample6_detailAddress").focus();
+        },
+      }).open();
+    }
+  </script>
+</html>

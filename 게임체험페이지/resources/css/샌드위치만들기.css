@@ -62,4 +62,29 @@ h4 {
 .plate {
   margin-top: 80px;
   margin-left: 70px;
+  height: 700px;
+  position: relative;
+}
+.sandwich-ingredient {
+  cursor: pointer;
+}
+
+.plate-img {
+  position: absolute;
+  z-index: -1;
+}
+.sandwich {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background-color: rgba(255, 0, 0, 0.13);
+  left: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.selected {
+  width: 500px;
+  height: 500px;
+  position: absolute;
 }

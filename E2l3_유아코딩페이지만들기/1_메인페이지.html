@@ -1,9 +1,207 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>UI Coding</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        background-color: orange;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        font-family: "ONE-Mobile-POP", sans-serif;
+      }
+      @font-face {
+        font-family: "ONE-Mobile-POP";
+        src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-POP.woff")
+          format("woff");
+        font-weight: normal;
+        font-style: normal;
+      }
+      .container {
+        width: 100%;
+        max-width: 1300px;
+        margin: 2.5rem auto;
+        padding: 0 20px;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: green;
+        position: sticky;
+        width: 1200px;
+        top: 2.5rem;
+        font-weight: normal;
+        border-radius: 10px;
+      }
+
+      .logo-wrapper {
+        background-color: blue;
+        padding: 20px 0;
+        margin: 0;
+      }
+      .logo {
+        font-size: 40px;
+        font-weight: bold;
+        color: yellow;
+      }
+
+      .nav {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+      }
+
+      .nav-item {
+        font-size: 18px;
+      }
+
+      .hero {
+        position: relative;
+        height: 500px;
+        background-image: url("path/to/image.jpg");
+        background-size: cover;
+        background-position: center;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      .hero-text {
+        font-size: 36px;
+        font-weight: bold;
+      }
+
+      .hero-button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 18px;
+        background-color: #000;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        border-radius: 20px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+        margin-top: 40px;
+        position: fixed;
+      }
+
+      .grid-item {
+        background-color: #edf03f;
+        padding: 20px;
+        text-align: center;
+        border-radius: 100px;
+      }
+
+      .heading {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      .paragraph {
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #000;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+      }
+
+      .responsive-img {
+        width: 100%;
+        height: auto;
+      }
+
+      .icon {
+        width: 40px;
+        height: 40px;
+      }
+      .text {
+        text-decoration: none;
+        font-size: 25px;
+      }
+      .nav-item a {
+        color: white;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="logo-wrapper">
+          <div class="logo">UI Coding</div>
+        </div>
+        <ul class="nav">
+          <li class="nav-item">
+            <a href="#" class="text">소개말</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="text">체험해보기</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="text">체험 후기</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="text">결제하기</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="text">고객센터</a>
+          </li>
+        </ul>
+        <div class="auth-buttons">
+          <button class="login-button">로그인</button>
+          <button class="signup-button">회원가입</button>
+        </div>
+      </header>
+      <section class="hero">
+        <div class="hero-text">
+          Welcome to UI Coding! <br />
+          <button class="hero-button">Let's play!</button>
+        </div>
+      </section>
+      <section class="grid">
+        <div class="grid-item">
+          <h2 class="heading">지금 시작하면 7일간 무료!</h2>
+          <p class="paragraph">Description of feature 1.</p>
+        </div>
+      </section>
+      <!-- <aside class="aside_wrap">
+
+        <div class="aside_bottom_wrap">
+          <div class="aside_bottom">
+            <p><a href="https://cocoble.jei.com/sign-in/start?_gl=1*j168bm*_ga*MTU4MzA2NjAzMC4xNzE4MjAzMjkw*_ga_Q04KDEKGK9*MTcxODIwMzI5MC4xLjEuMTcxODIwMzQ3OC42MC4wLjA." target="_blank">지금 시작하면 <b>7일간</b> 무료!</a></p>
+            <div class="aside_btns">
+              <a href="https://cocoble.jei.com/sign-in/start" class="btn_go_cocoble" target="_blank">코코블 시작하기</a>
+              <a href="javascript:;" class="btn_cocoble_counsel onlineCounselCocobleFloating2">무료상담신청</a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="btn_scroll on">
+          <button type="button" class="gotop" onclick="goTargetSection(0,'body')"><img src="img/btn-gotop.png" alt="맨 위로"></button>
+        </div>
+      
+      </aside> -->
+    </div>
+  </body>
+  <script></script>
 </html>
