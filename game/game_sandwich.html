@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="resources/css/샌드위치만들기.css" />
+    <link rel="stylesheet" href="resources/css/game_sandwich.css" />
   </head>
   <body>
     <div class="container">
@@ -128,16 +128,39 @@
     let zIndexCounter = 1;
     let currentStep = 0;
     const order = ["bread", "meat", "egg", "tomato", "lettuce", "bread"];
-    let fistBreadPlaced = false;
-    console.log(ingredient);
-    ingredient.forEach(function (img) {
-      img.addEventListener("click", function (e) {
-        const img = document.createElement("img");
-        img.src = e.target.src;
-        img.classList.add("selected");
-        zIndexCounter++;
-        img.style.zIndex = zIndexCounter;
-        sandwich.append(img);
+    let firstBreadPlaced = false;
+
+    ingredient.forEach((ingredient) => {
+      ingredient.addEventListener("click", function () {
+        const ingredientType = this.getAttribute("data-type");
+
+        if (
+          ingredientType === order[currentStep] ||
+          (ingredientType === "bread" &&
+            (currentStep === 0 || currentStep === 5))
+        ) {
+          if (ingredientType === "bread" && !firstBreadPlaced) {
+            firstBreadPlaced = true;
+          } else if (ingredientType === "bread" && currentStep === 0) {
+            alert("첫 번째 재료는 빵이어야 합니다.");
+            return;
+          }
+          const img = document.createElement("img");
+          img.src = this.src;
+          img.style.zIndex = zIndexCounter;
+          img.classList.add("selected");
+          zIndexCounter++;
+          sandwich.appendChild(img);
+          currentStep++;
+          if (currentStep === order.length) {
+            const lastIngredientAdded = sandwich.lastElementChild;
+            lastIngredientAdded.onload = function () {
+              alert("성공적으로 샌드위치를 완성했습니다!");
+            };
+          }
+        } else {
+          alert("순서가 틀렸습니다. 올바른 순서대로 눌러주세요.");
+        }
       });
     });
   </script>
