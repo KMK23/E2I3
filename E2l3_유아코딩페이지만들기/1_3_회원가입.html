@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      #join_form {
+        width: 700px;
+        margin: auto;
+      }
+      #join_form div {
+        margin-top: 10px;
+      }
+      fieldset {
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        padding: 50px;
+      }
+      legend {
+        font-size: 1.8rem;
+        text-align: center;
+        font-weight: 700;
+      }
+      form div span {
+        font-size: 13px;
+        color: rgb(107, 130, 197);
+        font-style: italic;
+        display: none;
+      }
+      form p {
+        display: inline-block;
+        margin: 0;
+        padding-right: 10px;
+      }
+      .errorMessage {
+        font-size: 13px;
+        color: red;
+        display: block;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form id="join_form">
+        <fieldset>
+          <legend>회원가입</legend>
+          <div class="name box">
+            <p class="name-label">이름 :</p>
+            <input
+              class="name-input"
+              type="text"
+              placeholder="이름을 입력하세요."
+            />
+          </div>
+          <div class="joinId box">
+            <p class="id-label">아이디 :</p>
+            <input
+              class="id-input"
+              type="text"
+              placeholder="아이디를 입력하세요."
+            />
+            <button class="idBtn">아이디 중복확인</button><br />
+            <span class="err-id">* ID 사용이 가능합니다.</span>
+          </div>
+          <div class="password box">
+            <p class="password-label">비밀번호 :</p>
+            <input
+              class="password-input"
+              type="password"
+              placeholder="비밀번호를 입력하세요"
+            /><br />
+            <span class="err-pwd">* 4~12글자까지만 입력 가능합니다.</span>
+          </div>
+          <div class="password2 box">
+            <p class="password2-label">비밀번호 확인 :</p>
+            <input class="password2-input" type="password" /><br />
+            <span class="err-repwd"></span>
+          </div>
+          <div class="birth box">
+            <p class="birth-label">생년월일 :</p>
+            <input class="birth-input" type="date" /><br />
+          </div>
+          <div class="addrNum box">
+            <p class="addrNum-label">주소 검색:</p>
+            <input class="addrNum-input" type="text" placeholder="우편번호" />
+            <button class="addrNum">주소검색</button>
+          </div>
+          <div class="addr box">
+            <p class="addr-label">주소 :</p>
+            <input class="addr-input" type="text" placeholder="기본주소" />
+            <input class="addr2-input" type="text" placeholder="상세주소" />
+          </div>
+          <div class="email box">
+            <p class="email-label">이메일 :</p>
+            <input class="email-input" type="text" />@
+            <input class="email2-input" type="text" />
+            <select class="emailaddr" id="emailaddr">
+              <option value="">직접입력</option>
+              <option value="naver.com">NAVER</option>
+              <option value="gmail.com">GOOGLE</option>
+              <option value="daum.net">DAUM</option>
+            </select>
+          </div>
+          <div class="tel box">
+            <p class="tel-label">전화번호 :</p>
+            <input class="tel-input" type="text" name="tel" /> <br />
+            <span type="hidden" class="err-mobile">* '-'없이 숫자만 입력</span>
+          </div>
+          <div class="set box">
+            <input class="agree-input" type="checkbox" name="agree" />
+            <p class="agree-label">약관 동의</p>
+            <br />
+            <span class="err-agree">* 필수</span>
+          </div>
+          <br /><br />
+          <button class="history Btn">이전으로</button>
+          <button class="join Btn">회원가입</button>
+        </fieldset>
+      </form>
+    </div>
+    <script>
+      // 여기서부터 아이디 중복확인 버튼 만든것
+      const idinput = document.querySelector(".id-input");
+      const idBtn = document.querySelector(".idBtn");
+      const errid = document.querySelector(".err-id");
+      idBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        const ErrorSpan = document.querySelector(".errorMessage");
+        if (ErrorSpan) {
+          ErrorSpan.remove();
+        }
+
+        if (idinput.value === "") {
+          idBtn.insertAdjacentHTML(
+            "afterend",
+            " <span class='errorMessage'>아이디를 입력하세요</span>"
+          );
+        } else if (idinput.value != "") {
+          errid.style.display = "block";
+        }
+
+        // idinput.value === ""
+        //   ? idBtn.insertAdjacentHTML(
+        //       "afterend",
+        //       "<span class='errorMessage'>아이디를 입력하세요</span>"
+        //     )
+        //   : (errid.style.display = "block");
+
+        idBtn.addEventListener("click", function () {
+          const errordouble = document.querySelector(".errorMessage");
+          if (errordouble) {
+            errordouble.remove();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
