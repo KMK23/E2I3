@@ -15,10 +15,13 @@
       box-sizing: border-box;
     }
     body {
-      width: 100%;
-      height: 100%;
       font-family: pretendard;
-      margin: 0;
+    }
+    .wrap {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      height: 100vh;
     }
     .nav-bar {
       height: 100px;
@@ -41,7 +44,6 @@
     }
     .nav-bar ul li a {
       color: #495057;
-      /* background-color: rgb(255, 255, 255); */
       padding: 24px;
       margin: 0;
       border-radius: 16px 16px 0 0;
@@ -55,7 +57,6 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      /* gap: 10px; */
       word-break: keep-all;
     }
 
@@ -67,28 +68,25 @@
       font-weight: 900;
     }
     .sub-title {
-      font-size: 4rem;
+      font-size: 3rem;
       color: #343a40;
       font-weight: 600;
     }
     .title {
-      font-size: 6rem;
+      font-size: 4rem;
       color: #ffd43b;
       margin: 0.5rem;
     }
     .title-text {
       background-color: #ffb300;
       font-size: 1.5rem;
-      padding: 2rem;
+      padding: 1.5rem;
       border-radius: 32px;
     }
     .active {
       background-color: #fd7e14;
     }
-    .gameAll {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
+
     .game-title {
       font-size: 2rem;
       margin-left: 50px;
@@ -112,69 +110,177 @@
       font-weight: 900;
       cursor: pointer;
     }
+    .game-bar ul {
+      display: flex;
+      list-style-type: none;
+      gap: 40px;
+      background-color: #e9ecef;
+      font-size: 1.3rem;
+      padding: 24px;
+      border-radius: 32px;
+    }
+    .gameLink {
+      color: #495057;
+      text-decoration: none;
+      font-weight: 600;
+    }
   </style>
   <body>
-    <!-- 네비게이션 바 -->
-    <section>
-      <div class="nav-bar">
-        <ul class="nav nav-pills">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#"
-              >블록 코딩 기초 학습</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">협력 코딩 게임</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">디지털 감성 학습</a>
-          </li>
-        </ul>
-      </div>
-    </section>
-    <!-- 전체 페이지  -->
-    <section>
-      <div class="container">
-        <div class="wrap-text">
-          <span class="title-label">Easy Fun Coding</span>
-          <p class="sub-title">단계별 프로그래밍 학습을 통해</p>
-          <h2 class="title">기초 컴퓨팅 사고력을 튼튼하게</h2>
-          <p class="title-text">
-            아이들이 쉽고 재미있게 코딩의 기초를 다질 수 있도록 단계별 학습
-            프로그램을 제공하며, <br />
-            다양한 문제 해결을 통해 창의력을 키우고, 논리적 사고를 연습합니다.
-          </p>
-          <div class="gameAll">
-            <div class="game-list1">
-              <div class="game-title">동물을 찾아요</div>
-              <img src="resources/img/동물을 찾아요.png" alt="" />
+    <div class="wrap">
+      <!-- 네비게이션 바 -->
+      <section>
+        <div class="nav-bar">
+          <ul class="nav nav-pills">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#"
+                >블록 코딩 기초 학습</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#basic-coding">AI학습 리포트</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">디지털 감성 학습</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- 전체 페이지  -->
+      <section>
+        <div class="container">
+          <div class="wrap-text">
+            <span class="title-label">Easy Fun Coding</span>
+            <p class="sub-title">단계별 프로그래밍 학습을 통해</p>
+            <h2 class="title">기초 컴퓨팅 사고력을 튼튼하게</h2>
+            <p class="title-text">
+              아이들이 쉽고 재미있게 코딩의 기초를 다질 수 있도록 단계별 학습
+              프로그램을 제공하며, <br />
+              다양한 문제 해결을 통해 창의력을 키우고, 논리적 사고를 연습합니다.
+            </p>
+            <div class="game-bar">
+              <ul>
+                <li class="gameName">
+                  <a class="gameLink" href="#" id="game1">디버깅</a>
+                </li>
+                <li class="gameName">
+                  <a class="gameLink" href="#" id="game2">알고리즘 및 순차</a>
+                </li>
+                <li class="gameName">
+                  <a class="gameLink" href="#" id="game3">반복,패턴 만들기</a>
+                </li>
+              </ul>
             </div>
-            <div class="game-list2">
-              <div class="game-title">샌드위치 만들기</div>
-              <img src="resources/img/샌드위치만들기.png" alt="" />
+            <div class="gameAll">
+              <div class="gameImg" id="img1">
+                <img
+                  src="resources/img/동물을 찾아요.png"
+                  alt=""
+                  class="selected"
+                />
+              </div>
+              <div class="gameImg" id="img2" style="display: none">
+                <img src="resources/img/샌드위치만들기.png" alt="" />
+              </div>
+              <div class="gameImg" id="img3" style="display: none">
+                <img
+                  src="resources/img/squid-game-6758080_1280.jpg"
+                  alt=""
+                  width="900px"
+                />
+              </div>
             </div>
           </div>
+          <div class="gameStart1">
+            <button class="gameBtn">
+              게임<br />
+              체험하기
+            </button>
+          </div>
         </div>
-        <div class="gameStart">
-          <button class="gameBtn">
-            게임<br />
-            체험하기
-          </button>
-        </div>
-      </div>
-    </section>
+      </section>
+      <!-- AI코딩 -->
+      <section>
+        <div id="basic-coding"></div>
+        <h1>디지털 시대에 필요한 감성을 배워보세요!</h1>
+        <h3>
+          AI학습 리포트는 여러분이 디지털 세상에서 올바르게 살아가는 법을 배울
+          수 있는 특별한 기회를 제공합니다.
+        </h3>
+        <ul>
+          <li>
+            디지털 시대의 매너: 사이버 공간에서의 예의와 적절한 행동의 중요성을
+            배우세요.
+          </li>
+          <li>
+            디지털 감성: 온라인에서의 자신감을 키우고, 다른 사람과의 존중과
+            소통의 방법을 익히세요.
+          </li>
+          <li>
+            사이버 보안: 개인정보 보호와 온라인 안전에 대한 필수적인 지식을
+            습득하세요.
+          </li>
+          <li>
+            디지털 예절: 올바른 온라인 행동 규범을 익히며, 다양한 상황에서의
+            적절한 반응 방법을 배웁니다.
+          </li>
+          <p>
+            애니메이션과 퀴즈를 통해 이 모든 학습이 쉽고 재미있게 전달됩니다.
+            AI학습 리포트는 여러분이 디지털 세상에서 스마트하고 안전하게 길을
+            잡을 수 있도록 도와줍니다.
+          </p>
+        </ul>
+      </section>
+    </div>
   </body>
   <script>
-    //메뉴에서 class 넣고 빼서 움직이기
-    const navBarMove = document.querySelectorAll(".nav-link");
-    navBarMove.addEventListener("click", function () {
-      navBarMove.classList.add("active");
+    // 메뉴에서 class 넣고 빼서 움직이기
+    const navBarLinks = document.querySelectorAll(".nav-link");
+
+    navBarLinks.forEach((link) => {
+      link.addEventListener("click", function (e) {
+        navBarLinks.forEach((navLink) => navLink.classList.remove("active")); // 다른 링크에서 'active' 클래스 제거
+        link.classList.add("active"); // 클릭된 링크에 'active' 클래스 추가
+      });
+    });
+
+    // 게임 종류 버튼 눌러서 게임 이동
+    const gameNames = document.querySelectorAll(".gameName");
+    //gameName을 가진 li(버튼)들을 다 가져왔어
+    const gameImgs = document.querySelectorAll(".gameImg");
+    //gameImg 를 가진 div 들 가져옴
+
+    gameNames.forEach((gameName, index) => {
+      gameName.addEventListener("click", function (e) {
+        e.preventDefault();
+        gameImgs.forEach((img, imgIndex) => {
+          if (index === imgIndex) {
+            if (img.style.display === "none") {
+              img.style.display = "block";
+            } else {
+              img.style.display = "block"; // 두 번 눌렀을 때 이미지를 계속 보여줍니다.
+            }
+          } else {
+            img.style.display = "none";
+          }
+        });
+      });
     });
 
     // 게임하기 버튼
     const gameBtn = document.querySelector(".gameBtn");
-    gameBtn.addEventListener("click", function () {
-      location.href = "3_1_게임체험하기1.html";
+
+    const game1 = document.querySelector("#game1");
+    const game2 = document.querySelector("#game2");
+    const game3 = document.querySelector("#game3");
+
+    game1.addEventListener("click", function () {
+      location.href = "3_1_game1.html";
+    });
+    game2.addEventListener("click", function () {
+      location.href = "../game/game_sandwich.html";
+    });
+    game3.addEventListener("click", function () {
+      location.href = "";
     });
   </script>
 </html>
