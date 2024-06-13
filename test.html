@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  </head>
+  <body>
+    <input class="addrNum-input" type="text" placeholder="우편번호" />
+    <button class="addrNum" id="addrBtn" onclick="findAddr()">주소검색</button>
+  </body>
+  <script>
+    function findAddr() {
+      new daum.Postcode({
+        oncomplete: function (data) {
+          console.log(data);
+        },
+      }).open();
+    }
+  </script>
+</html>
