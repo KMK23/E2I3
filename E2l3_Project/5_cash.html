@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
+  </head>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    html {
+      font-family: Pretendard;
+    }
+    body {
+      background-image: url("resources/img/backgrondimgs.webp");
+      /* opacity: 0.3; */
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100%;
+      margin: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 1300px;
+      margin: 2.5rem auto;
+      height: 100vh;
+    }
+    .content {
+      /* border: 2px solid beige; */
+      background-color: rgb(243, 243, 234);
+      border-radius: 16px;
+      padding: 80px 50px;
+    }
+    .coding {
+      flex-direction: column;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0px 0px 18px;
+    }
+    .text-p {
+      margin: 0 0 8px;
+      color: #a8a281;
+      font-size: 36px;
+    }
+    .text-h2 {
+      font-weight: 700;
+      color: #453f36;
+      font-size: 40px;
+    }
+    .paymone {
+      text-align: center;
+    }
+    .code-link {
+      background: linear-gradient(45deg, #fff, #ffd700);
+
+      padding: 16px;
+      border-width: 8px;
+      border-radius: 16px;
+      text-decoration: none;
+      color: #453f36;
+      font-size: 36px;
+    }
+  </style>
+  <body>
+    <section class="container">
+      <div class="content">
+        <div class="coding">
+          <p class="text-p">"친구들은 이미 코딩 시작했어요!"</p>
+          <h2 class="text-h2">무료체험을 시작해 보세요.</h2>
+        </div>
+        <div class="paymone">
+          <a href="#" class="code-link" target="_blank"
+            >0원으로 7일간 무료체험을 시작해보세요</a
+          >
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
