@@ -72,36 +72,42 @@
             width="120"
             height="120"
             class="sandwich-ingredient"
+            data-type="egg"
           />
           <img
             src="resources/img/상추.png"
             width="120"
             height="120"
             class="sandwich-ingredient"
+            data-type="lettuce"
           />
           <img
             src="resources/img/햄.png"
             width="120"
             height="120"
             class="sandwich-ingredient"
+            data-type="meat"
           />
           <img
             src="resources/img/식빵.png"
             width="120"
             height="120"
             class="sandwich-ingredient"
+            data-type="bread"
           />
           <img
             src="resources/img/식빵.png"
             width="120"
             height="120"
             class="sandwich-ingredient"
+            data-type="bread"
           />
           <img
             src="resources/img/토마토.png"
             width="120"
             height="120"
             class="sandwich-ingredient"
+            data-type="tomato"
           />
         </div>
         <div class="plate">
@@ -120,6 +126,9 @@
     const ingredient = document.querySelectorAll(".sandwich-ingredient");
     const sandwich = document.querySelector(".sandwich");
     let zIndexCounter = 1;
+    let currentStep = 0;
+    const order = ["bread", "meat", "egg", "tomato", "lettuce", "bread"];
+    let fistBreadPlaced = false;
     console.log(ingredient);
     ingredient.forEach(function (img) {
       img.addEventListener("click", function (e) {
