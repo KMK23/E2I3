@@ -32,12 +32,18 @@ h4 {
 .title {
   margin-bottom: 3px;
 }
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
 .plate {
   background-color: gray;
   border: 13px solid rgb(109, 108, 108);
   border-radius: 10px;
   display: flex;
   justify-content: space-around;
+  align-items: baseline;
   margin-top: 30px;
 }
 .bakery {

@@ -11,17 +11,35 @@
   />
 
   <style>
+    @font-face {
+      font-family: "Ownglyph_meetme-Rg";
+      src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_1@1.0/Ownglyph_meetme-Rg.woff2")
+        format("woff2");
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: "GmarketSansMedium";
+      src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
+        format("woff");
+      font-weight: normal;
+      font-style: normal;
+    }
     * {
       box-sizing: border-box;
+      word-break: keep-all;
     }
     body {
       font-family: pretendard;
-    }
-    .wrap {
+      height: 100vh;
       width: 100%;
       max-width: 1200px;
       margin: 0 auto;
-      height: 100vh;
+    }
+    .wrap {
+      background-image: url("resources/img/intro-bg.png");
+      background-repeat: no-repeat;
+      background-size: cover;
     }
     .nav-bar {
       height: 100px;
@@ -30,6 +48,7 @@
       justify-content: center;
       align-items: center;
       margin-top: 80px;
+      background-color: #0e3534;
     }
     .nav-bar ul {
       list-style-type: none;
@@ -43,7 +62,7 @@
       margin: 0;
     }
     .nav-bar ul li a {
-      color: #495057;
+      color: white;
       padding: 24px;
       margin: 0;
       border-radius: 16px 16px 0 0;
@@ -58,6 +77,7 @@
       align-items: center;
       justify-content: center;
       word-break: keep-all;
+      height: 100%;
     }
 
     .title-label {
@@ -95,21 +115,23 @@
       padding: 12px;
       border-radius: 32px;
     }
-    .gameBtn {
-      position: fixed;
-      padding: 24px;
-      border: none;
-      background-color: rgba(209, 209, 174, 0.479);
-      font-size: 1rem;
-      bottom: 0;
-      right: 10rem;
-      border-radius: 50%;
-      width: 7rem;
-      height: 7rem;
-      font-style: italic;
-      font-weight: 900;
-      cursor: pointer;
+    .gameAll {
+      position: relative;
     }
+    .gameBtn1 {
+      position: absolute;
+      z-index: 1;
+      bottom: 0;
+      right: 50px;
+      border: none;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      font-weight: 800;
+      cursor: pointer;
+      background-color: rgba(255, 224, 122, 0.479);
+    }
+
     .game-bar ul {
       display: flex;
       list-style-type: none;
@@ -124,29 +146,182 @@
       text-decoration: none;
       font-weight: 600;
     }
+    /* AI 학습 리포트 */
+
+    .AI-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 100px;
+      margin-top: 50px;
+    }
+    .AI-text-img {
+      display: flex;
+      flex-direction: column;
+      border-radius: 50px;
+      padding: 32px;
+      gap: 100px;
+    }
+    .AI-text-img h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      font-style: italic;
+      font-family: "GmarketSansMedium";
+    }
+    .AI-text-img h3 {
+      color: #e0bb35;
+      font-family: "GmarketSansMedium";
+    }
+    .AI-stu-img img {
+      border-radius: 50%;
+    }
+
+    .dsec {
+      color: white;
+    }
+    .dsec h4 {
+      font-size: 2rem;
+    }
+    .dsec p {
+      font-size: 1.2rem;
+    }
+    .AI-desc1 {
+      background-color: #ad75fd;
+      border-radius: 32px;
+      margin: 0;
+      width: fit-content;
+      height: auto;
+      padding: 7px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .AI-desc2 {
+      background-color: #ff9d00;
+      border-radius: 32px;
+      padding: 7px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .AI-desc3 {
+      background-color: #9dc300;
+      border-radius: 32px;
+      padding: 7px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* 아래 부분을 추가 */
+    .content-desc {
+      display: flex;
+      gap: 20px;
+      width: 100%;
+      justify-content: space-around;
+      flex-direction: column;
+    }
+
+    /* 디지털 학습 */
+
+    #basic-coding {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 100px;
+      background-color: #fab442;
+      border-radius: 50px;
+      padding: 50px;
+    }
+    .AI-main-title {
+      font-size: 4rem;
+      font-style: italic;
+      font-weight: 800;
+      color: #ffffff;
+    }
+    .AI-sub-title {
+      font-size: 2rem;
+    }
+    .lists {
+      list-style-type: none;
+      background-color: #fa9a85;
+      font-size: 2rem;
+      padding: 24px;
+      border-radius: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .lists li {
+      font-family: Ownglyph_meetme-Rg;
+    }
+    p {
+      font-family: "GmarketSansMedium";
+    }
+    .AI-imgs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .AI-img {
+      width: 450px;
+      height: 450px;
+      position: relative;
+      transition: transform 0.3s ease-in-out;
+    }
+    .button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      cursor: pointer;
+    }
+
+    #AI-img1 {
+      background-image: url("resources/img/1_KakaoTalk_20240614_141659959.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    #AI-img2 {
+      background-image: url("resources/img/2_KakaoTalk_20240614_141659959_01.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    #AI-img3 {
+      background-image: url("resources/img/3_KakaoTalk_20240614_141659959_02.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    #AI-img4 {
+      background-image: url("resources/img/4_KakaoTalk_20240614_141659959_03.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
   </style>
   <body>
     <div class="wrap">
       <!-- 네비게이션 바 -->
-      <section>
+      <section calss="coding">
         <div class="nav-bar">
           <ul class="nav nav-pills">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#"
+              <a class="nav-link" aria-current="page" href="#gamePage"
                 >블록 코딩 기초 학습</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#basic-coding">AI학습 리포트</a>
+              <a class="nav-link" href="#AI-study">AI학습 리포트</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">디지털 감성 학습</a>
+              <a class="nav-link" href="#basic-coding">디지털 감성 학습</a>
             </li>
           </ul>
         </div>
       </section>
       <!-- 전체 페이지  -->
-      <section>
+      <section class="coding" id="gamePage">
         <div class="container">
           <div class="wrap-text">
             <span class="title-label">Easy Fun Coding</span>
@@ -177,36 +352,89 @@
                   alt=""
                   class="selected"
                 />
+                <button class="gameBtn1" id="Btn1">게임 체험하기</button>
               </div>
               <div class="gameImg" id="img2" style="display: none">
-                <img src="resources/img/샌드위치만들기.png" alt="" />
+                <img src="resources/img/샌드위치만들기.png" alt="" />;
+                <button class="gameBtn1" id="Btn2">게임 체험하기</button>
               </div>
               <div class="gameImg" id="img3" style="display: none">
                 <img
                   src="resources/img/squid-game-6758080_1280.jpg"
                   alt=""
-                  width="900px"
+                  width="600px"
+                  height="800px"
                 />
+                <button class="gameBtn1" id="Btn3">게임 체험하기</button>
               </div>
             </div>
           </div>
-          <div class="gameStart1">
-            <button class="gameBtn">
-              게임<br />
-              체험하기
-            </button>
-          </div>
         </div>
       </section>
-      <!-- AI코딩 -->
-      <section>
-        <div id="basic-coding"></div>
-        <h1>디지털 시대에 필요한 감성을 배워보세요!</h1>
-        <h3>
-          AI학습 리포트는 여러분이 디지털 세상에서 올바르게 살아가는 법을 배울
-          수 있는 특별한 기회를 제공합니다.
+    </div>
+
+    <!-- AI 학습리포트 -->
+    <section id="AI-study">
+      <div class="AI-content">
+        <div class="AI-text-img">
+          <h1>AI기반 학습 리포트로 맞춤형 학습 관리까지</h1>
+          <h3>
+            홈페이지에서는 AI 기술을 활용한 학습 리포트를 통해<br />아이들의
+            코딩 실력을 체계적으로 분석하고 맞춤형 학습 계획을 제공합니다.
+          </h3>
+          <div class="AI-stu-img">
+            <img
+              src="resources/img/children-593313_1280.jpg"
+              alt=""
+              width="600px"
+              height="400px"
+            />
+          </div>
+        </div>
+        <div class="content-desc">
+          <div class="AI-desc1 dsec">
+            <h4>성장에 맞춘 커리큘럼</h4>
+            <p>아이의 학습 속도와 이해도를 분석하여 최적의 학습 경로를 제공</p>
+            <img
+              src="resources/img/차트1_waifu2x_art_noise1_scale.webp"
+              width="400px"
+              height="200px"
+            />
+          </div>
+          <div class="AI-desc2 dsec">
+            <h4>즉각적인 피드백</h4>
+            <p>실시간으로 제공되는 피드백을 통해 아이의 학습 효과 극대화</p>
+            <img
+              src="resources/img/차트2_waifu2x_art_noise1_scale.webp"
+              alt=""
+              width="400px"
+              height="200px"
+            />
+          </div>
+          <div class="AI-desc3 dsec">
+            <h4>맞춤형 과제</h4>
+            <p>아이의 강점과 약점을 파악하여 적절한 난이도의 과제 제시</p>
+            <img
+              src="resources/img/차트3_waifu2x_art_noise1_scale.webp"
+              alt=""
+              width="400px"
+              height="200px"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 디지털 -->
+
+    <section class="section3">
+      <div id="basic-coding">
+        <h1 class="AI-main-title">디지털 시대에 필요한 감성을 배워보세요!</h1>
+        <h3 class="AI-sub-title">
+          AI학습 리포트는 여러분이 디지털 세상에서 <br />
+          올바르게 살아가는 법을 배울 수 있는 특별한 기회를 제공합니다.
         </h3>
-        <ul>
+        <ul class="lists">
           <li>
             디지털 시대의 매너: 사이버 공간에서의 예의와 적절한 행동의 중요성을
             배우세요.
@@ -223,14 +451,49 @@
             디지털 예절: 올바른 온라인 행동 규범을 익히며, 다양한 상황에서의
             적절한 반응 방법을 배웁니다.
           </li>
-          <p>
-            애니메이션과 퀴즈를 통해 이 모든 학습이 쉽고 재미있게 전달됩니다.
-            AI학습 리포트는 여러분이 디지털 세상에서 스마트하고 안전하게 길을
-            잡을 수 있도록 도와줍니다.
-          </p>
         </ul>
-      </section>
-    </div>
+        <p>
+          애니메이션과 퀴즈를 통해 이 모든 학습이 쉽고 재미있게 전달됩니다.
+          <br />
+          br AI학습 리포트는 여러분이 디지털 세상에서 스마트하고 안전하게 길을
+          잡을 수 있도록 도와줍니다.
+        </p>
+        <div class="AI-imgs">
+          <div class="AI-img" id="AI-img1">
+            <img
+              src="resources/img/circle-play-solid.svg"
+              class="button"
+              width="50px"
+              height="50px"
+            />
+          </div>
+          <div class="AI-img" id="AI-img2">
+            <img
+              src="resources/img/circle-play-solid.svg"
+              class="button"
+              width="50px"
+              height="50px"
+            />
+          </div>
+          <div class="AI-img" id="AI-img3">
+            <img
+              src="resources/img/circle-play-solid.svg"
+              class="button"
+              width="50px"
+              height="50px"
+            />
+          </div>
+          <div class="AI-img" id="AI-img4">
+            <img
+              src="resources/img/circle-play-solid.svg"
+              class="button"
+              width="50px"
+              height="50px"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
   <script>
     // 메뉴에서 class 넣고 빼서 움직이기
@@ -267,20 +530,32 @@
     });
 
     // 게임하기 버튼
-    const gameBtn = document.querySelector(".gameBtn");
 
-    const game1 = document.querySelector("#game1");
-    const game2 = document.querySelector("#game2");
-    const game3 = document.querySelector("#game3");
+    const gameBtn1 = document.getElementById("Btn1");
+    const gameBtn2 = document.getElementById("Btn2");
+    const gameBtn3 = document.getElementById("Btn3");
 
-    game1.addEventListener("click", function () {
+    gameBtn1.addEventListener("click", function () {
       location.href = "3_1_game1.html";
     });
-    game2.addEventListener("click", function () {
-      location.href = "../game/game_sandwich.html";
-    });
-    game3.addEventListener("click", function () {
+    gameBtn2.addEventListener("click", function () {
       location.href = "";
+    });
+    gameBtn3.addEventListener("click", function () {
+      location.href = "";
+    });
+
+    // 동영상 플레이
+    const playBtns = document.querySelectorAll(".button");
+    playBtns.forEach((el, idx) => {
+      el.addEventListener("click", function () {
+        const parentDiv = el.parentElement;
+        if (parentDiv.style.transform === "scale(1.5, 1.5)") {
+          parentDiv.style.transform = "scale(1, 1)";
+        } else {
+          parentDiv.style.transform = "scale(1.5, 1.5)";
+        }
+      });
     });
   </script>
 </html>
