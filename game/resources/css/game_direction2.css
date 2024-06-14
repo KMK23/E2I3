@@ -32,3 +32,55 @@ h4 {
 .title {
   margin-bottom: 3px;
 }
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.password-box {
+  border: 4px dotted rgb(169, 230, 177);
+  display: flex;
+  justify-content: space-around;
+  padding: 35px 150px;
+  border-radius: 40px;
+  position: relative;
+}
+.password {
+  position: absolute;
+  top: -25px;
+  border: 3px dashed rgb(95, 163, 104);
+  width: 140px;
+  text-align: center;
+  padding: 10px;
+  background-color: rgb(169, 230, 177);
+  border-radius: 10px;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25%, auto));
+  grid-template-rows: repeat(auto-fit, minmax(25%, auto));
+  border: 4px solid rgb(169, 230, 177);
+  border-radius: 10px;
+  height: 70%;
+  width: 80%;
+  align-self: center;
+}
+.boxes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 4px solid rgb(169, 230, 177);
+  cursor: pointer;
+}
+.tree {
+  display: none;
+}
+/* .hidden {
+  display: none;
+} */
+.visited {
+  background-color: rgba(184, 224, 219, 0.425);
+}
+.arrived {
+  background-color: rgba(184, 224, 219, 0.425);
+}
