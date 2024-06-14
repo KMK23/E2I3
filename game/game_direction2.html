@@ -10,17 +10,221 @@
     <div class="container">
       <div class="header">
         <div class="level">
-          <div>2단계</div>
+          <div>3단계</div>
         </div>
         <div>
-          <h1 class="title">빵집에 빵을 진열해요</h1>
-          <h4 class="text">빵을 일정한 순서대로 진열해 보아요.</h4>
+          <h1 class="title">빵을 배달해요</h1>
+          <h4 class="text">진용이네 집까지 가는 길을 알려주는 암호에요.</h4>
           <h4 class="text">
-            재료를 살펴보고 순서대로 샌드위치를 만들어 보세요.
+            암호에 적힌 방향대로 빈칸을 클릭하며 진용이네 집까지 가 보세요.
           </h4>
         </div>
       </div>
-      <hr />
+      <div class="password-box">
+        <div class="password">암호문</div>
+        <div class="arrow">
+          <img src="resources/img/오른쪽.png" width="70" height="70" />
+        </div>
+        <div class="arrow">
+          <img src="resources/img/아래.png" width="70" height="70" />
+        </div>
+        <div class="arrow">
+          <img src="resources/img/오른쪽.png" width="70" height="70" />
+        </div>
+        <div class="arrow">
+          <img src="resources/img/아래.png" width="70" height="70" />
+        </div>
+        <div class="arrow">
+          <img src="resources/img/오른쪽.png" width="70" height="70" />
+        </div>
+        <div class="arrow">
+          <img src="resources/img/아래.png" width="70" height="70" />
+        </div>
+      </div>
+      <div class="wrapper">
+        <div class="boxes" data-row="0" data-col="0">
+          <img src="resources/img/아이.png" width="100" height="100" id="boy" />
+        </div>
+        <div class="boxes" data-row="0" data-col="1"></div>
+        <div class="boxes" data-row="0" data-col="2">
+          <img
+            src="resources/img/나무1.png"
+            width="100"
+            height="120"
+            class="tree hidden"
+          />
+        </div>
+        <div class="boxes" data-row="0" data-col="3">
+          <img
+            src="resources/img/나무5.png"
+            width="100"
+            height="120"
+            class="tree hidden"
+          />
+        </div>
+        <div class="boxes" data-row="1" data-col="0">
+          <img
+            src="resources/img/나무4.png"
+            width="100"
+            height="120"
+            class="tree hidden"
+          />
+        </div>
+        <div class="boxes" data-row="1" data-col="1"></div>
+        <div class="boxes" data-row="1" data-col="2"></div>
+        <div class="boxes" data-row="1" data-col="3">
+          <img
+            src="resources/img/나무3.png"
+            width="100"
+            height="120"
+            class="tree hidden"
+          />
+        </div>
+        <div class="boxes" data-row="2" data-col="0">
+          <img
+            src="resources/img/나무2.png"
+            width="100"
+            height="120"
+            class="tree hidden"
+          />
+        </div>
+        <div class="boxes" data-row="2" data-col="1">
+          <img
+            src="resources/img/나무4.png"
+            width="100"
+            height="120"
+            class="tree hidden"
+          />
+        </div>
+        <div class="boxes" data-row="2" data-col="2"></div>
+        <div class="boxes" data-row="2" data-col="3"></div>
+        <div class="boxes" data-row="3" data-col="0">
+          <img
+            src="resources/img/나무4.png"
+            width="100"
+            height="120"
+            class="tree hidden"
+          />
+        </div>
+        <div class="boxes" data-row="3" data-col="1">
+          <img
+            src="resources/img/나무2.png"
+            width="100"
+            height="120"
+            class="tree hidden"
+          />
+        </div>
+        <div class="boxes" data-row="3" data-col="2">
+          <img
+            src="resources/img/나무4.png"
+            width="100"
+            height="120"
+            class="tree hidden"
+          />
+        </div>
+        <div class="boxes" data-row="3" data-col="3" id="house">
+          <img src="resources/img/집.png" width="100" height="100" />
+        </div>
+      </div>
     </div>
   </body>
+  <script>
+    const boxes = document.querySelectorAll(".boxes");
+    const boy = document.getElementById("boy");
+    let boyPosition = { row: 0, col: 0 };
+    let previousPosition = null;
+    const directions = ["right", "down", "right", "down", "right", "down"]; // 암호문에 있는 방향
+    let directionIndex = 0;
+
+    boxes.forEach(function (box) {
+      box.addEventListener("click", boxClickHandler);
+    });
+
+    function boxClickHandler() {
+      const row = parseInt(this.getAttribute("data-row"));
+      const col = parseInt(this.getAttribute("data-col"));
+
+      // 방문한 상자인지 확인
+      if (this.classList.contains("visited")) {
+        alert("이미 방문한 칸입니다!");
+        return;
+      }
+
+      moveBoy(row, col);
+    }
+
+    function moveBoy(row, col) {
+      if (
+        previousPosition &&
+        previousPosition.row === row &&
+        previousPosition.col === col
+      ) {
+        alert("올바르지 않은 방향입니다!");
+        return;
+      }
+
+      const nextDirection = directions[directionIndex];
+      const validMove = checkMove(row, col, nextDirection);
+
+      if (validMove) {
+        document
+          .querySelector(
+            `.boxes[data-row="${boyPosition.row}"][data-col="${boyPosition.col}"]`
+          )
+          .classList.add("visited");
+        previousPosition = { ...boyPosition };
+        boyPosition = { row, col };
+        directionIndex++;
+        updateBoyPosition();
+        if (row === 3 && col === 3) {
+          document.querySelector("#house").classList.add("arrived");
+        }
+      } else {
+        alert("올바르지 않은 방향입니다!");
+        document.querySelector(
+          `.boxes[data-row="${row}"][data-col="${col}"] .tree`
+        ).style.display = "block";
+      }
+    }
+
+    function checkMove(row, col, nextDirection) {
+      const currentRow = boyPosition.row;
+      const currentCol = boyPosition.col;
+
+      if (
+        (nextDirection === "right" &&
+          col === currentCol + 1 &&
+          row === currentRow) ||
+        (nextDirection === "down" &&
+          row === currentRow + 1 &&
+          col === currentCol) ||
+        (nextDirection === "left" &&
+          col === currentCol - 1 &&
+          row === currentRow) ||
+        (nextDirection === "up" && row === currentRow - 1 && col === currentCol)
+      ) {
+        const cell = document.querySelector(
+          `.boxes[data-row="${row}"][data-col="${col}"]`
+        );
+        const tree = cell.querySelector("img.tree");
+        if (tree) {
+          tree.classList.remove("hidden");
+          return false;
+        }
+        return true;
+      }
+      return false;
+    }
+
+    function updateBoyPosition() {
+      boy.parentElement.removeChild(boy);
+      document
+        .querySelector(
+          `.boxes[data-row="${boyPosition.row}"][data-col="${boyPosition.col}"]`
+        )
+        .appendChild(boy);
+    }
+
+    updateBoyPosition();
+  </script>
 </html>
