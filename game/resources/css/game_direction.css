@@ -32,6 +32,11 @@ h4 {
 .title {
   margin-bottom: 3px;
 }
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
 .plate {
   background-color: gray;
   border: 13px solid rgb(109, 108, 108);

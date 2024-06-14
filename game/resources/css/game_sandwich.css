@@ -32,6 +32,11 @@ h4 {
 .title {
   margin-bottom: 3px;
 }
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
 .wrapper {
   margin-top: 40px;
   border: 1px solid red;
