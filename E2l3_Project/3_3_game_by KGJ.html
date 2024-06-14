@@ -46,15 +46,39 @@
       flex-direction: column;
       gap: 40px;
     }
-    .ground {
-      position: relative;
+
+    .bkImg {
+      background-color: bisque;
+      height: 80px;
     }
-    .hole {
-      background-color: black;
-      width: 20px;
-      height: 20px;
+    .ground-one {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .vege {
+      position: absolute;
+      top: -50px;
+    }
+    .hole1 {
+      width: 60px;
+      height: 60px;
+      background-color: #31210f;
+      border-radius: 0 0 50% 50%;
       position: absolute;
       top: 0;
+      right: 280px;
+    }
+    .hole2 {
+      width: 60px;
+      height: 60px;
+      background-color: #31210f;
+      border-radius: 0 0 50% 50%;
+      position: absolute;
+      top: 0;
+      right: 180px;
     }
   </style>
   <body>
@@ -69,15 +93,101 @@
           <h4 class="text">일정한 순서를 잘 보고 심어 보세요.</h4>
         </div>
       </div>
-      <div class="gameStart">
-        <div class="ground">
-          <img src="resources/img/pngwing.com.png" alt="" />
+      <!-- 게임1번 -->
+      <div class="gameStart1">
+        <div class="bkImg"></div>
+        <div class="ground-one">
+          <img
+            src="resources/img/pngwing.com.png"
+            height="150px"
+            width="100%"
+            class="groundImg"
+          />
 
-          <div class="hole"></div>
-          <div class="hole"></div>
-          <div class="hole"></div>
+          <div class="hole1"></div>
+          <div class="hole2"></div>
+        </div>
+      </div>
+      <!-- 게임2번 -->
+      <div class="gameStart1 game2">
+        <div class="bkImg"></div>
+        <div class="ground-one">
+          <img
+            src="resources/img/pngwing.com.png"
+            height="150px"
+            width="100%"
+            class="groundImg"
+          />
         </div>
       </div>
     </div>
+    <script>
+      // 게임 1번 스크립트
+      document.addEventListener("DOMContentLoaded", function () {
+        const ground = document.querySelector(".ground-one");
+
+        const vegetables = [
+          {
+            src: "resources/img/그림1.png",
+            className: "carrot",
+            left: "20px",
+            width: "30px",
+          },
+          {
+            src: "resources/img/그림3.png",
+            className: "spring-onion",
+            left: "80px",
+            width: "130px",
+          },
+          {
+            src: "resources/img/그림1.png",
+            className: "carrot",
+            left: "240px",
+            width: "30px",
+          },
+          {
+            src: "resources/img/그림3.png",
+            className: "spring-onion",
+            left: "300px",
+            width: "130px",
+          },
+          {
+            src: "resources/img/그림1.png",
+            className: "carrot",
+            left: "460px",
+            width: "30px",
+          },
+          {
+            src: "resources/img/그림3.png",
+            className: "spring-onion",
+            left: "520px",
+            width: "130px",
+          },
+          {
+            src: "resources/img/그림1.png",
+            className: "carrot",
+            left: "870px",
+            width: "30px",
+          },
+          {
+            src: "resources/img/그림3.png",
+            className: "spring-onion",
+            left: "900px",
+            width: "130px",
+          },
+        ];
+
+        vegetables.forEach((vege) => {
+          const img = document.createElement("img");
+          img.src = vege.src;
+
+          img.className = `vege ${vege.className}`;
+          img.style.left = vege.left;
+          img.style.width = vege.width;
+          ground.appendChild(img);
+        });
+      });
+      // 게임2번
+    </script>
   </body>
 </html>
