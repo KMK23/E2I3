@@ -3,84 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    ;
+
     <title>Document</title>
   </head>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      width: 100%;
-      height: 100%;
-      margin: 0;
-    }
-    .container {
-      width: 100%;
-      max-width: 1000px;
-      margin: 2.5rem auto;
-      height: 100vh;
-    }
-    .header {
-      width: 100%;
-      display: flex;
-    }
-    h1,
-    h4 {
-      margin: 0;
-    }
-    .level {
-      width: 10%;
-      margin-right: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: beige;
-      border-radius: 18px;
-    }
-    .title {
-      margin-bottom: 3px;
-    }
-    .container {
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-    }
+  <script src="resources/js/3_3_game_by KGJ.js"></script>
+  <link rel="stylesheet" href="resources/css파일/3_3_game_by_KGJ.css" />
 
-    .bkImg {
-      background-color: bisque;
-      height: 80px;
-    }
-    .ground-one {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-    }
-    .vege {
-      position: absolute;
-      top: -50px;
-    }
-    .hole1 {
-      width: 60px;
-      height: 60px;
-      background-color: #31210f;
-      border-radius: 0 0 50% 50%;
-      position: absolute;
-      top: 0;
-      right: 280px;
-    }
-    .hole2 {
-      width: 60px;
-      height: 60px;
-      background-color: #31210f;
-      border-radius: 0 0 50% 50%;
-      position: absolute;
-      top: 0;
-      right: 180px;
-    }
-  </style>
   <body>
     <div class="container">
       <div class="header">
@@ -111,83 +39,33 @@
       <!-- 게임2번 -->
       <div class="gameStart1 game2">
         <div class="bkImg"></div>
-        <div class="ground-one">
+        <div class="ground-two">
           <img
             src="resources/img/pngwing.com.png"
             height="150px"
             width="100%"
-            class="groundImg"
+            class="groundImg2"
           />
+          <div id="game2-hole1"></div>
+          <div id="game2-hole2"></div>
         </div>
       </div>
+      <!-- 게임3번 -->
+      <div class="gameStart1 game3">
+        <div class="bkImg"></div>
+        <div class="ground-three">
+          <img
+            src="resources/img/pngwing.com.png"
+            height="150px"
+            width="100%"
+            class="groundImg3"
+          />
+          <div id="game3-hole1"></div>
+          <div id="game3-hole2"></div>
+          <div id="game3-hole3"></div>
+        </div>
+      </div>
+      <div class="gameImgs"></div>
     </div>
-    <script>
-      // 게임 1번 스크립트
-      document.addEventListener("DOMContentLoaded", function () {
-        const ground = document.querySelector(".ground-one");
-
-        const vegetables = [
-          {
-            src: "resources/img/그림1.png",
-            className: "carrot",
-            left: "20px",
-            width: "30px",
-          },
-          {
-            src: "resources/img/그림3.png",
-            className: "spring-onion",
-            left: "80px",
-            width: "130px",
-          },
-          {
-            src: "resources/img/그림1.png",
-            className: "carrot",
-            left: "240px",
-            width: "30px",
-          },
-          {
-            src: "resources/img/그림3.png",
-            className: "spring-onion",
-            left: "300px",
-            width: "130px",
-          },
-          {
-            src: "resources/img/그림1.png",
-            className: "carrot",
-            left: "460px",
-            width: "30px",
-          },
-          {
-            src: "resources/img/그림3.png",
-            className: "spring-onion",
-            left: "520px",
-            width: "130px",
-          },
-          {
-            src: "resources/img/그림1.png",
-            className: "carrot",
-            left: "870px",
-            width: "30px",
-          },
-          {
-            src: "resources/img/그림3.png",
-            className: "spring-onion",
-            left: "900px",
-            width: "130px",
-          },
-        ];
-
-        vegetables.forEach((vege) => {
-          const img = document.createElement("img");
-          img.src = vege.src;
-
-          img.className = `vege ${vege.className}`;
-          img.style.left = vege.left;
-          img.style.width = vege.width;
-          ground.appendChild(img);
-        });
-      });
-      // 게임2번
-    </script>
   </body>
 </html>
