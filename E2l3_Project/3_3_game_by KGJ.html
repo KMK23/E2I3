@@ -3,12 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>Document</title>
+    <link rel="stylesheet" href="resources/css파일/3_3_game_by_KGJ.css" />
   </head>
-  <script src="resources/js/3_3_game_by KGJ.js"></script>
-  <link rel="stylesheet" href="resources/css파일/3_3_game_by_KGJ.css" />
-
   <body>
     <div class="container">
       <div class="header">
@@ -31,9 +28,8 @@
             width="100%"
             class="groundImg"
           />
-
-          <div class="hole1"></div>
-          <div class="hole2"></div>
+          <div id="hole1" class="game1-holes"></div>
+          <div id="hole2" class="game1-holes"></div>
         </div>
       </div>
       <!-- 게임2번 -->
@@ -46,8 +42,8 @@
             width="100%"
             class="groundImg2"
           />
-          <div id="game2-hole1"></div>
-          <div id="game2-hole2"></div>
+          <div id="game2-hole1" class="game2-holes"></div>
+          <div id="game2-hole2" class="game2-holes"></div>
         </div>
       </div>
       <!-- 게임3번 -->
@@ -60,12 +56,13 @@
             width="100%"
             class="groundImg3"
           />
-          <div id="game3-hole1"></div>
-          <div id="game3-hole2"></div>
-          <div id="game3-hole3"></div>
+          <div id="game3-hole1" class="game3-holes"></div>
+          <div id="game3-hole2" class="game3-holes"></div>
+          <div id="game3-hole3" class="game3-holes"></div>
         </div>
       </div>
       <div class="gameImgs"></div>
     </div>
   </body>
+  <script src="resources/js/3_3_game_by KGJ.js"></script>
 </html>
