@@ -16,31 +16,130 @@
           <h1 class="title">어떤 옷을 입을까요?</h1>
           <h4 class="text">사랑이는 요일마다 규칙대로 옷을 입어요.</h4>
           <h4 class="text">
-            옷 입는 규칙을 찾고, 일요일에 입어야 하는 옷을 찾아 색칠해 보세요.
+            옷 입는 규칙을 찾고, 일요일에 입어야 하는 옷을 찾아 입혀주세요.
           </h4>
         </div>
       </div>
-    </div>
-    <div class="rule">
-      <div class="week">월</div>
-      <div class="cloth">
-        <img src="resources/img/분홍반팔.png" />
-        <div class="color">분홍</div>
+      <div class="rule"></div>
+      <div class="clothes"></div>
+      <div class="game">
+        <div class="closet">
+          <img
+            src="resources/img/빨간반팔.png"
+            id="red"
+            draggable="true"
+            ondragstart="drag(event)"
+          />
+          <img
+            src="resources/img/검정반팔.png"
+            id="black"
+            draggable="true"
+            ondragstart="drag(event)"
+          />
+          <img
+            src="resources/img/분홍반팔.png"
+            id="pink"
+            draggable="true"
+            ondragstart="drag(event)"
+          />
+          <img
+            src="resources/img/노란반팔.png"
+            id="yellow"
+            draggable="true"
+            ondragstart="drag(event)"
+          />
+          <img
+            src="resources/img/보라반팔.png"
+            id="purple"
+            draggable="true"
+            ondragstart="drag(event)"
+          />
+          <img
+            src="resources/img/파란반팔.png"
+            id="blue"
+            draggable="true"
+            ondragstart="drag(event)"
+          />
+        </div>
+        <div
+          class="character"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        >
+          <div class="girl">
+            <img src="resources/img/여자아이.png" width="500" height="800" />
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="clothes"></div>
-    <div class="girl">
-      <img src="resources/img/여자아이.png" width="500" height="700" />
-      <div class="answer"></div>
     </div>
   </body>
   <script>
     const rule = document.querySelector(".rule");
-    const week = ["월", "화", "수", "목", "금", "토", "일"];
-    const color = ["분홍색", "파란색", "노란색"];
-    const src = ["분홍반팔", "파란반팔", "노란반팔"];
-    week.forEach(function (day) {
-      rule.insertAdjacentHTML("beforeend", `<div>${day}</div>`);
+    const arr = [
+      { day: "월", color: "분홍색", src: "resources/img/분홍반팔.png" },
+      { day: "화", color: "파란색", src: "resources/img/파란반팔.png" },
+      { day: "수", color: "노란색", src: "resources/img/노란반팔.png" },
+      { day: "목", color: "분홍색", src: "resources/img/분홍반팔.png" },
+      { day: "금", color: "파란색", src: "resources/img/파란반팔.png" },
+      { day: "토", color: "노란색", src: "resources/img/노란반팔.png" },
+      { day: "일", color: "?", src: "resources/img/question-solid.svg" },
+    ];
+    arr.forEach(function (e) {
+      rule.insertAdjacentHTML(
+        "beforeend",
+        `<div class="cloth">
+          <div class="week">${e.day}</div>
+        <img src='${e.src}' width="125" height="100" />
+        <div class="color">${e.color}</div>
+      </div>`
+      );
     });
+
+    function allowDrop(event) {
+      event.preventDefault();
+    }
+
+    function drag(event) {
+      event.dataTransfer.setData("text", event.target.id);
+    }
+
+    function drop(event) {
+      event.preventDefault();
+      const data = event.dataTransfer.getData("text");
+      const bubble = document.createElement("div");
+      const girl = document.querySelector(".girl");
+
+      if (data === "pink") {
+        girl.innerHTML = `<img src="resources/img/분홍옷여아.png" width="500" height="800" />`;
+        bubble.classList.add("speech-bubble");
+        bubble.innerHTML = "정답이야!";
+        girl.append(bubble);
+      } else if (data === "black") {
+        girl.innerHTML = `<img src="resources/img/검정옷여아.png" width="500" height="800" />`;
+        bubble.classList.add("speech-bubble");
+        bubble.innerHTML = "규칙을 다시 생각해보자";
+        girl.append(bubble);
+      } else if (data === "yellow") {
+        girl.innerHTML = `<img src="resources/img/노란옷여아.png" width="500" height="800" />`;
+        bubble.classList.add("speech-bubble");
+        bubble.innerHTML = "규칙을 다시 생각해보자";
+        girl.append(bubble);
+      } else if (data === "blue") {
+        girl.innerHTML = `<img src="resources/img/파란옷여아.png" width="500" height="800" />`;
+        bubble.classList.add("speech-bubble");
+        bubble.innerHTML = "규칙을 다시 생각해보자";
+        girl.append(bubble);
+      } else if (data === "purple") {
+        girl.innerHTML = `<img src="resources/img/보라옷여아.png" width="500" height="800" />`;
+        bubble.classList.add("speech-bubble");
+        bubble.innerHTML = "규칙을 다시 생각해보자";
+        girl.append(bubble);
+      } else if (data === "red") {
+        girl.innerHTML = `<img src="resources/img/빨간옷여아.png" width="500" height="800" />`;
+        bubble.classList.add("speech-bubble");
+        bubble.innerHTML = "규칙을 다시 생각해보자";
+        girl.append(bubble);
+      }
+    }
   </script>
 </html>

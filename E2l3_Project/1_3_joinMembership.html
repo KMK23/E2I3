@@ -6,12 +6,27 @@
     <title>Document</title>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <style>
+      @font-face {
+        font-family: "LeferiPoint-BlackA";
+        src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-BlackA.woff")
+          format("woff");
+        font-weight: normal;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "LeferiPoint-WhiteObliqueA";
+        src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-WhiteObliqueA.woff")
+          format("woff");
+        font-weight: normal;
+        font-style: normal;
+      }
       * {
         box-sizing: border-box;
       }
       body {
         width: 100%;
         height: 100%;
+        font-family: "LeferiPoint-BlackA", sans-serif;
       }
       .container {
         display: flex;
@@ -52,7 +67,9 @@
       form p {
         display: inline-block;
         margin: 0;
-        padding-right: 10px;
+        padding: 10px;
+        width: 180px;
+        text-align: right;
       }
       .errorMessage {
         font-size: 16px;
@@ -65,6 +82,23 @@
       .joinId {
         margin: 0;
       }
+      .hide {
+        display: none;
+        width: 300px;
+        margin-left: 50px;
+      }
+      input {
+        width: 260px;
+        border-radius: 4px;
+        font-family: "LeferiPoint-WhiteObliqueA";
+        padding-left: 10px;
+        background-color: lightgray;
+      }
+      .alert {
+        width: 800px;
+        margin-left: 180px;
+        font-size: 20px;
+      }
     </style>
   </head>
   <body>
@@ -73,7 +107,7 @@
         <fieldset>
           <legend>회원가입</legend>
           <div class="name box">
-            <p class="name-label">이름 :</p>
+            <p class="name-label">이름</p>
             <input
               class="name-input"
               type="text"
@@ -81,35 +115,51 @@
             />
           </div>
           <div class="joinId box">
-            <p class="id-label" id="idlabel">아이디 :</p>
+            <p class="id-label" id="idlabel">아이디</p>
             <input
               class="id-input"
               type="text"
               placeholder="아이디를 입력하세요."
             />
-            <button class="idBtn btn">아이디 중복확인</button><br />
-            <span class="err-id">* ID 사용이 가능합니다.</span>
+            <div class="success-message hide alert" style="color: red">
+              사용할 수 있는 아이디입니다.
+            </div>
+            <div class="failure-message hide alert" style="color: red">
+              아이디는 4~12글자이어야 합니다.
+            </div>
+            <div class="failure-message2 hide alert" style="color: red">
+              영어 또는 숫자만 가능합니다.
+            </div>
           </div>
           <div class="password box">
-            <p class="password-label">비밀번호 :</p>
+            <p class="password-label">비밀번호</p>
             <input
               class="password-input"
               type="password"
               placeholder="비밀번호를 입력하세요"
+              id="password"
             /><br />
-            <span class="err-pwd">* 4~12글자까지만 입력 가능합니다.</span>
+            <div class="strongPassword-message hide alert" style="color: red">
+              8글자 이상, 영문, 숫자, 특수문자(@$!%*#?&)를 사용하세요.
+            </div>
           </div>
           <div class="password2 box">
-            <p class="password2-label">비밀번호 확인 :</p>
-            <input class="password2-input" type="password" /><br />
-            <span class="err-repwd"></span>
+            <p class="password2-label">비밀번호 확인</p>
+            <input
+              class="password2-input"
+              type="password"
+              id="password2"
+            /><br />
+            <div class="mismatch-message hide alert" style="color: red">
+              비밀번호가 일치하지 않습니다.
+            </div>
           </div>
           <div class="birth box">
-            <p class="birth-label">생년월일 :</p>
+            <p class="birth-label">생년월일</p>
             <input class="birth-input" type="date" /><br />
           </div>
           <div class="addrNum box">
-            <p class="addrNum-label">주소 검색:</p>
+            <p class="addrNum-label">주소 검색</p>
             <input
               class="addrNum-input"
               id="sample6_postcode"
@@ -126,7 +176,7 @@
             </button>
           </div>
           <div class="addr box">
-            <p class="addr-label">주소 :</p>
+            <p class="addr-label">주소</p>
             <input
               class="addr-input"
               id="sample6_address"
@@ -141,7 +191,7 @@
             />
           </div>
           <div class="email box">
-            <p class="email-label">이메일 :</p>
+            <p class="email-label">이메일</p>
             <input class="email-input" type="text" />@
             <input class="email2-input" type="text" id="email2" />
             <select class="emailaddr" id="emailaddr">
@@ -154,7 +204,7 @@
             </select>
           </div>
           <div class="tel box">
-            <p class="tel-label">전화번호 :</p>
+            <p class="tel-label">전화번호</p>
             <input class="tel-input" type="text" name="tel" /> <br />
             <span type="hidden" class="err-mobile">* '-'없이 숫자만 입력</span>
           </div>
@@ -177,33 +227,110 @@
     <script>
       // 여기서부터 아이디 중복확인 버튼 만든것
       const idinput = document.querySelector(".id-input");
-      const idBtn = document.querySelector(".idBtn");
-      const errid = document.querySelector(".err-id");
-      idBtn.addEventListener("click", function (e) {
-        e.preventDefault();
+      let elSuccessMessage = document.querySelector(".success-message"); // div.success-message.hide
+      let elFailureMessage = document.querySelector(".failure-message"); // div.failure-message.hide
+      let elFailureMessageTwo = document.querySelector(".failure-message2"); // div.failure-message2.hide
 
-        const ErrorSpan = document.querySelector(".errorMessage");
-        if (ErrorSpan) {
-          ErrorSpan.remove();
-        }
+      function idLength(value) {
+        return value.length >= 4 && value.length <= 12;
+      }
 
-        if (idinput.value === "") {
-          idBtn.insertAdjacentHTML(
-            "afterend",
-            " <span class='errorMessage'>아이디를 입력하세요</span>"
-          );
-        } else if (idinput.value != "") {
-          errid.style.display = "block";
-        }
+      function onlyNumberAndEnglish(str) {
+        return /^[A-Za-z0-9][A-Za-z0-9]*$/.test(str);
+      }
 
-        idBtn.addEventListener("click", function () {
-          const errordouble = document.querySelector(".errorMessage");
-          if (errordouble) {
-            errordouble.remove();
+      idinput.onkeyup = function () {
+        // 값을 입력한 경우
+        if (idinput.value.length !== 0) {
+          // 영어 또는 숫자 외의 값을 입력했을 경우
+          if (onlyNumberAndEnglish(idinput.value) === false) {
+            elSuccessMessage.classList.add("hide");
+            elFailureMessage.classList.add("hide");
+            elFailureMessageTwo.classList.remove("hide"); // 영어 또는 숫자만 가능합니다
           }
-        });
+          // 글자 수가 4~12글자가 아닐 경우
+          else if (idLength(idinput.value) === false) {
+            elSuccessMessage.classList.add("hide"); // 성공 메시지가 가려져야 함
+            elFailureMessage.classList.remove("hide"); // 아이디는 4~12글자이어야 합니다
+            elFailureMessageTwo.classList.add("hide"); // 실패 메시지2가 가려져야 함
+          }
+          // 조건을 모두 만족할 경우
+          else if (
+            idLength(idinput.value) ||
+            onlyNumberAndEnglish(idinput.value)
+          ) {
+            elSuccessMessage.classList.remove("hide"); // 사용할 수 있는 아이디입니다
+            elFailureMessage.classList.add("hide"); // 실패 메시지가 가려져야 함
+            elFailureMessageTwo.classList.add("hide"); // 실패 메시지2가 가려져야 함
+          }
+        }
+        // 값을 입력하지 않은 경우 (지웠을 때)
+        // 모든 메시지를 가린다.
+        else {
+          elSuccessMessage.classList.add("hide");
+          elFailureMessage.classList.add("hide");
+          elFailureMessageTwo.classList.add("hide");
+        }
+      };
+      // 비밀번호 정보
+
+      let password = document.querySelector("#password");
+      let password2 = document.querySelector("#password2");
+
+      let elMismatchMessage = document.querySelector(".mismatch-message"); // div.mismatch-message.hide
+      let elStrongPasswordMessage = document.querySelector(
+        ".strongPassword-message"
+      );
+
+      function strongPassword(str) {
+        return /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(
+          str
+        );
+      }
+
+      function isMatch(password1, password2) {
+        return password1 === password2;
+      }
+
+      password.onkeyup = function () {
+        // console.log(elInputPassword.value);
+        // 값을 입력한 경우
+        if (password.value.length !== 0) {
+          if (strongPassword(password.value)) {
+            elStrongPasswordMessage.classList.add("hide"); // 실패 메시지가 가려져야 함
+          } else {
+            elStrongPasswordMessage.classList.remove("hide"); // 실패 메시지가 보여야 함
+          }
+        }
+        // 값을 입력하지 않은 경우 (지웠을 때)
+        // 모든 메시지를 가린다.
+        else {
+          elStrongPasswordMessage.classList.add("hide");
+        }
+      };
+      // 비밀번호 입력란에서 엔터 입력 시 이벤트 핸들링
+      password.addEventListener("keyup", function (e) {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          // 비밀번호 입력란에서 엔터를 눌렀을 때의 처리를 추가
+          // 예: 다음 입력 필드로 포커스를 이동하거나 특정 동작 수행
+        }
       });
 
+      // 비밀번호 확인
+      password2.onkeyup = function () {
+        // console.log(elInputPasswordRetype.value);
+        if (password2.value.length !== 0) {
+          if (isMatch(password.value, password2.value)) {
+            elMismatchMessage.classList.add("hide"); // 실패 메시지가 가려져야 함
+          } else {
+            elMismatchMessage.classList.remove("hide"); // 실패 메시지가 보여야 함
+          }
+        } else {
+          elMismatchMessage.classList.add("hide"); // 실패 메시지가 가려져야 함
+        }
+      };
+      // 주소 검색
       function findAddr() {
         new daum.Postcode({
           oncomplete: function (data) {
@@ -250,28 +377,6 @@
           },
         }).open();
       }
-
-      //이메일
-      // <div class="email box">
-      //       <p class="email-label">이메일 :</p>
-      //       <input class="email-input" type="text" />@
-      //       <input class="email2-input" type="text" />
-      //       <select class="emailaddr" id="emailaddr">
-      //         <option value="">직접입력</option>
-      //         <option value="naver.com">NAVER</option>
-      //         <option value="gmail.com">GOOGLE</option>
-      //         <option value="daum.net">DAUM</option>
-      //       </select>
-      //     </div>
-
-      //       <input class="box" id="domain-txt" type="text"/>
-      // <select class="box" id="domain-list">
-      //   <option value="naver.com">naver.com</option>
-      //   <option value="google.com">google.com</option>
-      //   <option value="hanmail.net">hanmail.net</option>
-      //   <option value="nate.com">nate.com</option>
-      //   <option value="kakao.com">kakao.com</option>
-      // </select>
 
       const emailSelect = document.getElementById("emailaddr");
       const email2Input = document.getElementById("email2");
