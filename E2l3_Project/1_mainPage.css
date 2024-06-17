@@ -143,14 +143,14 @@ body {
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; / 애니메이션 효과 */
     }
     
-    .content-btn
+    .content-btn:hover
     {
     background-color: #0056b3; /* 호버 시 배경색 /
     transform: scale(1.05); / 호버 시 크기 증가 /
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); / 호버 시 그림자 효과 */
     }
     
-    .content-btn
+    .content-btn:focus
     {
     transform: scale(0.95); /* 클릭 시 크기 감소 /
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); / 클릭 시 그림자 감소 */
@@ -218,9 +218,9 @@ body {
     border: none;
     }
     
-    .fir-btn
+    .fir-btn:hover
     ,
-    .sec-btn
+    .sec-btn:hover
     {
     font-size: 20px;
     }
