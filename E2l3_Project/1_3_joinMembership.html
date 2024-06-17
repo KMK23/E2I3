@@ -6,12 +6,20 @@
     <title>Document</title>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <style>
+      @font-face {
+        font-family: "LINESeedKR-Bd";
+        src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2")
+          format("woff2");
+        font-weight: 700;
+        font-style: normal;
+      }
       * {
         box-sizing: border-box;
       }
       body {
         width: 100%;
         height: 100%;
+        font-family: "LINESeedKR-Bd";
       }
       .container {
         display: flex;
@@ -53,6 +61,8 @@
         display: inline-block;
         margin: 0;
         padding-right: 10px;
+        width: 160px;
+        text-align: right;
       }
       .errorMessage {
         font-size: 16px;
@@ -68,6 +78,9 @@
       .hide {
         display: none;
       }
+      input {
+        width: 260px;
+      }
     </style>
   </head>
   <body>
@@ -76,7 +89,7 @@
         <fieldset>
           <legend>회원가입</legend>
           <div class="name box">
-            <p class="name-label">이름 :</p>
+            <p class="name-label">이름</p>
             <input
               class="name-input"
               type="text"
@@ -84,17 +97,17 @@
             />
           </div>
           <div class="joinId box">
-            <p class="id-label" id="idlabel">아이디 :</p>
+            <p class="id-label" id="idlabel">아이디</p>
             <input
               class="id-input"
               type="text"
               placeholder="아이디를 입력하세요."
             />
-            <button class="idBtn btn">아이디 중복확인</button><br />
+            <button class="idBtn btn">중복확인</button><br />
             <span class="err-id">* ID 사용이 가능합니다.</span>
           </div>
           <div class="password box">
-            <p class="password-label">비밀번호 :</p>
+            <p class="password-label">비밀번호</p>
             <input
               class="password-input"
               type="password"
@@ -106,7 +119,7 @@
             </div>
           </div>
           <div class="password2 box">
-            <p class="password2-label">비밀번호 확인 :</p>
+            <p class="password2-label">비밀번호 확인</p>
             <input
               class="password2-input"
               type="password"
@@ -117,11 +130,11 @@
             </div>
           </div>
           <div class="birth box">
-            <p class="birth-label">생년월일 :</p>
+            <p class="birth-label">생년월일</p>
             <input class="birth-input" type="date" /><br />
           </div>
           <div class="addrNum box">
-            <p class="addrNum-label">주소 검색:</p>
+            <p class="addrNum-label">주소 검색</p>
             <input
               class="addrNum-input"
               id="sample6_postcode"
@@ -138,7 +151,7 @@
             </button>
           </div>
           <div class="addr box">
-            <p class="addr-label">주소 :</p>
+            <p class="addr-label">주소</p>
             <input
               class="addr-input"
               id="sample6_address"
@@ -153,7 +166,7 @@
             />
           </div>
           <div class="email box">
-            <p class="email-label">이메일 :</p>
+            <p class="email-label">이메일</p>
             <input class="email-input" type="text" />@
             <input class="email2-input" type="text" id="email2" />
             <select class="emailaddr" id="emailaddr">
@@ -166,7 +179,7 @@
             </select>
           </div>
           <div class="tel box">
-            <p class="tel-label">전화번호 :</p>
+            <p class="tel-label">전화번호</p>
             <input class="tel-input" type="text" name="tel" /> <br />
             <span type="hidden" class="err-mobile">* '-'없이 숫자만 입력</span>
           </div>
