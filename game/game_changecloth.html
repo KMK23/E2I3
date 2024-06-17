@@ -20,27 +20,103 @@
           </h4>
         </div>
       </div>
-    </div>
-    <div class="rule">
-      <div class="week">월</div>
-      <div class="cloth">
-        <img src="resources/img/분홍반팔.png" />
-        <div class="color">분홍</div>
+      <div class="rule"></div>
+      <div class="clothes"></div>
+      <div class="game">
+        <div class="closet">
+          <img
+            src="resources/img/빨간반팔.png"
+            id="red"
+            draggable="true"
+            ondragstart="drag(event)"
+          />
+          <img
+            src="resources/img/검정반팔.png"
+            id="black"
+            draggable="true"
+            ondragstart="drag(event)"
+          />
+          <img
+            src="resources/img/분홍반팔.png"
+            id="pink"
+            draggable="true"
+            ondragstart="drag(event)"
+          />
+          <img
+            src="resources/img/노란반팔.png"
+            id="yellow"
+            draggable="true"
+            ondragstart="drag(event)"
+          />
+          <img
+            src="resources/img/보라반팔.png"
+            id="purple"
+            draggable="true"
+            ondragstart="drag(event)"
+          />
+          <img
+            src="resources/img/파란반팔.png"
+            id="blue"
+            draggable="true"
+            ondragstart="drag(event)"
+          />
+        </div>
+        <div
+          class="character"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        >
+          <img src="resources/img/여자아이.png" width="500" height="800" />
+          <div class="answer">
+            <img src="resources/img/분홍반팔.png" width="400" height="200" />
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="clothes"></div>
-    <div class="girl">
-      <img src="resources/img/여자아이.png" width="500" height="700" />
-      <div class="answer"></div>
     </div>
   </body>
   <script>
     const rule = document.querySelector(".rule");
-    const week = ["월", "화", "수", "목", "금", "토", "일"];
-    const color = ["분홍색", "파란색", "노란색"];
-    const src = ["분홍반팔", "파란반팔", "노란반팔"];
-    week.forEach(function (day) {
-      rule.insertAdjacentHTML("beforeend", `<div>${day}</div>`);
+    const arr = [
+      { day: "월", color: "분홍색", src: "resources/img/분홍반팔.png" },
+      { day: "화", color: "파란색", src: "resources/img/파란반팔.png" },
+      { day: "수", color: "노란색", src: "resources/img/노란반팔.png" },
+      { day: "목", color: "분홍색", src: "resources/img/분홍반팔.png" },
+      { day: "금", color: "파란색", src: "resources/img/파란반팔.png" },
+      { day: "토", color: "노란색", src: "resources/img/노란반팔.png" },
+      { day: "일", color: "?", src: "resources/img/question-solid.svg" },
+    ];
+    arr.forEach(function (e) {
+      rule.insertAdjacentHTML(
+        "beforeend",
+        `<div class="cloth">
+          <div class="week">${e.day}</div>
+        <img src='${e.src}' width="125" height="100" />
+        <div class="color">${e.color}</div>
+      </div>`
+      );
     });
+
+    function allowDrop(event) {
+      event.preventDefault();
+    }
+
+    function drag(event) {
+      event.dataTransfer.setData("text", event.target.id);
+    }
+
+    function drop(event) {
+      event.preventDefault();
+      const data = event.dataTransfer.getData("text");
+      const answerBox = document.querySelector(".answer");
+      const correctBox = document.querySelector(".correct");
+
+      if (data === "pink") {
+        answerBox.innerHTML = `<img src="resources/img/분홍반팔.png" class="correct">`;
+        alert("정답입니다!");
+      } else {
+        alert("다시 생각해보세요");
+        answerBox.innerHTML = "";
+      }
+    }
   </script>
 </html>
