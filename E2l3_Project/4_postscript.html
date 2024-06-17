@@ -54,6 +54,7 @@
     }
     .text-list {
       display: grid;
+      grid-gap: 16px;
       grid-template-columns: repeat(3, 1fr);
       justify-items: center;
       margin-top: 24px;
@@ -66,6 +67,9 @@
       width: 300px;
       text-align: center;
       background-color: #ffffff;
+    }
+    .information {
+      margin-bottom: 8px;
     }
     .text-box {
       margin-top: 32px;
@@ -160,9 +164,23 @@
         </div>
         <div class="text-list">
           <p class="list-p">
+            <img
+              class="information"
+              src="resources/img/검색 아이콘.svg"
+              width="16px"
+              height="15px"
+            />
+            <br />
             회원가입을 하려는데 이미<br />가입되어있다고 나옵니다.
           </p>
           <p class="list-p">
+            <img
+              class="information"
+              src="resources/img/검색 아이콘.svg"
+              width="16px"
+              height="15px"
+            />
+            <br />
             아이디와 비밀번호가 정확한데<br />로그인이 되지 않습니다.
           </p>
           <p class="list-p">도서 구입 방법을 알고 싶습니다.</p>
