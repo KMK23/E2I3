@@ -7,10 +7,17 @@
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <style>
       @font-face {
-        font-family: "LINESeedKR-Bd";
-        src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2")
-          format("woff2");
-        font-weight: 700;
+        font-family: "LeferiPoint-BlackA";
+        src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-BlackA.woff")
+          format("woff");
+        font-weight: normal;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "LeferiPoint-WhiteObliqueA";
+        src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-WhiteObliqueA.woff")
+          format("woff");
+        font-weight: normal;
         font-style: normal;
       }
       * {
@@ -19,7 +26,7 @@
       body {
         width: 100%;
         height: 100%;
-        font-family: "LINESeedKR-Bd";
+        font-family: "LeferiPoint-BlackA", sans-serif;
       }
       .container {
         display: flex;
@@ -60,8 +67,8 @@
       form p {
         display: inline-block;
         margin: 0;
-        padding-right: 10px;
-        width: 160px;
+        padding: 10px;
+        width: 180px;
         text-align: right;
       }
       .errorMessage {
@@ -77,12 +84,20 @@
       }
       .hide {
         display: none;
-        text-align: center;
-        width: 260px;
-        margin-top: 10px;
+        width: 300px;
+        margin-left: 50px;
       }
       input {
         width: 260px;
+        border-radius: 4px;
+        font-family: "LeferiPoint-WhiteObliqueA";
+        padding-left: 10px;
+        background-color: lightgray;
+      }
+      .alert {
+        width: 800px;
+        margin-left: 180px;
+        font-size: 20px;
       }
     </style>
   </head>
@@ -106,14 +121,14 @@
               type="text"
               placeholder="아이디를 입력하세요."
             />
-            <div class="success-message hide" style="color: red">
-              사용할 수 있는 아이디입니다
+            <div class="success-message hide alert" style="color: red">
+              사용할 수 있는 아이디입니다.
             </div>
-            <div class="failure-message hide" style="color: red">
-              아이디는 4~12글자이어야 합니다
+            <div class="failure-message hide alert" style="color: red">
+              아이디는 4~12글자이어야 합니다.
             </div>
-            <div class="failure-message2 hide" style="color: red">
-              영어 또는 숫자만 가능합니다
+            <div class="failure-message2 hide alert" style="color: red">
+              영어 또는 숫자만 가능합니다.
             </div>
           </div>
           <div class="password box">
@@ -124,8 +139,8 @@
               placeholder="비밀번호를 입력하세요"
               id="password"
             /><br />
-            <div class="strongPassword-message hide" style="color: red">
-              8글자 이상, 영문, 숫자, 특수문자(@$!%*#?&)를 사용하세요
+            <div class="strongPassword-message hide alert" style="color: red">
+              8글자 이상, 영문, 숫자, 특수문자(@$!%*#?&)를 사용하세요.
             </div>
           </div>
           <div class="password2 box">
@@ -135,8 +150,8 @@
               type="password"
               id="password2"
             /><br />
-            <div class="mismatch-message hide" style="color: red">
-              비밀번호가 일치하지 않습니다
+            <div class="mismatch-message hide alert" style="color: red">
+              비밀번호가 일치하지 않습니다.
             </div>
           </div>
           <div class="birth box">
