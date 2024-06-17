@@ -71,6 +71,13 @@ h4 {
   top: 0;
   right: 180px;
 }
+.hole-dropped {
+  background-color: transparent;
+  border-radius: 0;
+  width: auto;
+  height: auto;
+  position: relative;
+}
 /* 게임 2번 */
 .ground-two {
   position: relative;
@@ -155,4 +162,58 @@ h4 {
 .gameImgs img {
   max-width: 100%; /* 이미지가 div 크기를 벗어나지 않도록 설정 */
   height: auto; /* 이미지 비율 유지 */
+}
+
+/* drop */
+/* 기본 hole 스타일 */
+.game1-holes,
+.game2-holes,
+.game3-holes {
+  width: 60px;
+  height: 60px;
+  background-color: #31210f;
+  border-radius: 0 0 50% 50%;
+  position: absolute;
+}
+
+/* 기본 드래그 가능한 이미지 스타일 */
+.vegetablesImgs {
+  transition: all 0.3s ease;
+}
+
+/* 드롭된 이미지 스타일 */
+.dropped {
+  position: relative;
+}
+
+/* 이미지별 드롭된 스타일 */
+.dropped.carrot {
+  position: absolute;
+  top: 10px;
+  left: -30px;
+  width: 30px;
+  transform: translate(-50%, -50%);
+}
+
+.dropped.spring-onion {
+  position: absolute;
+  top: 10px;
+  left: -30px;
+  width: 130px;
+  transform: translate(-50%, -50%);
+}
+.dropped.onion {
+  position: absolute;
+  top: 0px;
+  left: -30px;
+  width: 30px;
+  transform: translate(-50%, -50%);
+}
+
+.dropped.radish {
+  position: absolute;
+  top: 0px;
+  left: -30px;
+  width: 130px;
+  transform: translate(-50%, -50%);
 }
