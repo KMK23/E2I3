@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>UI Coding Remake</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="resources/css파일/3_1_game1.css" />
   </head>
   <style>
     * {
@@ -176,6 +176,22 @@
       padding: 10px 20px;
       transition: background-color 0.3s ease;
     }
+    .pageBtn1 {
+      width: 100px;
+      border: none;
+      padding: 8px 8px 8px 8px;
+      margin-bottom: 24px;
+      background-color: #f3e907;
+      color: black;
+      cursor: pointer;
+      font-size: 16px;
+      position: absolute;
+      left: 85%;
+      top: 60%;
+    }
+    .pageBtn1:hover {
+      background-color: ;
+    }
   </style>
   <body>
     <div class="container">
@@ -211,5 +227,92 @@
         </div>
       </div>
     </div>
+    <!-- gamepag1 시작-->
+    <div class="container" id="game1">
+      <div class="header">
+        <div class="step"><span>1단계</span></div>
+        <div class="text1">
+          <h1>동물을 찾아요</h1>
+          <p>
+            아래에 여러마리의 동물이 있어요. <br />
+            같은 동물끼리 찾아서 클릭해 보세요.
+          </p>
+        </div>
+      </div>
+      <div class="content">
+        <img class="dog1 dog" src="resources/img/3_1_게임체험하기 img/개.png" />
+        <img class="dog2 dog" src="resources/img/3_1_게임체험하기 img/개.png" />
+        <img
+          class="rabbit1 rabbit"
+          src="resources/img/3_1_게임체험하기 img/토끼.png"
+        />
+        <img
+          class="rabbit2 rabbit"
+          src="resources/img/3_1_게임체험하기 img/토끼.png"
+        />
+        <img
+          class="ship1 ship"
+          src="resources/img/3_1_게임체험하기 img/양.png"
+        />
+        <img
+          class="ship2 ship"
+          src="resources/img/3_1_게임체험하기 img/양.png"
+        />
+        <img
+          class="bear1 bear"
+          src="resources/img/3_1_게임체험하기 img/곰.png"
+        />
+        <img
+          class="bear2 bear"
+          src="resources/img/3_1_게임체험하기 img/곰.png"
+        />
+        <img
+          class="cat1 cat"
+          src="resources/img/3_1_게임체험하기 img/고양이.png"
+        />
+        <img
+          class="cat2 cat"
+          src="resources/img/3_1_게임체험하기 img/고양이.png"
+        />
+      </div>
+      <button onclick="gamepagBtn1()" class="pageBtn1">다음페이지</button>
+    </div>
+    <!-- gamepage1 끝 -->
   </body>
+  <script>
+    // gamepage1 시작 //
+    const imgs = document.querySelectorAll("div img");
+    let firstSelected = null;
+    let clearStage = imgs.length;
+
+    imgs.forEach(function (img) {
+      img.addEventListener("click", function () {
+        if (firstSelected === null) {
+          firstSelected = img;
+          img.classList.add("selected");
+        } else {
+          if (firstSelected.src == img.src) {
+            firstSelected.style.display = "none";
+            img.style.display = "none";
+            firstSelected = null;
+
+            clearStage = clearStage - 2;
+            if (clearStage === 0) {
+              alert("Stage Clear!!");
+              location.href = "3_1_game2.html";
+            }
+          } else {
+            alert("같은 동물을 선택하세요!");
+            firstSelected.classList.remove("selected");
+            firstSelected = null;
+          }
+        }
+      });
+    });
+
+    function gamepagBtn1() {
+      window.location.href = "3_1_game2.html";
+    }
+    // gamepage1 끝 //
+  </script>
 </html>
