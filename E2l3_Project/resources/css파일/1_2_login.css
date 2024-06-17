@@ -1,5 +1,13 @@
+@font-face {
+  font-family: "LINESeedKR-Bd";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
 * {
   box-sizing: border-box;
+  font-family: "LINESeedKR-Bd";
 }
 body {
   width: 100%;
@@ -46,14 +54,16 @@ body {
 
 .login-form h1 {
   font-size: 56px;
+  color: rgb(37, 37, 37);
 }
 .login-box {
   position: relative;
 }
 i {
   position: absolute;
-  left: 10px;
-  top: 36px;
+  left: 5px;
+  top: 25px;
+  font-size: 24px;
 }
 .login-input {
   width: 300px;
@@ -62,6 +72,7 @@ i {
   padding: 0 0 0 30px;
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 10px;
+  font-family: "LINESeedKR-Bd";
 }
 .forgot-signIn {
   display: flex;
