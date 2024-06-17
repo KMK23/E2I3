@@ -65,6 +65,9 @@
       .joinId {
         margin: 0;
       }
+      .hide {
+        display: none;
+      }
     </style>
   </head>
   <body>
@@ -96,13 +99,22 @@
               class="password-input"
               type="password"
               placeholder="비밀번호를 입력하세요"
+              id="password"
             /><br />
-            <span class="err-pwd">* 4~12글자까지만 입력 가능합니다.</span>
+            <div class="strongPassword-message hide" style="color: red">
+              8글자 이상, 영문, 숫자, 특수문자(@$!%*#?&)를 사용하세요
+            </div>
           </div>
           <div class="password2 box">
             <p class="password2-label">비밀번호 확인 :</p>
-            <input class="password2-input" type="password" /><br />
-            <span class="err-repwd"></span>
+            <input
+              class="password2-input"
+              type="password"
+              id="password2"
+            /><br />
+            <div class="mismatch-message hide" style="color: red">
+              비밀번호가 일치하지 않습니다
+            </div>
           </div>
           <div class="birth box">
             <p class="birth-label">생년월일 :</p>
@@ -179,31 +191,76 @@
       const idinput = document.querySelector(".id-input");
       const idBtn = document.querySelector(".idBtn");
       const errid = document.querySelector(".err-id");
+
+      // 아이디 중복확인 버튼 클릭 이벤트 핸들러
       idBtn.addEventListener("click", function (e) {
         e.preventDefault();
 
+        // 이미 존재하는 오류 메시지 삭제
         const ErrorSpan = document.querySelector(".errorMessage");
         if (ErrorSpan) {
           ErrorSpan.remove();
         }
 
+        // 아이디 입력란이 비어있는 경우 오류 메시지 표시
         if (idinput.value === "") {
           idBtn.insertAdjacentHTML(
             "afterend",
             " <span class='errorMessage'>아이디를 입력하세요</span>"
           );
-        } else if (idinput.value != "") {
+        } else {
+          // 아이디가 입력된 경우 정상 메시지 표시
           errid.style.display = "block";
         }
-
-        idBtn.addEventListener("click", function () {
-          const errordouble = document.querySelector(".errorMessage");
-          if (errordouble) {
-            errordouble.remove();
-          }
-        });
       });
 
+      // 비밀번호 정보
+
+      let password = document.querySelector("#password");
+      let password2 = document.querySelector("#password2");
+
+      let elMismatchMessage = document.querySelector(".mismatch-message"); // div.mismatch-message.hide
+      let elStrongPasswordMessage = document.querySelector(
+        ".strongPassword-message"
+      );
+
+      function strongPassword(str) {
+        return /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(
+          str
+        );
+      }
+
+      function isMatch(password1, password2) {
+        return password1 === password2;
+      }
+
+      password.onkeyup = function () {
+        // console.log(elInputPassword.value);
+        // 값을 입력한 경우
+        if (password.value.length !== 0) {
+          if (strongPassword(password.value)) {
+            elStrongPasswordMessage.classList.add("hide"); // 실패 메시지가 가려져야 함
+          } else {
+            elStrongPasswordMessage.classList.remove("hide"); // 실패 메시지가 보여야 함
+          }
+        }
+        // 값을 입력하지 않은 경우 (지웠을 때)
+        // 모든 메시지를 가린다.
+        else {
+          elStrongPasswordMessage.classList.add("hide");
+        }
+      };
+      // 비밀번호 입력란에서 엔터 입력 시 이벤트 핸들링
+      password.addEventListener("keyup", function (e) {
+        if (e.key === "Enter") {
+          e.preventDefault(); // 기본 동작(폼 제출)을 막음
+
+          console.log("Enter key pressed in password field");
+          // 비밀번호 입력란에서 엔터를 눌렀을 때의 추가 처리
+          // 예: 다음 입력 필드로 포커스를 이동하거나 특정 동작 수행
+        }
+      });
+      // 주소 검색
       function findAddr() {
         new daum.Postcode({
           oncomplete: function (data) {
@@ -250,28 +307,6 @@
           },
         }).open();
       }
-
-      //이메일
-      // <div class="email box">
-      //       <p class="email-label">이메일 :</p>
-      //       <input class="email-input" type="text" />@
-      //       <input class="email2-input" type="text" />
-      //       <select class="emailaddr" id="emailaddr">
-      //         <option value="">직접입력</option>
-      //         <option value="naver.com">NAVER</option>
-      //         <option value="gmail.com">GOOGLE</option>
-      //         <option value="daum.net">DAUM</option>
-      //       </select>
-      //     </div>
-
-      //       <input class="box" id="domain-txt" type="text"/>
-      // <select class="box" id="domain-list">
-      //   <option value="naver.com">naver.com</option>
-      //   <option value="google.com">google.com</option>
-      //   <option value="hanmail.net">hanmail.net</option>
-      //   <option value="nate.com">nate.com</option>
-      //   <option value="kakao.com">kakao.com</option>
-      // </select>
 
       const emailSelect = document.getElementById("emailaddr");
       const email2Input = document.getElementById("email2");
