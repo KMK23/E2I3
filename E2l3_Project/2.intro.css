@@ -24,8 +24,14 @@ body {
   background-color: #f9f9f9;
   color: #333;
   line-height: 1.6;
+  font-family: 'LeferiBaseType-RegularA';
 }
-
+@font-face {
+  font-family: 'LeferiBaseType-RegularA';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiBaseType-RegularA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 header {
   background-color: #4caf50;
   color: white;
