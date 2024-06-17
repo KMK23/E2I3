@@ -103,6 +103,16 @@
               type="text"
               placeholder="아이디를 입력하세요."
             />
+
+            <div class="success-message hide" style="color: red">
+              사용할 수 있는 아이디입니다
+            </div>
+            <div class="failure-message hide" style="color: red">
+              아이디는 4~12글자이어야 합니다
+            </div>
+            <div class="failure-message2 hide" style="color: red">
+              영어 또는 숫자만 가능합니다
+            </div>
             <button class="idBtn btn">중복확인</button><br />
             <span class="err-id">* ID 사용이 가능합니다.</span>
           </div>
@@ -202,31 +212,51 @@
     <script>
       // 여기서부터 아이디 중복확인 버튼 만든것
       const idinput = document.querySelector(".id-input");
-      const idBtn = document.querySelector(".idBtn");
-      const errid = document.querySelector(".err-id");
+      let elSuccessMessage = document.querySelector(".success-message"); // div.success-message.hide
+      let elFailureMessage = document.querySelector(".failure-message"); // div.failure-message.hide
+      let elFailureMessageTwo = document.querySelector(".failure-message2"); // div.failure-message2.hide
 
-      // 아이디 중복확인 버튼 클릭 이벤트 핸들러
-      idBtn.addEventListener("click", function (e) {
-        e.preventDefault();
+      function idLength(value) {
+        return value.length >= 4 && value.length <= 12;
+      }
 
-        // 이미 존재하는 오류 메시지 삭제
-        const ErrorSpan = document.querySelector(".errorMessage");
-        if (ErrorSpan) {
-          ErrorSpan.remove();
+      function onlyNumberAndEnglish(str) {
+        return /^[A-Za-z0-9][A-Za-z0-9]*$/.test(str);
+      }
+
+      idinput.onkeyup = function () {
+        // 값을 입력한 경우
+        if (idinput.value.length !== 0) {
+          // 영어 또는 숫자 외의 값을 입력했을 경우
+          if (onlyNumberAndEnglish(idinput.value) === false) {
+            elSuccessMessage.classList.add("hide");
+            elFailureMessage.classList.add("hide");
+            elFailureMessageTwo.classList.remove("hide"); // 영어 또는 숫자만 가능합니다
+          }
+          // 글자 수가 4~12글자가 아닐 경우
+          else if (idLength(idinput.value) === false) {
+            elSuccessMessage.classList.add("hide"); // 성공 메시지가 가려져야 함
+            elFailureMessage.classList.remove("hide"); // 아이디는 4~12글자이어야 합니다
+            elFailureMessageTwo.classList.add("hide"); // 실패 메시지2가 가려져야 함
+          }
+          // 조건을 모두 만족할 경우
+          else if (
+            idLength(idinput.value) ||
+            onlyNumberAndEnglish(idinput.value)
+          ) {
+            elSuccessMessage.classList.remove("hide"); // 사용할 수 있는 아이디입니다
+            elFailureMessage.classList.add("hide"); // 실패 메시지가 가려져야 함
+            elFailureMessageTwo.classList.add("hide"); // 실패 메시지2가 가려져야 함
+          }
         }
-
-        // 아이디 입력란이 비어있는 경우 오류 메시지 표시
-        if (idinput.value === "") {
-          idBtn.insertAdjacentHTML(
-            "afterend",
-            " <span class='errorMessage'>아이디를 입력하세요</span>"
-          );
-        } else {
-          // 아이디가 입력된 경우 정상 메시지 표시
-          errid.style.display = "block";
+        // 값을 입력하지 않은 경우 (지웠을 때)
+        // 모든 메시지를 가린다.
+        else {
+          elSuccessMessage.classList.add("hide");
+          elFailureMessage.classList.add("hide");
+          elFailureMessageTwo.classList.add("hide");
         }
-      });
-
+      };
       // 비밀번호 정보
 
       let password = document.querySelector("#password");
@@ -266,13 +296,25 @@
       // 비밀번호 입력란에서 엔터 입력 시 이벤트 핸들링
       password.addEventListener("keyup", function (e) {
         if (e.key === "Enter") {
-          e.preventDefault(); // 기본 동작(폼 제출)을 막음
-
-          console.log("Enter key pressed in password field");
-          // 비밀번호 입력란에서 엔터를 눌렀을 때의 추가 처리
+          e.preventDefault();
+          // 비밀번호 입력란에서 엔터를 눌렀을 때의 처리를 추가
           // 예: 다음 입력 필드로 포커스를 이동하거나 특정 동작 수행
         }
       });
+
+      // 비밀번호 확인
+      password2.onkeyup = function () {
+        // console.log(elInputPasswordRetype.value);
+        if (password2.value.length !== 0) {
+          if (isMatch(password.value, password2.value)) {
+            elMismatchMessage.classList.add("hide"); // 실패 메시지가 가려져야 함
+          } else {
+            elMismatchMessage.classList.remove("hide"); // 실패 메시지가 보여야 함
+          }
+        } else {
+          elMismatchMessage.classList.add("hide"); // 실패 메시지가 가려져야 함
+        }
+      };
       // 주소 검색
       function findAddr() {
         new daum.Postcode({
