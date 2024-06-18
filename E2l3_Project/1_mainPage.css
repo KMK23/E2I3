@@ -1,3 +1,54 @@
+@font-face {
+  font-family: 'NanumSquareRound';
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot);
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot?#iefix)
+      format('embedded-opentype'),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff2)
+      format('woff2'),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff)
+      format('woff'),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.ttf)
+      format('truetype');
+}
+
+@font-face {
+  font-family: 'NanumSquareRoundB';
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.eot);
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.eot?#iefix)
+      format('embedded-opentype'),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.woff2)
+      format('woff2'),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.woff)
+      format('woff'),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.ttf)
+      format('truetype');
+}
+
+@font-face {
+  font-family: 'NanumSquareRoundEB';
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.eot);
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.eot?#iefix)
+      format('embedded-opentype'),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.woff2)
+      format('woff2'),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.woff)
+      format('woff'),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.ttf)
+      format('truetype');
+}
+
+@font-face {
+  font-family: 'NanumSquareRoundL';
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.eot);
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.eot?#iefix)
+      format('embedded-opentype'),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.woff2)
+      format('woff2'),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.woff)
+      format('woff'),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.ttf)
+      format('truetype');
+}
 * {
   box-sizing: border-box;
 }
@@ -10,16 +61,8 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
-  font-family: 'LeferiBaseType-RegularA';
+  font-family: 'NanumSquareRound';
 }
-
-@font-face {
-  font-family: 'LeferiBaseType-RegularA';
-  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiBaseType-RegularA.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
 .three-btns {
   display: flex;
   gap: 10px;
@@ -123,113 +166,111 @@ body {
   align-items: center;
   text-align: center;
   margin: 120px;
-  }
-  .content-text {
-    font-size: 70px;
-    font-weight: bold;
-    color: blue;
-    }
-    
-    .content-btn {
-    margin-top: 20px;
-    padding: 20px 30px;
-    font-size: 25px;
-    font-weight: bold;
-    color: white;
-    background-color: #007bff; /* 기본 배경색 /
+}
+.content-text {
+  font-size: 70px;
+  font-weight: bold;
+  color: blue;
+}
+
+.content-btn {
+  margin-top: 20px;
+  padding: 20px 30px;
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+  background-color: #007bff; /* 기본 배경색 /
     border: none; / 테두리 제거 /
     cursor: pointer;
     border-radius: 20px;
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; / 애니메이션 효과 */
-    }
-    
-    .content-btn:hover
-    {
-    background-color: #0056b3; /* 호버 시 배경색 /
+}
+
+.content-btn:hover {
+  background-color: #0056b3; /* 호버 시 배경색 /
     transform: scale(1.05); / 호버 시 크기 증가 /
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); / 호버 시 그림자 효과 */
-    }
-    
-    .content-btn:focus
-    {
-    transform: scale(0.95); /* 클릭 시 크기 감소 /
+}
+
+.content-btn:focus {
+  transform: scale(
+    0.95
+  ); /* 클릭 시 크기 감소 /
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); / 클릭 시 그림자 감소 */
-    }
-    
-    .aside {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: greenyellow;
-    width: 800px;
-    height: 100px;
-    border-radius: 50px;
-    position: fixed;
-    bottom: 1rem;
-    transform: translateX(-50%);
-    left: 50%;
-    }
-    
-    .aside-text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 10px;
-    font-size: 30px;
-    }
-    
-    .aside-text a {
-    color: black;
-    text-decoration: none;
-    }
-    
-    .special {
-    color: #007bff;
-    font-size: 35px;
-    }
-    
-    .aside-btns {
-    display: flex;
-    padding: 0 10px;
-    gap: 10px;
-    }
-    
-    .fir-btn {
-    color: white;
-    background-color: blue;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    padding: 10px 20px;
-    transition: background-color 0.3s ease, font-size 0.3s ease;
-    }
-    
-    .sec-btn {
-    color: black;
-    background-color: white;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 20px;
-    cursor: pointer;
-    padding: 10px 20px;
-    transition: background-color 0.3s ease, font-size 0.3s ease;
-    border: none;
-    }
-    
-    .fir-btn:hover
-    ,
-    .sec-btn:hover
-    {
-    font-size: 20px;
-    }
-    
-    section {
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 2rem auto;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    }
+}
+
+.aside {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: greenyellow;
+  width: 800px;
+  height: 100px;
+  border-radius: 50px;
+  position: fixed;
+  bottom: 1rem;
+  transform: translateX(-50%);
+  left: 50%;
+}
+
+.aside-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10px;
+  font-size: 30px;
+}
+
+.aside-text a {
+  color: black;
+  text-decoration: none;
+}
+
+.special {
+  color: #007bff;
+  font-size: 35px;
+}
+
+.aside-btns {
+  display: flex;
+  padding: 0 10px;
+  gap: 10px;
+}
+
+.fir-btn {
+  color: white;
+  background-color: blue;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease, font-size 0.3s ease;
+}
+
+.sec-btn {
+  color: black;
+  background-color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease, font-size 0.3s ease;
+  border: none;
+}
+
+.fir-btn:hover,
+.sec-btn:hover {
+  font-size: 20px;
+}
+
+section {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
