@@ -111,6 +111,9 @@ section blockquote {
 #programs .program {
   margin-bottom: 1.5rem;
 }
+.program {
+  margin-bottom: 1.5rem;
+}
 
 #contact form {
   display: flex;
