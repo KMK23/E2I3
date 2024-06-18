@@ -12,51 +12,101 @@
 
   <style>
     @font-face {
-      font-family: "LINESeedKR-Bd";
-      src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2")
-        format("woff2");
-      font-weight: 700;
-      font-style: normal;
+      font-family: "NanumSquareRound";
+      src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot);
+      src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot?#iefix)
+          format("embedded-opentype"),
+        url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff2)
+          format("woff2"),
+        url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff)
+          format("woff"),
+        url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.ttf)
+          format("truetype");
+    }
+
+    @font-face {
+      font-family: "NanumSquareRoundB";
+      src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.eot);
+      src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.eot?#iefix)
+          format("embedded-opentype"),
+        url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.woff2)
+          format("woff2"),
+        url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.woff)
+          format("woff"),
+        url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.ttf)
+          format("truetype");
+    }
+
+    @font-face {
+      font-family: "NanumSquareRoundEB";
+      src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.eot);
+      src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.eot?#iefix)
+          format("embedded-opentype"),
+        url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.woff2)
+          format("woff2"),
+        url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.woff)
+          format("woff"),
+        url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.ttf)
+          format("truetype");
+    }
+
+    @font-face {
+      font-family: "NanumSquareRoundL";
+      src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.eot);
+      src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.eot?#iefix)
+          format("embedded-opentype"),
+        url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.woff2)
+          format("woff2"),
+        url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.woff)
+          format("woff"),
+        url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.ttf)
+          format("truetype");
     }
     * {
       box-sizing: border-box;
-      font-family: "LINESeedKR-Bd";
+      font-family: "NanumSquareRoundEB";
     }
     body {
-      font-family: pretendard;
       height: 100vh;
       width: 100%;
       max-width: 1200px;
       margin: 0 auto;
     }
     .wrap {
-      background-image: url("resources/img/intro-bg.png");
+      background-color: #f6bb43;
       background-repeat: no-repeat;
       background-size: cover;
     }
     .nav-bar {
-      height: 100px;
+      height: 100%;
       margin: 0;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-top: 80px;
+      margin-top: 2%;
       background-color: #0e3534;
     }
     .nav-bar ul {
       list-style-type: none;
       display: flex;
-      font-size: 36px;
+      font-size: 2rem;
       font-weight: 500;
       color: white;
       align-items: center;
-      justify-content: center;
-      gap: 64px;
+      justify-content: space-around;
       margin: 0;
+      padding: 1%;
+    }
+    .nav {
+      width: 80%;
+    }
+    .nav-item {
+      width: 100%;
+      text-align: center;
     }
     .nav-bar ul li a {
       color: white;
-      padding: 24px;
+      padding: 5%;
       margin: 0;
       border-radius: 16px 16px 0 0;
       text-decoration: none;
@@ -81,33 +131,25 @@
       font-weight: 900;
     }
     .sub-title {
-      font-size: 3rem;
+      font-size: 2rem;
       color: #343a40;
       font-weight: 600;
     }
     .title {
-      font-size: 4rem;
+      font-size: 3rem;
       color: #ffd43b;
       margin: 0.5rem;
     }
     .title-text {
       background-color: #ffb300;
-      font-size: 1.5rem;
-      padding: 1.5rem;
+      font-size: 1.3rem;
+      padding: 1.3rem;
       border-radius: 32px;
     }
     .active {
       background-color: #fd7e14;
     }
 
-    .game-title {
-      font-size: 2rem;
-      margin-left: 50px;
-      background-color: #f0bc00;
-      width: fit-content;
-      padding: 12px;
-      border-radius: 32px;
-    }
     .gameAll {
       position: relative;
     }
@@ -115,10 +157,10 @@
       position: absolute;
       z-index: 1;
       bottom: 0;
-      right: 50px;
+      right: 5%;
       border: none;
-      width: 70px;
-      height: 70px;
+      width: 7rem;
+      height: 7rem;
       border-radius: 50%;
       font-weight: 800;
       cursor: pointer;
@@ -128,24 +170,31 @@
     .game-bar ul {
       display: flex;
       list-style-type: none;
-      gap: 40px;
       background-color: #e9ecef;
       font-size: 1.3rem;
       padding: 24px;
       border-radius: 32px;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+    .game-bar {
+      width: 60%;
     }
     .gameLink {
       color: #495057;
       text-decoration: none;
       font-weight: 600;
+      width: 100%;
+      height: 100%;
     }
     /* AI 학습 리포트 */
 
     .AI-content {
       display: flex;
       justify-content: space-between;
-      gap: 100px;
-      margin-top: 50px;
+      gap: 5%;
+      background-color: #f9d182;
+      padding: 10%;
     }
     .AI-text-img {
       display: flex;
@@ -158,11 +207,11 @@
       font-size: 2.5rem;
       font-weight: 800;
       font-style: italic;
-      font-family: "GmarketSansMedium";
+      font-family: "NanumSquareRound";
     }
     .AI-text-img h3 {
       color: #e0bb35;
-      font-family: "GmarketSansMedium";
+      font-family: "NanumSquareRound";
     }
     .AI-stu-img img {
       border-radius: 50%;
@@ -249,10 +298,10 @@
       gap: 15px;
     }
     .lists li {
-      font-family: Ownglyph_meetme-Rg;
+      font-family: "NanumSquareRound";
     }
     p {
-      font-family: "GmarketSansMedium";
+      font-family: "NanumSquareRound";
     }
     .AI-imgs {
       display: grid;
@@ -271,6 +320,10 @@
       cursor: pointer;
     }
 
+    .AI-imgs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
     #AI-img1 {
       background-image: url("resources/img/1_KakaoTalk_20240614_141659959.png");
       background-size: cover;
@@ -390,8 +443,9 @@
             <p>아이의 학습 속도와 이해도를 분석하여 최적의 학습 경로를 제공</p>
             <img
               src="resources/img/차트1_waifu2x_art_noise1_scale.webp"
-              width="400px"
-              height="200px"
+              width="100%"
+              height="50%"
+              style="border-radius: 25%"
             />
           </div>
           <div class="AI-desc2 dsec">
@@ -400,8 +454,8 @@
             <img
               src="resources/img/차트2_waifu2x_art_noise1_scale.webp"
               alt=""
-              width="400px"
-              height="200px"
+              width="100%"
+              height="50%"
             />
           </div>
           <div class="AI-desc3 dsec">
@@ -410,8 +464,8 @@
             <img
               src="resources/img/차트3_waifu2x_art_noise1_scale.webp"
               alt=""
-              width="400px"
-              height="200px"
+              width="100%"
+              height="50%"
             />
           </div>
         </div>
@@ -448,8 +502,8 @@
         <p>
           애니메이션과 퀴즈를 통해 이 모든 학습이 쉽고 재미있게 전달됩니다.
           <br />
-          br AI학습 리포트는 여러분이 디지털 세상에서 스마트하고 안전하게 길을
-          잡을 수 있도록 도와줍니다.
+          AI학습 리포트는 여러분이 디지털 세상에서 스마트하고 안전하게 길을 잡을
+          수 있도록 도와줍니다.
         </p>
         <div class="AI-imgs">
           <div class="AI-img" id="AI-img1">

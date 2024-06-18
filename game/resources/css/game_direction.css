@@ -71,9 +71,9 @@ body {
   width: 100%;
   display: flex;
   background-color: #eaf0ff;
-  padding: 40px;
+  padding: 24px;
   border-radius: 32px;
-  margin-top: 40px;
+  margin-top: 2%;
 }
 .w {
   padding-left: 32px;
@@ -98,14 +98,14 @@ h4 {
 }
 .title {
   margin-bottom: 3px;
-  font-size: 48px;
+  font-size: 32px;
   letter-spacing: 3px;
   font-family: "NanumSquareRoundEB";
   padding-bottom: 16px;
   align-self: center;
 }
 .text {
-  font-size: 24px;
+  font-size: 16px;
   padding-left: 16px;
   color: rgb(129, 129, 129);
 }
@@ -121,13 +121,13 @@ h4 {
   display: flex;
   justify-content: space-around;
   align-items: baseline;
-  margin-top: 30px;
+  /* margin-top: 30px; */
 }
 .bakery {
   display: flex;
   margin-top: 30px;
   justify-content: space-between;
-  height: 800px;
+  height: 70%;
 }
 .donuts,
 .cupcakes {
@@ -136,7 +136,7 @@ h4 {
   width: 40%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 .choco-donuts,
 .choco-cupcakes,

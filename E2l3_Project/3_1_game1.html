@@ -9,13 +9,13 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="step"><span>1단계</span></div>
-        <div class="text1">
-          <h1>동물을 찾아요</h1>
-          <p>
-            아래에 여러마리의 동물이 있어요. <br />
-            같은 동물끼리 찾아서 클릭해 보세요.
-          </p>
+        <div class="level">
+          <span>Level 1</span>
+        </div>
+        <div class="w">
+          <h1 class="title">동물을 찾아요</h1>
+          <h4 class="text">아래에 여러마리의 동물이 있어요.</h4>
+          <h4 class="text">같은 동물끼리 찾아서 클릭해 보세요.</h4>
         </div>
       </div>
       <div class="content">
@@ -53,6 +53,11 @@
           class="cat2 cat"
           src="resources/img/3_1_게임체험하기 img/고양이.png"
         />
+        <div class="grass grass1"></div>
+        <div class="grass grass2"></div>
+        <div class="grass grass3"></div>
+        <div class="grass grass4"></div>
+        <div class="grass grass5"></div>
       </div>
     </div>
   </body>
@@ -67,16 +72,23 @@
           firstSelected = img;
           img.classList.add("selected");
         } else {
-          if (firstSelected.src == img.src) {
-            firstSelected.style.display = "none";
-            img.style.display = "none";
-            firstSelected = null;
+          if (firstSelected === img) {
+            alert("다른 이미지를 선택하세요!");
+            return;
+          }
 
-            clearStage = clearStage - 2;
-            if (clearStage === 0) {
-              alert("Stage Clear!!");
-              location.href = "3_1_game2.html";
-            }
+          if (firstSelected.src == img.src) {
+            img.classList.add("selected");
+            setTimeout(function () {
+              firstSelected.style.display = "none";
+              img.style.display = "none";
+              firstSelected = null;
+
+              clearStage = clearStage - 2;
+              if (clearStage === 0) {
+                alert("Stage Clear!!");
+              }
+            }, 300);
           } else {
             alert("같은 동물을 선택하세요!");
             firstSelected.classList.remove("selected");
