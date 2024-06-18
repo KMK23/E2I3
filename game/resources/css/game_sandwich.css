@@ -89,7 +89,7 @@ h4 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #dcff90;
+  background-color: #90b0ff;
   border-radius: 32px;
   font-size: 24px;
   font-weight: BOLD;
@@ -114,9 +114,10 @@ h4 {
   flex-direction: column;
   gap: 24px;
 }
-.rule {
+.wrapper {
   margin-top: 8px;
   border: 10px dotted pink;
+  border-radius: 24px;
   display: flex;
   padding: 24px 24px;
   position: relative;
@@ -135,16 +136,19 @@ h4 {
   text-align: center;
 }
 .play-game {
-  margin-top: 80px;
+  display: flex;
+  gap: 10%;
 }
 .sandwich-ingredients {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10%;
+  padding-top: 16px;
 }
 .plate {
-  margin-top: 80px;
-  margin-left: 70px;
-  height: 700px;
+  margin-top: 40px;
+  /* margin-left: 70px; */
+  /* height: 700px; */
   position: relative;
 }
 .sandwich-ingredient {
@@ -157,15 +161,16 @@ h4 {
 }
 .sandwich {
   position: absolute;
-  width: 600px;
-  height: 600px;
-  left: 100px;
+  width: 300px;
+  height: 300px;
+  top: 45px;
+  left: 116px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .selected {
-  width: 500px;
-  height: 500px;
+  width: 350px;
+  height: 350px;
   position: absolute;
 }
