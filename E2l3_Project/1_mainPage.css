@@ -57,9 +57,10 @@ body {
   width: 100%;
   height: 100%;
   margin: 0;
-  background-image: url("resources/img/home-image.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  /* background-image: url("resources/img/home-image.jpg"); */
+  background-color: RED;
+  /* background-repeat: no-repeat; */
+  /* background-size: cover;   */
   height: 100vh;
   font-family: "NanumSquareRound";
 }
@@ -160,7 +161,8 @@ body {
 .content {
   position: relative;
   height: 500px;
-  background-image: url("path/to/image.jpg");
+  /* background-image: url("path/to/image.jpg"); */
+  background-color: red;
   background-position: center;
   display: flex;
   justify-content: center;
