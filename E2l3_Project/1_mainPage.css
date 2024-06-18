@@ -277,3 +277,101 @@ section {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
+
+.bubbles {
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  top: 0;
+  z-index: -9999;
+}
+
+.bubbles span {
+  -webkit-animation: bubbelUp 15s linear infinite;
+  animation: bubbelUp 15s linear infinite;
+  border-radius: 50%;
+  height: 7vw;
+  overflow: hidden;
+  width: 7vw;
+}
+
+.bubbles span.purple {
+  background-color: #d9d7f1;
+}
+
+.bubbles span.yellow {
+  background-color: #fffdde;
+}
+
+.bubbles span.green {
+  background-color: #e7fbbe;
+}
+
+.bubbles span.pink {
+  background-color: #ffcbcb;
+}
+
+.bubbles span.blue {
+  background-color: #d6e5fa;
+}
+
+.bubbles span.b1 {
+  -webkit-animation-duration: 30s;
+  animation-duration: 30s;
+}
+
+.bubbles span.b2 {
+  -webkit-animation-duration: 20s;
+  animation-duration: 20s;
+}
+
+.bubbles span.b3 {
+  -webkit-animation-duration: 10s;
+  animation-duration: 10s;
+}
+
+.bubbles span.b4 {
+  -webkit-animation-duration: 7.5s;
+  animation-duration: 7.5s;
+}
+
+.bubbles span.b5 {
+  -webkit-animation-duration: 8s;
+  animation-duration: 8s;
+}
+
+@-webkit-keyframes bubbelUp {
+  0% {
+    opacity: 0.3;
+    -webkit-transform: translateY(2800px) scale(0.4);
+    transform: translateY(2800px) scale(0.4);
+  }
+
+  75% {
+    opacity: 0.8;
+  }
+
+  to {
+    opacity: 0.1;
+    -webkit-transform: translateY(0) scale(1.7);
+    transform: translateY(0) scale(1.7);
+  }
+}
+
+@keyframes bubbelUp {
+  0% {
+    opacity: 0.3;
+    -webkit-transform: translateY(2800px) scale(0.4);
+    transform: translateY(2800px) scale(0.4);
+  }
+
+  75% {
+    opacity: 0.8;
+  }
+
+  to {
+    opacity: 0.1;
+    -webkit-transform: translateY(0) scale(1.7);
+    transform: translateY(0) scale(1.7);
+  }
+}

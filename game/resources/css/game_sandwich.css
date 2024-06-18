@@ -115,20 +115,20 @@ h4 {
   gap: 24px;
 }
 .rule {
-  margin-top: 40px;
-  border: 1px solid red;
+  margin-top: 8px;
+  border: 10px dotted pink;
   display: flex;
-  padding: 48px 24px;
+  padding: 24px 24px;
   position: relative;
   justify-content: space-around;
   align-items: center;
 }
 .recipe {
-  background-color: orange;
+  background-color: rgba(252, 160, 176, 0.904);
   position: absolute;
-  padding: 20px 60px;
+  padding: 10px 60px;
   border-radius: 16px;
-  top: -30px;
+  top: -28px;
   left: 38%;
 }
 .ingredient {
