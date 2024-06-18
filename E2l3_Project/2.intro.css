@@ -16,21 +16,13 @@ button {
   margin: 0;
   padding: 0;
   border: 0;
-  font-family: 'Arial', sans-serif;
+  font-family: 'NanumSquareRound';
   box-sizing: border-box;
 }
-
 body {
   background-color: #f9f9f9;
   color: #333;
   line-height: 1.6;
-  font-family: 'LeferiBaseType-RegularA';
-}
-@font-face {
-  font-family: 'LeferiBaseType-RegularA';
-  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiBaseType-RegularA.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
 }
 header {
   background-color: #4caf50;
