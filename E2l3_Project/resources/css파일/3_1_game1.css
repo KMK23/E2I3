@@ -14,8 +14,8 @@ body {
   position: relative;
   width: 100%;
   max-width: 1300px;
-  margin: 2.5rem auto;
-  height: 100vh;
+  margin: 0 auto;
+  height: 100vh;/
 }
 .header {
   display: flex;
@@ -61,8 +61,8 @@ img {
 }
 .dog2 {
   position: absolute;
-  top: 85%;
-  left: 20%;
+  top: 35%;
+  left: 25%;
 }
 .rabbit1 {
   position: absolute;
@@ -86,13 +86,13 @@ img {
 }
 .bear1 {
   position: absolute;
-  top: 40%;
-  left: 20%;
+  top: 22%;
+  left: 0%;
 }
 .bear2 {
   position: absolute;
-  top: 90%;
-  left: 60%;
+  top: 35%;
+  left: 80%;
 }
 .cat1 {
   position: absolute;
@@ -101,7 +101,7 @@ img {
 }
 .cat2 {
   position: absolute;
-  left: 60%;
+  left: 50%;
   top: 30%;
 }
 .selected {
