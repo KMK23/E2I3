@@ -26,36 +26,48 @@
         <div class="closet">
           <img
             src="resources/img/빨간반팔.png"
+            width="125"
+            height="100"
             id="red"
             draggable="true"
             ondragstart="drag(event)"
           />
           <img
             src="resources/img/검정반팔.png"
+            width="125"
+            height="100"
             id="black"
             draggable="true"
             ondragstart="drag(event)"
           />
           <img
             src="resources/img/분홍반팔.png"
+            width="125"
+            height="100"
             id="pink"
             draggable="true"
             ondragstart="drag(event)"
           />
           <img
             src="resources/img/노란반팔.png"
+            width="125"
+            height="100"
             id="yellow"
             draggable="true"
             ondragstart="drag(event)"
           />
           <img
             src="resources/img/보라반팔.png"
+            width="125"
+            height="100"
             id="purple"
             draggable="true"
             ondragstart="drag(event)"
           />
           <img
             src="resources/img/파란반팔.png"
+            width="125"
+            height="100"
             id="blue"
             draggable="true"
             ondragstart="drag(event)"
@@ -67,7 +79,7 @@
           ondragover="allowDrop(event)"
         >
           <div class="girl">
-            <img src="resources/img/여자아이.png" width="500" height="800" />
+            <img src="resources/img/여자아이.png" width="360" height="480" />
           </div>
         </div>
       </div>
@@ -110,32 +122,32 @@
       const girl = document.querySelector(".girl");
 
       if (data === "pink") {
-        girl.innerHTML = `<img src="resources/img/분홍옷여아.png" width="500" height="800" />`;
+        girl.innerHTML = `<img src="resources/img/분홍옷여아.png" width="360" height="480" />`;
         bubble.classList.add("speech-bubble");
         bubble.innerHTML = "정답이야!";
         girl.append(bubble);
       } else if (data === "black") {
-        girl.innerHTML = `<img src="resources/img/검정옷여아.png" width="500" height="800" />`;
+        girl.innerHTML = `<img src="resources/img/검정옷여아.png" width="360" height="480" />`;
         bubble.classList.add("speech-bubble");
         bubble.innerHTML = "규칙을 다시 생각해보자";
         girl.append(bubble);
       } else if (data === "yellow") {
-        girl.innerHTML = `<img src="resources/img/노란옷여아.png" width="500" height="800" />`;
+        girl.innerHTML = `<img src="resources/img/노란옷여아.png" width="360" height="480" />`;
         bubble.classList.add("speech-bubble");
         bubble.innerHTML = "규칙을 다시 생각해보자";
         girl.append(bubble);
       } else if (data === "blue") {
-        girl.innerHTML = `<img src="resources/img/파란옷여아.png" width="500" height="800" />`;
+        girl.innerHTML = `<img src="resources/img/파란옷여아.png" width="360" height="480"  />`;
         bubble.classList.add("speech-bubble");
         bubble.innerHTML = "규칙을 다시 생각해보자";
         girl.append(bubble);
       } else if (data === "purple") {
-        girl.innerHTML = `<img src="resources/img/보라옷여아.png" width="500" height="800" />`;
+        girl.innerHTML = `<img src="resources/img/보라옷여아.png" width="360" height="480" />`;
         bubble.classList.add("speech-bubble");
         bubble.innerHTML = "규칙을 다시 생각해보자";
         girl.append(bubble);
       } else if (data === "red") {
-        girl.innerHTML = `<img src="resources/img/빨간옷여아.png" width="500" height="800" />`;
+        girl.innerHTML = `<img src="resources/img/빨간옷여아.png" width="360" height="480" />`;
         bubble.classList.add("speech-bubble");
         bubble.innerHTML = "규칙을 다시 생각해보자";
         girl.append(bubble);
