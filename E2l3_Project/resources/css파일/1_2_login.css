@@ -1,13 +1,57 @@
 @font-face {
-  font-family: "LINESeedKR-Bd";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2")
-    format("woff2");
-  font-weight: 700;
-  font-style: normal;
+  font-family: "NanumSquareRound";
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot);
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot?#iefix)
+      format("embedded-opentype"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff2)
+      format("woff2"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff)
+      format("woff"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.ttf)
+      format("truetype");
+}
+
+@font-face {
+  font-family: "NanumSquareRoundB";
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.eot);
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.eot?#iefix)
+      format("embedded-opentype"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.woff2)
+      format("woff2"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.woff)
+      format("woff"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.ttf)
+      format("truetype");
+}
+
+@font-face {
+  font-family: "NanumSquareRoundEB";
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.eot);
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.eot?#iefix)
+      format("embedded-opentype"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.woff2)
+      format("woff2"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.woff)
+      format("woff"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.ttf)
+      format("truetype");
+}
+
+@font-face {
+  font-family: "NanumSquareRoundL";
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.eot);
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.eot?#iefix)
+      format("embedded-opentype"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.woff2)
+      format("woff2"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.woff)
+      format("woff"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.ttf)
+      format("truetype");
 }
 * {
   box-sizing: border-box;
-  font-family: "LINESeedKR-Bd";
+  font-family: "NanumSquareRoundEB";
 }
 body {
   width: 100%;
@@ -72,7 +116,7 @@ i {
   padding: 0 0 0 30px;
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 10px;
-  font-family: "LINESeedKR-Bd";
+  font-family: "NanumSquareRoundEB";
 }
 .forgot-signIn {
   display: flex;

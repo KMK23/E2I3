@@ -1,3 +1,55 @@
+@font-face {
+  font-family: "NanumSquareRound";
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot);
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot?#iefix)
+      format("embedded-opentype"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff2)
+      format("woff2"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff)
+      format("woff"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.ttf)
+      format("truetype");
+}
+
+@font-face {
+  font-family: "NanumSquareRoundB";
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.eot);
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.eot?#iefix)
+      format("embedded-opentype"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.woff2)
+      format("woff2"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.woff)
+      format("woff"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.ttf)
+      format("truetype");
+}
+
+@font-face {
+  font-family: "NanumSquareRoundEB";
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.eot);
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.eot?#iefix)
+      format("embedded-opentype"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.woff2)
+      format("woff2"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.woff)
+      format("woff"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.ttf)
+      format("truetype");
+}
+
+@font-face {
+  font-family: "NanumSquareRoundL";
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.eot);
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.eot?#iefix)
+      format("embedded-opentype"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.woff2)
+      format("woff2"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.woff)
+      format("woff"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.ttf)
+      format("truetype");
+}
+
 * {
   box-sizing: border-box;
 }
@@ -5,11 +57,14 @@ body {
   width: 100%;
   height: 100%;
   margin: 0;
+  background-color: #fff9ea;
+  font-family: "NanumSquareRound";
+  letter-spacing: 2px;
 }
 .container {
   width: 100%;
   max-width: 1000px;
-  margin: 2.5rem auto;
+  margin: 0 auto;
   height: 100vh;
 }
 .header {
@@ -37,7 +92,54 @@ h4 {
   flex-direction: column;
   gap: 40px;
 }
-
+.header {
+  width: 100%;
+  display: flex;
+  /* border: 10px solid #eaf0ff; */
+  background-color: #eaf0ff;
+  padding: 40px;
+  border-radius: 32px;
+  margin-top: 40px;
+}
+.w {
+  padding-left: 32px;
+}
+h1,
+h4 {
+  margin: 0;
+  padding: 4px;
+}
+.level {
+  width: 14%;
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff9d90;
+  border-radius: 32px;
+  font-size: 24px;
+  font-weight: BOLD;
+  text-align: center;
+  box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.4);
+}
+.title {
+  margin-bottom: 3px;
+  font-size: 48px;
+  letter-spacing: 3px;
+  font-family: "NanumSquareRoundEB";
+  padding-bottom: 16px;
+  align-self: center;
+}
+.text {
+  font-size: 24px;
+  padding-left: 16px;
+  color: rgb(129, 129, 129);
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
 .bkImg {
   background-color: bisque;
   height: 80px;
@@ -143,25 +245,26 @@ h4 {
 .gameImgs {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 0; /* 그리드 항목 간의 간격을 없앱니다 */
+  gap: 0;
 }
 
 .gameImgs div {
-  width: 100%; /* 그리드 셀의 너비를 100%로 설정합니다 */
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 3px solid pink; /* border를 유지합니다 */
-  box-sizing: border-box; /* border를 포함하도록 설정 */
+  border: 3px solid pink;
+  box-sizing: border-box;
   border-right: none;
+  background-color: white;
 }
 .gameImgs div:last-child {
   border-right: 3px solid pink;
 }
 
 .gameImgs img {
-  max-width: 100%; /* 이미지가 div 크기를 벗어나지 않도록 설정 */
-  height: auto; /* 이미지 비율 유지 */
+  max-width: 100%;
+  height: auto;
 }
 
 /* drop */
