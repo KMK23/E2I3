@@ -9,28 +9,27 @@
   <body>
     <div class="container">
       <div class="header">
-        <div class="step"><span>1단계</span></div>
-        <div class="text1">
-          <h1>아이스크림 쌓기</h1>
-          <p>
-            아이스크림을 규칙에 맞게 담고 있어요.<br />
-            아래 보기에 있는 아이스크림을 클릭해서<br />
-            마지막에 와야 할 아이스크림을 만들어보세요.
-          </p>
+        <div class="level"><span>Level 2</span></div>
+        <div class="w">
+          <h1 class="title">아이스크림 쌓기</h1>
+          <h4 class="text">아이스크림을 규칙에 맞게 담고 있어요.</h4>
+          <h4 class="text">
+            규칙을 잘 보고 마지막에 와야 할 아이스크림을 만들어보세요.
+          </h4>
         </div>
       </div>
       <div class="content">
         <div class="rules">
           <div class="rule">
-            <img class="iceCream" src="resources/img/예제1.png" />
+            <img class="iceCream iceCream1" src="resources/img/예제1.png" />
             <img class="right" src="resources/img/화살표.png" />
           </div>
           <div class="rule">
-            <img class="iceCream" src="resources/img/예제2.png" />
+            <img class="iceCream iceCream2" src="resources/img/예제2.png" />
             <img class="right" src="resources/img/화살표.png" />
           </div>
           <div class="rule">
-            <img class="iceCream" src="resources/img/예제3.png" />
+            <img class="iceCream iceCream3" src="resources/img/예제3.png" />
             <img class="right" src="resources/img/화살표.png" />
           </div>
           <div class="rule">
@@ -76,7 +75,7 @@
       newScoop.src = scoopImage;
       newScoop.className = "stacked-scoop";
 
-      const bottomPosition = 43 + scoopCount * 4;
+      const bottomPosition = 53 + scoopCount * 5;
       newScoop.style.setProperty("--bottom-position", `${bottomPosition}%`);
 
       setTimeout(() => {

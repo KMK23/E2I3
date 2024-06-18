@@ -4,246 +4,233 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>UI Coding</title>
-    <style>
-      * {
-        box-sizing: border-box;
-      }
-      body {
-        /* background-color: orange; */
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        font-family: 'ONE-Mobile-POP', sans-serif;
-      }
-      @font-face {
-        font-family: 'ONE-Mobile-POP';
-        src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-POP.woff')
-          format('woff');
-        font-weight: normal;
-        font-style: normal;
-      }
-      .container {
-        /* width: 100%; */
-        /* max-width: 1300px; */
-        padding: 0 20px;
-        background-image: url('resources/img/home-image.jpg');
-        /* 배경화면 넣을 곳 */
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 100vh;
-      }
-
-      .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        /* background-color: green; */
-        position: sticky;
-        /* width: 1200px; */
-        top: 2.5rem;
-        font-weight: normal;
-        background-color: rgba(248, 248, 244, 0.541);
-        border-radius: 10px;
-      }
-
-      .logo-wrapper {
-        /* background-color: blue; */
-        padding: 20px 0;
-        margin: 0;
-      }
-      .logo {
-        font-size: 40px;
-        font-weight: bold;
-        /* color: yellow; */
-      }
-
-      .nav {
-        list-style: none;
-        display: flex;
-        gap: 20px;
-      }
-
-      .nav-item {
-        font-size: 18px;
-      }
-
-      .hero {
-        position: relative;
-        height: 500px;
-        background-image: url('path/to/image.jpg');
-        background-size: cover;
-        background-position: center;
-        /* color: #fff; */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-      }
-
-      .hero-text {
-        font-size: 36px;
-        font-weight: bold;
-      }
-
-      .hero-button {
-        margin-top: 20px;
-        padding: 10px 20px;
-        font-size: 18px;
-        /* background-color: #000;
-        color: #fff; */
-        border: none;
-        cursor: pointer;
-        border-radius: 20px;
-        position: sticky;
-      }
-
-      /* .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 20px;
-        margin-top: 40px;
-        position: fixed;
-      } */
-      /*
-      .grid-item {
-        /* background-color: #edf03f; */
-      /* padding: 20px;
-        text-align: center;
-        border-radius: 100px; */
-      /* } */
-      */
-
-      /* .heading {
-        font-size: 24px;
-        margin-bottom: 10px;
-      } */
-
-      /* .paragraph {
-        font-size: 16px;
-        line-height: 1.6;
-      } */
-
-      .btn {
-        display: inline-block;
-        padding: 10px 20px;
-        font-size: 16px;
-        /* background-color: #000;
-        color: #fff; */
-        text-decoration: none;
-        border-radius: 5px;
-      }
-
-      .responsive-img {
-        width: 100%;
-        height: auto;
-      }
-
-      .icon {
-        width: 40px;
-        height: 40px;
-      }
-      .text {
-        text-decoration: none;
-        font-size: 25px;
-      }
-      .banner {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: greenyellow;
-        width: 800px;
-        height: 50px;
-        border-radius: 24px;
-      }
-
-      /* .nav-item a {
-        color: white;
-      } */
-      .logo a {
-        color: white;
-        text-decoration: none;
-      }
-    </style>
+    <link rel="stylesheet" href="1_mainPage.css" />
+    <link rel="stylesheet" href="2.intro.css" />
   </head>
   <body>
-    <div class="container">
-      <header class="header">
-        <div class="logo-wrapper">
-          <div class="logo"><a href="#">UI Coding</a></div>
+    <div class="three-btns">
+      <a href="1_2_login.html" class="login-btn">로그인</a>
+      <a href="1_3_joinMembership.html" class="signup-btn">회원가입</a>
+      <a href="/1_4_myPage.html" class="mypage-btn">마이페이지</a>
+    </div>
+    <div class="header">
+      <div class="logo-wrapper">
+        <div class="logo"><a href="#">UI Coding</a></div>
+      </div>
+    </div>
+    <div class="main-container">
+      <ul class="main">
+        <li class="sub"><a href="#about" class="part">소개인사</a></li>
+        <li class="sub">
+          <a href="3_intro_game.html" class="part">체험해보기</a>
+        </li>
+        <li class="sub"><a href="#review" class="part">체험 후기</a></li>
+        <li class="sub"><a href="5_cash.html" class="part">결제하기</a></li>
+        <li class="sub">
+          <a href="4_postscript.html" class="part">고객센터</a>
+        </li>
+      </ul>
+    </div>
+    <section class="content">
+      <div class="content-text">
+        Welcome to UI Coding! <br />
+        <button class="content-btn">Let's play!</button>
+      </div>
+    </section>
+    <div class="aside">
+      <div class="aside-text">
+        <a href="#">지금 시작하면 <span class="special">7일간</span>무료!</a>
+        <div class="aside-btns">
+          <button class="fir-btn">UI Coding 시작</button>
+          <button class="sec-btn">무료 상담 신청</button>
         </div>
-        <ul class="nav">
-          <li class="nav-item">
-            <a href="#" class="text">소개말</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="text">체험해보기</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="text">체험 후기</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="text">결제하기</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="text">고객센터</a>
-          </li>
-        </ul>
-        <div class="auth-buttons">
-          <button class="login-button">로그인</button>
-          <button class="signup-button">회원가입</button>
-        </div>
-      </header>
-      <section class="hero">
-        <div class="hero-text">
-          Welcome to UI Coding! <br />
-          <button class="hero-button">Let's play!</button>
-        </div>
-      </section>
-      <!-- <section class="aside-wrap">
-        <div class="aside"> -->
-          <!-- <h2 class="heading">지금 시작하면 7일간 무료!</h2>
-          <p class="paragraph">Description of feature 1.</p> -->
-          <!-- <p>
-            <a href="aside-bottom" target="blank">지금 시작하면 7일간 무료!</a>
+      </div>
+    </div>
+
+    <!-- 소개인사 내용 시작 -->
+    <section id="about">
+      <h2>UI Coding의 목표</h2>
+      <p>
+        저희의 목표는 모든 아이들이 재미있고 쉽게 코딩을 배울 수 있도록 하는
+        것입니다. 이를 통해 아이들은 코딩을 자연스럽게 생활의 일부로 받아들일 수
+        있습니다. 결국, 코딩은 미래의 중요한 기술로서 아이들의 삶에 긍정적인
+        영향을 미칠 것입니다.
+      </p>
+      <h2>UI Coding의 비전</h2>
+      <p>
+        모든 아이들이 미래의 창의적인 문제 해결사로 성장하는 것입니다. 코딩을
+        통해 아이들은 다양한 문제를 창의적으로 접근하고 해결할 수 있는 능력을
+        기릅니다. 이러한 능력은 아이들이 성장하면서 다양한 분야에서 빛을 발할
+        것입니다.
+      </p>
+      <h2>유아 코딩교육의 가치</h2>
+      <p>
+        유아 코딩교육은 논리적 사고와 문제 해결 능력을 키워줍니다. 이를 통해
+        아이들은 단계적으로 생각하고, 문제를 체계적으로 해결하는 방법을
+        배웁니다. 결국, 이러한 교육은 아이들의 전반적인 학습 능력과 자신감을
+        높이는 데 기여합니다.
+      </p>
+    </section>
+    <section id="team">
+      <h2>선생진 소개</h2>
+      <div class="team-member">
+        <img
+          src="resources/img/2.소개인사 예시 이미지/피카츄.jpg"
+          alt="선생님 사진"
+        />
+        <p>김경문</p>
+        <p>주임 선생님</p>
+        <p class="motto">"최선을 다해 애들을 가르치겠습니다!"</p>
+      </div>
+      <div class="team-member">
+        <img
+          src="resources/img/2.소개인사 예시 이미지/꼬부기.jpg"
+          alt="선생님 사진"
+        />
+        <p>김예은</p>
+        <p>부주임 선생님</p>
+        <p class="motto">"아이들의 성장을 돕겠습니다!"</p>
+      </div>
+      <div class="team-member">
+        <img
+          src="resources/img/2.소개인사 예시 이미지/푸린.jpg"
+          alt="선생님 사진"
+        />
+        <p>홍명주</p>
+        <p>수석 선생님</p>
+        <p class="motto">"창의력을 키우겠습니다!"</p>
+      </div>
+      <div class="team-member">
+        <img
+          src="resources/img/2.소개인사 예시 이미지/이브이.jpg"
+          alt="선생님 사진"
+        />
+        <p>양주원</p>
+        <p>전임 선생님</p>
+        <p class="motto">"문제 해결 능력을 높이겠습니다!"</p>
+      </div>
+      <div class="team-member">
+        <img
+          src="resources/img/2.소개인사 예시 이미지/피츄.jpg"
+          alt="선생님 사진"
+        />
+        <p>김원진</p>
+        <p>신입 선생님</p>
+        <p class="motto">"열정을 다하겠습니다!"</p>
+      </div>
+    </section>
+    <section id="programs">
+      <h2>유아 코딩교육 대표 프로그램 소개</h2>
+      <br /><br />
+      <div class="program">
+        <div class="program-content1">
+          <img
+            src="resources/img/프로그램 소개/블록 코딩.jpg"
+            width="300px"
+            height="200px"
+          /><br /><br />
+          <h3>블록 코딩</h3>
+          <p>
+            블록을 끌어다 놓으며 프로그램을 구성할 수 있어 유아들이 쉽게 배울 수
+            있습니다.<br /><br /><br />
           </p>
-          <div class="aside-btns">
-            <a href="#">UI Coding 시작하기</a>
-            <a href="#">무료상담신청</a>
-          </div>
         </div>
-      </section> -->
-
-          <div class="banner">
-            <div class="text-Btn">
-              <a href="#">
-                지금 시작하면 <span class="week">7일간</span> 무료</a
-              >
-              <button class="starBtn">코코볼 시작</button>
-              <button class="Btn2">무료 상담 신청</button>
-            </div>
-          </div>
-          <!-- 원래 코코볼 fixed 하단 문구  -->
-          <!-- <aside class="aside_wrap">
-
-        <div class="aside_bottom_wrap">
-          <div class="aside_bottom">
-            <p><a href="https://cocoble.jei.com/sign-in/start?_gl=1*j168bm*_ga*MTU4MzA2NjAzMC4xNzE4MjAzMjkw*_ga_Q04KDEKGK9*MTcxODIwMzI5MC4xLjEuMTcxODIwMzQ3OC42MC4wLjA." target="_blank">지금 시작하면 <b>7일간</b> 무료!</a></p>
-            <div class="aside_btns">
-              <a href="https://cocoble.jei.com/sign-in/start" class="btn_go_cocoble" target="_blank">코코블 시작하기</a>
-              <a href="javascript:;" class="btn_cocoble_counsel onlineCounselCocobleFloating2">무료상담신청</a>
-            </div>
-          </div>
+        <div class="program-content2">
+          <img
+            src="resources/img/프로그램 소개/비봇.png"
+            width="300px"
+            height="200px"
+          /><br /><br />
+          <h3>비봇</h3>
+          <p>
+            간단한 버튼 조작으로 로봇을 이동시키며 명령어의 순서를 배우는
+            프로그램입니다.<br /><br /><br />
+          </p>
         </div>
-      
-        <div class="btn_scroll on">
-          <button type="button" class="gotop" onclick="goTargetSection(0,'body')"><img src="img/btn-gotop.png" alt="맨 위로"></button>
+        <div class="program-content3">
+          <img
+            src="resources/img/프로그램 소개/오조봇.png"
+            width="300px"
+            height="200px"
+          /><br /><br />
+          <h3>오조봇</h3>
+          <p>
+            색깔을 인식하여 움직이는 작은 로봇으로 색을 통해 코딩을 배우는
+            프로그램입니다.<br /><br /><br />
+          </p>
         </div>
-      
-      </aside> -->
-          <!-- </div> -->
+        <div class="program-content4">
+          <img
+            src="resources/img/프로그램 소개/코드 어피즈.jpg"
+            width="300px"
+            height="200px"
+          /><br /><br />
+          <h3>코드 어피즈</h3>
+          <p>
+            여러 개의 모듈을 연결하여 명령어를 만들고 애벌레가 그에 맞게
+            움직이도록 하는 장난감입니다.<br /><br /><br />
+          </p>
         </div>
-      </section>
+        <div class="program-content5">
+          <img
+            src="resources/img/프로그램 소개/코드 멍키.png"
+            width="300px"
+            height="200px"
+          /><br /><br />
+          <h3>코드 멍키</h3>
+          <p>
+            게임과 미션을 통해 코딩 개념을 배우는 온라인 플랫폼입니다.
+            <br /><br /><br />
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="testimonials">
+      <h2>부모님 후기</h2>
+      <br />
+      <h3>김재형 (35세, 직장인)</h3>
+      <blockquote>
+        "우리 아이가 코딩을 배우기 시작한 지 6개월째인데, 창의력이 폭발적으로
+        늘어나는 게 눈에 보여요. 돈이 전혀 아깝지 않습니다!"
+      </blockquote>
+      <br />
+      <h3>홍수지 (32세, 주부)</h3>
+      <blockquote>
+        "코딩 교육 덕분에 아이의 상상력과 논리적 사고가 매일매일 마법처럼 자라는
+        것 같아요. 함께 이야기를 나누면서 똑똑해진 걸 느낄 수 있어 너무 기뻐요!"
+      </blockquote>
+      <br />
+      <h3>정아람 (40세, 자영업자)</h3>
+      <blockquote>
+        "코딩 수업을 통해 우리 아이가 새로운 세상을 발견하고, 그 과정에서 스스로
+        문제를 해결하는 힘을 키우는 걸 보니 정말 행복해요!"
+      </blockquote>
+      <br />
+    </section>
+    <section id="contact">
+      <h2>연락처 및 문의</h2>
+      <p>이메일: info@codingforkids.com</p>
+      <p>전화번호: 123-456-7890</p>
+      <form>
+        <label for="name">이름</label>
+        <input type="text" id="name" name="name" />
+        <label for="message">문의 내용</label>
+        <textarea id="message" name="message"></textarea>
+        <button type="submit">보내기</button>
+      </form>
+    </section>
+    <footer>
+      <p>&copy; 2024 유아 코딩 사이트 By E2I3</p>
+    </footer>
+    <!-- 소개인사 내용 끝 -->
+    <div class="bubbles">
+      <span class="purple b3"></span><span class="pink b2"></span
+      ><span class="yellow b1"></span><span class="blue b5"></span
+      ><span class="green b4"></span><span class="purple b1"></span
+      ><span class="pink b5"></span><span class="yellow b3"></span
+      ><span class="blue b2"></span><span class="green b4"></span
+      ><span class="purple b5"></span><span class="yellow b3"></span
+      ><span class="pink b4"></span>
     </div>
   </body>
-  <script></script>
 </html>

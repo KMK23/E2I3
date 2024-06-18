@@ -1,52 +1,122 @@
+@font-face {
+  font-family: "NanumSquareRound";
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot);
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot?#iefix)
+      format("embedded-opentype"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff2)
+      format("woff2"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff)
+      format("woff"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.ttf)
+      format("truetype");
+}
+
+@font-face {
+  font-family: "NanumSquareRoundB";
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.eot);
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.eot?#iefix)
+      format("embedded-opentype"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.woff2)
+      format("woff2"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.woff)
+      format("woff"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.ttf)
+      format("truetype");
+}
+
+@font-face {
+  font-family: "NanumSquareRoundEB";
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.eot);
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.eot?#iefix)
+      format("embedded-opentype"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.woff2)
+      format("woff2"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.woff)
+      format("woff"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.ttf)
+      format("truetype");
+}
+
+@font-face {
+  font-family: "NanumSquareRoundL";
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.eot);
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.eot?#iefix)
+      format("embedded-opentype"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.woff2)
+      format("woff2"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.woff)
+      format("woff"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.ttf)
+      format("truetype");
+}
 * {
   box-sizing: border-box;
 }
 body {
   width: 100%;
   height: 100%;
-  /* margin: 100px 0 0 0; */
+  margin: 0;
+  background-color: #fff9ea;
+  font-family: "NanumSquareRound";
+  letter-spacing: 2px;
+}
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  height: 100vh;
+}
+.header {
+  width: 100%;
+  display: flex;
+  background-color: #eaf0ff;
+  padding: 24px;
+  border-radius: 32px;
+  margin-top: 2%;
+}
+.w {
+  padding-left: 32px;
+}
+h1,
+h4 {
+  margin: 0;
+  padding: 4px;
+}
+.level {
+  width: 14%;
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff9d90;
+  border-radius: 32px;
+  font-size: 24px;
+  font-weight: BOLD;
+  text-align: center;
+  box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.4);
+}
+.title {
+  margin-bottom: 3px;
+  font-size: 32px;
+  letter-spacing: 3px;
+  font-family: "NanumSquareRoundEB";
+  padding-bottom: 16px;
+  align-self: center;
+}
+.text {
+  font-size: 16px;
+  padding-left: 16px;
+  color: rgb(129, 129, 129);
 }
 .container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  position: relative;
-  width: 100%;
-  max-width: 1300px;
-  margin: 2.5rem auto;
-  height: 100vh;
-}
-.header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 850px;
-  border: 3px dashed #7fdaf4;
-  border-radius: 32px;
-  margin-bottom: 24px;
-  position: relative;
-}
-.step {
-  background-color: #ebcbbb;
-  border-radius: 16px;
-  color: rgb(173, 95, 141);
-  font-weight: 800;
-  padding: 16px;
-  margin-right: 16px;
-  position: absolute;
-  left: 36px;
-}
-.text1 h1 {
-  margin: 16px 16px;
-  font-weight: 600;
-  font-size: 32px;
-}
-.text p {
-  margin: 0;
+  gap: 24px;
 }
 .content {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 .first-content {
   width: 700px;
@@ -55,7 +125,7 @@ body {
   border: 9px solid #ffb300;
   border-radius: 16px;
   border-bottom: none;
-  margin-bottom: 32px;
+  margin-bottom: 16px;
 }
 .area1,
 .area2,
@@ -93,11 +163,11 @@ body {
   align-items: center;
 }
 .icon img {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
 }
 .icon5 img {
-  width: 40px;
+  width: 30px;
 }
 
 .second-content {
@@ -143,11 +213,10 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 50px;
 }
 .board {
   width: 100%;
-  height: 400px;
+  height: 300px;
   background-color: white;
   position: relative;
   display: flex;
@@ -163,7 +232,7 @@ body {
   width: 100%;
   height: 100%;
   padding: 16px;
-  font-size: 80px;
+  font-size: 60px;
   text-align: center;
 }
 .input::placeholder {
@@ -172,13 +241,13 @@ body {
 }
 
 .check {
-  padding: 24px;
+  padding: 16px;
   border-radius: 16px;
   border: none;
   font-weight: 800;
   color: white;
   background-color: #008b8b;
-  font-size: 24px;
+  font-size: 16px;
   cursor: pointer;
 }
 

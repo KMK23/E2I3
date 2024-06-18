@@ -1,0 +1,164 @@
+/* styles.css */
+
+/* Reset some default styles */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li,
+img,
+a,
+input,
+textarea,
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: 'NanumSquareRound';
+  box-sizing: border-box;
+}
+body {
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+header {
+  background-color: #4caf50;
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.5rem;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+nav ul li {
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+section {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #4caf50;
+}
+
+section p,
+section blockquote {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+#team {
+  /* text-align: center; */
+  padding: 1rem;
+}
+
+#team h2 {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+#team {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+#team .team-member {
+  text-align: center;
+  margin: 1rem;
+  flex: 1 1 200px; /* Each member will take up at least 200px but can grow */
+  max-width: 220px; /* Ensures the maximum width of each member block */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: #fff;
+}
+
+#team .team-member img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+#team .team-member p {
+  margin: 0.5rem 0;
+}
+
+#team .team-member .motto {
+  color: #888;
+  font-style: italic;
+}
+
+#programs .program {
+  margin-bottom: 1.5rem;
+}
+
+#contact form {
+  display: flex;
+  flex-direction: column;
+}
+
+#contact form label {
+  margin: 0.5rem 0 0.25rem;
+}
+
+#contact form input,
+#contact form textarea {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+#contact form button {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+#contact form button:hover {
+  background-color: #45a049;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  background-color: #4caf50;
+  color: white;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
