@@ -2,55 +2,120 @@
   box-sizing: border-box;
 }
 @font-face {
-  font-family: "LINESeedKR-Bd";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2")
-    format("woff2");
-  font-weight: 700;
-  font-style: normal;
+  font-family: "NanumSquareRound";
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot);
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot?#iefix)
+      format("embedded-opentype"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff2)
+      format("woff2"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff)
+      format("woff"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.ttf)
+      format("truetype");
 }
+
 body,
 html {
-  font-family: "LINESeedKR-Bd";
+  font-family: "NanumSquareRound";
   margin: 0;
   width: 100%;
   height: 100%;
   padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../img/backgroundHome.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+  z-index: -1;
 }
 .container {
-  position: relative;
-  height: 100%;
+  text-align: right;
   width: 100%;
-  overflow: hidden;
+  height: 100vh;
   max-width: 1300px;
   margin: 2.5rem auto;
 }
-.container::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  background-image: url("resources/img/backgroundHome.jpg");
-  background-size: cover;
-  opacity: 0.5;
-  z-index: 1;
-}
 .header {
-  position: relative;
-  z-index: 2;
   margin: 0 0 60px;
 }
 .headerH2 {
   font-weight: 700;
-  font-size: 28px;
+  font-size: 40px;
   text-align: center;
 }
 .color {
-  color: #35dec3;
+  color: #4bff00;
 }
 .content {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+.list {
+  text-align: center;
+  background-color: #09f95a;
+  border-radius: 8px;
+  width: 50%;
+  padding: 16px;
 }
 .gameImg {
-  background-color: #ffff00;
+  border-radius: 8px;
+}
+.img-container {
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+}
+.img-container img {
+  width: 100%;
+  height: auto;
+}
+
+.pay-link {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 10px;
+  border: 1px solid #ccc;
+  z-index: 1000;
+  text-decoration: none;
+  color: black;
+}
+.img-container:hover .pay-link {
+  display: block;
+}
+.title {
+  font-size: 16px;
+  background-clip: padding-box;
+}
+.title > strong {
+  font-size: 22px;
+}
+.payBtn {
+  border: none;
+  width: 16%;
+  padding: 12px;
+  background-color: #05d7fb;
+  border-radius: 16px;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+.payBtn:hover {
+  background-color: #07f10c;
 }
