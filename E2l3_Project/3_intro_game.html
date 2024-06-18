@@ -62,39 +62,131 @@
         url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.ttf)
           format("truetype");
     }
+
+    .bubbles {
+      display: flex;
+      justify-content: space-around;
+      position: absolute;
+      top: 0;
+      z-index: -9999;
+    }
+
+    .bubbles span {
+      -webkit-animation: bubbelUp 15s linear infinite;
+      animation: bubbelUp 15s linear infinite;
+      border-radius: 50%;
+      height: 7vw;
+      overflow: hidden;
+      width: 7vw;
+    }
+
+    .bubbles span.purple {
+      background-color: #d9d7f1;
+    }
+
+    .bubbles span.yellow {
+      background-color: #fffdde;
+    }
+
+    .bubbles span.green {
+      background-color: #e7fbbe;
+    }
+
+    .bubbles span.pink {
+      background-color: #ffcbcb;
+    }
+
+    .bubbles span.blue {
+      background-color: #d6e5fa;
+    }
+
+    .bubbles span.b1 {
+      -webkit-animation-duration: 30s;
+      animation-duration: 30s;
+    }
+
+    .bubbles span.b2 {
+      -webkit-animation-duration: 20s;
+      animation-duration: 20s;
+    }
+
+    .bubbles span.b3 {
+      -webkit-animation-duration: 10s;
+      animation-duration: 10s;
+    }
+
+    .bubbles span.b4 {
+      -webkit-animation-duration: 7.5s;
+      animation-duration: 7.5s;
+    }
+
+    .bubbles span.b5 {
+      -webkit-animation-duration: 8s;
+      animation-duration: 8s;
+    }
+
+    @-webkit-keyframes bubbelUp {
+      0% {
+        opacity: 0.3;
+        -webkit-transform: translateY(2800px) scale(0.4);
+        transform: translateY(2800px) scale(0.4);
+      }
+
+      75% {
+        opacity: 0.8;
+      }
+
+      to {
+        opacity: 0.1;
+        -webkit-transform: translateY(0) scale(1.7);
+        transform: translateY(0) scale(1.7);
+      }
+    }
+
+    @keyframes bubbelUp {
+      0% {
+        opacity: 0.3;
+        -webkit-transform: translateY(2800px) scale(0.4);
+        transform: translateY(2800px) scale(0.4);
+      }
+
+      75% {
+        opacity: 0.8;
+      }
+
+      to {
+        opacity: 0.1;
+        -webkit-transform: translateY(0) scale(1.7);
+        transform: translateY(0) scale(1.7);
+      }
+    }
+
     * {
       box-sizing: border-box;
       font-family: "NanumSquareRoundEB";
     }
-    html {
-      border: 2.6rem solid rgb(41, 29, 29);
-      margin: 0;
-    }
+
     body {
       height: 100vh;
       width: 100%;
       max-width: 1200px;
       margin: 0 auto;
-      background-color: #0e3534;
+      background-color: #fff;
     }
-    .wrap {
-      background-color: #f6bb43;
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
+
     .nav-bar {
-      height: 100%;
+      height: 4rem;
       margin: 0;
       display: flex;
       justify-content: center;
       align-items: center;
       margin-top: 2%;
-      background-color: #0e3534;
+      background-color: #fa9a85;
     }
     .nav-bar ul {
       list-style-type: none;
       display: flex;
-      font-size: 2rem;
+      font-size: 1.3rem;
       font-weight: 500;
       color: white;
       align-items: center;
@@ -102,6 +194,7 @@
       margin: 0;
       padding: 1%;
     }
+
     .nav {
       width: 80%;
     }
@@ -118,6 +211,7 @@
     }
     .container {
       position: relative;
+      padding-bottom: 10rem;
     }
     .wrap-text {
       display: flex;
@@ -136,23 +230,22 @@
       font-weight: 900;
     }
     .sub-title {
-      font-size: 2rem;
+      font-size: 1.2rem;
       color: #343a40;
       font-weight: 600;
     }
     .title {
-      font-size: 3rem;
+      font-size: 1.8rem;
       color: #ffd43b;
       margin: 0.5rem;
     }
     .title-text {
       background-color: #ffb300;
-      font-size: 1.3rem;
       padding: 1.3rem;
       border-radius: 32px;
     }
     .active {
-      background-color: #fd7e14;
+      background-color: #495057;
     }
 
     .gameAll {
@@ -176,7 +269,7 @@
       display: flex;
       list-style-type: none;
       background-color: #e9ecef;
-      font-size: 1.3rem;
+      font-size: 1rem;
       padding: 24px;
       border-radius: 32px;
       justify-content: space-evenly;
@@ -192,24 +285,40 @@
       width: 100%;
       height: 100%;
     }
+    .selected {
+      width: 60%;
+      height: 100%;
+    }
+    .gameImg {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .gameImg img {
+      display: block;
+      margin: 0 auto;
+      border: 3px solid #88c0d0;
+      border-radius: 6%;
+    }
     /* AI 학습 리포트 */
 
     .AI-content {
       display: flex;
       justify-content: space-between;
-      gap: 5%;
-      background-color: #f9d182;
-      padding: 10%;
+      gap: 10%;
+      background-color: #e7fbbe;
+      padding: 3%;
+      border-radius: 5%;
     }
     .AI-text-img {
       display: flex;
       flex-direction: column;
       border-radius: 50px;
       padding: 32px;
-      gap: 100px;
+      gap: 10%;
     }
     .AI-text-img h1 {
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: 800;
       font-style: italic;
       font-family: "NanumSquareRound";
@@ -217,6 +326,7 @@
     .AI-text-img h3 {
       color: #e0bb35;
       font-family: "NanumSquareRound";
+      font-size: 1rem;
     }
     .AI-stu-img img {
       border-radius: 50%;
@@ -226,40 +336,50 @@
       color: white;
     }
     .dsec h4 {
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
     .dsec p {
-      font-size: 1.2rem;
+      font-size: 1rem;
+    }
+    .sc-text {
+      margin: 0.5rem;
     }
     .AI-desc1 {
       background-color: #ad75fd;
       border-radius: 32px;
       margin: 0;
-      width: fit-content;
       height: auto;
       padding: 7px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      width: 20rem;
     }
+
     .AI-desc2 {
       background-color: #ff9d00;
       border-radius: 32px;
+      margin: 0;
+      height: auto;
       padding: 7px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      width: 20rem;
     }
     .AI-desc3 {
       background-color: #9dc300;
       border-radius: 32px;
+      margin: 0;
+      height: auto;
       padding: 7px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      width: 20rem;
     }
 
     /* 아래 부분을 추가 */
@@ -278,24 +398,22 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      margin-top: 100px;
-      background-color: #fab442;
+
       border-radius: 50px;
       padding: 50px;
     }
     .AI-main-title {
-      font-size: 4rem;
+      font-size: 2rem;
       font-style: italic;
       font-weight: 800;
-      color: #ffffff;
     }
     .AI-sub-title {
-      font-size: 2rem;
+      font-size: 1rem;
     }
     .lists {
       list-style-type: none;
       background-color: #fa9a85;
-      font-size: 2rem;
+      font-size: 1rem;
       padding: 24px;
       border-radius: 25px;
       display: flex;
@@ -332,7 +450,6 @@
     #AI-img1 {
       background-image: url("resources/img/1_KakaoTalk_20240614_141659959.png");
       background-size: cover;
-      background-repeat: no-repeat;
       background-position: center;
     }
     #AI-img2 {
@@ -352,200 +469,217 @@
     }
   </style>
   <body>
-    <div class="wrap">
-      <!-- 네비게이션 바 -->
-      <section calss="coding">
-        <div class="nav-bar">
-          <ul class="nav nav-pills">
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#gamePage"
-                >블록 코딩 기초 학습</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#AI-study">AI학습 리포트</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#basic-coding">디지털 감성 학습</a>
-            </li>
-          </ul>
+    <div class="All">
+      <div class="wrap">
+        <!-- 네비게이션 바 -->
+        <section calss="coding">
+          <div class="nav-bar">
+            <ul class="nav nav-pills">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#gamePage"
+                  >블록 코딩 기초 학습</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#AI-study">AI학습 리포트</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#basic-coding">디지털 감성 학습</a>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <!-- 전체 페이지  -->
+        <section class="coding" id="gamePage">
+          <div class="container">
+            <div class="wrap-text">
+              <span class="title-label">Easy Fun Coding</span>
+              <p class="sub-title">단계별 프로그래밍 학습을 통해</p>
+              <h2 class="title">기초 컴퓨팅 사고력을 튼튼하게</h2>
+              <p class="title-text">
+                아이들이 쉽고 재미있게 코딩의 기초를 다질 수 있도록 단계별 학습
+                프로그램을 제공하며, <br />
+                다양한 문제 해결을 통해 창의력을 키우고, 논리적 사고를
+                연습합니다.
+              </p>
+              <div class="game-bar">
+                <ul>
+                  <li class="gameName">
+                    <a class="gameLink" href="#" id="game1">디버깅</a>
+                  </li>
+                  <li class="gameName">
+                    <a class="gameLink" href="#" id="game2">알고리즘 및 순차</a>
+                  </li>
+                  <li class="gameName">
+                    <a class="gameLink" href="#" id="game3">반복,패턴 만들기</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="gameAll">
+                <div class="gameImg" id="img1">
+                  <img
+                    src="resources/img/동물을 찾아요.png"
+                    alt=""
+                    class="selected"
+                  />
+                  <button class="gameBtn1" id="Btn1">게임 체험하기</button>
+                </div>
+                <div class="gameImg" id="img2" style="display: none">
+                  <img
+                    src="resources/img/샌드위치만들기.png"
+                    class="selected"
+                  />
+                  <button class="gameBtn1" id="Btn2">게임 체험하기</button>
+                </div>
+                <div class="gameImg" id="img3" style="display: none">
+                  <img src="resources/img/반복패턴.png" class="selected" />
+                  <button class="gameBtn1" id="Btn3">게임 체험하기</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- AI 학습리포트 -->
+      <section id="AI-study">
+        <div class="AI-content">
+          <div class="AI-text-img">
+            <h1 class="sc-text">AI기반 학습 리포트로 맞춤형 학습 관리까지</h1>
+            <h3 class="sc-text">
+              홈페이지에서는 AI 기술을 활용한 학습 리포트를 통해<br />아이들의
+              코딩 실력을 체계적으로 분석하고 맞춤형 학습 계획을 제공합니다.
+            </h3>
+            <div class="AI-stu-img">
+              <img
+                src="resources/img/children-593313_1280.jpg"
+                alt=""
+                width="600px"
+                height="400px"
+              />
+            </div>
+          </div>
+          <div class="content-desc">
+            <div class="AI-desc1 dsec">
+              <h4 class="sc-text">성장에 맞춘 커리큘럼</h4>
+              <p class="sc-text">
+                아이의 학습 속도와 이해도를 분석하여 <br />최적의 학습 경로를
+                제공
+              </p>
+              <img
+                src="resources/img/차트1_waifu2x_art_noise1_scale.webp"
+                width="80%"
+                height="50%"
+                style="border-radius: 25%"
+              />
+            </div>
+            <div class="AI-desc2 dsec">
+              <h4 class="sc-text">즉각적인 피드백</h4>
+              <p class="sc-text">
+                실시간으로 제공되는 <br />피드백을 통해 아이의 학습 효과 극대화
+              </p>
+              <img
+                src="resources/img/차트2_waifu2x_art_noise1_scale.webp"
+                alt=""
+                width="80%"
+                height="50%"
+              />
+            </div>
+            <div class="AI-desc3 dsec">
+              <h4 class="sc-text">맞춤형 과제</h4>
+              <p class="sc-text">
+                아이의 강점과 약점을 파악하여 <br />적절한 난이도의 과제 제시
+              </p>
+              <img
+                src="resources/img/차트3_waifu2x_art_noise1_scale.webp"
+                alt=""
+                width="80%"
+                height="50%"
+              />
+            </div>
+          </div>
         </div>
       </section>
-      <!-- 전체 페이지  -->
-      <section class="coding" id="gamePage">
-        <div class="container">
-          <div class="wrap-text">
-            <span class="title-label">Easy Fun Coding</span>
-            <p class="sub-title">단계별 프로그래밍 학습을 통해</p>
-            <h2 class="title">기초 컴퓨팅 사고력을 튼튼하게</h2>
-            <p class="title-text">
-              아이들이 쉽고 재미있게 코딩의 기초를 다질 수 있도록 단계별 학습
-              프로그램을 제공하며, <br />
-              다양한 문제 해결을 통해 창의력을 키우고, 논리적 사고를 연습합니다.
-            </p>
-            <div class="game-bar">
-              <ul>
-                <li class="gameName">
-                  <a class="gameLink" href="#" id="game1">디버깅</a>
-                </li>
-                <li class="gameName">
-                  <a class="gameLink" href="#" id="game2">알고리즘 및 순차</a>
-                </li>
-                <li class="gameName">
-                  <a class="gameLink" href="#" id="game3">반복,패턴 만들기</a>
-                </li>
-              </ul>
+
+      <!-- 디지털 -->
+
+      <section class="section3">
+        <div id="basic-coding">
+          <h1 class="AI-main-title">디지털 시대에 필요한 감성을 배워보세요!</h1>
+          <h3 class="AI-sub-title">
+            AI학습 리포트는 여러분이 디지털 세상에서 <br />
+            올바르게 살아가는 법을 배울 수 있는 특별한 기회를 제공합니다.
+          </h3>
+          <ul class="lists">
+            <li>
+              디지털 시대의 매너: 사이버 공간에서의 예의와 적절한 행동의
+              중요성을 배우세요.
+            </li>
+            <li>
+              디지털 감성: 온라인에서의 자신감을 키우고, 다른 사람과의 존중과
+              소통의 방법을 익히세요.
+            </li>
+            <li>
+              사이버 보안: 개인정보 보호와 온라인 안전에 대한 필수적인 지식을
+              습득하세요.
+            </li>
+            <li>
+              디지털 예절: 올바른 온라인 행동 규범을 익히며, 다양한 상황에서의
+              적절한 반응 방법을 배웁니다.
+            </li>
+          </ul>
+          <p>
+            애니메이션과 퀴즈를 통해 이 모든 학습이 쉽고 재미있게 전달됩니다.
+            <br />
+            AI학습 리포트는 여러분이 디지털 세상에서 스마트하고 안전하게 길을
+            잡을 수 있도록 도와줍니다.
+          </p>
+          <div class="AI-imgs">
+            <div class="AI-img" id="AI-img1">
+              <img
+                src="resources/img/circle-play-solid.svg"
+                class="button"
+                width="50px"
+                height="50px"
+              />
             </div>
-            <div class="gameAll">
-              <div class="gameImg" id="img1">
-                <img
-                  src="resources/img/동물을 찾아요.png"
-                  alt=""
-                  class="selected"
-                />
-                <button class="gameBtn1" id="Btn1">게임 체험하기</button>
-              </div>
-              <div class="gameImg" id="img2" style="display: none">
-                <img src="resources/img/샌드위치만들기.png" alt="" />;
-                <button class="gameBtn1" id="Btn2">게임 체험하기</button>
-              </div>
-              <div class="gameImg" id="img3" style="display: none">
-                <img
-                  src="resources/img/squid-game-6758080_1280.jpg"
-                  alt=""
-                  width="600px"
-                  height="800px"
-                />
-                <button class="gameBtn1" id="Btn3">게임 체험하기</button>
-              </div>
+            <div class="AI-img" id="AI-img2">
+              <img
+                src="resources/img/circle-play-solid.svg"
+                class="button"
+                width="50px"
+                height="50px"
+              />
+            </div>
+            <div class="AI-img" id="AI-img3">
+              <img
+                src="resources/img/circle-play-solid.svg"
+                class="button"
+                width="50px"
+                height="50px"
+              />
+            </div>
+            <div class="AI-img" id="AI-img4">
+              <img
+                src="resources/img/circle-play-solid.svg"
+                class="button"
+                width="50px"
+                height="50px"
+              />
             </div>
           </div>
         </div>
       </section>
     </div>
-
-    <!-- AI 학습리포트 -->
-    <section id="AI-study">
-      <div class="AI-content">
-        <div class="AI-text-img">
-          <h1>AI기반 학습 리포트로 맞춤형 학습 관리까지</h1>
-          <h3>
-            홈페이지에서는 AI 기술을 활용한 학습 리포트를 통해<br />아이들의
-            코딩 실력을 체계적으로 분석하고 맞춤형 학습 계획을 제공합니다.
-          </h3>
-          <div class="AI-stu-img">
-            <img
-              src="resources/img/children-593313_1280.jpg"
-              alt=""
-              width="600px"
-              height="400px"
-            />
-          </div>
-        </div>
-        <div class="content-desc">
-          <div class="AI-desc1 dsec">
-            <h4>성장에 맞춘 커리큘럼</h4>
-            <p>아이의 학습 속도와 이해도를 분석하여 최적의 학습 경로를 제공</p>
-            <img
-              src="resources/img/차트1_waifu2x_art_noise1_scale.webp"
-              width="100%"
-              height="50%"
-              style="border-radius: 25%"
-            />
-          </div>
-          <div class="AI-desc2 dsec">
-            <h4>즉각적인 피드백</h4>
-            <p>실시간으로 제공되는 피드백을 통해 아이의 학습 효과 극대화</p>
-            <img
-              src="resources/img/차트2_waifu2x_art_noise1_scale.webp"
-              alt=""
-              width="100%"
-              height="50%"
-            />
-          </div>
-          <div class="AI-desc3 dsec">
-            <h4>맞춤형 과제</h4>
-            <p>아이의 강점과 약점을 파악하여 적절한 난이도의 과제 제시</p>
-            <img
-              src="resources/img/차트3_waifu2x_art_noise1_scale.webp"
-              alt=""
-              width="100%"
-              height="50%"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 디지털 -->
-
-    <section class="section3">
-      <div id="basic-coding">
-        <h1 class="AI-main-title">디지털 시대에 필요한 감성을 배워보세요!</h1>
-        <h3 class="AI-sub-title">
-          AI학습 리포트는 여러분이 디지털 세상에서 <br />
-          올바르게 살아가는 법을 배울 수 있는 특별한 기회를 제공합니다.
-        </h3>
-        <ul class="lists">
-          <li>
-            디지털 시대의 매너: 사이버 공간에서의 예의와 적절한 행동의 중요성을
-            배우세요.
-          </li>
-          <li>
-            디지털 감성: 온라인에서의 자신감을 키우고, 다른 사람과의 존중과
-            소통의 방법을 익히세요.
-          </li>
-          <li>
-            사이버 보안: 개인정보 보호와 온라인 안전에 대한 필수적인 지식을
-            습득하세요.
-          </li>
-          <li>
-            디지털 예절: 올바른 온라인 행동 규범을 익히며, 다양한 상황에서의
-            적절한 반응 방법을 배웁니다.
-          </li>
-        </ul>
-        <p>
-          애니메이션과 퀴즈를 통해 이 모든 학습이 쉽고 재미있게 전달됩니다.
-          <br />
-          AI학습 리포트는 여러분이 디지털 세상에서 스마트하고 안전하게 길을 잡을
-          수 있도록 도와줍니다.
-        </p>
-        <div class="AI-imgs">
-          <div class="AI-img" id="AI-img1">
-            <img
-              src="resources/img/circle-play-solid.svg"
-              class="button"
-              width="50px"
-              height="50px"
-            />
-          </div>
-          <div class="AI-img" id="AI-img2">
-            <img
-              src="resources/img/circle-play-solid.svg"
-              class="button"
-              width="50px"
-              height="50px"
-            />
-          </div>
-          <div class="AI-img" id="AI-img3">
-            <img
-              src="resources/img/circle-play-solid.svg"
-              class="button"
-              width="50px"
-              height="50px"
-            />
-          </div>
-          <div class="AI-img" id="AI-img4">
-            <img
-              src="resources/img/circle-play-solid.svg"
-              class="button"
-              width="50px"
-              height="50px"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
+    <div class="bubbles">
+      <span class="purple b3"></span><span class="pink b2"></span
+      ><span class="yellow b1"></span><span class="blue b5"></span
+      ><span class="green b4"></span><span class="purple b1"></span
+      ><span class="pink b5"></span><span class="yellow b3"></span
+      ><span class="blue b2"></span><span class="green b4"></span
+      ><span class="purple b5"></span><span class="yellow b3"></span
+      ><span class="pink b4"></span>
+    </div>
   </body>
   <script>
     // 메뉴에서 class 넣고 빼서 움직이기
@@ -606,6 +740,9 @@
           parentDiv.style.transform = "scale(1, 1)";
         } else {
           parentDiv.style.transform = "scale(1.5, 1.5)";
+          setTimeout(() => {
+            parentDiv.style.transform = "scale(1, 1)";
+          }, 500); // 2초 뒤에 원래 크기로 되돌아감
         }
       });
     });
