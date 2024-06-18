@@ -7,55 +7,55 @@
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <style>
       @font-face {
-        font-family: 'NanumSquareRound';
+        font-family: "NanumSquareRound";
         src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot);
         src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot?#iefix)
-            format('embedded-opentype'),
+            format("embedded-opentype"),
           url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff2)
-            format('woff2'),
+            format("woff2"),
           url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff)
-            format('woff'),
+            format("woff"),
           url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.ttf)
-            format('truetype');
+            format("truetype");
       }
 
       @font-face {
-        font-family: 'NanumSquareRoundB';
+        font-family: "NanumSquareRoundB";
         src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.eot);
         src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.eot?#iefix)
-            format('embedded-opentype'),
+            format("embedded-opentype"),
           url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.woff2)
-            format('woff2'),
+            format("woff2"),
           url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.woff)
-            format('woff'),
+            format("woff"),
           url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.ttf)
-            format('truetype');
+            format("truetype");
       }
 
       @font-face {
-        font-family: 'NanumSquareRoundEB';
+        font-family: "NanumSquareRoundEB";
         src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.eot);
         src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.eot?#iefix)
-            format('embedded-opentype'),
+            format("embedded-opentype"),
           url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.woff2)
-            format('woff2'),
+            format("woff2"),
           url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.woff)
-            format('woff'),
+            format("woff"),
           url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.ttf)
-            format('truetype');
+            format("truetype");
       }
 
       @font-face {
-        font-family: 'NanumSquareRoundL';
+        font-family: "NanumSquareRoundL";
         src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.eot);
         src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.eot?#iefix)
-            format('embedded-opentype'),
+            format("embedded-opentype"),
           url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.woff2)
-            format('woff2'),
+            format("woff2"),
           url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.woff)
-            format('woff'),
+            format("woff"),
           url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.ttf)
-            format('truetype');
+            format("truetype");
       }
 
       * {
@@ -64,7 +64,7 @@
       body {
         width: 100%;
         height: 100%;
-        font-family: 'NanumSquareRound';
+        font-family: "NanumSquareRound";
         font-weight: bold;
       }
       .container {
@@ -75,18 +75,19 @@
       }
 
       #join_form {
-        width: 1000px;
-        height: 1000px;
+        width: 50%;
+        height: 50%;
       }
       #join_form div {
-        margin-top: 10px;
+        padding-left: 16px;
       }
       fieldset {
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
         padding: 50px;
-        height: 800px;
+        width: 100%;
         display: flex;
         flex-direction: column;
+        border-radius: 16px;
       }
 
       fieldset * {
@@ -106,9 +107,10 @@
       form p {
         display: inline-block;
         margin: 0;
-        padding: 10px;
         width: 180px;
         text-align: right;
+        /* line-height: 48px; */
+        /* background-color: darkgray; */
       }
       .errorMessage {
         font-size: 16px;
@@ -127,16 +129,90 @@
         margin-left: 50px;
       }
       input {
-        width: 260px;
-        border-radius: 4px;
-        font-family: 'LeferiPoint-WhiteObliqueA';
-        padding-left: 10px;
+        width: 280px;
         background-color: lightgray;
+        margin-left: 16px;
+        border: none;
+        font-family: "NanumSquareRound";
+        border-radius: 8px;
+        padding: 8px 8px 8px 16px;
       }
       .alert {
-        width: 800px;
-        margin-left: 180px;
-        font-size: 20px;
+        font-size: 16px;
+      }
+      .name,
+      .joinId,
+      .password,
+      .password2,
+      .birth,
+      .addrNum,
+      .addr,
+      .email,
+      .tel,
+      .set,
+      .btns {
+        padding: 10px;
+      }
+      .box {
+        display: flex;
+        align-items: center;
+      }
+      .agree-input,
+      .agree-label {
+        width: fit-content;
+      }
+      .set {
+        display: flex;
+        justify-content: flex-end;
+      }
+      .btns {
+        display: flex;
+        gap: 16px;
+        justify-content: flex-end;
+      }
+      #email2 {
+        margin-left: 4px;
+      }
+      #at {
+        margin: 0;
+        padding: 0 2px 0 6px;
+      }
+      #addrBtn {
+        margin-left: 16px;
+        padding: 6px 14px;
+        background-color: rgb(143, 143, 143);
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+      }
+      #emailaddr {
+        margin-left: 16px;
+      }
+      button {
+        font-family: "NanumSquareRound";
+      }
+      .btn2 {
+        background-color: rgb(82, 81, 81);
+        color: white;
+        padding: 16px 40px;
+        border: none;
+        border-radius: 8px;
+      }
+      select {
+        height: 40px;
+        border-radius: 8px;
+        padding-left: 4px;
+        font-family: "NanumSquareRound";
+      }
+      legend {
+        background-color: rgb(180, 180, 180);
+        border-radius: 16px;
+        width: 300px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 16px;
       }
     </style>
   </head>
@@ -211,7 +287,7 @@
               id="addrBtn"
               onclick="findAddr()"
             >
-              주소검색
+              주소 찾기
             </button>
           </div>
           <div class="addr box">
@@ -231,7 +307,8 @@
           </div>
           <div class="email box">
             <p class="email-label">이메일</p>
-            <input class="email-input" type="text" />@
+            <input class="email-input" type="text" />
+            <h4 id="at">@</h4>
             <input class="email2-input" type="text" id="email2" />
             <select class="emailaddr" id="emailaddr">
               <option value="naver.com">naver.com</option>
@@ -239,7 +316,7 @@
               <option value="daum.net">daum.net</option>
               <option value="daum.net">hanmail.net</option>
               <option value="daum.net">nate.com</option>
-              <option value="">직접입력</option>
+              <option value="" selected>직접 입력</option>
             </select>
           </div>
           <div class="tel box">
@@ -248,27 +325,32 @@
             <span type="hidden" class="err-mobile">* '-'없이 숫자만 입력</span>
           </div>
           <div class="set box">
-            <input class="agree-input" type="checkbox" name="agree" />
+            <input
+              style="zoom: 2"
+              class="agree-input"
+              type="checkbox"
+              name="agree"
+            />
             <p class="agree-label">약관 동의</p>
             <br />
             <span class="err-agree">* 필수</span>
           </div>
           <br /><br />
           <div class="btns">
-            <button class="history Btn btn" onclick="history.go(-1)">
+            <button class="history Btn btn btn2" onclick="history.go(-1)">
               이전으로
             </button>
-            <button class="join Btn btn">회원가입</button>
+            <button class="join Btn btn btn2">회원가입</button>
           </div>
         </fieldset>
       </form>
     </div>
     <script>
       // 여기서부터 아이디 중복확인 버튼 만든것
-      const idinput = document.querySelector('.id-input');
-      let elSuccessMessage = document.querySelector('.success-message'); // div.success-message.hide
-      let elFailureMessage = document.querySelector('.failure-message'); // div.failure-message.hide
-      let elFailureMessageTwo = document.querySelector('.failure-message2'); // div.failure-message2.hide
+      const idinput = document.querySelector(".id-input");
+      let elSuccessMessage = document.querySelector(".success-message"); // div.success-message.hide
+      let elFailureMessage = document.querySelector(".failure-message"); // div.failure-message.hide
+      let elFailureMessageTwo = document.querySelector(".failure-message2"); // div.failure-message2.hide
 
       function idLength(value) {
         return value.length >= 4 && value.length <= 12;
@@ -283,42 +365,42 @@
         if (idinput.value.length !== 0) {
           // 영어 또는 숫자 외의 값을 입력했을 경우
           if (onlyNumberAndEnglish(idinput.value) === false) {
-            elSuccessMessage.classList.add('hide');
-            elFailureMessage.classList.add('hide');
-            elFailureMessageTwo.classList.remove('hide'); // 영어 또는 숫자만 가능합니다
+            elSuccessMessage.classList.add("hide");
+            elFailureMessage.classList.add("hide");
+            elFailureMessageTwo.classList.remove("hide"); // 영어 또는 숫자만 가능합니다
           }
           // 글자 수가 4~12글자가 아닐 경우
           else if (idLength(idinput.value) === false) {
-            elSuccessMessage.classList.add('hide'); // 성공 메시지가 가려져야 함
-            elFailureMessage.classList.remove('hide'); // 아이디는 4~12글자이어야 합니다
-            elFailureMessageTwo.classList.add('hide'); // 실패 메시지2가 가려져야 함
+            elSuccessMessage.classList.add("hide"); // 성공 메시지가 가려져야 함
+            elFailureMessage.classList.remove("hide"); // 아이디는 4~12글자이어야 합니다
+            elFailureMessageTwo.classList.add("hide"); // 실패 메시지2가 가려져야 함
           }
           // 조건을 모두 만족할 경우
           else if (
             idLength(idinput.value) ||
             onlyNumberAndEnglish(idinput.value)
           ) {
-            elSuccessMessage.classList.remove('hide'); // 사용할 수 있는 아이디입니다
-            elFailureMessage.classList.add('hide'); // 실패 메시지가 가려져야 함
-            elFailureMessageTwo.classList.add('hide'); // 실패 메시지2가 가려져야 함
+            elSuccessMessage.classList.remove("hide"); // 사용할 수 있는 아이디입니다
+            elFailureMessage.classList.add("hide"); // 실패 메시지가 가려져야 함
+            elFailureMessageTwo.classList.add("hide"); // 실패 메시지2가 가려져야 함
           }
         }
         // 값을 입력하지 않은 경우 (지웠을 때)
         // 모든 메시지를 가린다.
         else {
-          elSuccessMessage.classList.add('hide');
-          elFailureMessage.classList.add('hide');
-          elFailureMessageTwo.classList.add('hide');
+          elSuccessMessage.classList.add("hide");
+          elFailureMessage.classList.add("hide");
+          elFailureMessageTwo.classList.add("hide");
         }
       };
       // 비밀번호 정보
 
-      let password = document.querySelector('#password');
-      let password2 = document.querySelector('#password2');
+      let password = document.querySelector("#password");
+      let password2 = document.querySelector("#password2");
 
-      let elMismatchMessage = document.querySelector('.mismatch-message'); // div.mismatch-message.hide
+      let elMismatchMessage = document.querySelector(".mismatch-message"); // div.mismatch-message.hide
       let elStrongPasswordMessage = document.querySelector(
-        '.strongPassword-message'
+        ".strongPassword-message"
       );
 
       function strongPassword(str) {
@@ -336,20 +418,20 @@
         // 값을 입력한 경우
         if (password.value.length !== 0) {
           if (strongPassword(password.value)) {
-            elStrongPasswordMessage.classList.add('hide'); // 실패 메시지가 가려져야 함
+            elStrongPasswordMessage.classList.add("hide"); // 실패 메시지가 가려져야 함
           } else {
-            elStrongPasswordMessage.classList.remove('hide'); // 실패 메시지가 보여야 함
+            elStrongPasswordMessage.classList.remove("hide"); // 실패 메시지가 보여야 함
           }
         }
         // 값을 입력하지 않은 경우 (지웠을 때)
         // 모든 메시지를 가린다.
         else {
-          elStrongPasswordMessage.classList.add('hide');
+          elStrongPasswordMessage.classList.add("hide");
         }
       };
       // 비밀번호 입력란에서 엔터 입력 시 이벤트 핸들링
-      password.addEventListener('keyup', function (e) {
-        if (e.key === 'Enter') {
+      password.addEventListener("keyup", function (e) {
+        if (e.key === "Enter") {
           e.preventDefault();
           // 비밀번호 입력란에서 엔터를 눌렀을 때의 처리를 추가
           // 예: 다음 입력 필드로 포커스를 이동하거나 특정 동작 수행
@@ -361,12 +443,12 @@
         // console.log(elInputPasswordRetype.value);
         if (password2.value.length !== 0) {
           if (isMatch(password.value, password2.value)) {
-            elMismatchMessage.classList.add('hide'); // 실패 메시지가 가려져야 함
+            elMismatchMessage.classList.add("hide"); // 실패 메시지가 가려져야 함
           } else {
-            elMismatchMessage.classList.remove('hide'); // 실패 메시지가 보여야 함
+            elMismatchMessage.classList.remove("hide"); // 실패 메시지가 보여야 함
           }
         } else {
-          elMismatchMessage.classList.add('hide'); // 실패 메시지가 가려져야 함
+          elMismatchMessage.classList.add("hide"); // 실패 메시지가 가려져야 함
         }
       };
       // 주소 검색
@@ -376,11 +458,11 @@
             // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분입니다.
             console.log(data);
 
-            let addr = ''; // 주소 변수
-            let extraAddr = ''; // 참고항목 변수
+            let addr = ""; // 주소 변수
+            let extraAddr = ""; // 참고항목 변수
 
             // 사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
-            if (data.userSelectedType === 'R') {
+            if (data.userSelectedType === "R") {
               // 사용자가 도로명 주소를 선택했을 경우
               addr = data.roadAddress;
             } else {
@@ -389,37 +471,37 @@
             }
 
             // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
-            if (data.userSelectedType === 'R') {
+            if (data.userSelectedType === "R") {
               // 법정동명이 있을 경우 추가한다. (법정리는 제외)
               // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
-              if (data.bname !== '' && /[동|로|가]$/g.test(data.bname)) {
+              if (data.bname !== "" && /[동|로|가]$/g.test(data.bname)) {
                 extraAddr += data.bname;
               }
               // 건물명이 있고, 공동주택일 경우 추가한다.
-              if (data.buildingName !== '' && data.apartment === 'Y') {
+              if (data.buildingName !== "" && data.apartment === "Y") {
                 extraAddr +=
-                  extraAddr !== ''
-                    ? ', ' + data.buildingName
+                  extraAddr !== ""
+                    ? ", " + data.buildingName
                     : data.buildingName;
               }
               // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
-              if (extraAddr !== '') {
-                extraAddr = ' (' + extraAddr + ')';
+              if (extraAddr !== "") {
+                extraAddr = " (" + extraAddr + ")";
               }
             }
 
             // 우편번호와 주소 정보를 해당 필드에 넣는다.
-            document.getElementById('sample6_postcode').value = data.zonecode;
-            document.getElementById('sample6_address').value = addr + extraAddr;
+            document.getElementById("sample6_postcode").value = data.zonecode;
+            document.getElementById("sample6_address").value = addr + extraAddr;
             // 커서를 상세주소 필드로 이동한다.
-            document.getElementById('sample6_detailAddress').focus();
+            document.getElementById("sample6_detailAddress").focus();
           },
         }).open();
       }
 
-      const emailSelect = document.getElementById('emailaddr');
-      const email2Input = document.getElementById('email2');
-      emailSelect.addEventListener('change', function () {
+      const emailSelect = document.getElementById("emailaddr");
+      const email2Input = document.getElementById("email2");
+      emailSelect.addEventListener("change", function () {
         email2Input.value = emailSelect.value;
       });
     </script>
