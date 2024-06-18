@@ -73,11 +73,14 @@ section blockquote {
   margin-bottom: 1rem;
 }
 
-section blockquote {
-  font-style: italic;
-  color: #555;
-  padding-left: 1rem;
-  border-left: 4px solid #4caf50;
+#team {
+  /* text-align: center; */
+  padding: 1rem;
+}
+
+#team h2 {
+  width: 100%;
+  margin-bottom: 2rem;
 }
 
 #team {
@@ -89,6 +92,12 @@ section blockquote {
 #team .team-member {
   text-align: center;
   margin: 1rem;
+  flex: 1 1 200px; /* Each member will take up at least 200px but can grow */
+  max-width: 220px; /* Ensures the maximum width of each member block */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: #fff;
 }
 
 #team .team-member img {
@@ -109,9 +118,6 @@ section blockquote {
 }
 
 #programs .program {
-  margin-bottom: 1.5rem;
-}
-.program {
   margin-bottom: 1.5rem;
 }
 
