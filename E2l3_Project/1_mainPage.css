@@ -1,54 +1,70 @@
 @font-face {
-  font-family: 'NanumSquareRound';
+  font-family: "NanumSquareRound";
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot);
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot?#iefix)
-      format('embedded-opentype'),
+      format("embedded-opentype"),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff2)
-      format('woff2'),
+      format("woff2"),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff)
-      format('woff'),
+      format("woff"),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.ttf)
-      format('truetype');
+      format("truetype");
 }
 
 @font-face {
-  font-family: 'NanumSquareRoundB';
+  font-family: "NanumSquareRoundB";
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.eot);
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.eot?#iefix)
-      format('embedded-opentype'),
+      format("embedded-opentype"),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.woff2)
-      format('woff2'),
+      format("woff2"),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.woff)
-      format('woff'),
+      format("woff"),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.ttf)
-      format('truetype');
+      format("truetype");
 }
 
 @font-face {
-  font-family: 'NanumSquareRoundEB';
+  font-family: "NanumSquareRoundEB";
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.eot);
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.eot?#iefix)
-      format('embedded-opentype'),
+      format("embedded-opentype"),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.woff2)
-      format('woff2'),
+      format("woff2"),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.woff)
-      format('woff'),
+      format("woff"),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.ttf)
-      format('truetype');
+      format("truetype");
 }
 
 @font-face {
-  font-family: 'NanumSquareRoundL';
+  font-family: "NanumSquareRoundL";
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.eot);
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.eot?#iefix)
-      format('embedded-opentype'),
+      format("embedded-opentype"),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.woff2)
-      format('woff2'),
+      format("woff2"),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.woff)
-      format('woff'),
+      format("woff"),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.ttf)
-      format('truetype');
+      format("truetype");
 }
+@font-face {
+  font-family: "ONE-Mobile-POP";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-POP.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GangwonEduPowerExtraBoldA";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -58,11 +74,11 @@ body {
   height: 100%;
   margin: 0;
   /* background-image: url("resources/img/home-image.jpg"); */
-  background-color: RED;
+  /* background-color: RED; */
   /* background-repeat: no-repeat; */
   /* background-size: cover;   */
   height: 100vh;
-  font-family: 'NanumSquareRound';
+  font-family: "NanumSquareRound";
 }
 
 .three-btns {
@@ -98,20 +114,27 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: normal;
-  background-color: pink;
+  /* font-weight: normal; */
+  font-family: "ONE-Mobile-POP";
+  /* background-color: pink; */
   border-radius: none;
   color: black;
   padding: 20px;
 }
-
+#mainIcon {
+  filter: invert(90%) sepia(8%) saturate(295%) hue-rotate(169deg)
+    brightness(81%) contrast(85%);
+  width: 6rem;
+  height: 6rem;
+  padding-right: 6px;
+}
 .logo-wrapper {
   display: flex;
   justify-content: center;
 }
 
 .logo {
-  font-size: 40px;
+  font-size: 3rem;
   font-weight: bold;
   color: black;
 }
@@ -119,13 +142,19 @@ body {
 .logo a {
   color: black;
   text-decoration: none;
+  font-family: "ONE-Mobile-POP";
+  color: #44474b;
+  font-size: 3.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-container {
   position: sticky;
   top: 0; /* header 아래에 위치 */
   z-index: 999; /* header 아래에 위치 */
-  background-color: aliceblue;
+  background-color: rgba(240, 248, 255, 0.808);
   padding: 10px 0;
 }
 
@@ -144,7 +173,10 @@ body {
 .main .sub a:hover,
 .main .sub a:active {
   font-size: 30px; /* 마우스를 대거나 포커스 시 크기 증가 */
-  color: red; /* 마우스를 대거나 포커스 시 색상 변경 */
+  color: rgb(115, 187, 255); /* 마우스를 대거나 포커스 시 색상 변경 */
+  /* background-color: rgb(215, 151, 228); */
+  /* border-radius: 2.5rem; */
+  /* padding: 1.25rem; */
 }
 
 .sub {
@@ -160,22 +192,28 @@ body {
 
 .content {
   position: relative;
-  height: 500px;
-  /* background-image: url("path/to/image.jpg"); */
-  background-color: pink;
+  height: 42rem;
+  background-color: #fff9db;
   background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin: 120px;
+  gap: 0;
 }
 .content-text {
   font-size: 70px;
   font-weight: bold;
-  color: blue;
+  color: rgb(71, 71, 71);
 }
-
+.content-title {
+  color: #087f5b;
+  font-family: "GangwonEduPowerExtraBoldA";
+  font-size: 5rem;
+}
+.content-subtitle {
+  font-size: 1.8rem;
+}
 .content-btn {
   margin-top: 20px;
   padding: 20px 30px;

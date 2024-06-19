@@ -16,7 +16,7 @@ button {
   margin: 0;
   padding: 0;
   border: 0;
-  font-family: 'NanumSquareRound';
+  font-family: "NanumSquareRound";
   box-sizing: border-box;
 }
 body {
@@ -58,7 +58,7 @@ section {
   margin: 2rem auto;
   background-color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+  border-radius: 3.75rem;
 }
 
 section h2 {
