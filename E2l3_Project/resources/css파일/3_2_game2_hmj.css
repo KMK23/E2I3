@@ -58,7 +58,7 @@ body {
   margin: 0;
   background-color: #fff9ea;
   font-family: "NanumSquareRound";
-  letter-spacing: 2px;
+  letter-spacing: 0.125rem;
 }
 .container {
   width: 100%;
@@ -70,42 +70,42 @@ body {
   width: 100%;
   display: flex;
   background-color: #eaf0ff;
-  padding: 24px;
-  border-radius: 32px;
+  padding: 1.5rem;
+  border-radius: 2rem;
   margin-top: 2%;
 }
 .w {
-  padding-left: 32px;
+  padding-left: 2rem;
 }
 h1,
 h4 {
   margin: 0;
-  padding: 4px;
+  padding: 0.25rem;
 }
 .level {
   width: 14%;
-  margin-right: 20px;
+  margin-right: 1.25rem;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #dcff90;
-  border-radius: 32px;
-  font-size: 24px;
+  border-radius: 2rem;
+  font-size: 1.5rem;
   font-weight: BOLD;
   text-align: center;
-  box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 0.65rem 0.65rem 0px 0px rgba(0, 0, 0, 0.4);
 }
 .title {
-  margin-bottom: 3px;
-  font-size: 32px;
-  letter-spacing: 3px;
+  margin-bottom: 1%;
+  font-size: 2rem;
+  letter-spacing: 0.1875rem;
   font-family: "NanumSquareRoundEB";
-  padding-bottom: 16px;
+  padding-bottom: 1rem;
   align-self: center;
 }
 .text {
-  font-size: 16px;
-  padding-left: 16px;
+  font-size: 1rem;
+  padding-left: 1rem;
   color: rgb(129, 129, 129);
 }
 .container {
@@ -149,6 +149,7 @@ h4 {
 }
 .right {
   width: 20%;
+  margin-left: 25%;
 }
 .examples {
   display: flex;
@@ -157,7 +158,7 @@ h4 {
   border: 5px dotted red;
   gap: 3%;
   margin-bottom: 2%;
-  border-radius: 16px;
+  border-radius: 1rem;
 }
 .examples img {
   width: 10%;
@@ -168,7 +169,7 @@ h4 {
   bottom: 50%;
   left: 50%;
   transform: translateX(-50%);
-  width: %;
+  width: 10%;
   animation: drop 1.5s;
 }
 @keyframes drop {
