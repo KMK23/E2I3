@@ -13,7 +13,7 @@
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.ttf)
       format("truetype");
 }
-.body {
+body {
   font-family: "NanumSquareRound";
   margin: 0;
   width: 100%;
@@ -23,14 +23,14 @@
   width: 100%;
   height: 100vh;
   margin: 2.5rem auto;
-  max-width: 1300px;
+  max-width: 81.25rem;
 }
 head {
-  margin: 0px 0px 32px;
+  margin: 0 0 2rem;
 }
 .headH2 {
   font-weight: 700;
-  font-size: 40px;
+  font-size: 2.5rem;
   text-align: center;
 }
 .color {
@@ -38,12 +38,143 @@ head {
 }
 .content {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  justify-content: center;
+  grid-template-columns: repeat(2, 0.5fr);
+  gap: 1.5rem;
+  justify-items: center;
   align-items: center;
+  text-align: center;
 }
 .list {
-  background-color: #09f95a;
-  border-radius: 8px;
+  background-color: #e0f2e9;
+  border-radius: 1rem;
+  margin: 0.625rem 1.25rem;
+  padding: 1.25rem;
+  width: 70%;
+}
+.list > img {
+  border-radius: 1rem;
+}
+.list-tite {
+  color: #0b1b43;
+  font-size: 1rem;
+  margin: 0.625rem 0 0;
+  text-align: center;
+}
+.list-tite > strong {
+  color: #0b1b43;
+  font-size: 1.375rem;
+}
+.payBtn {
+  padding-right: 3.5rem;
+  float: right;
+  border: none;
+  border-radius: 1rem;
+  background-color: #05d7fb;
+  font-size: 1rem;
+  width: 10%;
+  font-weight: 700;
+  padding: 0.75rem;
+  color: #fff;
+  cursor: pointer;
+  margin: 3.5rem;
+}
+.payBtn:hover {
+  background-color: #07f10c;
+}
+.bubbles {
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  top: 0;
+  z-index: -9999;
+}
+
+.bubbles span {
+  -webkit-animation: bubbelUp 15s linear infinite;
+  animation: bubbelUp 15s linear infinite;
+  border-radius: 50%;
+  height: 7vw;
+  overflow: hidden;
+  width: 7vw;
+}
+
+.bubbles span.purple {
+  background-color: #d9d7f1;
+}
+
+.bubbles span.yellow {
+  background-color: #fffdde;
+}
+
+.bubbles span.green {
+  background-color: #e7fbbe;
+}
+
+.bubbles span.pink {
+  background-color: #ffcbcb;
+}
+
+.bubbles span.blue {
+  background-color: #d6e5fa;
+}
+
+.bubbles span.b1 {
+  -webkit-animation-duration: 30s;
+  animation-duration: 30s;
+}
+
+.bubbles span.b2 {
+  -webkit-animation-duration: 20s;
+  animation-duration: 20s;
+}
+
+.bubbles span.b3 {
+  -webkit-animation-duration: 10s;
+  animation-duration: 10s;
+}
+
+.bubbles span.b4 {
+  -webkit-animation-duration: 7.5s;
+  animation-duration: 7.5s;
+}
+
+.bubbles span.b5 {
+  -webkit-animation-duration: 8s;
+  animation-duration: 8s;
+}
+
+@-webkit-keyframes bubbelUp {
+  0% {
+    opacity: 0.3;
+    -webkit-transform: translateY(2800px) scale(0.4);
+    transform: translateY(2800px) scale(0.4);
+  }
+
+  75% {
+    opacity: 0.8;
+  }
+
+  to {
+    opacity: 0.1;
+    -webkit-transform: translateY(0) scale(1.7);
+    transform: translateY(0) scale(1.7);
+  }
+}
+
+@keyframes bubbelUp {
+  0% {
+    opacity: 0.3;
+    -webkit-transform: translateY(2800px) scale(0.4);
+    transform: translateY(2800px) scale(0.4);
+  }
+
+  75% {
+    opacity: 0.8;
+  }
+
+  to {
+    opacity: 0.1;
+    -webkit-transform: translateY(0) scale(1.7);
+    transform: translateY(0) scale(1.7);
+  }
 }
