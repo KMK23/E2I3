@@ -93,7 +93,7 @@ h4 {
   font-size: 1.5rem;
   font-weight: BOLD;
   text-align: center;
-  box-shadow: 0.65rem 0.65rem 0px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 0.625rem 0.625rem 0px 0px rgba(0, 0, 0, 0.4);
 }
 .title {
   margin-bottom: 1%;
