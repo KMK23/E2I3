@@ -9,29 +9,61 @@
   </head>
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,700;1,700&display=swap");
+    * {
+      box-sizing: border-box;
+    }
 
     body {
-      font-family: "Nunito", cursive;
       color: #efefef;
       text-align: center;
-      padding: 4em 0;
       background-color: #212123;
     }
 
     .conteudo__geral {
       display: flex;
+      height: 100vh;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      flex-direction: column;
     }
-
+    .textBox {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      flex-grow: 1;
+    }
+    .textBox .logo {
+      background-color: #258f85;
+      padding: 1% 2%;
+      font-weight: 900;
+      width: fit-content;
+      border-radius: 1.3rem;
+      margin-bottom: 1%;
+    }
+    .title {
+      font-size: 3rem;
+      margin: 1% 0;
+    }
+    .span {
+      color: #fbd52d;
+      /* font-style: italic; */
+    }
+    .title-desc {
+      font-size: 1.2rem;
+      background-color: white;
+      color: #10162c;
+      padding: 1rem;
+      border-radius: 2rem;
+      margin: 1% 0;
+    }
     body {
       margin: 0;
       min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: #1d1e22;
+      background-color: #10162c;
     }
 
     img {
@@ -45,6 +77,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-grow: 3;
     }
 
     .container-carrossel {
@@ -74,7 +107,9 @@
       border-radius: 5px;
       transition: opacity 0.5s;
     }
-
+    /* .imgscale {
+      transform: scale(0.7);
+    } */
     .carrossel-item:hover {
       opacity: 1;
     }
@@ -89,64 +124,90 @@
     .carrossel-item:nth-child(1) {
       --rotatey: 0;
       transform: rotatey(var(--rotatey)) translatez(var(--tz));
-      background: linear-gradient(-229deg, #fbd52d, #ef3a7b);
+      /* background: linear-gradient(-229deg, #fbd52d, #ef3a7b); */
+      background-image: url("resources/img/원본_게임1.png");
+      background-size: cover;
     }
 
     .carrossel-item:nth-child(2) {
       --rotatey: 0;
       transform: rotatey(var(--rotatey)) translatez(var(--tz));
-      background: linear-gradient(-229deg, #ff70af, #5fa8f5);
+      background-image: url("resources/img/원본_게임2.png");
+      background-size: cover;
     }
 
     .carrossel-item:nth-child(3) {
       --rotatey: 0;
       transform: rotatey(var(--rotatey)) translatez(var(--tz));
-      background: linear-gradient(-229deg, #0cebeb, #29ffc6);
+      /* background: linear-gradient(-229deg, #0cebeb, #29ffc6); */
+      background-image: url("resources/img/원본_게임3.png");
+      background-size: cover;
     }
     .carrossel-item:nth-child(4) {
       --rotatey: 0;
       transform: rotatey(var(--rotatey)) translatez(var(--tz));
-      background: linear-gradient(-229deg, #88f7f9, #048fff);
+      /* background: linear-gradient(-229deg, #88f7f9, #048fff); */
+      background-image: url("resources/img/게임\ 사이즈\ 조절.png");
+      background-size: cover;
     }
 
     .carrossel-item:nth-child(5) {
       --rotate: 0;
       transform: rotatey(var(--rotatey)) translatez(var(--tz));
-      background: linear-gradient(-229deg, #0093e9, #80d0c7);
+      /* background: linear-gradient(-229deg, #0093e9, #80d0c7); */
+      background-image: url("resources/img/게임6.png");
+      background-size: cover;
     }
 
     .carrossel-item:nth-child(6) {
       --rotatey: 0;
       transform: rotatey(var(--rotatey)) translatez(var(--tz));
-      background: linear-gradient(-229deg, #cf91ff, #5782f5);
+      /* background: linear-gradient(-229deg, #cf91ff, #5782f5); */
+      background-image: url("resources/img/게임7.png");
+      background-size: cover;
     }
 
     @media screen and (min-width: 576px) {
       .container-carrossel {
         --widthItem: 25rem;
-        --heightItem: 25rem;
+        --heightItem: 22rem;
       }
     }
   </style>
   <body>
-    <div class="conteudo__geral">
-      <div class="container">
-        <div class="container-carrossel">
-          <div class="carrossel">
-            <div class="carrossel-item">
-              <img src="resources/img/원본_게임1.png" alt="" />
+    <div>
+      <div class="conteudo__geral">
+        <div class="textBox">
+          <div class="logo">코딩팡팡</div>
+          <h1 class="title">
+            <span class="span">코딩팡팡</span>만의 다양하고 다채로운 컨텐츠!
+          </h1>
+          <h4 class="title-desc">
+            단계적으로 설계된 프로그램식 블로 코딩을 경험해보세요
+          </h4>
+        </div>
+        <div class="container">
+          <div class="container-carrossel">
+            <div class="carrossel">
+              <div class="carrossel-item img1">
+                <!-- <img src="resources/img/원본_게임1.png" class="imgscale" /> -->
+              </div>
+              <div class="carrossel-item img2">
+                <!-- <img src="resources/img/원본_게임2.png" alt="" /> -->
+              </div>
+              <div class="carrossel-item img2">
+                <!-- <img src="resources/img/원본_게임3.png" alt="" /> -->
+              </div>
+              <div class="carrossel-item img2">
+                <!-- <img src="resources/img/게임5.png" alt="" /> -->
+              </div>
+              <div class="carrossel-item img2">
+                <!-- <img src="resources/img/게임6.png" alt="" /> -->
+              </div>
+              <div class="carrossel-item img2">
+                <!-- <img src="resources/img/게임7.png" alt="" /> -->
+              </div>
             </div>
-            <div class="carrossel-item">
-              <img src="resources/img/원본_게임2.png" alt="" />
-            </div>
-            <div class="carrossel-item">
-              <img src="resources/img/원본_게임3.png" alt="" />
-            </div>
-            <div class="carrossel-item">
-              <img src="resources/img/원본_게임4.png" alt="" />
-            </div>
-            <div class="carrossel-item"></div>
-            <div class="carrossel-item"></div>
           </div>
         </div>
       </div>
@@ -229,7 +290,19 @@
     const update = () => {
       lastMoveTo = lerp(moveTo, lastMoveTo, 0.05);
       carrossel.style.setProperty("--rotatey", lastMoveTo + "deg");
-
+      carrosselItems.forEach((item) => {
+        const angle =
+          (parseFloat(item.style.getPropertyValue("--rotatey")) + lastMoveTo) %
+          360;
+        if (angle < 0) {
+          angle += 360;
+        }
+        if (angle >= 330 || angle <= 30) {
+          item.style.opacity = 1;
+        } else {
+          item.style.opacity = 0.5;
+        }
+      });
       requestAnimationFrame(update);
     };
 
@@ -245,36 +318,31 @@
       return carrosselProps;
     };
 
+    const getDirection = (item) => {
+      const rect = item.getBoundingClientRect();
+      const middleX = window.innerWidth / 2;
+
+      if (rect.left > middleX) {
+        return "right";
+      } else if (rect.right < middleX) {
+        return "left";
+      }
+
+      return null;
+    };
+
     const initEvents = () => {
-      // Eventos del mouse
-      carrossel.addEventListener("mousedown", () => {
-        isMouseDown = true;
-        carrossel.style.cursor = "grabbing";
-      });
-      carrossel.addEventListener("mouseup", () => {
-        isMouseDown = false;
-        carrossel.style.cursor = "grab";
-      });
-      container.addEventListener("mouseleave", () => (isMouseDown = false));
+      carrosselItems.forEach((item) => {
+        item.addEventListener("click", () => {
+          const direction = getDirection(item);
 
-      carrossel.addEventListener(
-        "mousemove",
-        (e) => isMouseDown && getPosX(e.clientX)
-      );
-
-      // Eventos del touch
-      carrossel.addEventListener("touchstart", () => {
-        isMouseDown = true;
-        carrossel.style.cursor = "grabbing";
+          if (direction === "left") {
+            moveTo += 60; // 왼쪽으로 회전
+          } else if (direction === "right") {
+            moveTo -= 60; // 오른쪽으로 회전
+          }
+        });
       });
-      carrossel.addEventListener("touchend", () => {
-        isMouseDown = false;
-        carrossel.style.cursor = "grab";
-      });
-      container.addEventListener(
-        "touchmove",
-        (e) => isMouseDown && getPosX(e.touches[0].clientX)
-      );
 
       window.addEventListener("resize", createcarrossel);
 
