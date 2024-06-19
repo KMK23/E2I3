@@ -59,11 +59,11 @@ body {
   margin: 0;
   background-color: #fff9ea;
   font-family: "NanumSquareRound";
-  letter-spacing: 2px;
+  letter-spacing: 0.125rem;
 }
 .container {
   width: 100%;
-  max-width: 1000px;
+  max-width: 62.5rem;
   margin: 0 auto;
   height: 100vh;
 }
@@ -71,73 +71,73 @@ body {
   width: 100%;
   display: flex;
   background-color: #eaf0ff;
-  padding: 24px;
-  border-radius: 32px;
+  padding: 1.5rem;
+  border-radius: 2rem;
   margin-top: 2%;
 }
 .w {
-  padding-left: 32px;
+  padding-left: 2rem;
 }
 h1,
 h4 {
   margin: 0;
-  padding: 4px;
+  padding: 0.25rem;
 }
 .level {
   width: 14%;
-  margin-right: 20px;
+  margin-right: 1.25rem;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #ff9d90;
-  border-radius: 32px;
-  font-size: 24px;
+  border-radius: 2rem;
+  font-size: 1.5rem;
   font-weight: BOLD;
   text-align: center;
-  box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 0.625rem 0.625rem 0px 0px rgba(0, 0, 0, 0.4);
 }
 .title {
-  margin-bottom: 3px;
-  font-size: 32px;
-  letter-spacing: 3px;
+  margin-bottom: 0.1875rem;
+  font-size: 2rem;
+  letter-spacing: 0.1875rem;
   font-family: "NanumSquareRoundEB";
-  padding-bottom: 16px;
+  padding-bottom: 1rem;
   align-self: center;
 }
 .text {
-  font-size: 16px;
-  padding-left: 16px;
+  font-size: 1rem;
+  padding-left: 1rem;
   color: rgb(129, 129, 129);
 }
 .container {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 1.5rem;
 }
 .password-box {
-  border: 4px dotted rgb(169, 230, 177);
+  border: 0.25rem dotted rgb(169, 230, 177);
   display: flex;
   justify-content: space-around;
-  padding: 30px 150px;
-  border-radius: 40px;
+  padding: 1.875rem 9.375rem;
+  border-radius: 2.5rem;
   position: relative;
 }
 .password {
   position: absolute;
-  top: -25px;
-  border: 3px dashed rgb(95, 163, 104);
-  width: 140px;
+  top: -1.5625rem;
+  border: 0.1875rem dashed rgb(95, 163, 104);
+  width: 8.75rem;
   text-align: center;
-  padding: 10px;
+  padding: 0.625rem;
   background-color: rgb(169, 230, 177);
-  border-radius: 10px;
+  border-radius: 0.625rem;
 }
 .wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25%, auto));
   grid-template-rows: repeat(auto-fit, minmax(25%, auto));
-  border: 4px solid rgb(169, 230, 177);
-  border-radius: 10px;
+  border: 0.25rem solid rgb(169, 230, 177);
+  border-radius: 0.625rem;
   height: 70%;
   width: 80%;
   align-self: center;
@@ -147,15 +147,12 @@ h4 {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 4px solid rgb(169, 230, 177);
+  border: 0.25rem solid rgb(169, 230, 177);
   cursor: pointer;
 }
 .tree {
   display: none;
 }
-/* .hidden {
-  display: none;
-} */
 .visited {
   background-color: rgba(184, 224, 219, 0.425);
 }

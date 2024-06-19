@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: "NanumSquareRound";
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot);
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot?#iefix)
+      format("embedded-opentype"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff2)
+      format("woff2"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff)
+      format("woff"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.ttf)
+      format("truetype");
+}
+.body {
+  font-family: "NanumSquareRound";
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+.container {
+  width: 100%;
+  height: 100vh;
+  margin: 2.5rem auto;
+  max-width: 1300px;
+}
+head {
+  margin: 0px 0px 32px;
+}
+.headH2 {
+  font-weight: 700;
+  font-size: 40px;
+  text-align: center;
+}
+.color {
+  color: #4bff00;
+}
+.content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+}
+.list {
+  background-color: #09f95a;
+  border-radius: 8px;
+}
