@@ -70,36 +70,10 @@ body {
 .header {
   width: 100%;
   display: flex;
-}
-h1,
-h4 {
-  margin: 0;
-}
-.level {
-  width: 10%;
-  margin-right: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: beige;
-  border-radius: 18px;
-}
-.title {
-  margin-bottom: 3px;
-}
-.container {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-.header {
-  width: 100%;
-  display: flex;
-  /* border: 10px solid #eaf0ff; */
   background-color: #eaf0ff;
-  padding: 40px;
+  padding: 24px;
   border-radius: 32px;
-  margin-top: 40px;
+  margin-top: 2%;
 }
 .w {
   padding-left: 32px;
@@ -124,26 +98,35 @@ h4 {
 }
 .title {
   margin-bottom: 3px;
-  font-size: 48px;
+  font-size: 32px;
   letter-spacing: 3px;
   font-family: "NanumSquareRoundEB";
   padding-bottom: 16px;
   align-self: center;
 }
 .text {
-  font-size: 24px;
+  font-size: 16px;
   padding-left: 16px;
   color: rgb(129, 129, 129);
 }
 .container {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 24px;
 }
+
 .bkImg {
   background-color: bisque;
-  height: 80px;
+  height: 8vmin; /* 절대 단위에서 상대 단위로 변경 */
 }
+
+.groundImg,
+.groundImg2,
+.groundImg3 {
+  width: 100%;
+  height: 9.5vmin; /* 절대 단위에서 상대 단위로 변경 */
+}
+
 .ground-one {
   position: relative;
   display: flex;
@@ -151,28 +134,32 @@ h4 {
   align-items: center;
   flex-direction: column;
 }
+
 .vege {
   position: absolute;
-  top: -50px;
+  top: -5vmin; /* 절대 단위에서 상대 단위로 변경 */
 }
+
 #hole1 {
-  width: 60px;
-  height: 60px;
+  width: 6vmin; /* 절대 단위에서 상대 단위로 변경 */
+  height: 6vmin; /* 절대 단위에서 상대 단위로 변경 */
   background-color: #31210f;
   border-radius: 0 0 50% 50%;
   position: absolute;
   top: 0;
-  right: 280px;
+  right: 28vmin; /* 절대 단위에서 상대 단위로 변경 */
 }
+
 #hole2 {
-  width: 60px;
-  height: 60px;
+  width: 6vmin; /* 절대 단위에서 상대 단위로 변경 */
+  height: 6vmin; /* 절대 단위에서 상대 단위로 변경 */
   background-color: #31210f;
   border-radius: 0 0 50% 50%;
   position: absolute;
   top: 0;
-  right: 180px;
+  right: 18vmin; /* 절대 단위에서 상대 단위로 변경 */
 }
+
 .hole-dropped {
   background-color: transparent;
   border-radius: 0;
@@ -181,66 +168,76 @@ h4 {
   position: relative;
 }
 /* 게임 2번 */
+
 .ground-two {
   position: relative;
 }
+
 .vege2 {
   position: absolute;
-  top: -70px;
+  top: -7vmin; /* 절대 단위에서 상대 단위로 변경 */
 }
+
 #game2-hole1 {
-  width: 60px;
-  height: 60px;
+  width: 6vmin; /* 절대 단위에서 상대 단위로 변경 */
+  height: 6vmin; /* 절대 단위에서 상대 단위로 변경 */
   background-color: #31210f;
   border-radius: 0 0 50% 50%;
   position: absolute;
   top: 0;
-  right: 230px;
+  right: 23vmin; /* 절대 단위에서 상대 단위로 변경 */
 }
+
 #game2-hole2 {
-  width: 60px;
-  height: 60px;
+  width: 6vmin; /* 절대 단위에서 상대 단위로 변경 */
+  height: 6vmin; /* 절대 단위에서 상대 단위로 변경 */
   background-color: #31210f;
   border-radius: 0 0 50% 50%;
   position: absolute;
   top: 0;
-  right: 30px;
+  right: 3vmin; /* 절대 단위에서 상대 단위로 변경 */
 }
+
 /* 게임3번 */
 .ground-three {
   position: relative;
 }
+
 .vege3 {
   position: absolute;
-  top: -60px;
+  top: -6vmin; /* 절대 단위에서 상대 단위로 변경 */
 }
+
 #game3-hole1 {
-  width: 60px;
-  height: 60px;
+  width: 6vmin; /* 절대 단위에서 상대 단위로 변경 */
+  height: 6vmin; /* 절대 단위에서 상대 단위로 변경 */
   background-color: #31210f;
   border-radius: 0 0 50% 50%;
   position: absolute;
   top: 0;
-  right: 250px;
+  right: 25vmin; /* 절대 단위에서 상대 단위로 변경 */
 }
+
 #game3-hole2 {
-  width: 60px;
-  height: 60px;
+  width: 6vmin; /* 절대 단위에서 상대 단위로 변경 */
+  height: 6vmin; /* 절대 단위에서 상대 단위로 변경 */
   background-color: #31210f;
   border-radius: 0 0 50% 50%;
   position: absolute;
   top: 0;
-  right: 150px;
+  right: 15vmin; /* 절대 단위에서 상대 단위로 변경 */
 }
+
 #game3-hole3 {
-  width: 60px;
-  height: 60px;
+  width: 6vmin; /* 절대 단위에서 상대 단위로 변경 */
+  height: 6vmin; /* 절대 단위에서 상대 단위로 변경 */
   background-color: #31210f;
   border-radius: 0 0 50% 50%;
   position: absolute;
   top: 0;
-  right: 50px;
+  right: 5vmin; /* 절대 단위에서 상대 단위로 변경 */
 }
+
 /* 게임 이미지 */
 .gameImgs {
   display: grid;
@@ -253,13 +250,14 @@ h4 {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 3px solid pink;
+  border: 0.3vmin solid pink; /* 절대 단위에서 상대 단위로 변경 */
   box-sizing: border-box;
   border-right: none;
   background-color: white;
 }
+
 .gameImgs div:last-child {
-  border-right: 3px solid pink;
+  border-right: 0.3vmin solid pink; /* 절대 단위에서 상대 단위로 변경 */
 }
 
 .gameImgs img {
@@ -272,8 +270,8 @@ h4 {
 .game1-holes,
 .game2-holes,
 .game3-holes {
-  width: 60px;
-  height: 60px;
+  width: 6vmin; /* 절대 단위에서 상대 단위로 변경 */
+  height: 6vmin; /* 절대 단위에서 상대 단위로 변경 */
   background-color: #31210f;
   border-radius: 0 0 50% 50%;
   position: absolute;
@@ -292,31 +290,32 @@ h4 {
 /* 이미지별 드롭된 스타일 */
 .dropped.carrot {
   position: absolute;
-  top: 10px;
-  left: -30px;
-  width: 30px;
+  top: 1vmin;
+  left: -3vmin; /* 절대 단위에서 상대 단위로 변경 */
+  width: 3vmin; /* 절대 단위에서 상대 단위로 변경 */
   transform: translate(-50%, -50%);
 }
 
 .dropped.spring-onion {
   position: absolute;
-  top: 10px;
-  left: -30px;
-  width: 130px;
+  top: 1vmin;
+  left: -3vmin; /* 절대 단위에서 상대 단위로 변경 */
+  width: 13vmin; /* 절대 단위에서 상대 단위로 변경 */
   transform: translate(-50%, -50%);
 }
+
 .dropped.onion {
   position: absolute;
-  top: 0px;
-  left: -30px;
-  width: 30px;
+  top: 0;
+  left: -3vmin; /* 절대 단위에서 상대 단위로 변경 */
+  width: 3vmin; /* 절대 단위에서 상대 단위로 변경 */
   transform: translate(-50%, -50%);
 }
 
 .dropped.radish {
   position: absolute;
-  top: 0px;
-  left: -30px;
-  width: 130px;
+  top: 0;
+  left: -3vmin; /* 절대 단위에서 상대 단위로 변경 */
+  width: 13vmin; /* 절대 단위에서 상대 단위로 변경 */
   transform: translate(-50%, -50%);
 }

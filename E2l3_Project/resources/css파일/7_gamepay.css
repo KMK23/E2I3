@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
 }
+
 @font-face {
   font-family: "NanumSquareRound";
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot);
@@ -14,6 +15,10 @@
       format("truetype");
 }
 
+html {
+  font-size: 16px; /* 1rem = 16px */
+}
+
 body,
 html {
   font-family: "NanumSquareRound";
@@ -22,8 +27,8 @@ html {
   height: 100%;
   padding: 0;
   position: relative;
-  overflow: hidden;
 }
+
 body::before {
   content: "";
   position: absolute;
@@ -37,49 +42,75 @@ body::before {
   opacity: 0.5;
   z-index: -1;
 }
+
 .container {
   text-align: right;
   width: 100%;
   height: 100vh;
-  max-width: 1300px;
+  max-width: 81.25rem; /* 1300px -> 81.25rem */
   margin: 2.5rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
+
 .header {
-  margin: 0 0 60px;
+  margin: 0 0 1rem; /* 60px -> 1rem */
 }
+
 .headerH2 {
   font-weight: 700;
-  font-size: 40px;
+  font-size: 2.5rem; /* 40px -> 2.5rem */
   text-align: center;
 }
+
 .color {
   color: #4bff00;
 }
+
 .content {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  justify-content: center;
-  align-items: center;
-  gap: 32px;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0.5rem; /* 줄 간격을 줄입니다 */
+  flex-grow: 1;
+  height: calc(
+    100vh - 6rem
+  ); /* 전체 높이에서 header와 margin을 뺀 높이로 설정합니다 */
 }
+
 .list {
+  display: flex;
+  flex-direction: column;
   text-align: center;
   background-color: #09f95a;
-  border-radius: 8px;
-  width: 50%;
-  padding: 16px;
+  border-radius: 0.5rem; /* 8px -> 0.5rem */
+  padding: 1rem; /* 16px -> 1rem */
+  justify-content: space-between;
+  height: 33.33%; /* 이미지 비율에 맞춰 크기를 줄입니다 */
 }
+
 .gameImg {
-  border-radius: 8px;
+  border-radius: 0.5rem; /* 8px -> 0.5rem */
+  width: 100%; /* 부모 요소의 너비에 맞춥니다 */
+  height: auto; /* 비율에 맞춰 높이를 자동 조정합니다 */
+  object-fit: cover;
+  transform: scale(0.33); /* 이미지 배율을 원래 크기로 유지합니다 */
+  transform-origin: center;
 }
+
 .img-container {
-  overflow: hidden;
+  overflow: visible;
   position: relative;
   display: inline-block;
+  width: 100%; /* 부모 요소의 너비에 맞춥니다 */
+  height: auto; /* 부모 요소의 높이에 맞춥니다 */
 }
+
 .img-container img {
   width: 100%;
   height: auto;
+  object-fit: cover;
 }
 
 .pay-link {
@@ -89,33 +120,39 @@ body::before {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
-  padding: 10px;
+  padding: 0.625rem; /* 10px -> 0.625rem */
   border: 1px solid #ccc;
   z-index: 1000;
   text-decoration: none;
   color: black;
 }
+
 .img-container:hover .pay-link {
   display: block;
 }
+
 .title {
-  font-size: 16px;
+  font-size: 1rem; /* 16px -> 1rem */
   background-clip: padding-box;
 }
+
 .title > strong {
-  font-size: 22px;
+  font-size: 1.375rem; /* 22px -> 1.375rem */
 }
+
 .payBtn {
   border: none;
   width: 16%;
-  padding: 12px;
+  padding: 0.75rem; /* 12px -> 0.75rem */
   background-color: #05d7fb;
-  border-radius: 16px;
-  font-size: 16px;
+  border-radius: 1rem; /* 16px -> 1rem */
+  font-size: 1rem; /* 16px -> 1rem */
   color: #fff;
   font-weight: 700;
   cursor: pointer;
+  align-self: center;
 }
+
 .payBtn:hover {
   background-color: #07f10c;
 }
