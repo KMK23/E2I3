@@ -60,11 +60,32 @@ section {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 3.75rem;
 }
-
+#about {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  justify-content: space-between;
+}
+.part {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.part p {
+  width: 70%;
+}
 section h2 {
   font-size: 2rem;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
   color: #4caf50;
+  height: 20%;
+  justify-content: flex-start;
+}
+
+section p {
+  /* height: 80%; */
 }
 
 section p,
