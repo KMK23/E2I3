@@ -156,8 +156,8 @@ section blockquote {
 footer {
   text-align: center;
   padding: 1rem 0;
-  background-color: #4caf50;
-  color: white;
+  background-color: pink;
+  color: black;
   position: relative;
   bottom: 0;
   width: 100%;

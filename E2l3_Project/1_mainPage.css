@@ -162,7 +162,7 @@ body {
   position: relative;
   height: 500px;
   /* background-image: url("path/to/image.jpg"); */
-  background-color: red;
+  background-color: pink;
   background-position: center;
   display: flex;
   justify-content: center;
@@ -231,51 +231,51 @@ body {
 
 .special {
   color: #007bff;
-  font-size: 35px;
+  font-size: 2.1875rem;
 }
 
 .aside-btns {
   display: flex;
-  padding: 0 10px;
-  gap: 10px;
+  padding: 0.625rem;
+  gap: 0.625rem;
 }
 
 .fir-btn {
   color: white;
   background-color: blue;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: bold;
   border: none;
-  border-radius: 30px;
+  border-radius: 1.875rem;
   cursor: pointer;
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem;
   transition: background-color 0.3s ease, font-size 0.3s ease;
 }
 
 .sec-btn {
   color: black;
   background-color: white;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: bold;
-  border-radius: 20px;
+  border-radius: 1.25rem;
   cursor: pointer;
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem;
   transition: background-color 0.3s ease, font-size 0.3s ease;
   border: none;
 }
 
 .fir-btn:hover,
 .sec-btn:hover {
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 section {
   padding: 2rem;
-  max-width: 1200px;
+  max-width: 75rem;
   margin: 2rem auto;
   background-color: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+  box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.625rem;
 }
 
 .bubbles {
@@ -351,8 +351,8 @@ section {
 @-webkit-keyframes bubbelUp {
   0% {
     opacity: 0.3;
-    -webkit-transform: translateY(2800px) scale(0.4);
-    transform: translateY(2800px) scale(0.4);
+    -webkit-transform: translateY(175rem) scale(0.4);
+    transform: translateY(175rem) scale(0.4);
   }
 
   75% {
@@ -369,8 +369,8 @@ section {
 @keyframes bubbelUp {
   0% {
     opacity: 0.3;
-    -webkit-transform: translateY(2800px) scale(0.4);
-    transform: translateY(2800px) scale(0.4);
+    -webkit-transform: translateY(175rem) scale(0.4);
+    transform: translateY(175rem) scale(0.4);
   }
 
   75% {
