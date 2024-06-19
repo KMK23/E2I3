@@ -122,7 +122,7 @@ h4 {
   width: 70%;
   display: grid;
   grid-template-rows: repeat(3, 1fr);
-  border: 9px solid #ffb300;
+  border: 0.5625rem solid #ffb300;
   border-radius: 1rem;
   border-bottom: none;
   margin-bottom: 1rem;
@@ -136,7 +136,7 @@ h4 {
 .area1,
 .area2,
 .area3 {
-  border-bottom: 6px solid #ffb300;
+  border-bottom: 0.375rem solid #ffb300;
 }
 .word {
   display: flex;
@@ -144,7 +144,7 @@ h4 {
   align-items: center;
   font-size: 2rem;
   font-weight: 1000;
-  border-right: 6px solid #ffb300;
+  border-right: 0.375rem solid #ffb300;
   color: #834e56;
   background-color: #fff68f;
 }
@@ -154,7 +154,7 @@ h4 {
 .icon2,
 .icon5,
 .icon8 {
-  border-right: 6px solid #ffb300;
+  border-right: 0.375rem solid #ffb300;
 }
 
 .icon {
@@ -198,7 +198,7 @@ h4 {
   left: -1.25rem;
   width: 0;
   height: 0;
-  border: 10px solid transparent;
+  border: 0.625rem solid transparent;
   border-right-color: #e6f7ff;
 }
 .second-area img {
@@ -223,7 +223,7 @@ h4 {
   justify-content: center;
   align-items: center;
   box-shadow: 0 0 0.625rem 0.375rem rgba(0, 0, 0, 0.7);
-  border: 25px groove silver;
+  border: 1.5625rem groove silver;
 }
 
 .input {
