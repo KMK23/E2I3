@@ -316,14 +316,7 @@ section {
   border-radius: 0.625rem;
 }
 
-.bubbles {
-  display: flex;
-  justify-content: space-around;
-  position: absolute;
-  top: 0;
-  z-index: -9999;
-}
-
+/* 배경 버블 */
 .bubbles {
   display: flex;
   justify-content: space-around;

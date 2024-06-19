@@ -1,0 +1,461 @@
+@font-face {
+  font-family: "NanumSquareRound";
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot);
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot?#iefix)
+      format("embedded-opentype"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff2)
+      format("woff2"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff)
+      format("woff"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.ttf)
+      format("truetype");
+}
+
+@font-face {
+  font-family: "NanumSquareRoundB";
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.eot);
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.eot?#iefix)
+      format("embedded-opentype"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.woff2)
+      format("woff2"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.woff)
+      format("woff"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.ttf)
+      format("truetype");
+}
+
+@font-face {
+  font-family: "NanumSquareRoundEB";
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.eot);
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.eot?#iefix)
+      format("embedded-opentype"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.woff2)
+      format("woff2"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.woff)
+      format("woff"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.ttf)
+      format("truetype");
+}
+
+@font-face {
+  font-family: "NanumSquareRoundL";
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.eot);
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.eot?#iefix)
+      format("embedded-opentype"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.woff2)
+      format("woff2"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.woff)
+      format("woff"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.ttf)
+      format("truetype");
+}
+
+.bubbles {
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  top: 0;
+  z-index: -9999;
+}
+
+.bubbles span {
+  -webkit-animation: bubbelUp 15s linear infinite;
+  animation: bubbelUp 15s linear infinite;
+  border-radius: 50%;
+  height: 7vw;
+  overflow: hidden;
+  width: 7vw;
+}
+
+.bubbles span.purple {
+  background-color: #d9d7f1;
+}
+
+.bubbles span.yellow {
+  background-color: #fffdde;
+}
+
+.bubbles span.green {
+  background-color: #e7fbbe;
+}
+
+.bubbles span.pink {
+  background-color: #ffcbcb;
+}
+
+.bubbles span.blue {
+  background-color: #d6e5fa;
+}
+
+.bubbles span.b1 {
+  -webkit-animation-duration: 30s;
+  animation-duration: 30s;
+}
+
+.bubbles span.b2 {
+  -webkit-animation-duration: 20s;
+  animation-duration: 20s;
+}
+
+.bubbles span.b3 {
+  -webkit-animation-duration: 10s;
+  animation-duration: 10s;
+}
+
+.bubbles span.b4 {
+  -webkit-animation-duration: 7.5s;
+  animation-duration: 7.5s;
+}
+
+.bubbles span.b5 {
+  -webkit-animation-duration: 8s;
+  animation-duration: 8s;
+}
+
+@-webkit-keyframes bubbelUp {
+  0% {
+    opacity: 0.3;
+    -webkit-transform: translateY(2800px) scale(0.4);
+    transform: translateY(2800px) scale(0.4);
+  }
+
+  75% {
+    opacity: 0.8;
+  }
+
+  to {
+    opacity: 0.1;
+    -webkit-transform: translateY(0) scale(1.7);
+    transform: translateY(0) scale(1.7);
+  }
+}
+
+@keyframes bubbelUp {
+  0% {
+    opacity: 0.3;
+    -webkit-transform: translateY(2800px) scale(0.4);
+    transform: translateY(2800px) scale(0.4);
+  }
+
+  75% {
+    opacity: 0.8;
+  }
+
+  to {
+    opacity: 0.1;
+    -webkit-transform: translateY(0) scale(1.7);
+    transform: translateY(0) scale(1.7);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "NanumSquareRoundEB";
+}
+
+/* body {
+  height: 100vh;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #fff;
+} */
+.nav-bar {
+  height: 4rem;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2%;
+  background-color: #fa9a85;
+  border-radius: 5rem;
+}
+.nav-bar ul {
+  list-style-type: none;
+  display: flex;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: white;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0;
+  padding: 1%;
+}
+
+.nav {
+  width: 80%;
+}
+.nav-item {
+  width: 100%;
+  text-align: center;
+}
+.nav-bar ul li a {
+  color: white;
+  padding: 5%;
+  margin: 0;
+  border-radius: 1rem 1rem 0 0;
+  text-decoration: none;
+}
+.container {
+  position: relative;
+  padding-bottom: 10rem;
+}
+.wrap-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  word-break: keep-all;
+  height: 100%;
+}
+
+.title-label {
+  font-size: 1rem;
+  font-style: italic;
+  color: #ffd43b;
+  margin-top: 1rem;
+  font-weight: 900;
+}
+.sub-title {
+  font-size: 1.2rem;
+  color: #343a40;
+  font-weight: 600;
+}
+.title {
+  font-size: 1.8rem;
+  color: #ffd43b;
+  margin: 0.5rem;
+}
+.title-text {
+  background-color: #ffb300;
+  padding: 1.3rem;
+  border-radius: 2rem;
+}
+.active {
+  background-color: #495057;
+  width: 30%;
+}
+
+.gameAll {
+  position: relative;
+}
+.gameBtn1 {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  right: 5%;
+  border: none;
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  font-weight: 800;
+  cursor: pointer;
+  background-color: rgba(255, 224, 122, 0.479);
+}
+
+.game-bar ul {
+  display: flex;
+  list-style-type: none;
+  background-color: #e9ecef;
+  font-size: 1rem;
+  padding: 1.2rem;
+  border-radius: 2rem;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.game-bar {
+  width: 60%;
+}
+.gameLink {
+  color: #495057;
+  text-decoration: none;
+  font-weight: 600;
+  width: 100%;
+  height: 100%;
+}
+.selected {
+  width: 60%;
+  height: 100%;
+}
+.gameImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.gameImg img {
+  display: block;
+  margin: 0 auto;
+  border: 3px solid #88c0d0;
+  border-radius: 6%;
+}
+/* AI 학습 리포트 */
+
+.AI-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 10%;
+  background-color: #e7fbbe;
+  padding: 3%;
+  border-radius: 5%;
+}
+.AI-text-img {
+  display: flex;
+  flex-direction: column;
+  border-radius: 3rem;
+  padding: 2rem;
+  gap: 10%;
+}
+.AI-text-img h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  font-style: italic;
+  font-family: "NanumSquareRound";
+}
+.AI-text-img h3 {
+  color: #e0bb35;
+  font-family: "NanumSquareRound";
+  font-size: 1rem;
+}
+.AI-stu-img img {
+  border-radius: 50%;
+}
+
+.dsec {
+  color: white;
+}
+.dsec h4 {
+  font-size: 1.5rem;
+}
+.dsec p {
+  font-size: 1rem;
+}
+.sc-text {
+  margin: 0.5rem;
+}
+.AI-desc1 {
+  background-color: #ad75fd;
+  border-radius: 32px;
+  margin: 0;
+  height: auto;
+  padding: 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20rem;
+}
+
+.AI-desc2 {
+  background-color: #ff9d00;
+  border-radius: 32px;
+  margin: 0;
+  height: auto;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20rem;
+}
+.AI-desc3 {
+  background-color: #9dc300;
+  border-radius: 32px;
+  margin: 0;
+  height: auto;
+  padding: 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20rem;
+}
+
+/* 아래 부분을 추가 */
+.content-desc {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+/* 디지털 학습 */
+
+#basic-coding {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50px;
+  padding: 50px;
+}
+.AI-main-title {
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 800;
+}
+.AI-sub-title {
+  font-size: 1rem;
+}
+.lists {
+  list-style-type: none;
+  background-color: #fa9a85;
+  font-size: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.lists li {
+  font-family: "NanumSquareRound";
+}
+p {
+  font-family: "NanumSquareRound";
+}
+.AI-imgs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.AI-img {
+  width: 17rem;
+  height: 17rem;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+.button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  cursor: pointer;
+}
+
+.AI-imgs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10%;
+  width: 80%;
+  height: 100%;
+  place-items: center;
+}
+#AI-img1 {
+  background-image: url("resources/img/1_KakaoTalk_20240614_141659959.png");
+  background-size: cover;
+  background-position: center;
+}
+#AI-img2 {
+  background-image: url("resources/img/2_KakaoTalk_20240614_141659959_01.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#AI-img3 {
+  background-image: url("resources/img/3_KakaoTalk_20240614_141659959_02.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#AI-img4 {
+  background-image: url("resources/img/4_KakaoTalk_20240614_141659959_03.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
