@@ -19,6 +19,7 @@ body {
   width: 100%;
   height: 100%;
   /* margin: 100px 0 0 0; */
+  word-break: keep-all;
 }
 .container {
   display: flex;
@@ -27,7 +28,7 @@ body {
   align-items: center;
   position: relative;
   width: 100%;
-  max-width: 1300px;
+  max-width: 62.5rem;
   margin: 2.5rem auto;
   height: 100vh;
 }
@@ -35,48 +36,48 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 1.5rem;
 }
 div > img,
 h3 > img {
-  width: 50px;
-  height: 50px;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 .first-content {
   display: flex;
   align-items: flex-start;
   justify-content: space-around;
-  gap: 200px;
-  border: 30px solid lightgray;
-  padding: 32px;
+  gap: 12rem;
+  border: 1.875rem solid lightgray;
+  padding: 2rem;
 }
 .left-area {
   display: flex;
   flex-direction: column;
-  gap: 56px;
+  gap: 3rem;
 }
 .user-info {
-  gap: 36px;
+  gap: 3.25rem;
   display: flex;
   align-items: center;
 }
 .user-info img {
   background-color: #83b4eb;
   border-radius: 50%;
-  padding: 4px;
+  padding: 0.25rem;
 }
 .my-info {
   display: flex;
-  gap: 48px;
+  gap: 3rem;
   cursor: pointer;
   justify-content: center;
   align-items: center;
 }
 .my-info div {
-  font-size: 18px;
+  font-size: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 0.5rem;
   justify-content: center;
   align-items: center;
 }
@@ -86,27 +87,27 @@ h3 > img {
 .right-area {
   border-left: 2px dotted gray;
   height: 100%;
-  padding-left: 40px;
+  padding-left: 2.5rem;
 }
 .right-area h3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 16px;
-  font-size: 24px;
+  gap: 1rem;
+  font-size: 1.5rem;
   font-weight: 100;
 }
 .right-area h3 img {
   background-color: rgb(241, 217, 76);
   border-radius: 50%;
-  padding: 4px;
+  padding: 0.25rem;
 }
 .bottom-area {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
-  font-size: 24px;
+  font-size: 1.25rem;
   background-color: rgb(168, 168, 168);
   justify-items: center;
   align-items: center;
@@ -118,14 +119,14 @@ h3 > img {
 .my-shipping,
 .my-info2 {
   display: grid;
-  border: 1px solid white;
+  border: 0.1rem solid white;
   width: 100%;
   text-align: center;
-  padding: 24px;
+  padding: 1.25rem;
   cursor: pointer;
 }
 .bottom-area p {
-  margin: 8px;
+  margin: 0.5rem;
 }
 .my-classroom2:hover,
 .review:hover,

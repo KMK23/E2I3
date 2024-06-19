@@ -59,11 +59,13 @@ body {
   margin: 0;
   background-color: #fff9ea;
   font-family: "NanumSquareRound";
-  letter-spacing: 2px;
+  /* letter-spacing: 2px; */
+  letter-spacing: 0.125rem;
 }
 .container {
   width: 100%;
-  max-width: 1000px;
+  /* max-width: 1000px; */
+  max-width: 62.5rem;
   margin: 0 auto;
   height: 100vh;
 }
@@ -71,55 +73,72 @@ body {
   width: 100%;
   display: flex;
   background-color: #eaf0ff;
-  padding: 24px;
-  border-radius: 32px;
+  /* padding: 24px; */
+  padding: 1.5rem;
+  /* border-radius: 32px; */
+  border-radius: 2rem;
   margin-top: 2%;
 }
 .w {
-  padding-left: 32px;
+  /* padding-left: 32px; */
+  padding-left: 2rem;
 }
 h1,
 h4 {
   margin: 0;
-  padding: 4px;
+  /* padding: 4px; */
+  padding: 0.25rem;
 }
 .level {
   width: 14%;
-  margin-right: 20px;
+  /* margin-right: 20px; */
+  margin-right: 1.25rem;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #90b0ff;
-  border-radius: 32px;
-  font-size: 24px;
+  /* border-radius: 32px; */
+  border-radius: 2rem;
+  /* font-size: 24px; */
+  font-size: 1.5rem;
   font-weight: BOLD;
   text-align: center;
-  box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.4);
+  /* box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.4); */
+  box-shadow: 0.625rem 0.625rem 0px 0px rgba(0, 0, 0, 0.4);
 }
 .title {
-  margin-bottom: 3px;
-  font-size: 32px;
-  letter-spacing: 3px;
+  /* margin-bottom: 3px; */
+  margin-bottom: 0.1875rem;
+  /* font-size: 32px; */
+  font-size: 2rem;
+  /* letter-spacing: 3px; */
+  letter-spacing: 0.1875rem;
   font-family: "NanumSquareRoundEB";
-  padding-bottom: 16px;
+  /* padding-bottom: 16px; */
+  padding-bottom: 1rem;
   align-self: center;
 }
 .text {
-  font-size: 16px;
-  padding-left: 16px;
+  /* font-size: 16px; */
+  font-size: 1rem;
+  /* padding-left: 16px; */
+  padding-left: 1rem;
   color: rgb(129, 129, 129);
 }
 .container {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  /* gap: 24px; */
+  gap: 1.5rem;
 }
 .wrapper {
-  margin-top: 8px;
-  border: 10px dotted pink;
-  border-radius: 24px;
+  margin-top: 1%;
+  /* border: 10px dotted pink; */
+  border: 0.625rem dotted pink;
+  /* border-radius: 24px; */
+  border-radius: 1.5rem;
   display: flex;
-  padding: 24px 24px;
+  padding: 2.5% 2.5%;
   position: relative;
   justify-content: space-around;
   align-items: center;
@@ -127,9 +146,12 @@ h4 {
 .recipe {
   background-color: rgba(252, 160, 176, 0.904);
   position: absolute;
-  padding: 10px 60px;
-  border-radius: 16px;
-  top: -28px;
+  /* padding: 10px 60px; */
+  padding: 0.625rem 3.75rem;
+  /* border-radius: 16px; */
+  border-radius: 1rem;
+  /* top: -28px; */
+  top: -1.75rem;
   left: 38%;
 }
 .ingredient {
@@ -143,10 +165,12 @@ h4 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10%;
-  padding-top: 16px;
+  /* padding-top: 16px; */
+  padding-top: 1rem;
 }
 .plate {
-  margin-top: 40px;
+  /* margin-top: 40px; */
+  margin-top: 2.5rem;
   /* margin-left: 70px; */
   /* height: 700px; */
   position: relative;
@@ -161,16 +185,139 @@ h4 {
 }
 .sandwich {
   position: absolute;
-  width: 300px;
-  height: 300px;
-  top: 45px;
-  left: 116px;
+  /* width: 300px; */
+  width: 18.75rem;
+  /* height: 300px; */
+  height: 18.75rem;
+  /* top: 45px; */
+  top: 2.8125rem;
+  /* left: 116px; */
+  left: 7.25rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .selected {
-  width: 350px;
-  height: 350px;
+  /* width: 350px; */
+  width: 21.875rem;
+  /* height: 350px; */
+  height: 21.875rem;
   position: absolute;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+  }
+
+  .level {
+    width: 100%;
+    margin-bottom: 16px;
+    font-size: 20px;
+  }
+
+  .w {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .text {
+    font-size: 14px;
+    padding-left: 0;
+  }
+
+  .wrapper {
+    padding: 5%;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .recipe {
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 40px;
+    font-size: 14px;
+  }
+
+  .play-game {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .plate {
+    margin-top: 20px;
+  }
+
+  .plate-img {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .sandwich {
+    width: 80%;
+    height: 80%;
+    top: 10%;
+    left: 10%;
+  }
+
+  .selected {
+    width: 100%;
+    height: 100%;
+  }
+}
+.ingredient-img {
+  width: 80px;
+  height: 80px;
+}
+/* .sandwich-ingredients {
+  display: flex;
+  justify-content: space-around;
+  gap: 8px;
+} */
+/* .sandwich-ingredient {
+  width: 80px;
+  height: 80px;
+} */
+@media (max-width: 480px) {
+  .header {
+    padding: 8px;
+  }
+
+  .level {
+    font-size: 16px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .text {
+    font-size: 12px;
+  }
+
+  .wrapper {
+    padding: 8%;
+  }
+
+  .recipe {
+    font-size: 12px;
+  }
+
+  .plate-img {
+    max-width: 300px;
+  }
+
+  .sandwich {
+    width: 90%;
+    height: 90%;
+    top: 5%;
+    left: 5%;
+  }
 }
