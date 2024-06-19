@@ -5,7 +5,165 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>상담하기</title>
   </head>
-  <style></style>
+  <style>
+    @font-face {
+      font-family: "NanumSquareRound";
+      src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot);
+      src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot?#iefix)
+          format("embedded-opentype"),
+        url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff2)
+          format("woff2"),
+        url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff)
+          format("woff"),
+        url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.ttf)
+          format("truetype");
+    }
+
+    @font-face {
+      font-family: "NanumSquareRoundB";
+      src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.eot);
+      src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.eot?#iefix)
+          format("embedded-opentype"),
+        url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.woff2)
+          format("woff2"),
+        url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.woff)
+          format("woff"),
+        url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.ttf)
+          format("truetype");
+    }
+
+    @font-face {
+      font-family: "NanumSquareRoundEB";
+      src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.eot);
+      src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.eot?#iefix)
+          format("embedded-opentype"),
+        url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.woff2)
+          format("woff2"),
+        url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.woff)
+          format("woff"),
+        url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.ttf)
+          format("truetype");
+    }
+
+    @font-face {
+      font-family: "NanumSquareRoundL";
+      src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.eot);
+      src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.eot?#iefix)
+          format("embedded-opentype"),
+        url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.woff2)
+          format("woff2"),
+        url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.woff)
+          format("woff"),
+        url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.ttf)
+          format("truetype");
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+
+      font-family: "NanumSquareRound";
+      letter-spacing: 2px;
+    }
+    .container {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .header {
+      display: flex;
+      flex-direction: column;
+    }
+    fieldset {
+      border-radius: 1rem;
+      padding: 2rem;
+    }
+    .header h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      padding: 0.8rem 0;
+      text-align: center;
+    }
+    .header h3 {
+      padding: 0.5rem 0;
+      border-bottom: 1px dashed black;
+      font-size: 1.2rem;
+    }
+    .user-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    input[type="text"],
+    input[type="tel"] {
+      height: 2rem;
+      width: 50%;
+      margin: 0.5rem 0;
+    }
+    .user-info > span,
+    .main-area span,
+    .middle-area span {
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+    }
+    span > span {
+      color: rgb(75, 127, 238);
+    }
+    .mains h3 {
+      padding: 0.5rem 0;
+      border-bottom: 1px dashed black;
+      font-size: 1.2rem;
+    }
+    .main-area2,
+    .main-area3 {
+      margin-bottom: 1rem;
+    }
+    .main-area4 {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .agree {
+      display: flex;
+      align-items: center;
+      font-size: 1.2rem;
+    }
+    .agree span:first-child {
+      background-color: lightgrey;
+      padding: 0.2rem;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 1.5rem;
+      margin-right: 1rem;
+    }
+    .agree span:nth-child(2) {
+      background-color: lightgrey;
+      padding: 0.4rem;
+      display: flex;
+      font-size: 1rem;
+      margin-left: 1rem;
+      border-radius: 50%;
+    }
+    .footer {
+      margin-bottom: 0.5rem;
+    }
+    .footer button {
+      display: flex;
+
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
   <body>
     <div class="container">
       <div class="wrap">
@@ -13,23 +171,90 @@
           <fieldset>
             <div class="header">
               <h2>무료상담 신청</h2>
+
               <h3>신청자 정보</h3>
             </div>
             <div class="user-info">
-              <span class="tel">휴대폰 번호 *</span>
+              <span class="tel">휴대폰 번호<span> *</span></span>
               <input
                 type="tel"
                 placeholder="'-'없이 휴대폰 번호를 입력해 주세요."
               />
-              <br />
-              <span class="addr">주소 *</span>
-              <input
-                class="addr-input1"
-                id="addr-input1"
-                type="text"
-                placeholder="기본주소"
-              />
-              <input class="addr-input2" id="addr-input2"
+              <div class="middle-area">
+                <span class="addr">주소 <span> *</span><br /></span>
+                <input
+                  class="addrNum-input"
+                  id="addrNum-input"
+                  type="text"
+                  placeholder="우편번호"
+                />
+                <button class="addrBtn" id="addrBtn" onclick="">
+                  주소 찾기
+                </button>
+                <input
+                  class="addr-input1"
+                  id="addr-input1"
+                  type="text"
+                  placeholder="기본주소"
+                />
+                <input
+                  class="addr-input2"
+                  id="addr-input2"
+                  type="text"
+                  placeholder="상세주소"
+                />
+              </div>
+              <div class="mains">
+                <h3>학습자 정보</h3>
+                <div class="main-area">
+                  <span class="children-name">자녀 이름<span> *</span></span>
+                  <input type="text" id="children-name" />
+                  <br />
+                  <div class="main-area2">
+                    <span class="children-age">자녀 연령<span> *</span></span>
+                    <input type="radio" name="ages" value="유아" />유아
+                    <input type="radio" name="ages" value="중고등" />중고등
+                    <input type="radio" name="ages" value="성인" />성인
+                    <input type="radio" name="ages" value="초등저학년" />초등
+                    저학년(1~3학년)
+                    <input type="radio" name="ages" value="초등고학년" />초등
+                    고학년(4~6학년)
+                    <br />
+                  </div>
+                  <div class="main-area3">
+                    <span class="leaning-form">학습 형태 <span> *</span></span>
+                    <input
+                      type="radio"
+                      name="forming"
+                      value="선생님방문"
+                    />선생님 방문
+                    <input
+                      type="radio"
+                      name="forming"
+                      value="학습센터"
+                    />학습센터
+                    <input type="radio" name="forming" value="온라인" />온라인
+                    <br />
+                  </div>
+                  <div class="main-area4">
+                    <span>상담 내용</span>
+                    <textarea rows="5" cols="50"></textarea>
+                  </div>
+                </div>
+                <div class="footer">
+                  <h2 class="agree">
+                    <span>i</span>개인정보 수집 및 이용 동의<span
+                      >내용보기</span
+                    >
+                  </h2>
+                  <input
+                    type="checkbox"
+                    style="zoom: 1"
+                    name="checkit"
+                  />개인정보 수집 및 이용에 동의합니다.(필수)
+                </div>
+                <button class="submit">상담 신청하기</button>
+              </div>
             </div>
           </fieldset>
         </form>
