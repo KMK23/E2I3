@@ -345,7 +345,7 @@
         </fieldset>
       </form>
     </div>
-    <script>
+    <script type="module">
       // 여기서부터 아이디 중복확인 버튼 만든것
       const idinput = document.querySelector(".id-input");
       let elSuccessMessage = document.querySelector(".success-message"); // div.success-message.hide
@@ -504,6 +504,8 @@
       emailSelect.addEventListener("change", function () {
         email2Input.value = emailSelect.value;
       });
+
+      import { db, getDatas } from "./resources/js/practice.js";
     </script>
   </body>
 </html>
