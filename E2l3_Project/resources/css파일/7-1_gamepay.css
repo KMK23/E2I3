@@ -14,6 +14,7 @@
       format("truetype");
 }
 body {
+  overflow: hidden;
   font-family: "NanumSquareRound";
   margin: 0;
   width: 100%;
@@ -26,11 +27,17 @@ body {
   max-width: 81.25rem;
 }
 head {
-  margin: 0 0 2rem;
+  margin: 1.5rem;
 }
 .headH2 {
+<<<<<<< Updated upstream
+  margin: 1rem;
+  font-weight: 500;
+  font-size: 2rem;
+=======
   font-weight: 700;
-  font-size: 2.5rem;
+  font-size: 1.25rem;
+>>>>>>> Stashed changes
   text-align: center;
 }
 .color {
@@ -38,8 +45,9 @@ head {
 }
 .content {
   display: grid;
-  grid-template-columns: repeat(2, 0.5fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
+  width: 95%;
   justify-items: center;
   align-items: center;
   text-align: center;
@@ -47,60 +55,124 @@ head {
 .list {
   background-color: #e0f2e9;
   border-radius: 1rem;
+<<<<<<< Updated upstream
+  padding: 1rem;
+  width: 100%;
+  margin: 0;
+=======
   margin: 0.625rem 1.25rem;
   padding: 1.25rem;
-  width: 70%;
+  width: 50%;
+>>>>>>> Stashed changes
 }
 .list > img {
   border-radius: 1rem;
+  max-height: 60%;
+  object-fit: contain;
 }
 .list-tite {
+  padding: 0.3125rem;
+  margin: 0;
   color: #0b1b43;
   font-size: 1rem;
-  margin: 0.625rem 0 0;
   text-align: center;
 }
 .list-tite > strong {
   color: #0b1b43;
-  font-size: 1.375rem;
+  font-size: 1.125rem;
 }
 .payBtncontainer {
-  margin-right: 3.75rem;
+<<<<<<< Updated upstream
+  text-align: center;
+  position: relative;
+=======
+  margin-right: 1rem;
+>>>>>>> Stashed changes
 }
 .payBtn {
-  float: right;
+  position: absolute;
+  top: 90%;
+  left: 87%;
   border: none;
   border-radius: 1rem;
   background-color: #05d7fb;
   font-size: 1rem;
+<<<<<<< Updated upstream
+  width: 10%;
+  z-index: 1000;
+=======
   width: 15%;
-  z-index: 1;
+>>>>>>> Stashed changes
   font-weight: 700;
-  padding: 1.5rem;
+  padding: 1rem;
   color: #fff;
   cursor: pointer;
-  margin: 3.125rem;
+  display: inline-block;
 }
 
 /* 반응형 스타일 - 작은 화면 */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .payBtn {
-    width: 80%;
-    min-width: 120px;
-  }
-}
+<<<<<<< Updated upstream
+    width: 15%;
 
-/* 반응형 스타일 - 중간 크기 화면 */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .payBtn {
-    width: 50%;
-    min-width: 140px;
+    top: 90%;
+    max-width: 7.5rem;
+=======
+    width: 100%;
+    padding: 0.9375rem;
+    font-size: 1.125rem;
+>>>>>>> Stashed changes
+  }
+  .content {
+    width: 75%;
   }
 }
-/*  */
 .payBtn:hover {
   background-color: #07f10c;
 }
+
+/* 반응형 스타일 - 중간 크기 화면 */
+@media (min-width: 37.5625rem) and (max-width: 64rem) {
+  .payBtn {
+<<<<<<< Updated upstream
+    width: 10%;
+    top: 90%;
+    min-width: 8.75rem;
+    right: 70%;
+  }
+  .content {
+    width: 85%;
+=======
+    width: auto;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.0625rem;
+>>>>>>> Stashed changes
+  }
+}
+/* 반응형 스타일 - 큰 화면 */
+@media (min-width: 1024px) and (max-width: 1900px) {
+  .payBtn {
+    width: 10%;
+    left: 85%;
+    top: 90%;
+  }
+  .content {
+    width: 85%;
+  }
+}
+
+/* 반응형 스타일 - 최대 축소 화면 */
+@media (min-width: 767px) and (max-width: 500px) {
+  .payBtn {
+    width: 16%;
+    top: 90%;
+  }
+  .content {
+    width: 65%;
+  }
+}
+
 .bubbles {
   display: flex;
   justify-content: space-around;
