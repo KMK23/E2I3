@@ -13,6 +13,7 @@
   flex-direction: column;
   align-items: center;
   flex-grow: 1;
+  margin-top: 6rem;
 }
 .textBox .logo {
   background-color: #258f85;
@@ -161,4 +162,5 @@ img {
 
 #gamePr {
   background-color: #0f193f;
+  height: 120vh;
 }
