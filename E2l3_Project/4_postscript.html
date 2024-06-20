@@ -97,17 +97,30 @@
       </div>
     </div>
   </body>
-  <script>
-    let list = document.querySelectorAll('.icon');
+  <script type="module">
+    let list = document.querySelectorAll(".icon");
     list.forEach(function (el) {
-      el.addEventListener('click', function () {
-        el.classList.add('selected');
+      el.addEventListener("click", function () {
+        el.classList.add("selected");
         list.forEach(function (el2) {
           if (el !== el2) {
-            el2.classList.remove('selected');
+            el2.classList.remove("selected");
           }
         });
       });
     });
+
+    import {
+      db,
+      getDatas,
+      addDatas,
+      deleteDatas,
+      updateDatas,
+    } from "./resources/js/practice.js";
+    async function getFAQ() {
+      const snapshot = await getDatas("FAQ_Best5");
+      console.log(snapshot);
+      const divTag = document.querySelector(".text-list");
+    }
   </script>
 </html>
