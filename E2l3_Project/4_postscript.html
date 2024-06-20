@@ -53,12 +53,12 @@
           <p class="list-p">
             <i class="fa-solid fa-magnifying-glass"></i>
             <br />
-            회원가입을 하려는데 이미<br />가입되어있다고 나옵니다.
+            회원가입을 하려는데 이미 가입되어있다고 나옵니다.
           </p>
           <p class="list-p">
             <i class="fa-solid fa-magnifying-glass"></i>
             <br />
-            아이디와 비밀번호가 정확한데<br />로그인이 되지 않습니다.
+            아이디와 비밀번호가 정확한데 로그인이 되지 않습니다.
           </p>
           <p class="list-p">
             <i class="fa-solid fa-magnifying-glass"></i>
@@ -70,7 +70,7 @@
           </p>
           <p class="list-p">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <br />신청한 강의는 어디에서 수강할수<br />있나요?
+            <br />신청한 강의는 어디에서 수강할수 있나요?
           </p>
           <p class="list-p">
             <i class="fa-solid fa-plus"></i>
@@ -110,17 +110,61 @@
       });
     });
 
-    import {
-      db,
-      getDatas,
-      addDatas,
-      deleteDatas,
-      updateDatas,
-    } from "./resources/js/practice.js";
-    async function getFAQ() {
-      const snapshot = await getDatas("FAQ_Best5");
-      console.log(snapshot);
-      const divTag = document.querySelector(".text-list");
-    }
+    // import {
+    //   db,
+    //   getDatas,
+    //   addDatas,
+    //   deleteDatas,
+    //   updateDatas,
+    // } from "./resources/js/practice.js";
+    // async function getFAQ() {
+    //   const snapshot = await getDatas("FAQ_Best5");
+    //   console.log(snapshot);
+    //   const divTag = document.querySelector(".text-list");
+    //   snapshot.forEach((doc) => {
+    //     const { Q1, Q2 } = doc.data();
+    //     let listPTag = `
+    //       <p class="list-p">
+    //         <i class="fa-solid fa-magnifying-glass"></i>
+    //         <br />
+    //         ${Q1}
+    //       </p>
+    //       <p class="list-p">
+    //         <i class="fa-solid fa-magnifying-glass"></i>
+    //         <br />
+    //         ${Q2}
+    //       </p>
+    //       <p class="list-p">
+    //         <i class="fa-solid fa-magnifying-glass"></i>
+    //         <br />도서 구입 방법을 알고 싶습니다.
+    //       </p>
+    //       <p class="list-p">
+    //         <i class="fa-solid fa-magnifying-glass"></i>
+    //         <br />결제 방법에 대해 알고 싶습니다.
+    //       </p>
+    //       <p class="list-p">
+    //         <i class="fa-solid fa-magnifying-glass"></i>
+    //         <br />신청한 강의는 어디에서 수강할수 있나요?
+    //       </p>
+    //       <p class="list-p">
+    //         <i class="fa-solid fa-plus"></i>
+    //         <br />
+    //         자주하는 질문 <strong class="color">FAQ</strong><br />더보기
+    //       </p>`;
+    //     divTag.innerHTML = listPTag;
+    //   });
+    // }
+    // getFAQ();
+
+    const arr = [
+      {
+        Q1: "회원가입을 하려는데 이미 가입되어있다고 나옵니다.",
+        Q2: "아이디와 비밀번호가 정확한데 로그인이 되지 않습니다.",
+        Q3: "도서 구입 방법을 알고 싶습니다.",
+        Q4: "결제 방법에 대해 알고 싶습니다.",
+        Q5: "신청한 강의는 어디에서 수강할 수 있나요?",
+      },
+      {},
+    ];
   </script>
 </html>
