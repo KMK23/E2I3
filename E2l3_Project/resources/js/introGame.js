@@ -40,13 +40,13 @@ const gameBtn2 = document.getElementById("Btn2");
 const gameBtn3 = document.getElementById("Btn3");
 
 gameBtn1.addEventListener("click", function () {
-  location.href = "3_1_game1.html";
+  location.href = "../game/game_sandwich.html";
 });
 gameBtn2.addEventListener("click", function () {
   location.href = "../game/game_sandwich.html";
 });
 gameBtn3.addEventListener("click", function () {
-  location.href = "3_2_game2_hmj.html";
+  location.href = "../game/game_sandwich.html";
 });
 
 // 동영상 플레이
