@@ -58,7 +58,7 @@ body {
   position: relative;
   text-align: center;
 }
-.reviewImgs .Btn {
+.reviewImgs .reviewBtn {
   display: none;
   position: absolute;
   top: 50%;
@@ -70,14 +70,14 @@ body {
   padding: 10px 20px;
   cursor: pointer;
 }
-.reviewImgs .Btn img {
+.reviewImgs .reviewBtn img {
   filter: invert(1) brightness(2);
 }
 .reviewImgs:hover .kids,
-.reviewImgs .Btn:hover ~ .kids {
+.reviewImgs .reviewBtn:hover ~ .kids {
   transform: scale(1.3, 1.3);
 }
-.reviewImgs:hover .Btn {
+.reviewImgs:hover .reviewBtn {
   display: block;
 }
 .reviewText {
@@ -97,7 +97,7 @@ body {
 .reviewImgs:hover .reviewText {
   display: block;
 }
-.spans {
+.reviewSpans {
   color: #ff9d00;
   display: flex;
   justify-content: flex-start;
