@@ -8,6 +8,14 @@
     <link rel="stylesheet" href="2.intro.css" />
     <link rel="stylesheet" href="resources/css파일/intro_game.css" />
     <link rel="stylesheet" href="resources/css파일/gamePreview.css" />
+    <link rel="stylesheet" href="5_cash.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
 
   <body>
@@ -43,12 +51,11 @@
     </div>
     <section class="content">
       <div class="content-text">
-        <span class="content-title">놀이처럼 배우는 우리 아이 첫 코딩!</span>
-        <br />
-        <span class="content-subtitle"
-          >아이들의 호기심을 가득 채워줄 다양한 활동과 게임으로 코딩의 기초를
-          다져보세요.</span
-        >
+        <div class="content-title">놀이처럼 배우는 우리 아이 첫 코딩!</div>
+        <div class="content-subtitle">
+          아이들의 호기심을 가득 채워줄 다양한 활동과 게임으로 코딩의 기초를
+          다져보세요.
+        </div>
         <br />
         <button class="content-btn">Let's play!</button>
       </div>
@@ -66,22 +73,22 @@
     <!-- 소개인사 내용 시작 -->
     <section id="about">
       <div class="part">
-        <h2>유아 코딩교육의 중요성</h2>
-        <p>
+        <h2 class="part-title">유아 코딩교육의 중요성</h2>
+        <p class="part-text">
           유아 코딩교육은 논리적 사고와 문제 해결 능력을 키웁니다. <br />
           이는 학습 능력과 자신감을 높입니다.
         </p>
       </div>
       <div class="part">
-        <h2>코딩팡팡의 목표</h2>
-        <p>
+        <h2 class="part-title">코딩팡팡의 목표</h2>
+        <p class="part-text">
           모든 아이들이 재미있고 쉽게 코딩을 배우는 것. <br />
           코딩은 아이들의 미래에 긍정적인 영향을 줄 중요한 기술입니다.
         </p>
       </div>
       <div class="part">
-        <h2>코딩팡팡의 비전</h2>
-        <p>
+        <h2 class="part-title">코딩팡팡의 비전</h2>
+        <p class="part-text">
           모든 아이들이 창의적인 문제 해결사로 성장하는 것. <br />
           코딩은 창의적 문제 해결 능력을 길러줍니다.
         </p>
@@ -98,7 +105,7 @@
             <span class="span">코딩팡팡</span>만의 다양하고 다채로운 컨텐츠!
           </h1>
           <h4 class="title-desc">
-            단계적으로 설계된 프로그램식 블로 코딩을 경험해보세요
+            단계적으로 설계된 프로그램식 블록 코딩을 경험해보세요
           </h4>
         </div>
         <div class="container99">
@@ -297,36 +304,16 @@
           </p>
           <div class="AI-imgs">
             <div class="AI-img" id="AI-img1">
-              <img
-                src="resources/img/circle-play-solid.svg"
-                class="button"
-                width="50px"
-                height="50px"
-              />
+              <i class="fa-regular fa-circle-play fa-2xl button"></i>
             </div>
             <div class="AI-img" id="AI-img2">
-              <img
-                src="resources/img/circle-play-solid.svg"
-                class="button"
-                width="50px"
-                height="50px"
-              />
+              <i class="fa-regular fa-circle-play fa-2xl button"></i>
             </div>
             <div class="AI-img" id="AI-img3">
-              <img
-                src="resources/img/circle-play-solid.svg"
-                class="button"
-                width="50px"
-                height="50px"
-              />
+              <i class="fa-regular fa-circle-play fa-2xl button"></i>
             </div>
             <div class="AI-img" id="AI-img4">
-              <img
-                src="resources/img/circle-play-solid.svg"
-                class="button"
-                width="50px"
-                height="50px"
-              />
+              <i class="fa-regular fa-circle-play fa-2xl button"></i>
             </div>
           </div>
         </div>
@@ -450,7 +437,7 @@
         </div>
       </div>
     </section> -->
-    <section id="testimonials">
+    <!-- <section id="testimonials">
       <h2>부모님 후기</h2>
       <br />
       <h3>김재형 (35세, 직장인)</h3>
@@ -471,7 +458,7 @@
         문제를 해결하는 힘을 키우는 걸 보니 정말 행복해요!"
       </blockquote>
       <br />
-    </section>
+    </section> -->
     <section id="contact">
       <h2>연락처 및 문의</h2>
       <p>이메일: cdpp0612@gmail.com</p>
@@ -484,6 +471,20 @@
         <button type="submit">보내기</button>
       </form>
     </section>
+    <section class="bottom1">
+      <div class="content1">
+        <div class="coding1">
+          <p class="text-p">"친구들은 이미 코딩 시작했어요!"</p>
+          <h2 class="text-h2">무료체험을 시작해 보세요.</h2>
+        </div>
+        <div class="paymone">
+          <a href="#" class="code-link" target="_blank"
+            >0원으로 7일간 무료체험을 시작해보세요</a
+          >
+        </div>
+      </div>
+    </section>
+
     <footer>
       <p>&copy; 2024 코딩팡팡 By E2I3</p>
       <p>전화번호: 042-057-9323</p>

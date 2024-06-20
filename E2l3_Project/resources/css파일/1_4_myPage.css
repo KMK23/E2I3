@@ -30,7 +30,7 @@ body {
   width: 100%;
   max-width: 62.5rem;
   margin: 2.5rem auto;
-  height: 100vh;
+  /* height: 100vh; */
 }
 .content {
   width: 100%;
@@ -48,7 +48,7 @@ h3 > img {
   align-items: flex-start;
   justify-content: space-around;
   gap: 12rem;
-  border: 1.875rem solid lightgray;
+  border: 1.875rem solid rgb(196, 247, 180);
   padding: 2rem;
 }
 .left-area {
@@ -108,7 +108,7 @@ h3 > img {
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   font-size: 1.25rem;
-  background-color: rgb(168, 168, 168);
+  background-color: rgb(117, 197, 153);
   justify-items: center;
   align-items: center;
 }
