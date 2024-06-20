@@ -92,13 +92,14 @@ body {
 .signup-btn,
 .mypage-btn {
   padding: 5px 10px;
+  margin-top: 0.8rem;
   font-size: 14px;
   font-weight: normal;
   color: black;
   text-decoration: none;
-  border: 1px solid #ccc;
+  border: 1px solid #fff;
   background-color: white;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease, border 0.3s ease;
 }
@@ -107,7 +108,7 @@ body {
 .signup-btn:hover,
 .mypage-btn:hover {
   background-color: skyblue;
-  border: 1px solid #ccc;
+  border: 1px solid skyblue;
 }
 
 .header {
@@ -126,20 +127,24 @@ body {
     brightness(81%) contrast(85%);
   width: 6rem;
   height: 6rem;
-  padding-right: 6px;
+  /* padding-right: 6px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .logo-wrapper {
   display: flex;
   justify-content: center;
+  /* height: 100px; */
 }
 
-.logo {
+.logo1 {
   font-size: 3rem;
   font-weight: bold;
   color: black;
 }
 
-.logo a {
+.logo1 a {
   color: black;
   text-decoration: none;
   font-family: "ONE-Mobile-POP";
@@ -148,6 +153,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  justify-content: space-evenly;
+  width: 340px;
 }
 
 .main-container {
