@@ -283,7 +283,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: greenyellow;
+  justify-content: space-around;
+  background-color: rgb(226, 255, 182);
   width: 800px;
   height: 80px;
   border-radius: 50px;
@@ -298,6 +299,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* justify-content: space-evenly; */
   padding-left: 10px;
   font-size: 30px;
 }
@@ -308,19 +310,22 @@ body {
 }
 
 .special {
-  color: #007bff;
+  color: #5395db;
   font-size: 2.1875rem;
+  font-family: "ONE-Mobile-POP";
+  padding: 0.6rem;
 }
 
 .aside-btns {
   display: flex;
   padding: 0.625rem;
   gap: 0.625rem;
+  padding-left: 2rem;
 }
 
 .fir-btn {
   color: white;
-  background-color: blue;
+  background-color: rgb(164, 164, 255);
   font-size: 1rem;
   font-weight: bold;
   border: none;
