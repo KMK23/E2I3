@@ -252,6 +252,7 @@ body {
   bottom: 1rem;
   transform: translateX(-50%);
   left: 50%;
+  z-index: 999;
 }
 
 .aside-text {
