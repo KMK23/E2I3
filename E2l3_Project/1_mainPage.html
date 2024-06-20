@@ -34,12 +34,13 @@
     </div>
     <div class="header">
       <div class="logo-wrapper">
-        <div class="logo">
-          <a href="#"
-            ><img
-              src="resources/img/코딩노트아이콘.svg"
-              id="mainIcon"
-            />코딩팡팡
+        <div class="logo1">
+          <a href="#">
+            <div id="mainIcon">
+              <!-- <img src="resources/img/코딩노트아이콘.svg" id="mainIcon" /> -->
+              <i class="fa-solid fa-laptop-code fa-xl"></i>
+            </div>
+            코딩팡팡
           </a>
         </div>
       </div>
@@ -561,10 +562,17 @@
     </section>
 
     <footer>
-      <p>&copy; 2024 코딩팡팡 By E2I3</p>
-      <p>전화번호: 042-057-9323</p>
-      <p>이메일: cdpp0612@gmail.com</p>
-      <p>주소: 대전광역시 중구 중앙로 121번길 20 (선화동 방산빌딩) 5층 501호</p>
+      <div>
+        <p>&copy; 2024 코딩팡팡 By E2I3</p>
+        <p>전화번호: 042-057-9323</p>
+        <p>이메일: cdpp0612@gmail.com</p>
+        <p>
+          주소: 대전광역시 중구 중앙로 121번길 20 (선화동 방산빌딩) 5층 501호
+        </p>
+      </div>
+      <button class="button-up">
+        <i class="fa-solid fa-arrow-up fa-2xl" style="color: white"></i>
+      </button>
     </footer>
     <!-- 소개인사 내용 끝 -->
     <div class="bubbles">
@@ -580,4 +588,32 @@
 
   <script src="resources/js/gamePreview.js"></script>
   <script src="resources/js/introGame.js"></script>
+  <script>
+    let scrollToTopButton = document.querySelector(".button-up");
+
+    // 사용자가 문서의 20px 아래로 스크롤하면 버튼을 표시
+    window.onscroll = function () {
+      scrollFunction();
+    };
+
+    function scrollFunction() {
+      if (
+        document.body.scrollTop > 20 ||
+        document.documentElement.scrollTop > 20
+      ) {
+        scrollToTopButton.style.display = "block";
+      } else {
+        scrollToTopButton.style.display = "none";
+      }
+    }
+
+    // 버튼에 이벤트 리스너 추가
+    scrollToTopButton.addEventListener("click", function () {
+      // 문서의 맨 위로 부드럽게 스크롤
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth", // 부드러운 스크롤
+      });
+    });
+  </script>
 </html>
