@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #FFB6C1;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1em;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    padding: 2em;
+}
+
+.community-section {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin: 2em auto;
+    padding: 2em;
+    max-width: 800px;
+}
+
+.community-section h2 {
+    margin-top: 0;
+}
+
+.community-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+}
+
+.community-topic {
+    background-color: #e6f7ff;
+    border-radius: 8px;
+    padding: 1em;
+    text-align: center;
+}
+
+.community-topic h3 {
+    margin-top: 0;
+}
+
+.view-button {
+    display: inline-block;
+    background-color: #00796b;
+    color: white;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-top: 1em;
+}
+
+.view-button:hover {
+    background-color: #004d40;
+}
+
+footer {
+    background-color: #FFB6C1;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
