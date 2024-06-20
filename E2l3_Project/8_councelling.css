@@ -1,0 +1,151 @@
+@font-face {
+  font-family: "NanumSquareRound";
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot);
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot?#iefix)
+      format("embedded-opentype"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff2)
+      format("woff2"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff)
+      format("woff"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.ttf)
+      format("truetype");
+}
+
+@font-face {
+  font-family: "NanumSquareRoundB";
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.eot);
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.eot?#iefix)
+      format("embedded-opentype"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.woff2)
+      format("woff2"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.woff)
+      format("woff"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.ttf)
+      format("truetype");
+}
+
+@font-face {
+  font-family: "NanumSquareRoundEB";
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.eot);
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.eot?#iefix)
+      format("embedded-opentype"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.woff2)
+      format("woff2"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.woff)
+      format("woff"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.ttf)
+      format("truetype");
+}
+
+@font-face {
+  font-family: "NanumSquareRoundL";
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.eot);
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.eot?#iefix)
+      format("embedded-opentype"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.woff2)
+      format("woff2"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.woff)
+      format("woff"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.ttf)
+      format("truetype");
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "NanumSquareRound";
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+.container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 2rem;
+  box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
+  width: 40rem;
+}
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container h2 {
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+.group {
+  margin-bottom: 0.9375rem;
+}
+.group label {
+  margin-bottom: 0.3125rem;
+  margin: 1rem;
+}
+#phone,
+#childName,
+#content {
+  width: 15rem;
+}
+
+.radio-group label {
+  padding: 1rem;
+}
+
+.group span {
+  color: rgb(107, 192, 218);
+}
+.group input,
+.group select,
+.group textarea {
+  width: 10rem;
+  padding: 0.5rem;
+  margin: 1rem 0;
+  border: 0.0625rem solid #ccc;
+  border-radius: 0.3125rem;
+}
+.group input[type="radio"] {
+  width: auto;
+}
+.group input[type="checkbox"] {
+  width: 2.5rem;
+}
+.group .radio-group label {
+  margin-right: 0.625rem;
+}
+.group .checkbox-group {
+  display: flex;
+  align-items: center;
+}
+.group .checkbox-group input {
+  margin-right: 0.3125rem;
+}
+.group .checkbox-group label {
+  margin: 0;
+}
+
+.content-group {
+  display: flex;
+  align-items: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.container button {
+  width: 70%;
+  padding: 0.625rem;
+  border: none;
+  border-radius: 1rem;
+  background-color: #087f5b;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.container button:hover {
+  background-color: #07412f;
+}

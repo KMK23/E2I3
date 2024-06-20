@@ -14,7 +14,7 @@
       <div class="content">
         <div class="button-list">
           <div class="icon">
-            <button class="list">
+            <button class="list button1">
               <i class="fa-solid fa-ranking-star fa-2xl"></i><br /><br /><br />
               베스트 5
             </button>
@@ -42,7 +42,7 @@
           </div>
         </div>
         <div class="text-list">
-          <p class="list-p">
+          <!-- <p class="list-p">
             <i class="fa-solid fa-magnifying-glass"></i>
             <br />
             회원가입을 하려는데 이미<br />가입되어있다고 나옵니다.
@@ -68,7 +68,7 @@
             <i class="fa-solid fa-plus"></i>
             <br />
             자주하는 질문 <strong class="color">FAQ</strong><br />더보기
-          </p>
+          </p> -->
         </div>
         <div class="text-box">
           <div class="faq-input">
@@ -89,5 +89,18 @@
       </div>
     </div>
   </body>
-  <script type="module"></script>
+  <script type="module">
+    import {
+      db,
+      getDatas,
+      addDatas,
+      deleteDatas,
+      updateDatas,
+    } from "./resources/js/practice.js";
+    async function getFAQ() {
+      const snapshot = await getDatas("FAQ_Best5");
+      console.log(snapshot);
+      const divTag = document.querySelector(".text-list");
+    }
+  </script>
 </html>
