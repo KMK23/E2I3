@@ -4,116 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-      @font-face {
-        font-family: "LeferiBaseType-RegularA";
-        src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiBaseType-RegularA.woff")
-          format("woff");
-        font-weight: normal;
-        font-style: normal;
-      }
-      * {
-        box-sizing: border-box;
-        font-family: "LeferiBaseType-RegularA";
-      }
-      body {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-      }
-      .container {
-        height: 100vh;
-        background-color: #0b212b;
-        margin: 0;
-      }
-      /* 타이틀 */
-      .title-wrap {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-      .logo {
-        color: #45565e;
-        margin-top: 100px;
-      }
-      .sub-title {
-        color: white;
-        font-size: 2rem;
-      }
-      .main-title {
-        color: white;
-        font-size: 3rem;
-      }
-      .strong {
-        color: #ff9d00;
-        font-size: 3rem;
-      }
-      /* 이미지 */
-      .imgs {
-        display: flex;
-        gap: 3%;
-        justify-content: center;
-        align-items: center;
-      }
-      .kids {
-        width: 20rem;
-        height: 20rem;
-        border-radius: 25px;
-      }
-      .reviewImgs {
-        position: relative;
-        text-align: center;
-      }
-      .reviewImgs .Btn {
-        display: none;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: none;
-        color: #fff;
-        border: none;
-        padding: 10px 20px;
-        cursor: pointer;
-      }
-      .reviewImgs .Btn img {
-        filter: invert(1) brightness(2);
-      }
-      .reviewImgs:hover .kids,
-      .reviewImgs .Btn:hover ~ .kids {
-        transform: scale(1.3, 1.3);
-      }
-      .reviewImgs:hover .Btn {
-        display: block;
-      }
-      .reviewText {
-        background-color: white;
-        color: black;
-        padding: 10px;
-        border-radius: 10px;
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 130%;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        font-size: 0.8rem;
-      }
-      .reviewImgs:hover .reviewText {
-        display: block;
-      }
-      .spans {
-        color: #ff9d00;
-        display: flex;
-        justify-content: flex-start;
-        flex-direction: column;
-      }
-    </style>
   </head>
+  <link rel="stylesheet" href="resources/css파일/real-review.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
   <body>
-    <div class="container">
+    <div class="review-container">
       <div class="title-wrap">
         <p class="logo">Real Review</p>
         <h3 class="sub-title">재미있고 쉬운 코딩의 세계!</h3>
@@ -121,15 +22,11 @@
           OOOO의 <span class="strong">리얼 체험 후기</span>
         </h1>
       </div>
-      <div class="imgs">
+      <div class="review-imgs">
         <div class="reviewImgs">
           <img src="resources/img/kids1.jpg" class="kids" />
           <button class="Btn">
-            <img
-              src="resources/img/circle-play-solid.svg"
-              width="50px"
-              height="50px"
-            />
+            <i class="fa-solid fa-circle-play fa-2xl"></i>
           </button>
           <div class="reviewText">
             <span class="spans">Real-Review</span>&nbsp쉽고 간단하게 이해
@@ -140,11 +37,7 @@
         <div class="reviewImgs">
           <img src="resources/img/kids2.jpg" class="kids" />
           <button class="Btn">
-            <img
-              src="resources/img/circle-play-solid.svg"
-              width="50px"
-              height="50px"
-            />
+            <i class="fa-solid fa-circle-play fa-2xl"></i>
           </button>
           <div class="reviewText">
             <span class="spans">Real-Review</span>&nbsp 아이들이 컴퓨터 앞에서
@@ -154,11 +47,7 @@
         <div class="reviewImgs">
           <img src="resources/img/kids3.jpg" class="kids" />
           <button class="Btn">
-            <img
-              src="resources/img/circle-play-solid.svg"
-              width="50px"
-              height="50px"
-            />
+            <i class="fa-solid fa-circle-play fa-2xl"></i>
           </button>
           <div class="reviewText">
             <span class="spans">Real-Review</span>&nbsp 지루하지 않는 게임들과
@@ -168,18 +57,13 @@
         <div class="reviewImgs">
           <img src="resources/img/kids4.jpg" class="kids" />
           <button class="Btn">
-            <img
-              src="resources/img/circle-play-solid.svg"
-              width="50px"
-              height="50px"
-            />
+            <i class="fa-solid fa-circle-play fa-2xl"></i>
           </button>
           <div class="reviewText">
             <span class="spans">Real-Review</span>&nbsp 보편화된 이론 학습이
             아닌 다양한 체험이 가능하여 이래서 많은 부모들이 선택하는구나
             싶습니다.
           </div>
-          ;
         </div>
       </div>
     </div>
