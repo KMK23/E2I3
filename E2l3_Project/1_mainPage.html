@@ -661,6 +661,7 @@
         </div>
         <div class="button-container">
           <button type="submit">상담 신청하기</button>
+          <!-- <button class="close-Btn">닫기</button> -->
         </div>
       </form>
     </div>
@@ -720,10 +721,10 @@
         behavior: "smooth", // 부드러운 스크롤
       });
     });
+
     const formContainer = document.querySelector(".form-container");
     const freeBtn = document.querySelector(".sec-btn");
     const overlay = document.getElementById("overlay");
-
     freeBtn.addEventListener("click", function () {
       formContainer.classList.add("visible");
       formContainer.classList.remove("hidden");
