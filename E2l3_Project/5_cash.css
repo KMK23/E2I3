@@ -6,9 +6,9 @@
   display: flex;
   flex-direction: column;
 }
-.coding {
-  flex-direction: column;
+.coding1 {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 0px 0px 18px;
