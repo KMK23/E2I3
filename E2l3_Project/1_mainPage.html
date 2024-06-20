@@ -8,6 +8,14 @@
     <link rel="stylesheet" href="2.intro.css" />
     <link rel="stylesheet" href="resources/css파일/intro_game.css" />
     <link rel="stylesheet" href="resources/css파일/gamePreview.css" />
+    <link rel="stylesheet" href="resources/css파일/real-review.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="5_cash.css" />
     <link
       rel="stylesheet"
@@ -136,11 +144,11 @@
     </div>
     <!-- 게임프리뷰 부분 끝 -->
 
-    <!-- 게임 체험하기 부분&홍보 시작 -->
+    <!-- intro_game 시작 -->
     <div class="All">
       <div class="wrap">
-        <!-- 네비게이션 바 -->
-        <section calss="coding">
+        <!-- 전체 페이지  -->
+        <section class="coding" id="gamePage">
           <div class="nav-bar">
             <ul class="nav nav-pills">
               <li class="nav-item">
@@ -156,13 +164,10 @@
               </li>
             </ul>
           </div>
-        </section>
-        <!-- 전체 페이지  -->
-        <section class="coding" id="gamePage">
           <div class="container">
             <div class="wrap-text">
               <span class="title-label">Easy Fun Coding</span>
-              <p class="sub-title">단계별 프로그래밍 학습을 통해</p>
+              <p class="sub-title1">단계별 프로그래밍 학습을 통해</p>
               <h2 class="title">기초 컴퓨팅 사고력을 튼튼하게</h2>
               <p class="title-text">
                 아이들이 쉽고 재미있게 코딩의 기초를 다질 수 있도록 단계별 학습
@@ -171,12 +176,12 @@
                 연습합니다.
               </p>
               <div class="game-bar">
-                <ul>
+                <ul class="game-bar1">
                   <li class="gameName">
-                    <a class="gameLink" href="#" id="game1">디버깅</a>
+                    <a class="gameLink" href="#" id="game1">알고리즘 및 순차</a>
                   </li>
                   <li class="gameName">
-                    <a class="gameLink" href="#" id="game2">알고리즘 및 순차</a>
+                    <a class="gameLink" href="#" id="game2">디버깅</a>
                   </li>
                   <li class="gameName">
                     <a class="gameLink" href="#" id="game3">반복,패턴 만들기</a>
@@ -319,9 +324,66 @@
         </div>
       </section>
     </div>
-    <!-- 게임 체험하기 부분&홍보 끝 -->
+    <!-- intro_game 끝 -->
 
-    <!-- 선생님 소개 부분 -->
+    <!-- 리얼리뷰 시작 -->
+    <div class="review-container">
+      <div class="title-wrap">
+        <p class="logo">Real Review</p>
+        <h3 class="sub-title">재미있고 쉬운 코딩의 세계!</h3>
+        <h1 class="main-title">
+          OOOO의 <span class="strong">리얼 체험 후기</span>
+        </h1>
+      </div>
+      <div class="review-imgs">
+        <div class="reviewImgs">
+          <img src="resources/img/kids1.jpg" class="kids" />
+          <button class="reviewBtn">
+            <i class="fa-solid fa-circle-play fa-2xl"></i>
+          </button>
+          <div class="reviewText">
+            <span class="reviewSpans">Real-Review</span>&nbsp쉽고 간단하게 이해
+            가능하며, 아이들이 하고 싶게 만들어져 있어 흥미 유발에도 너무
+            좋아요!
+          </div>
+        </div>
+        <div class="reviewImgs">
+          <img src="resources/img/kids2.jpg" class="kids" />
+          <button class="reviewBtn">
+            <i class="fa-solid fa-circle-play fa-2xl"></i>
+          </button>
+          <div class="reviewText">
+            <span class="reviewSpans">Real-Review</span>&nbsp 아이들이 컴퓨터
+            앞에서 공부한다는 느낌보단 게임을 하듯이 학습하여 재미있어 합니다.
+          </div>
+        </div>
+        <div class="reviewImgs">
+          <img src="resources/img/kids3.jpg" class="kids" />
+          <button class="reviewBtn">
+            <i class="fa-solid fa-circle-play fa-2xl"></i>
+          </button>
+          <div class="reviewText">
+            <span class="reviewSpans">Real-Review</span>&nbsp 지루하지 않는
+            게임들과 더 높은 점수를 받기 위해 지속적으로 학습 하는 모습이 보여
+            좋아요!
+          </div>
+        </div>
+        <div class="reviewImgs">
+          <img src="resources/img/kids4.jpg" class="kids" />
+          <button class="reviewBtn">
+            <i class="fa-solid fa-circle-play fa-2xl"></i>
+          </button>
+          <div class="reviewText">
+            <span class="reviewSpans">Real-Review</span>&nbsp 보편화된 이론
+            학습이 아닌 다양한 체험이 가능하여 이래서 많은 부모들이 선택하는구나
+            싶습니다.
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 리얼리뷰 끝 -->
+
+    <!-- 선생님 소개 부분 시작-->
     <section id="team">
       <h2>선생진 소개</h2>
       <div class="team-member">
@@ -370,6 +432,7 @@
         <p class="motto">"열정을 다하겠습니다!"</p>
       </div>
     </section>
+    <!-- 선생님 소개 부분 끝 -->
 
     <!-- <section id="programs">
       <h2>유아 코딩교육 대표 프로그램 소개</h2>

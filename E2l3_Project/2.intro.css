@@ -1,18 +1,7 @@
 /* styles.css */
 
 /* Reset some default styles */
-body,
-h1,
-h2,
-h3,
-p,
-ul,
-li,
-img,
-a,
-input,
-textarea,
-button {
+body {
   margin: 0;
   padding: 0;
   border: 0;
@@ -89,11 +78,11 @@ section h2 {
   height: 80%;
 } */
 
-section p,
+/* section p,
 section blockquote {
   font-size: 1.2rem;
   margin-bottom: 1rem;
-}
+} */
 
 #team {
   /* text-align: center; */

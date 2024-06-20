@@ -17,6 +17,8 @@ const gameImgs = document.querySelectorAll(".gameImg");
 gameNames.forEach((gameName, index) => {
   gameName.addEventListener("click", function (e) {
     e.preventDefault();
+    gameNames.forEach((gameName) => gameName.classList.remove("active1"));
+    gameName.classList.add("active1");
     gameImgs.forEach((img, imgIndex) => {
       if (index === imgIndex) {
         if (img.style.display === "none") {
