@@ -1,4 +1,3 @@
-// 여기서부터 아이디 중복확인 버튼 만든것
 const idinput = document.querySelector(".id-input");
 let elSuccessMessage = document.querySelector(".success-message"); // div.success-message.hide
 let elFailureMessage = document.querySelector(".failure-message"); // div.failure-message.hide
@@ -27,19 +26,20 @@ idinput.onkeyup = function () {
       elFailureMessage.classList.remove("hide"); // 아이디는 4~12글자이어야 합니다
       elFailureMessageTwo.classList.add("hide"); // 실패 메시지2가 가려져야 함
     }
-    // 조건을 모두 만족할 경우
-    else if (idLength(idinput.value) || onlyNumberAndEnglish(idinput.value)) {
-      elSuccessMessage.classList.remove("hide"); // 사용할 수 있는 아이디입니다
-      elFailureMessage.classList.add("hide"); // 실패 메시지가 가려져야 함
-      elFailureMessageTwo.classList.add("hide"); // 실패 메시지2가 가려져야 함
+    //     // 조건을 모두 만족할 경우
+    //     else if (idLength(idinput.value) || onlyNumberAndEnglish(idinput.value)) {
+    //       elSuccessMessage.classList.remove("hide"); // 사용할 수 있는 아이디입니다
+    //       elFailureMessage.classList.add("hide"); // 실패 메시지가 가려져야 함
+    //       elFailureMessageTwo.classList.add("hide"); // 실패 메시지2가 가려져야 함
+    //     }
+    //   }
+    //   // 값을 입력하지 않은 경우 (지웠을 때)
+    //   // 모든 메시지를 가린다.
+    else {
+      elSuccessMessage.classList.add("hide");
+      elFailureMessage.classList.add("hide");
+      elFailureMessageTwo.classList.add("hide");
     }
-  }
-  // 값을 입력하지 않은 경우 (지웠을 때)
-  // 모든 메시지를 가린다.
-  else {
-    elSuccessMessage.classList.add("hide");
-    elFailureMessage.classList.add("hide");
-    elFailureMessageTwo.classList.add("hide");
   }
 };
 // 비밀번호 정보
