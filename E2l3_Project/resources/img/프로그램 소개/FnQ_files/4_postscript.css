@@ -35,7 +35,7 @@ body {
 .list {
   cursor: pointer;
   border: none;
-  background-color: transparent;
+  background-color: #f6f6f6f6;
   color: #333333;
   font-size: 1rem;
   margin: 0.8rem 0 0;
