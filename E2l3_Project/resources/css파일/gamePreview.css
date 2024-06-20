@@ -13,6 +13,7 @@
   flex-direction: column;
   align-items: center;
   flex-grow: 1;
+  margin-top: 6rem;
 }
 .textBox .logo {
   background-color: #258f85;
@@ -21,20 +22,35 @@
   width: fit-content;
   border-radius: 1.3rem;
   margin-bottom: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 76px;
+  height: 90px;
+  font-family: "ONE-Mobile-POP";
 }
+#font-pop {
+  font-family: "ONE-Mobile-POP";
+  color: aliceblue;
+  letter-spacing: 0.22rem;
+  font-size: 4rem;
+  padding: 1rem;
+}
+
 .title {
   font-size: 3rem;
   margin: 1% 0;
 }
 .span {
-  color: #fbd52d;
+  color: #ffffff;
+  font-size: 3.6rem;
   /* font-style: italic; */
 }
 .title-desc {
   font-size: 1.2rem;
-  background-color: white;
-  color: #10162c;
-  padding: 1rem;
+  /* background-color: white; */
+  color: #afafaf;
+  padding: 1.06rem;
   border-radius: 2rem;
   margin: 1% 0;
   margin-bottom: 6rem;
@@ -161,4 +177,5 @@ img {
 
 #gamePr {
   background-color: #0f193f;
+  height: 120vh;
 }

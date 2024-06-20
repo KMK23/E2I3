@@ -1,18 +1,7 @@
 /* styles.css */
 
 /* Reset some default styles */
-body,
-h1,
-h2,
-h3,
-p,
-ul,
-li,
-img,
-a,
-input,
-textarea,
-button {
+body {
   margin: 0;
   padding: 0;
   border: 0;
@@ -75,6 +64,7 @@ section {
 }
 .part p {
   width: 70%;
+  height: 80%;
 }
 section h2 {
   font-size: 2rem;
@@ -88,11 +78,11 @@ section h2 {
   height: 80%;
 } */
 
-section p,
+/* section p,
 section blockquote {
   font-size: 1.2rem;
   margin-bottom: 1rem;
-}
+} */
 
 #team {
   /* text-align: center; */
@@ -177,9 +167,31 @@ section blockquote {
 footer {
   text-align: center;
   padding: 1rem 0;
-  background-color: pink;
+  background-color: rgb(250, 221, 226);
   color: black;
   position: relative;
   bottom: 0;
   width: 100%;
+  height: 7.5rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+footer div {
+  font-size: 0.6rem;
+  margin-right: 3rem;
+}
+footer div p {
+  margin: 0;
+}
+.button-up {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  width: 3rem;
+  height: 3rem;
+  border: none;
+  border-radius: 50%;
+  background-color: #c790e0d3;
+  cursor: pointer;
 }

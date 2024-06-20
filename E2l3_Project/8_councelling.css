@@ -49,117 +49,129 @@
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.ttf)
       format("truetype");
 }
-
 * {
   box-sizing: border-box;
 }
-body {
+/* body {
+  font-family: "NanumSquareRound";
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+} */
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  margin: 0;
-  background-color: #fff9ea;
-  font-family: "NanumSquareRound";
-  letter-spacing: 0.125rem;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
 }
-.container {
-  width: 100%;
-  max-width: 62.5rem;
-  margin: 0 auto;
-  height: 100vh;
-}
-.header {
-  width: 100%;
-  display: flex;
-  background-color: #eaf0ff;
-  padding: 1.5rem;
+.form-container {
+  background-color: white;
+  padding: 2rem;
   border-radius: 2rem;
-  margin-top: 2%;
+  box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
+  position: relative;
+  width: 40rem;
+  display: none;
+  z-index: 1000;
 }
-.w {
-  padding-left: 2rem;
+#overlay.visible {
+  display: block;
 }
-h1,
-h4 {
-  margin: 0;
-  padding: 0.25rem;
+#overlay.hodden {
+  display: none;
 }
-.level {
-  width: 14%;
-  margin-right: 1.25rem;
+.form-container.visible {
+  display: block;
+}
+.form-container.hidden {
+  display: none;
+}
+.form {
   display: flex;
-  justify-content: center;
   align-items: center;
-  background-color: #dcff90;
-  border-radius: 2rem;
-  font-size: 1.5rem;
-  font-weight: BOLD;
+  justify-content: center;
+}
+.form-container h2 {
   text-align: center;
-  box-shadow: 0.625rem 0.625rem 0px 0px rgba(0, 0, 0, 0.4);
+  margin-bottom: 1.25rem;
 }
-.title {
-  margin-bottom: 0.1875rem;
-  font-size: 2rem;
-  letter-spacing: 0.1875rem;
-  font-family: "NanumSquareRoundEB";
-  padding-bottom: 1rem;
-  align-self: center;
+.group {
+  margin-bottom: 0.9375rem;
 }
-.text {
-  font-size: 1rem;
-  padding-left: 1rem;
-  color: rgb(129, 129, 129);
+.group label {
+  margin-bottom: 0.3125rem;
+  margin: 1rem;
 }
-.container {
+#phone,
+#childName,
+#content {
+  width: 15rem;
+}
+
+.radio-group label {
+  padding: 1rem;
+}
+
+.group span {
+  color: rgb(107, 192, 218);
+}
+.group input,
+.group select,
+.group textarea {
+  width: 10rem;
+  padding: 0.5rem;
+  margin: 1rem 0;
+  border: 0.0625rem solid #ccc;
+  border-radius: 0.3125rem;
+}
+
+.group input[type="radio"] {
+  width: auto;
+}
+.group input[type="checkbox"] {
+  width: 2.5rem;
+}
+.group .radio-group label {
+  margin-right: 0.625rem;
+}
+.group .checkbox-group {
   display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  align-items: center;
 }
-.plate {
-  background-color: gray;
-  border: 13px solid rgb(109, 108, 108);
-  border-radius: 10px;
+.group .checkbox-group input {
+  margin-right: 0.3125rem;
+}
+.group .checkbox-group label {
+  margin: 0;
+}
+
+.content-group {
   display: flex;
-  justify-content: space-around;
-  align-items: baseline;
-  /* margin-top: 30px; */
+  align-items: center;
 }
-.bakery {
-  display: flex;
-  /* margin-top: 30px; */
-  margin-top: 1.875rem;
-  justify-content: space-between;
-  height: 70%;
-}
-.donuts,
-.cupcakes {
-  background-color: rgb(185, 235, 235);
-  /* border: 20px inset rgba(128, 128, 128, 0.87); */
-  border: 1.25rem inset rgba(128, 128, 128, 0.87);
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-.choco-donuts,
-.choco-cupcakes,
-.strawberry-donuts,
-.strawberry-cupcakes {
-  /* border-bottom: 20px inset black; */
-  border-bottom: 1.25rem inset black;
+
+.button-container {
   display: flex;
   justify-content: center;
-  align-items: center;
-  justify-content: space-around;
-  height: 40%;
 }
-.big,
-.small {
-  align-self: flex-end;
+
+.form-container button {
+  width: 70%;
+  padding: 0.625rem;
+  border: none;
+  border-radius: 1rem;
+  background-color: #087f5b;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
 }
-.shadow {
-  filter: brightness(0);
-}
-.chef {
-  display: flex;
-  align-items: flex-end;
+.form-container button:hover {
+  background-color: #07412f;
 }

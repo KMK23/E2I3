@@ -166,9 +166,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 2%;
-  background-color: #fa9a85;
-  border-radius: 5rem;
+  /* margin-top: 2%; */
+  background-color: #fff9db;
+  border-radius: 0.8rem;
 }
 .nav-bar ul {
   list-style-type: none;
@@ -179,22 +179,24 @@
   align-items: center;
   justify-content: space-around;
   margin: 0;
-  padding: 1%;
+  /* padding: 1%; */
 }
 
 .nav {
   width: 80%;
+  height: 100%;
 }
 .nav-item {
   width: 100%;
   text-align: center;
 }
 .nav-bar ul li a {
-  color: white;
+  color: rgb(0, 0, 0);
   padding: 5%;
   margin: 0;
-  border-radius: 1rem 1rem 0 0;
+  border-radius: 1rem;
   text-decoration: none;
+  font-weight: bold;
 }
 .container {
   position: relative;
@@ -202,6 +204,7 @@
 }
 .wrap-text {
   display: flex;
+  gap: 1.6rem;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -210,15 +213,15 @@
 }
 
 .title-label {
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-style: italic;
-  color: #ffd43b;
-  margin-top: 1rem;
+  color: #21c480;
+  padding: 1rem;
   font-weight: 900;
 }
-.sub-title {
+.sub-title1 {
   font-size: 1.2rem;
-  color: #343a40;
+  color: #33383d;
   font-weight: 600;
 }
 .title {
@@ -227,13 +230,38 @@
   margin: 0.5rem;
 }
 .title-text {
-  background-color: #ffb300;
+  background-color: #3fd898;
   padding: 1.3rem;
   border-radius: 2rem;
+  word-break: keep-all;
+  text-align: center;
+  font-weight: bold;
 }
 .active {
-  background-color: #495057;
-  width: 30%;
+  background-color: #c1e493;
+  color: #e9ecef;
+  width: 40%;
+  height: 100%;
+}
+.game-bar1 {
+  padding: 0;
+}
+.gameName {
+  flex-basis: 25%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+}
+.active1 {
+  background-color: rgba(128, 128, 128, 0.486);
+  border-radius: 2rem;
+  color: white;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  width: fit-content;
 }
 
 .gameAll {
@@ -243,7 +271,7 @@
   position: absolute;
   z-index: 1;
   bottom: 0;
-  right: 5%;
+  right: -10rem;
   border: none;
   width: 7rem;
   height: 7rem;
@@ -258,13 +286,16 @@
   list-style-type: none;
   background-color: #e9ecef;
   font-size: 1rem;
-  padding: 1.2rem;
+  /* padding: 1.2rem; */
+  margin: 0;
+  height: 100%;
   border-radius: 2rem;
   justify-content: space-evenly;
   align-items: center;
 }
 .game-bar {
   width: 60%;
+  height: 4rem;
 }
 .gameLink {
   color: #495057;
@@ -272,6 +303,9 @@
   font-weight: 600;
   width: 100%;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .selected {
   width: 60%;
@@ -281,20 +315,35 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 636px;
+  height: 550px;
 }
-.gameImg img {
+.gameImg {
   display: block;
   margin: 0 auto;
-  border: 3px solid #88c0d0;
+  border: 3px solid #bbdee7;
   border-radius: 6%;
+}
+
+#img1 {
+  background-image: url(../img/샌드위치게임이미지.JPG);
+  background-size: cover;
+}
+#img2 {
+  background-image: url(../img/같은거찾기이미지.JPG);
+  background-size: cover;
+}
+#img3 {
+  background-image: url(../img/옷입히기이미지.JPG);
+  background-size: cover;
 }
 /* AI 학습 리포트 */
 
 .AI-content {
   display: flex;
   justify-content: space-between;
-  gap: 10%;
-  background-color: #e7fbbe;
+  gap: 5%;
+  background-color: #eaf0ff;
   padding: 3%;
   border-radius: 5%;
 }
@@ -307,21 +356,23 @@
 }
 .AI-text-img h1 {
   font-size: 2rem;
-  font-weight: 800;
-  font-style: italic;
+  font-weight: bold;
+  /* font-style: italic; */
   font-family: "NanumSquareRound";
 }
 .AI-text-img h3 {
-  color: #e0bb35;
+  color: #087f5b;
   font-family: "NanumSquareRound";
   font-size: 1rem;
+  text-align: center;
 }
 .AI-stu-img img {
   border-radius: 50%;
 }
 
 .dsec {
-  color: white;
+  color: rgb(7, 4, 4);
+  font-family: "NanumSquareRound";
 }
 .dsec h4 {
   font-size: 1.5rem;
@@ -331,9 +382,10 @@
 }
 .sc-text {
   margin: 0.5rem;
+  text-align: center;
 }
 .AI-desc1 {
-  background-color: #ad75fd;
+  background-color: #ac75fc;
   border-radius: 32px;
   margin: 0;
   height: auto;
@@ -374,9 +426,10 @@
 .content-desc {
   display: flex;
   gap: 20px;
-  width: 100%;
+  /* width: 80%; */
   justify-content: space-around;
   flex-direction: column;
+  align-items: flex-end;
 }
 
 /* 디지털 학습 */
@@ -391,28 +444,55 @@
   padding: 50px;
 }
 .AI-main-title {
-  font-size: 2rem;
-  font-style: italic;
+  font-size: 3rem;
+  /* font-style: italic; */
   font-weight: 800;
 }
 .AI-sub-title {
-  font-size: 1rem;
+  font-size: 1.3rem;
+  text-align: center;
+  color: rgb(99, 99, 99);
 }
 .lists {
   list-style-type: none;
-  background-color: #fa9a85;
+  /* background-color: #fa9a85; */
   font-size: 1rem;
   padding: 1rem;
   border-radius: 1rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   gap: 15px;
+  width: 80%;
 }
 .lists li {
   font-family: "NanumSquareRound";
+  background-color: #fff9ea;
+  border-radius: 16px;
+  padding: 0.8rem;
+  flex-basis: 30%;
+  text-align: center;
+  word-break: keep-all;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-p {
+.lists-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+}
+#listInP {
   font-family: "NanumSquareRound";
+  text-align: center;
+  word-break: keep-all;
+}
+.mini-title {
+  height: 10%;
+  font-size: 1.2rem;
+  color: #42b87d;
+  font-weight: bold;
 }
 .AI-imgs {
   display: grid;
@@ -429,6 +509,8 @@ p {
   top: 50%;
   left: 50%;
   cursor: pointer;
+  filter: invert(44%) sepia(35%) saturate(3291%) hue-rotate(303deg)
+    brightness(86%) contrast(89%);
 }
 
 .AI-imgs {

@@ -92,13 +92,14 @@ body {
 .signup-btn,
 .mypage-btn {
   padding: 5px 10px;
+  margin-top: 0.8rem;
   font-size: 14px;
   font-weight: normal;
   color: black;
   text-decoration: none;
-  border: 1px solid #ccc;
+  border: 1px solid #fff;
   background-color: white;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease, border 0.3s ease;
 }
@@ -107,7 +108,7 @@ body {
 .signup-btn:hover,
 .mypage-btn:hover {
   background-color: skyblue;
-  border: 1px solid #ccc;
+  border: 1px solid skyblue;
 }
 
 .header {
@@ -126,20 +127,24 @@ body {
     brightness(81%) contrast(85%);
   width: 6rem;
   height: 6rem;
-  padding-right: 6px;
+  /* padding-right: 6px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .logo-wrapper {
   display: flex;
   justify-content: center;
+  /* height: 100px; */
 }
 
-.logo {
+.logo1 {
   font-size: 3rem;
   font-weight: bold;
   color: black;
 }
 
-.logo a {
+.logo1 a {
   color: black;
   text-decoration: none;
   font-family: "ONE-Mobile-POP";
@@ -148,6 +153,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  justify-content: space-evenly;
+  width: 340px;
 }
 
 .main-container {
@@ -185,6 +192,10 @@ body {
   color: black;
 }
 
+.about {
+  display: flex;
+}
+
 .part {
   text-decoration: none;
   color: black;
@@ -214,39 +225,75 @@ body {
 .content-subtitle {
   font-size: 1.8rem;
 }
+
 .content-btn {
-  margin-top: 20px;
-  padding: 20px 30px;
-  font-size: 25px;
-  font-weight: bold;
-  color: white;
-  background-color: #007bff; /* 기본 배경색 /
-    border: none; / 테두리 제거 /
-    cursor: pointer;
-    border-radius: 20px;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; / 애니메이션 효과 */
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  font-size: inherit;
+  font-family: inherit;
 }
-
+.content-btn {
+  font-weight: 200;
+  color: #3f3833;
+  text-transform: uppercase;
+  padding: 0.6125em 0.5em 0.3125em 0.5em;
+  background: #fff0f0;
+  border: 0.5px solid #f9c4d2;
+  border-radius: 0.1875em;
+  transform-style: preserve-3d;
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
+    background 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+.content-btn::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #f9c4d2;
+  border-radius: inherit;
+  box-shadow: 0 0 0 0.5px #b18597, 0 0.15625em 0 0 #ffe3e2;
+  transform: translate3d(0, 0.1875em, -0.25em);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
+    box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+}
 .content-btn:hover {
-  background-color: #0056b3; /* 호버 시 배경색 /
-    transform: scale(1.05); / 호버 시 크기 증가 /
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); / 호버 시 그림자 효과 */
+  background: #ffe9e9;
+  transform: translate(0, 0.0625em); /* 0.25em -> 0.0625em */
 }
-
-.content-btn:focus {
-  transform: scale(
-    0.95
-  ); /* 클릭 시 크기 감소 /
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); / 클릭 시 그림자 감소 */
+.content-btn:hover::before {
+  box-shadow: 0 0 0 0.5px #b18597, 0 0.125em 0 0 #ffe3e2; /* 2px -> 0.5px, 0.5em -> 0.125em */
+  transform: translate3d(
+    0,
+    0.125em,
+    -0.25em
+  ); /* 0.5em -> 0.125em, -1em -> -0.25em */
+}
+.content-btn:active {
+  background: #ffe9e9;
+  transform: translate(0em, 0.1875em); /* 0.75em -> 0.1875em */
+}
+.content-btn:active::before {
+  box-shadow: 0 0 0 0.5px #b18597, 0 0 #ffe3e2; /* 2px -> 0.5px */
+  transform: translate3d(0, 0, -0.25em); /* -1em -> -0.25em */
 }
 
 .aside {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: greenyellow;
+  justify-content: space-around;
+  background-color: rgb(226, 255, 182);
   width: 800px;
-  height: 100px;
+  height: 80px;
   border-radius: 50px;
   position: fixed;
   bottom: 1rem;
@@ -259,6 +306,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* justify-content: space-evenly; */
   padding-left: 10px;
   font-size: 30px;
 }
@@ -269,19 +317,22 @@ body {
 }
 
 .special {
-  color: #007bff;
+  color: #5395db;
   font-size: 2.1875rem;
+  font-family: "ONE-Mobile-POP";
+  padding: 0.6rem;
 }
 
 .aside-btns {
   display: flex;
   padding: 0.625rem;
   gap: 0.625rem;
+  padding-left: 2rem;
 }
 
 .fir-btn {
   color: white;
-  background-color: blue;
+  background-color: rgb(164, 164, 255);
   font-size: 1rem;
   font-weight: bold;
   border: none;

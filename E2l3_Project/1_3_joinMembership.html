@@ -122,6 +122,14 @@
         /* line-height: 48px; */
         /* background-color: darkgray; */
       }
+      #checkIdBtn {
+        margin-left: 1rem;
+        padding: 0.375rem 0.875rem;
+        background-color: rgb(143, 143, 143);
+        color: #fff;
+        border: none;
+        border-radius: 0.5rem;
+      }
       .errorMessage {
         font-size: 1rem;
         color: red;
@@ -215,6 +223,7 @@
         font-family: "NanumSquareRound";
       }
     </style>
+    <!-- <script src="resources/js/1_3_joinMembership.js"></script> -->
   </head>
   <body>
     <div class="container">
@@ -226,6 +235,7 @@
             <input
               class="name-input"
               type="text"
+              name="name"
               placeholder="이름을 입력하세요."
             />
           </div>
@@ -234,8 +244,11 @@
             <input
               class="id-input"
               type="text"
+              name="id"
               placeholder="아이디를 입력하세요."
             />
+            <button type="button" id="checkIdBtn">ID 중복 확인</button>
+            <div id="idCheckResult" class="hide alert"></div>
             <div class="success-message hide alert" style="color: red">
               사용할 수 있는 아이디입니다.
             </div>
@@ -251,6 +264,7 @@
             <input
               class="password-input"
               type="password"
+              name="password"
               placeholder="비밀번호를 입력하세요"
               id="password"
             /><br />
@@ -263,6 +277,7 @@
             <input
               class="password2-input"
               type="password"
+              name="password2"
               id="password2"
             /><br />
             <div class="mismatch-message hide alert" style="color: red">
@@ -271,7 +286,7 @@
           </div>
           <div class="birth box">
             <p class="birth-label">생년월일</p>
-            <input class="birth-input" type="date" /><br />
+            <input class="birth-input" type="date" name="birth" /><br />
           </div>
           <div class="addrNum box">
             <p class="addrNum-label">주소 검색</p>
@@ -279,6 +294,7 @@
               class="addrNum-input"
               id="sample6_postcode"
               type="text"
+              name="postcode"
               placeholder="우편번호"
             />
             <button
@@ -296,26 +312,28 @@
               class="addr-input"
               id="sample6_address"
               type="text"
+              name="address"
               placeholder="기본주소"
             />
             <input
               class="addr2-input"
               id="sample6_detailAddress"
               type="text"
+              name="detailAddress"
               placeholder="상세주소"
             />
           </div>
           <div class="email box">
             <p class="email-label">이메일</p>
-            <input class="email-input" type="text" />
+            <input class="email-input" type="text" name="email" />
             <h4 id="at">@</h4>
-            <input class="email2-input" type="text" id="email2" />
-            <select class="emailaddr" id="emailaddr">
+            <input class="email2-input" type="text" id="email2" name="email2" />
+            <select class="emailaddr" id="emailaddr" name="emailaddr">
               <option value="naver.com">naver.com</option>
               <option value="gmail.com">gmail.com</option>
               <option value="daum.net">daum.net</option>
-              <option value="daum.net">hanmail.net</option>
-              <option value="daum.net">nate.com</option>
+              <option value="hanmail.net">hanmail.net</option>
+              <option value="nate.com">nate.com</option>
               <option value="" selected>직접 입력</option>
             </select>
           </div>
@@ -345,165 +363,85 @@
         </fieldset>
       </form>
     </div>
-    <script>
-      // 여기서부터 아이디 중복확인 버튼 만든것
+    <!-- <script src="resources/js/joinmembershipfirebase.js"></script> -->
+    <script src="resources/js/1_3_joinMembership.js"></script>
+    <script type="module">
+      import {
+        db,
+        getDatas,
+        addDatas,
+        deleteDatas,
+        updateDatas,
+      } from "./resources/js/joinmembershipfirebase.js";
+
+      const joinBtn = document.querySelector(".join");
+      const checkIdBtn = document.getElementById("checkIdBtn");
       const idinput = document.querySelector(".id-input");
-      let elSuccessMessage = document.querySelector(".success-message"); // div.success-message.hide
-      let elFailureMessage = document.querySelector(".failure-message"); // div.failure-message.hide
-      let elFailureMessageTwo = document.querySelector(".failure-message2"); // div.failure-message2.hide
+      const IdcheckResult = document.getElementById("idCheckResult");
 
-      function idLength(value) {
-        return value.length >= 4 && value.length <= 12;
-      }
+      joinBtn.addEventListener("click", async function (e) {
+        e.preventDefault();
 
-      function onlyNumberAndEnglish(str) {
-        return /^[A-Za-z0-9][A-Za-z0-9]*$/.test(str);
-      }
+        const formEl = document.querySelector("form[id='join_form']");
+        const formData = new FormData(formEl);
 
-      idinput.onkeyup = function () {
-        // 값을 입력한 경우
-        if (idinput.value.length !== 0) {
-          // 영어 또는 숫자 외의 값을 입력했을 경우
-          if (onlyNumberAndEnglish(idinput.value) === false) {
-            elSuccessMessage.classList.add("hide");
-            elFailureMessage.classList.add("hide");
-            elFailureMessageTwo.classList.remove("hide"); // 영어 또는 숫자만 가능합니다
-          }
-          // 글자 수가 4~12글자가 아닐 경우
-          else if (idLength(idinput.value) === false) {
-            elSuccessMessage.classList.add("hide"); // 성공 메시지가 가려져야 함
-            elFailureMessage.classList.remove("hide"); // 아이디는 4~12글자이어야 합니다
-            elFailureMessageTwo.classList.add("hide"); // 실패 메시지2가 가려져야 함
-          }
-          // 조건을 모두 만족할 경우
-          else if (
-            idLength(idinput.value) ||
-            onlyNumberAndEnglish(idinput.value)
-          ) {
-            elSuccessMessage.classList.remove("hide"); // 사용할 수 있는 아이디입니다
-            elFailureMessage.classList.add("hide"); // 실패 메시지가 가려져야 함
-            elFailureMessageTwo.classList.add("hide"); // 실패 메시지2가 가려져야 함
-          }
+        const addObj = {};
+        formData.forEach((value, key) => {
+          addObj[key] = value;
+        });
+
+        const result = await addDatas("user", addObj);
+        console.log(result);
+
+        localStorage.setItem("name", addObj.name);
+        localStorage.setItem("id", addObj.id);
+
+        location.href = "1_mainPage.html";
+      });
+
+      checkIdBtn.addEventListener("click", async function () {
+        const idvalue = idinput.value.trim();
+        if (idvalue === "") {
+          IdcheckResult.textContent = "ID를 입력하세요.";
+          IdcheckResult.style.color = "red";
+          IdcheckResult.classList.remove("hide");
+          return;
         }
-        // 값을 입력하지 않은 경우 (지웠을 때)
-        // 모든 메시지를 가린다.
-        else {
-          elSuccessMessage.classList.add("hide");
-          elFailureMessage.classList.add("hide");
-          elFailureMessageTwo.classList.add("hide");
-        }
-      };
-      // 비밀번호 정보
 
-      let password = document.querySelector("#password");
-      let password2 = document.querySelector("#password2");
+        try {
+          const idExists = await getId(idvalue);
 
-      let elMismatchMessage = document.querySelector(".mismatch-message"); // div.mismatch-message.hide
-      let elStrongPasswordMessage = document.querySelector(
-        ".strongPassword-message"
-      );
-
-      function strongPassword(str) {
-        return /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(
-          str
-        );
-      }
-
-      function isMatch(password1, password2) {
-        return password1 === password2;
-      }
-
-      password.onkeyup = function () {
-        // console.log(elInputPassword.value);
-        // 값을 입력한 경우
-        if (password.value.length !== 0) {
-          if (strongPassword(password.value)) {
-            elStrongPasswordMessage.classList.add("hide"); // 실패 메시지가 가려져야 함
+          if (idExists) {
+            IdcheckResult.textContent = "이미 사용 중인 ID입니다.";
+            IdcheckResult.style.color = "red";
           } else {
-            elStrongPasswordMessage.classList.remove("hide"); // 실패 메시지가 보여야 함
+            IdcheckResult.textContent = "사용 가능한 ID입니다.";
+            IdcheckResult.style.color = "green";
           }
-        }
-        // 값을 입력하지 않은 경우 (지웠을 때)
-        // 모든 메시지를 가린다.
-        else {
-          elStrongPasswordMessage.classList.add("hide");
-        }
-      };
-      // 비밀번호 입력란에서 엔터 입력 시 이벤트 핸들링
-      password.addEventListener("keyup", function (e) {
-        if (e.key === "Enter") {
-          e.preventDefault();
-          // 비밀번호 입력란에서 엔터를 눌렀을 때의 처리를 추가
-          // 예: 다음 입력 필드로 포커스를 이동하거나 특정 동작 수행
+          IdcheckResult.classList.remove("hide");
+        } catch (error) {
+          console.error("Error checking ID:", error);
         }
       });
 
-      // 비밀번호 확인
-      password2.onkeyup = function () {
-        // console.log(elInputPasswordRetype.value);
-        if (password2.value.length !== 0) {
-          if (isMatch(password.value, password2.value)) {
-            elMismatchMessage.classList.add("hide"); // 실패 메시지가 가려져야 함
-          } else {
-            elMismatchMessage.classList.remove("hide"); // 실패 메시지가 보여야 함
-          }
-        } else {
-          elMismatchMessage.classList.add("hide"); // 실패 메시지가 가려져야 함
+      async function getId(idvalue) {
+        try {
+          const snapshot = await getDatas("user");
+          let idExists = false;
+
+          snapshot.forEach((doc) => {
+            const ids = doc.data().id;
+            if (ids === idvalue) {
+              idExists = true;
+            }
+          });
+
+          return idExists;
+        } catch (error) {
+          console.error("Error getting documents:", error);
+          throw error;
         }
-      };
-      // 주소 검색
-      function findAddr() {
-        new daum.Postcode({
-          oncomplete: function (data) {
-            // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분입니다.
-            console.log(data);
-
-            let addr = ""; // 주소 변수
-            let extraAddr = ""; // 참고항목 변수
-
-            // 사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
-            if (data.userSelectedType === "R") {
-              // 사용자가 도로명 주소를 선택했을 경우
-              addr = data.roadAddress;
-            } else {
-              // 사용자가 지번 주소를 선택했을 경우(J)
-              addr = data.jibunAddress;
-            }
-
-            // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
-            if (data.userSelectedType === "R") {
-              // 법정동명이 있을 경우 추가한다. (법정리는 제외)
-              // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
-              if (data.bname !== "" && /[동|로|가]$/g.test(data.bname)) {
-                extraAddr += data.bname;
-              }
-              // 건물명이 있고, 공동주택일 경우 추가한다.
-              if (data.buildingName !== "" && data.apartment === "Y") {
-                extraAddr +=
-                  extraAddr !== ""
-                    ? ", " + data.buildingName
-                    : data.buildingName;
-              }
-              // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
-              if (extraAddr !== "") {
-                extraAddr = " (" + extraAddr + ")";
-              }
-            }
-
-            // 우편번호와 주소 정보를 해당 필드에 넣는다.
-            document.getElementById("sample6_postcode").value = data.zonecode;
-            document.getElementById("sample6_address").value = addr + extraAddr;
-            // 커서를 상세주소 필드로 이동한다.
-            document.getElementById("sample6_detailAddress").focus();
-          },
-        }).open();
       }
-
-      const emailSelect = document.getElementById("emailaddr");
-      const email2Input = document.getElementById("email2");
-      emailSelect.addEventListener("change", function () {
-        email2Input.value = emailSelect.value;
-      });
     </script>
   </body>
 </html>

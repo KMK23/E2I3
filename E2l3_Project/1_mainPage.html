@@ -8,22 +8,41 @@
     <link rel="stylesheet" href="2.intro.css" />
     <link rel="stylesheet" href="resources/css파일/intro_game.css" />
     <link rel="stylesheet" href="resources/css파일/gamePreview.css" />
+    <link rel="stylesheet" href="resources/css파일/real-review.css" />
+    <link rel="stylesheet" href="8_councelling.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="5_cash.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
 
   <body>
     <div class="three-btns">
+      <span class="welcome">반갑습니다!</span>
       <a href="1_2_login.html" class="login-btn">로그인</a>
       <a href="1_3_joinMembership.html" class="signup-btn">회원가입</a>
       <a href="/1_4_myPage.html" class="mypage-btn">마이페이지</a>
     </div>
     <div class="header">
       <div class="logo-wrapper">
-        <div class="logo">
-          <a href="#"
-            ><img
-              src="resources/img/코딩노트아이콘.svg"
-              id="mainIcon"
-            />코딩팡팡
+        <div class="logo1">
+          <a href="#">
+            <div id="mainIcon">
+              <!-- <img src="resources/img/코딩노트아이콘.svg" id="mainIcon" /> -->
+              <i class="fa-solid fa-laptop-code fa-xl"></i>
+            </div>
+            코딩팡팡
           </a>
         </div>
       </div>
@@ -43,21 +62,20 @@
     </div>
     <section class="content">
       <div class="content-text">
-        <span class="content-title">놀이처럼 배우는 우리 아이 첫 코딩!</span>
-        <br />
-        <span class="content-subtitle"
-          >아이들의 호기심을 가득 채워줄 다양한 활동과 게임으로 코딩의 기초를
-          다져보세요.</span
-        >
+        <div class="content-title">놀이처럼 배우는 우리 아이 첫 코딩!</div>
+        <div class="content-subtitle">
+          아이들의 호기심을 가득 채워줄 다양한 활동과 게임으로 코딩의 기초를
+          다져보세요.
+        </div>
         <br />
         <button class="content-btn">Let's play!</button>
       </div>
     </section>
     <div class="aside">
       <div class="aside-text">
-        <a href="#">지금 시작하면 <span class="special">7일간</span>무료!</a>
+        <a href="#">지금 시작하면 <span class="special">7일간 </span>무료!</a>
         <div class="aside-btns">
-          <button class="fir-btn">UI Coding 시작</button>
+          <button class="fir-btn">코딩팡팡 시작하기</button>
           <button class="sec-btn">무료 상담 신청</button>
         </div>
       </div>
@@ -66,22 +84,22 @@
     <!-- 소개인사 내용 시작 -->
     <section id="about">
       <div class="part">
-        <h2>유아 코딩교육의 중요성</h2>
-        <p>
+        <h2 class="part-title">유아 코딩교육의 중요성</h2>
+        <p class="part-text">
           유아 코딩교육은 논리적 사고와 문제 해결 능력을 키웁니다. <br />
           이는 학습 능력과 자신감을 높입니다.
         </p>
       </div>
       <div class="part">
-        <h2>코딩팡팡의 목표</h2>
-        <p>
+        <h2 class="part-title">코딩팡팡의 목표</h2>
+        <p class="part-text">
           모든 아이들이 재미있고 쉽게 코딩을 배우는 것. <br />
           코딩은 아이들의 미래에 긍정적인 영향을 줄 중요한 기술입니다.
         </p>
       </div>
       <div class="part">
-        <h2>코딩팡팡의 비전</h2>
-        <p>
+        <h2 class="part-title">코딩팡팡의 비전</h2>
+        <p class="part-text">
           모든 아이들이 창의적인 문제 해결사로 성장하는 것. <br />
           코딩은 창의적 문제 해결 능력을 길러줍니다.
         </p>
@@ -93,12 +111,12 @@
     <div id="gamePr">
       <div class="conteudo__geral">
         <div class="textBox">
-          <div class="logo">코딩팡팡</div>
+          <div class="logo"><span id="font-pop">코딩팡팡</span></div>
           <h1 class="title">
             <span class="span">코딩팡팡</span>만의 다양하고 다채로운 컨텐츠!
           </h1>
           <h4 class="title-desc">
-            단계적으로 설계된 프로그램식 블로 코딩을 경험해보세요
+            단계적으로 설계된 프로그램식 블록 코딩을 경험해보세요
           </h4>
         </div>
         <div class="container99">
@@ -129,11 +147,11 @@
     </div>
     <!-- 게임프리뷰 부분 끝 -->
 
-    <!-- 게임 체험하기 부분&홍보 시작 -->
+    <!-- intro_game 시작 -->
     <div class="All">
       <div class="wrap">
-        <!-- 네비게이션 바 -->
-        <section calss="coding">
+        <!-- 전체 페이지  -->
+        <section class="coding" id="gamePage">
           <div class="nav-bar">
             <ul class="nav nav-pills">
               <li class="nav-item">
@@ -149,13 +167,10 @@
               </li>
             </ul>
           </div>
-        </section>
-        <!-- 전체 페이지  -->
-        <section class="coding" id="gamePage">
           <div class="container">
             <div class="wrap-text">
               <span class="title-label">Easy Fun Coding</span>
-              <p class="sub-title">단계별 프로그래밍 학습을 통해</p>
+              <p class="sub-title1">단계별 프로그래밍 학습을 통해</p>
               <h2 class="title">기초 컴퓨팅 사고력을 튼튼하게</h2>
               <p class="title-text">
                 아이들이 쉽고 재미있게 코딩의 기초를 다질 수 있도록 단계별 학습
@@ -164,12 +179,12 @@
                 연습합니다.
               </p>
               <div class="game-bar">
-                <ul>
+                <ul class="game-bar1">
                   <li class="gameName">
-                    <a class="gameLink" href="#" id="game1">디버깅</a>
+                    <a class="gameLink" href="#" id="game1">알고리즘 및 순차</a>
                   </li>
                   <li class="gameName">
-                    <a class="gameLink" href="#" id="game2">알고리즘 및 순차</a>
+                    <a class="gameLink" href="#" id="game2">디버깅</a>
                   </li>
                   <li class="gameName">
                     <a class="gameLink" href="#" id="game3">반복,패턴 만들기</a>
@@ -178,22 +193,25 @@
               </div>
               <div class="gameAll">
                 <div class="gameImg" id="img1">
-                  <img
-                    src="resources/img/동물을 찾아요.png"
+                  <!-- <img
+                    src="resources/img/샌드위치게임이미지.JPG"
                     alt=""
                     class="selected"
-                  />
+                  /> -->
                   <button class="gameBtn1" id="Btn1">게임 체험하기</button>
                 </div>
                 <div class="gameImg" id="img2" style="display: none">
-                  <img
-                    src="resources/img/샌드위치만들기.png"
+                  <!-- <img
+                    src="resources/img/같은거찾기이미지.JPG"
                     class="selected"
-                  />
+                  /> -->
                   <button class="gameBtn1" id="Btn2">게임 체험하기</button>
                 </div>
                 <div class="gameImg" id="img3" style="display: none">
-                  <img src="resources/img/반복패턴.png" class="selected" />
+                  <!-- <img
+                    src="resources/img/옷입히기이미지.JPG"
+                    class="selected"
+                  /> -->
                   <button class="gameBtn1" id="Btn3">게임 체험하기</button>
                 </div>
               </div>
@@ -208,7 +226,7 @@
           <div class="AI-text-img">
             <h1 class="sc-text">AI기반 학습 리포트로 맞춤형 학습 관리까지</h1>
             <h3 class="sc-text">
-              홈페이지에서는 AI 기술을 활용한 학습 리포트를 통해<br />아이들의
+              코딩팡팡에서는 AI 기술을 활용한 학습 리포트를 통해<br />아이들의
               코딩 실력을 체계적으로 분석하고 맞춤형 학습 계획을 제공합니다.
             </h3>
             <div class="AI-stu-img">
@@ -272,24 +290,33 @@
             올바르게 살아가는 법을 배울 수 있는 특별한 기회를 제공합니다.
           </h3>
           <ul class="lists">
-            <li>
-              디지털 시대의 매너: 사이버 공간에서의 예의와 적절한 행동의
-              중요성을 배우세요.
+            <li class="lists-li">
+              <span class="mini-title">디지털 시대의 매너</span> <br />
+              <div class="lists-text">
+                사이버 공간에서의 예의와 적절한 행동의 중요성을 배우세요.
+              </div>
             </li>
-            <li>
-              디지털 감성: 온라인에서의 자신감을 키우고, 다른 사람과의 존중과
-              소통의 방법을 익히세요.
+            <li class="lists-li">
+              <span class="mini-title">디지털 감성</span> <br />온라인에서의
+              <div class="lists-text">
+                자신감을 키우고 다른 사람과의 존중과 소통의 방법을 익히세요.
+              </div>
             </li>
-            <li>
-              사이버 보안: 개인정보 보호와 온라인 안전에 대한 필수적인 지식을
-              습득하세요.
+            <li class="lists-li">
+              <span class="mini-title">사이버 보안</span> <br />
+              <div class="lists-text">
+                개인정보 보호와 온라인 안전에 대한 필수적인 지식을 습득하세요.
+              </div>
             </li>
-            <li>
-              디지털 예절: 올바른 온라인 행동 규범을 익히며, 다양한 상황에서의
-              적절한 반응 방법을 배웁니다.
+            <li class="lists-li">
+              <span class="mini-title">디지털 예절</span> <br />올바른 온라인
+              <div class="lists-text">
+                행동 규범을 익히며, 다양한 상황에서의 적절한 반응 방법을
+                배웁니다.
+              </div>
             </li>
           </ul>
-          <p>
+          <p id="listInP">
             애니메이션과 퀴즈를 통해 이 모든 학습이 쉽고 재미있게 전달됩니다.
             <br />
             AI학습 리포트는 여러분이 디지털 세상에서 스마트하고 안전하게 길을
@@ -297,44 +324,81 @@
           </p>
           <div class="AI-imgs">
             <div class="AI-img" id="AI-img1">
-              <img
-                src="resources/img/circle-play-solid.svg"
-                class="button"
-                width="50px"
-                height="50px"
-              />
+              <i class="fa-regular fa-circle-play fa-2xl button"></i>
             </div>
             <div class="AI-img" id="AI-img2">
-              <img
-                src="resources/img/circle-play-solid.svg"
-                class="button"
-                width="50px"
-                height="50px"
-              />
+              <i class="fa-regular fa-circle-play fa-2xl button"></i>
             </div>
             <div class="AI-img" id="AI-img3">
-              <img
-                src="resources/img/circle-play-solid.svg"
-                class="button"
-                width="50px"
-                height="50px"
-              />
+              <i class="fa-regular fa-circle-play fa-2xl button"></i>
             </div>
             <div class="AI-img" id="AI-img4">
-              <img
-                src="resources/img/circle-play-solid.svg"
-                class="button"
-                width="50px"
-                height="50px"
-              />
+              <i class="fa-regular fa-circle-play fa-2xl button"></i>
             </div>
           </div>
         </div>
       </section>
     </div>
-    <!-- 게임 체험하기 부분&홍보 끝 -->
+    <!-- intro_game 끝 -->
 
-    <!-- 선생님 소개 부분 -->
+    <!-- 리얼리뷰 시작 -->
+    <div class="review-container">
+      <div class="title-wrap">
+        <p class="logo">Real Review</p>
+        <h3 class="sub-title">재미있고 쉬운 코딩의 세계!</h3>
+        <h1 class="main-title">
+          코딩팡팡 <span class="strong">리얼 체험 후기</span>
+        </h1>
+      </div>
+      <div class="review-imgs">
+        <div class="reviewImgs">
+          <img src="resources/img/kids1.jpg" class="kids" />
+          <button class="reviewBtn">
+            <i class="fa-solid fa-circle-play fa-2xl"></i>
+          </button>
+          <div class="reviewText">
+            <span class="reviewSpans">Real-Review</span>&nbsp쉽고 간단하게 이해
+            가능하며, 아이들이 하고 싶게 만들어져 있어 흥미 유발에도 너무
+            좋아요!
+          </div>
+        </div>
+        <div class="reviewImgs">
+          <img src="resources/img/kids2.jpg" class="kids" />
+          <button class="reviewBtn">
+            <i class="fa-solid fa-circle-play fa-2xl"></i>
+          </button>
+          <div class="reviewText">
+            <span class="reviewSpans">Real-Review</span>&nbsp 아이들이 컴퓨터
+            앞에서 공부한다는 느낌보단 게임을 하듯이 학습하여 재미있어 합니다.
+          </div>
+        </div>
+        <div class="reviewImgs">
+          <img src="resources/img/kids3.jpg" class="kids" />
+          <button class="reviewBtn">
+            <i class="fa-solid fa-circle-play fa-2xl"></i>
+          </button>
+          <div class="reviewText">
+            <span class="reviewSpans">Real-Review</span>&nbsp 지루하지 않는
+            게임들과 더 높은 점수를 받기 위해 지속적으로 학습 하는 모습이 보여
+            좋아요!
+          </div>
+        </div>
+        <div class="reviewImgs">
+          <img src="resources/img/kids4.jpg" class="kids" />
+          <button class="reviewBtn">
+            <i class="fa-solid fa-circle-play fa-2xl"></i>
+          </button>
+          <div class="reviewText">
+            <span class="reviewSpans">Real-Review</span>&nbsp 보편화된 이론
+            학습이 아닌 다양한 체험이 가능하여 이래서 많은 부모들이 선택하는구나
+            싶습니다.
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 리얼리뷰 끝 -->
+
+    <!-- 선생님 소개 부분 시작-->
     <section id="team">
       <h2>선생진 소개</h2>
       <div class="team-member">
@@ -383,6 +447,7 @@
         <p class="motto">"열정을 다하겠습니다!"</p>
       </div>
     </section>
+    <!-- 선생님 소개 부분 끝 -->
 
     <!-- <section id="programs">
       <h2>유아 코딩교육 대표 프로그램 소개</h2>
@@ -450,7 +515,7 @@
         </div>
       </div>
     </section> -->
-    <section id="testimonials">
+    <!-- <section id="testimonials">
       <h2>부모님 후기</h2>
       <br />
       <h3>김재형 (35세, 직장인)</h3>
@@ -471,7 +536,7 @@
         문제를 해결하는 힘을 키우는 걸 보니 정말 행복해요!"
       </blockquote>
       <br />
-    </section>
+    </section> -->
     <section id="contact">
       <h2>연락처 및 문의</h2>
       <p>이메일: cdpp0612@gmail.com</p>
@@ -484,11 +549,137 @@
         <button type="submit">보내기</button>
       </form>
     </section>
+    <section class="bottom1">
+      <div class="content1">
+        <div class="coding1">
+          <p class="text-p">"친구들은 이미 코딩 시작했어요!"</p>
+          <h2 class="text-h2">무료체험을 시작해 보세요.</h2>
+        </div>
+        <div class="paymone">
+          <a href="#" class="code-link" target="_blank"
+            >0원으로 7일간 무료체험을 시작해보세요</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- 숨겨져 있는 상담신청 시작 -->
+    <div id="overlay" class="hidden"></div>
+    <div class="form-container hidden">
+      <h2>무료상담 신청</h2>
+      <form>
+        <div class="group">
+          <label for="phone">휴대폰 번호 <span> *</span></label>
+          <input
+            type="text"
+            id="phone"
+            placeholder="- 없이 휴대폰 번호를 입력해 주세요."
+          />
+        </div>
+        <div class="group addr-group">
+          <label for="address">주소 <span> *</span></label>
+          <select id="sido" onchange="updateGugun()">
+            <option>시/도 선택</option>
+            <option>서울특별시</option>
+            <option>부산광역시</option>
+            <option>인천광역시</option>
+            <option>대구광역시</option>
+            <option>대전광역시</option>
+            <option>광주광역시</option>
+            <option>울산광역시</option>
+            <option>세종특별자치시</option>
+            <option>경기도</option>
+            <option>충청북도</option>
+            <option>충청남도</option>
+            <option>전라남도</option>
+            <option>경상북도</option>
+            <option>경상남도</option>
+            <option>강원특별자치도</option>
+            <option>전북특별자치도</option>
+            <option>제주특별자치도</option>
+            <!-- Add more options here -->
+          </select>
+          <select id="gugun">
+            <option>구/군 선택</option>
+            <!-- Add more options here -->
+          </select>
+        </div>
+        <div class="group">
+          <label for="childName">자녀 이름 <span> *</span></label>
+          <input
+            type="text"
+            id="childName"
+            placeholder="자녀의 이름을 입력해 주세요."
+          />
+        </div>
+        <div class="group">
+          <label>자녀 연령 <span> *</span></label>
+          <div class="radio-group">
+            <label><input type="radio" name="age" value="유아" /> 유아</label>
+            <label
+              ><input type="radio" name="age" value="초등 저학년(1~3학년)" />
+              초등 저학년(1~3학년)</label
+            >
+            <label
+              ><input type="radio" name="age" value="초등 고학년(4~6학년)" />
+              초등 고학년(4~6학년)</label
+            ><br />
+            <label
+              ><input type="radio" name="age" value="중고등" /> 중고등</label
+            >
+            <label><input type="radio" name="age" value="성인" /> 성인</label>
+          </div>
+        </div>
+        <div class="group">
+          <label>학습 형태 <span> *</span></label>
+          <div class="radio-group">
+            <label
+              ><input type="radio" name="studyType" value="선생님 방문" />
+              선생님 방문</label
+            >
+            <label
+              ><input type="radio" name="studyType" value="학습센터" />
+              학습센터</label
+            >
+            <label
+              ><input type="radio" name="studyType" value="온라인" />
+              온라인</label
+            >
+          </div>
+        </div>
+        <div class="group content-group">
+          <label for="content">상담 내용</label>
+          <textarea
+            id="content"
+            placeholder="상담할 내용을 입력해 주세요."
+          ></textarea>
+        </div>
+        <div class="group checkbox-group">
+          <input type="checkbox" id="agreement" />
+          <label for="agreement" id="agreementDesc"
+            >개인정보 수집 및 이용에 동의합니다.(필수)</label
+          >
+        </div>
+        <div class="button-container">
+          <button type="submit">상담 신청하기</button>
+          <!-- <button class="close-Btn">닫기</button> -->
+        </div>
+      </form>
+    </div>
+    <!-- 숨겨져 있는 상담신청 끝 -->
+
     <footer>
-      <p>&copy; 2024 코딩팡팡 By E2I3</p>
-      <p>전화번호: 042-057-9323</p>
-      <p>이메일: cdpp0612@gmail.com</p>
-      <p>주소: 대전광역시 중구 중앙로 121번길 20 (선화동 방산빌딩) 5층 501호</p>
+      <div>
+        <p>&copy; 2024 코딩팡팡 By E2I3</p>
+        <p>전화번호: 042-057-9323</p>
+        <p>이메일: cdpp0612@gmail.com</p>
+        <p>
+          주소: 대전광역시 중구 중앙로 121번길 20 (선화동 방산빌딩) 5층 501호
+        </p>
+      </div>
+      <button class="button-up">
+        <i class="fa-solid fa-arrow-up fa-2xl" style="color: white"></i>
+      </button>
     </footer>
     <!-- 소개인사 내용 끝 -->
     <div class="bubbles">
@@ -504,4 +695,50 @@
 
   <script src="resources/js/gamePreview.js"></script>
   <script src="resources/js/introGame.js"></script>
+  <script>
+    let scrollToTopButton = document.querySelector(".button-up");
+
+    // 사용자가 문서의 20px 아래로 스크롤하면 버튼을 표시
+    window.onscroll = function () {
+      scrollFunction();
+    };
+
+    function scrollFunction() {
+      if (
+        document.body.scrollTop > 20 ||
+        document.documentElement.scrollTop > 20
+      ) {
+        scrollToTopButton.style.display = "block";
+      } else {
+        scrollToTopButton.style.display = "none";
+      }
+    }
+
+    // 버튼에 이벤트 리스너 추가
+    scrollToTopButton.addEventListener("click", function () {
+      // 문서의 맨 위로 부드럽게 스크롤
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth", // 부드러운 스크롤
+      });
+    });
+
+    const formContainer = document.querySelector(".form-container");
+    const freeBtn = document.querySelector(".sec-btn");
+    const overlay = document.getElementById("overlay");
+    freeBtn.addEventListener("click", function () {
+      formContainer.classList.add("visible");
+      formContainer.classList.remove("hidden");
+      overlay.classList.add("visible");
+      overlay.classList.remove("hidden");
+    });
+
+    const userName = localStorage.getItem("name");
+    const userid = localStorage.getItem("id");
+
+    if (userName) {
+      const welcomeText = document.querySelector(".welcome");
+      welcomeText.innerHTML = `<span>${userName}</span>`;
+    }
+  </script>
 </html>
