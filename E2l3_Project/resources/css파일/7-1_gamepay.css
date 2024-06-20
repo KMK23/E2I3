@@ -30,14 +30,11 @@ head {
   margin: 1.5rem;
 }
 .headH2 {
-<<<<<<< Updated upstream
   margin: 1rem;
   font-weight: 500;
   font-size: 2rem;
-=======
   font-weight: 700;
   font-size: 1.25rem;
->>>>>>> Stashed changes
   text-align: center;
 }
 .color {
@@ -55,15 +52,12 @@ head {
 .list {
   background-color: #e0f2e9;
   border-radius: 1rem;
-<<<<<<< Updated upstream
   padding: 1rem;
   width: 100%;
   margin: 0;
-=======
   margin: 0.625rem 1.25rem;
   padding: 1.25rem;
   width: 50%;
->>>>>>> Stashed changes
 }
 .list > img {
   border-radius: 1rem;
@@ -82,12 +76,9 @@ head {
   font-size: 1.125rem;
 }
 .payBtncontainer {
-<<<<<<< Updated upstream
   text-align: center;
   position: relative;
-=======
   margin-right: 1rem;
->>>>>>> Stashed changes
 }
 .payBtn {
   position: absolute;
@@ -97,12 +88,9 @@ head {
   border-radius: 1rem;
   background-color: #05d7fb;
   font-size: 1rem;
-<<<<<<< Updated upstream
   width: 10%;
   z-index: 1000;
-=======
   width: 15%;
->>>>>>> Stashed changes
   font-weight: 700;
   padding: 1rem;
   color: #fff;
@@ -113,16 +101,10 @@ head {
 /* 반응형 스타일 - 작은 화면 */
 @media (max-width: 600px) {
   .payBtn {
-<<<<<<< Updated upstream
     width: 15%;
 
     top: 90%;
     max-width: 7.5rem;
-=======
-    width: 100%;
-    padding: 0.9375rem;
-    font-size: 1.125rem;
->>>>>>> Stashed changes
   }
   .content {
     width: 75%;
@@ -135,7 +117,6 @@ head {
 /* 반응형 스타일 - 중간 크기 화면 */
 @media (min-width: 37.5625rem) and (max-width: 64rem) {
   .payBtn {
-<<<<<<< Updated upstream
     width: 10%;
     top: 90%;
     min-width: 8.75rem;
@@ -143,11 +124,6 @@ head {
   }
   .content {
     width: 85%;
-=======
-    width: auto;
-    padding: 0.75rem 1.5rem;
-    font-size: 1.0625rem;
->>>>>>> Stashed changes
   }
 }
 /* 반응형 스타일 - 큰 화면 */
