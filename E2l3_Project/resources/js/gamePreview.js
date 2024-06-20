@@ -74,7 +74,7 @@ const update = () => {
   lastMoveTo = lerp(moveTo, lastMoveTo, 0.05);
   carrossel.style.setProperty("--rotatey", lastMoveTo + "deg");
   carrosselItems.forEach((item) => {
-    const angle =
+    let angle =
       (parseFloat(item.style.getPropertyValue("--rotatey")) + lastMoveTo) % 360;
     if (angle < 0) {
       angle += 360;
@@ -103,7 +103,8 @@ const onResize = () => {
 const getDirection = (item) => {
   const rect = item.getBoundingClientRect();
   const middleX = window.innerWidth / 2;
-
+  console.log(rect);
+  console.log(middleX);
   if (rect.left > middleX) {
     return "right";
   } else if (rect.right < middleX) {

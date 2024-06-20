@@ -110,14 +110,14 @@ img {
   --rotatey: 0;
   transform: rotatey(var(--rotatey)) translatez(var(--tz));
   /* background: linear-gradient(-229deg, #fbd52d, #ef3a7b); */
-  background-image: url("resources/img/원본_게임1.png");
+  background-image: url("../img/원본_게임1.png");
   background-size: cover;
 }
 
 .carrossel-item:nth-child(2) {
   --rotatey: 0;
   transform: rotatey(var(--rotatey)) translatez(var(--tz));
-  background-image: url("resources/img/원본_게임2.png");
+  background-image: url("../img/원본_게임2.png");
   background-size: cover;
 }
 
@@ -125,14 +125,14 @@ img {
   --rotatey: 0;
   transform: rotatey(var(--rotatey)) translatez(var(--tz));
   /* background: linear-gradient(-229deg, #0cebeb, #29ffc6); */
-  background-image: url("resources/img/원본_게임3.png");
+  background-image: url("../img/원본_게임3.png");
   background-size: cover;
 }
 .carrossel-item:nth-child(4) {
   --rotatey: 0;
   transform: rotatey(var(--rotatey)) translatez(var(--tz));
   /* background: linear-gradient(-229deg, #88f7f9, #048fff); */
-  background-image: url("resources/img/게임\ 사이즈\ 조절.png");
+  background-image: url("../img/게임\ 사이즈\ 조절.png");
   background-size: cover;
 }
 
@@ -140,7 +140,7 @@ img {
   --rotate: 0;
   transform: rotatey(var(--rotatey)) translatez(var(--tz));
   /* background: linear-gradient(-229deg, #0093e9, #80d0c7); */
-  background-image: url("resources/img/게임6.png");
+  background-image: url("../img/게임6.png");
   background-size: cover;
 }
 
@@ -148,7 +148,7 @@ img {
   --rotatey: 0;
   transform: rotatey(var(--rotatey)) translatez(var(--tz));
   /* background: linear-gradient(-229deg, #cf91ff, #5782f5); */
-  background-image: url("resources/img/게임7.png");
+  background-image: url("../img/게임7.png");
   background-size: cover;
 }
 

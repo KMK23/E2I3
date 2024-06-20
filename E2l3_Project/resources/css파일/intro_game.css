@@ -440,22 +440,22 @@ p {
   place-items: center;
 }
 #AI-img1 {
-  background-image: url("resources/img/1_KakaoTalk_20240614_141659959.png");
+  background-image: url("../img/1_KakaoTalk_20240614_141659959.png");
   background-size: cover;
   background-position: center;
 }
 #AI-img2 {
-  background-image: url("resources/img/2_KakaoTalk_20240614_141659959_01.png");
+  background-image: url("../img/2_KakaoTalk_20240614_141659959_01.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
 #AI-img3 {
-  background-image: url("resources/img/3_KakaoTalk_20240614_141659959_02.png");
+  background-image: url("../img/3_KakaoTalk_20240614_141659959_02.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
 #AI-img4 {
-  background-image: url("resources/img/4_KakaoTalk_20240614_141659959_03.png");
+  background-image: url("../img/4_KakaoTalk_20240614_141659959_03.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
