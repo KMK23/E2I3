@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,700;1,700&display=swap");
+
+.conteudo__geral {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.textBox {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+}
+.textBox .logo {
+  background-color: #258f85;
+  padding: 1% 2%;
+  font-weight: 900;
+  width: fit-content;
+  border-radius: 1.3rem;
+  margin-bottom: 1%;
+}
+.title {
+  font-size: 3rem;
+  margin: 1% 0;
+}
+.span {
+  color: #fbd52d;
+  /* font-style: italic; */
+}
+.title-desc {
+  font-size: 1.2rem;
+  background-color: white;
+  color: #10162c;
+  padding: 1rem;
+  border-radius: 2rem;
+  margin: 1% 0;
+  margin-bottom: 6rem;
+}
+/* body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #10162c;
+} */
+.gamePr {
+  background-color: #10162c;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container99 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 3;
+}
+
+.container-carrossel {
+  --widthItem: 150px;
+  --heightItem: 100px;
+  width: var(--widthItem);
+  height: var(--heightItem);
+  perspective: 1000px;
+}
+
+.carrossel {
+  --rotatey: 0;
+  font-size: 4rem;
+  position: relative;
+  transform: rotatey(var(--rotatey));
+  transform-style: preserve-3d;
+  user-select: none;
+  cursor: grab;
+}
+
+.carrossel-item {
+  opacity: 0.5;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  transition: opacity 0.5s;
+}
+/* .imgscale {
+  transform: scale(0.7);
+} */
+.carrossel-item:hover {
+  opacity: 1;
+}
+
+.carrossel,
+.carrossel-item {
+  width: 100%;
+  height: 100%;
+}
+/* background: linear-gradient(-229deg, #642B73, #C6426E); */
+
+.carrossel-item:nth-child(1) {
+  --rotatey: 0;
+  transform: rotatey(var(--rotatey)) translatez(var(--tz));
+  /* background: linear-gradient(-229deg, #fbd52d, #ef3a7b); */
+  background-image: url("resources/img/원본_게임1.png");
+  background-size: cover;
+}
+
+.carrossel-item:nth-child(2) {
+  --rotatey: 0;
+  transform: rotatey(var(--rotatey)) translatez(var(--tz));
+  background-image: url("resources/img/원본_게임2.png");
+  background-size: cover;
+}
+
+.carrossel-item:nth-child(3) {
+  --rotatey: 0;
+  transform: rotatey(var(--rotatey)) translatez(var(--tz));
+  /* background: linear-gradient(-229deg, #0cebeb, #29ffc6); */
+  background-image: url("resources/img/원본_게임3.png");
+  background-size: cover;
+}
+.carrossel-item:nth-child(4) {
+  --rotatey: 0;
+  transform: rotatey(var(--rotatey)) translatez(var(--tz));
+  /* background: linear-gradient(-229deg, #88f7f9, #048fff); */
+  background-image: url("resources/img/게임\ 사이즈\ 조절.png");
+  background-size: cover;
+}
+
+.carrossel-item:nth-child(5) {
+  --rotate: 0;
+  transform: rotatey(var(--rotatey)) translatez(var(--tz));
+  /* background: linear-gradient(-229deg, #0093e9, #80d0c7); */
+  background-image: url("resources/img/게임6.png");
+  background-size: cover;
+}
+
+.carrossel-item:nth-child(6) {
+  --rotatey: 0;
+  transform: rotatey(var(--rotatey)) translatez(var(--tz));
+  /* background: linear-gradient(-229deg, #cf91ff, #5782f5); */
+  background-image: url("resources/img/게임7.png");
+  background-size: cover;
+}
+
+@media screen and (min-width: 576px) {
+  .container-carrossel {
+    --widthItem: 25rem;
+    --heightItem: 22rem;
+  }
+}
+
+#gamePr {
+  background-color: #0f193f;
+}
