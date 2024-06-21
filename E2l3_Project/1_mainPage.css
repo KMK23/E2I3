@@ -87,10 +87,13 @@ body {
   justify-content: flex-end;
   align-items: center;
 }
-
+.welcome {
+  margin-top: 1rem;
+}
 .login-btn,
 .signup-btn,
-.mypage-btn {
+.mypage-btn,
+.logout-btn {
   padding: 5px 10px;
   margin-top: 0.8rem;
   font-size: 14px;
