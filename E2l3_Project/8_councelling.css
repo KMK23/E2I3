@@ -49,6 +49,13 @@
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.ttf)
       format("truetype");
 }
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
 * {
   box-sizing: border-box;
 }
@@ -61,25 +68,33 @@
   height: 100vh;
   margin: 0;
 } */
+
+#from99 {
+  font-family: "Pretendard-Regular";
+}
 #overlay {
   display: none;
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background: rgba(0, 0, 0, 0.5);
   z-index: 999;
+  overflow: hidden;
+  top: 0;
+  left: 0;
 }
 .form-container {
   background-color: white;
   padding: 2rem;
   border-radius: 2rem;
   box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
-  position: relative;
+  position: fixed;
   width: 40rem;
   display: none;
   z-index: 1000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 #overlay.visible {
   display: block;
@@ -165,6 +180,7 @@
 .form-container button {
   width: 70%;
   padding: 0.625rem;
+  margin: 0.8rem;
   border: none;
   border-radius: 1rem;
   background-color: #087f5b;
@@ -174,4 +190,7 @@
 }
 .form-container button:hover {
   background-color: #07412f;
+}
+.button-container.close-Btn {
+  background-color: white;
 }

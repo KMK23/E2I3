@@ -17,14 +17,24 @@
         <div>
           <div class="login-form-all">
             <form class="login-form">
-              <h1 class="login-sign-In">로그인</h1>
+              <h1 class="login-sign-In">LogIn</h1>
               <div class="login-box">
                 <i class="bx bx-user login-icon"></i>
-                <input type="text" placeholder="Username" class="login-input" />
+                <input
+                  type="text"
+                  placeholder="Username"
+                  class="login-input"
+                  id="login-id"
+                />
               </div>
               <div class="login-box">
                 <i class="bx bx-lock login-icon"></i>
-                <input type="text" placeholder="Password" class="login-input" />
+                <input
+                  type="password"
+                  placeholder="Password"
+                  class="login-input"
+                  id="login-password"
+                />
               </div>
               <div class="forgot-signIn">
                 <h3 class="forgot-text"><a href="#">비밀번호 찾기</a></h3>
@@ -36,4 +46,41 @@
       </div>
     </div>
   </body>
+  <script type="module">
+    import {
+      db,
+      getDatas,
+      addDatas,
+      deleteDatas,
+      updateDatas,
+    } from "./resources/js/joinmembershipfirebase.js";
+    // 우선 가져오자
+    const loginBtn = document.querySelector(".signInBtn");
+    const loginId = document.querySelector("#login-id");
+    const loginpassword = document.querySelector("#login-password");
+
+    async function getIdandPassword() {
+      const snapshot = await getDatas("user");
+      return snapshot.docs.map((doc) => doc.data());
+    }
+
+    loginBtn.addEventListener("click", async function (e) {
+      e.preventDefault();
+      const idValue = loginId.value.trim();
+      const passwordValue = loginpassword.value.trim();
+      const users = await getIdandPassword();
+      const user = users.find(
+        (user) => user.id === idValue && user.password === passwordValue
+      );
+
+      if (user) {
+        localStorage.setItem("name", user.name);
+        localStorage.setItem("id", user.id);
+        alert(`${user.name}님 반갑습니다😁`);
+        location.href = "1_mainPage.html";
+      } else {
+        alert("아이디 또는 비밀번호가 잘못되었습니다.");
+      }
+    });
+  </script>
 </html>

@@ -150,14 +150,18 @@
         </div>
       </div>
     </div>
+    <div class="score">내 점수 : 10 점</div>
   </body>
   <script>
     const ingredient = document.querySelectorAll(".sandwich-ingredient");
     const sandwich = document.querySelector(".sandwich");
+    const score = document.querySelector(".score");
     let zIndexCounter = 1;
     let currentStep = 0;
     const order = ["bread", "meat", "egg", "tomato", "lettuce", "bread"];
     let firstBreadPlaced = false;
+    let minus = 0;
+    let myScore = 0;
 
     ingredient.forEach((ingredient) => {
       ingredient.addEventListener("click", function () {
@@ -189,7 +193,11 @@
           }
         } else {
           alert("순서가 틀렸습니다. 올바른 순서대로 눌러주세요.");
+          minus++;
+          console.log(minus);
         }
+        myScore = 10 - minus;
+        score.innerHTML = `내 점수 : ${myScore}`;
       });
     });
   </script>
