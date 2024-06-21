@@ -150,7 +150,6 @@
         </div>
       </div>
     </div>
-    <span id="user"></span>
     <div class="score">점수 : 10 점</div>
   </body>
   <script type="module">
@@ -163,44 +162,20 @@
     let firstBreadPlaced = false;
     let minus = 0;
     let myScore = 0;
-
     import {
       db,
       getDatas,
       addDatas,
       deleteDatas,
       updateDatas,
-      addScore,
-      updateScore,
     } from "./resources/js/scoreBoard.js";
 
-    // function updateScore() {
-    //   myScore = 10 - minus;
-    //   score.innerHTML = `점수 : ${myScore} 점`;
-    //   console.log(`Current Score: ${myScore}`);
-    // }
-    // function endGame() {
-    //   console.log(`Current Score: ${myScore}`);
-    //   addScore(myScore).then(() => {
-    //     alert("성공적으로 샌드위치를 완성했습니다! 점수가 저장되었습니다.");
-    //   });
-    // }
-
-    function updateScoreDisplay() {
-      myScore = 10 - minus;
+    function updateScore() {
+      myScore = 10 - minus + currentStep;
       score.innerHTML = `점수 : ${myScore} 점`;
-      console.log(`Current Score: ${myScore}`);
-    }
-
-    async function endGame() {
-      console.log(`Current Score: ${myScore}`);
-      let user = localStorage.getItem("id");
-      if (!user) {
-        alert("점수를 등록하시려면 로그인을 해주세요.");
-        return false;
-      }
-      await updateScore(user, myScore);
-      alert("성공적으로 샌드위치를 완성했습니다! 점수가 저장되었습니다.");
+      // console.log(`Current Score: ${myScore}`);
+      const finalScore = myScore;
+      return;
     }
 
     ingredient.forEach((ingredient) => {
@@ -228,31 +203,43 @@
           if (currentStep === order.length) {
             const lastIngredientAdded = sandwich.lastElementChild;
             lastIngredientAdded.onload = function () {
-              // alert("성공적으로 샌드위치를 완성했습니다!");
-              endGame();
+              alert("성공적으로 샌드위치를 완성했습니다!");
             };
           }
         } else {
           alert("순서가 틀렸습니다. 올바른 순서대로 눌러주세요.");
           minus++;
         }
-        // updateScore();
-        updateScoreDisplay();
+        updateScore();
       });
     });
 
-    async function userName() {
-      const snapshot = await getDatas("user");
-      snapshot.forEach((e) => {
-        // console.log(e.data().id);
-      });
+    async function saveScoreToFirebase(score) {
+      const userId = localStorage.getItem("id");
+      const userName = localStorage.getItem("name");
+      const data = {
+        userId: userId,
+        userName: userName,
+        score: score,
+        date: new Date(),
+      };
+      await addDatas("scores", data);
     }
 
-    let user = localStorage.getItem("id");
-    const userSpan = document.querySelector("#user");
-    userSpan.innerHTML = `${user}`;
-    userName();
+    // 우선 getDatas 써본거
+    async function getGameData() {
+      const snapshot = await getDatas("user");
+      console.log(snapshot).dota().name;
+    }
+    getGameData();
 
-    localStorage.removeItem("userInfo");
+    //addDatas
+
+    // 점수코드
+    밍ㄹ미;
+    ㅇ람;
+    ㅣㅇㄴfka;
+    lsdkf;
+    ㅁ;
   </script>
 </html>
