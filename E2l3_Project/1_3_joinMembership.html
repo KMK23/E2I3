@@ -429,24 +429,33 @@
         }
       });
 
-      async function getId(idvalue) {
-        try {
-          const snapshot = await getDatas("user");
-          let idExists = false;
+      // async function getId(idvalue) {
+      //   try {
+      //     const snapshot = await getDatas("user");
+      //     let idExists = false;
 
-          snapshot.forEach((doc) => {
-            const ids = doc.data().id;
-            if (ids === idvalue) {
-              idExists = true;
-            }
-          });
+      //     snapshot.forEach((doc) => {
+      //       const ids = doc.data().id;
+      //       console.log(ids);
+      //       if (ids === idvalue) {
+      //         idExists = true;
+      //       }
+      //     });
 
-          return idExists;
-        } catch (error) {
-          console.error("Error getting documents:", error);
-          throw error;
-        }
+      //     return idExists;
+      //   } catch (error) {
+      //     console.error("Error getting documents:", error);
+      //     throw error;
+      //   }
+      // }
+
+      async function getID2() {
+        const snapshot = await getDatas("user");
+        snapshot.forEach((doc) => {
+          console.log(doc.data().id);
+        });
       }
+      getID2();
     </script>
   </body>
 </html>
