@@ -33,6 +33,7 @@
       <a href="1_2_login.html" class="login-btn">로그인</a>
       <a href="1_3_joinMembership.html" class="signup-btn">회원가입</a>
       <a href="/1_4_myPage.html" class="mypage-btn">마이페이지</a>
+      <a href="#" class="logout-btn" style="display: none">로그아웃</a>
     </div>
     <div class="header">
       <div class="logo-wrapper">
@@ -726,6 +727,11 @@
     const formContainer = document.querySelector(".form-container");
     const freeBtn = document.querySelector(".sec-btn");
     const overlay = document.getElementById("overlay");
+    const loginBtn = document.querySelector(".login-btn");
+    const joinBtn = document.querySelector(".signup-btn");
+    const mypageBtn = document.querySelector(".mypage-btn");
+    const logoutBtn = document.querySelector(".logout-btn");
+
     freeBtn.addEventListener("click", function () {
       formContainer.classList.add("visible");
       formContainer.classList.remove("hidden");
@@ -738,7 +744,16 @@
 
     if (userName) {
       const welcomeText = document.querySelector(".welcome");
-      welcomeText.innerHTML = `<span>${userName}</span>`;
+      welcomeText.innerHTML = `<span>${userName}님 반갑습니다😁</span>`;
+      loginBtn.style.display = "none";
+      joinBtn.style.display = "none";
+      logoutBtn.style.display = "inline-block";
     }
+
+    logoutBtn.addEventListener("click", function () {
+      localStorage.removeItem("name");
+      localStorage.removeItem("id");
+      location.reload();
+    });
   </script>
 </html>

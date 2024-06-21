@@ -336,6 +336,10 @@
               <option value="nate.com">nate.com</option>
               <option value="" selected>직접 입력</option>
             </select>
+            <button type="button" id="sendVerificationBtn">
+              인증 이메일 전송
+            </button>
+            <div id="emailVerificationResult" class="hide alert"></div>
           </div>
           <div class="tel box">
             <p class="tel-label">전화번호</p>
@@ -378,6 +382,12 @@
       const checkIdBtn = document.getElementById("checkIdBtn");
       const idinput = document.querySelector(".id-input");
       const IdcheckResult = document.getElementById("idCheckResult");
+      const sendVerificationBtn = document.getElementById(
+        "sendVerificationBtn"
+      );
+      const emailVerificationResult = document.getElementById(
+        "emailVerificationResult"
+      );
 
       joinBtn.addEventListener("click", async function (e) {
         e.preventDefault();
@@ -398,7 +408,7 @@
 
         location.href = "1_mainPage.html";
       });
-
+      // 아이디 중복확인
       checkIdBtn.addEventListener("click", async function () {
         const idvalue = idinput.value.trim();
         if (idvalue === "") {
@@ -442,6 +452,35 @@
           throw error;
         }
       }
+
+      // 이메일 인증
+      sendVerificationBtn.addEventListener("click", async function () {
+        const emailInput = document.querySelector(".email-input").value.trim();
+        const emailSelect = document.querySelector("#emailaddr").value.trim();
+        const email = `${emailInput}@${emailSelect}`;
+
+        if (emailInput === "" || emailSelect === "") {
+          emailVerificationResult.textContent = "이메일을 입력하세요";
+          emailVerificationResult.style.color = "red";
+          emailVerificationResult.classList.remove("hide");
+          return;
+        }
+
+        try {
+          await sendVerificationBtn(email);
+
+          emailVerificationResult.textContent = "인증 이메일이 전송되었습니다";
+          emailVerificationResult.style.color = "blue";
+          emailVerificationResult.classList.remove("hide");
+        } catch (error) {
+          emailVerificationResult.textContent = "이메일 전송에 실패했습니다";
+          emailVerificationResult.style.color = "red";
+          emailVerificationResult.classList.remove("hide");
+          console.error("Error sending email:", error);
+        }
+      });
+
+      async function sendVerificationEmail(email) {}
     </script>
   </body>
 </html>
