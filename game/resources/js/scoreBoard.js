@@ -10,6 +10,7 @@ import {
   deleteDoc,
   updateDoc,
   getDoc,
+  arrayUnion,
 } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -61,6 +62,18 @@ async function addScore(score) {
   }
 }
 
+async function updateScore(user, score) {
+  const docRef = doc(db, "scores", "ar1");
+  try {
+    await updateDoc(docRef, {
+      scores: arrayUnion({ id: user, score: score }),
+    });
+    console.log("Document successfully updated!");
+  } catch (e) {
+    console.error("Error updating document: ", e);
+  }
+}
+
 async function deleteDatas(collectionName, docId) {
   const docRef = await doc(db, collectionName, docId);
   await deleteDoc(docRef);
@@ -78,5 +91,13 @@ async function updateDatas(collectionName, docId, updateinfoObj) {
   // const docData = await getDoc(docRef);
   await updateDoc(docRef, updateinfoObj);
 }
-export { db, getDatas, addDatas, deleteDatas, updateDatas, addScore };
+export {
+  db,
+  getDatas,
+  addDatas,
+  deleteDatas,
+  updateDatas,
+  addScore,
+  updateScore,
+};
 //export 는 말그대로 내보내서 쓰는것들이니까 deleteDats를 쓴거야.
