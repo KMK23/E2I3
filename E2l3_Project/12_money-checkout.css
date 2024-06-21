@@ -1,0 +1,90 @@
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.title {
+  font-size: 28px;
+  color: #333333;
+  margin-bottom: 25px;
+}
+
+.plans {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.plan {
+  width: 45%;
+  background-color: #fafafa;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+}
+
+.plan-header {
+  background-color: #e6f7ff;
+  border-radius: 15px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.plan-badge {
+  font-size: 20px;
+  font-weight: bold;
+  color: #007acc;
+}
+
+.plan-price {
+  font-size: 18px;
+  color: #666666;
+}
+
+.price {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ff6600;
+  margin: 10px 0;
+}
+
+.discount {
+  font-size: 18px;
+  color: #1e90ff;
+}
+
+.pay-button {
+  background-color: #007acc;
+  color: #ffffff;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.pay-button:hover {
+  background-color: #005b99;
+}
+
+.note {
+  font-size: 14px;
+  color: #999999;
+  margin-top: 15px;
+}
