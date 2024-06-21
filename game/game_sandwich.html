@@ -162,22 +162,27 @@
     let firstBreadPlaced = false;
     let minus = 0;
     let myScore = 0;
+
     import {
       db,
       getDatas,
       addDatas,
       deleteDatas,
       updateDatas,
+      addScore,
     } from "./resources/js/scoreBoard.js";
 
     function updateScore() {
       myScore = 10 - minus;
       score.innerHTML = `점수 : ${myScore} 점`;
-      // console.log(`Current Score: ${myScore}`);
-      const finalScore = myScore;
-      return;
+      console.log(`Current Score: ${myScore}`);
     }
-
+    function endGame() {
+      console.log(`Current Score: ${myScore}`);
+      addScore(myScore).then(() => {
+        alert("성공적으로 샌드위치를 완성했습니다! 점수가 저장되었습니다.");
+      });
+    }
     ingredient.forEach((ingredient) => {
       ingredient.addEventListener("click", function () {
         const ingredientType = this.getAttribute("data-type");
@@ -203,7 +208,8 @@
           if (currentStep === order.length) {
             const lastIngredientAdded = sandwich.lastElementChild;
             lastIngredientAdded.onload = function () {
-              alert("성공적으로 샌드위치를 완성했습니다!");
+              // alert("성공적으로 샌드위치를 완성했습니다!");
+              endGame();
             };
           }
         } else {
@@ -218,7 +224,7 @@
     //   return myScore;
     // }
 
-    console.log(finalScore);
+    // console.log(finalScore);
     // let result = myScore;
     // console.log(result);
     // // console.log(myScore);
