@@ -150,6 +150,7 @@
         </div>
       </div>
     </div>
+    <span id="user"></span>
     <div class="score">점수 : 10 점</div>
   </body>
   <script type="module">
@@ -170,19 +171,38 @@
       deleteDatas,
       updateDatas,
       addScore,
+      updateScore,
     } from "./resources/js/scoreBoard.js";
 
-    function updateScore() {
+    // function updateScore() {
+    //   myScore = 10 - minus;
+    //   score.innerHTML = `점수 : ${myScore} 점`;
+    //   console.log(`Current Score: ${myScore}`);
+    // }
+    // function endGame() {
+    //   console.log(`Current Score: ${myScore}`);
+    //   addScore(myScore).then(() => {
+    //     alert("성공적으로 샌드위치를 완성했습니다! 점수가 저장되었습니다.");
+    //   });
+    // }
+
+    function updateScoreDisplay() {
       myScore = 10 - minus;
       score.innerHTML = `점수 : ${myScore} 점`;
       console.log(`Current Score: ${myScore}`);
     }
-    function endGame() {
+
+    async function endGame() {
       console.log(`Current Score: ${myScore}`);
-      addScore(myScore).then(() => {
-        alert("성공적으로 샌드위치를 완성했습니다! 점수가 저장되었습니다.");
-      });
+      let user = localStorage.getItem("id");
+      if (!user) {
+        alert("점수를 등록하시려면 로그인을 해주세요.");
+        return false;
+      }
+      await updateScore(user, myScore);
+      alert("성공적으로 샌드위치를 완성했습니다! 점수가 저장되었습니다.");
     }
+
     ingredient.forEach((ingredient) => {
       ingredient.addEventListener("click", function () {
         const ingredientType = this.getAttribute("data-type");
@@ -216,65 +236,23 @@
           alert("순서가 틀렸습니다. 올바른 순서대로 눌러주세요.");
           minus++;
         }
-        updateScore();
+        // updateScore();
+        updateScoreDisplay();
       });
     });
 
-    // function getFinalScore() {
-    //   return myScore;
-    // }
+    async function userName() {
+      const snapshot = await getDatas("user");
+      snapshot.forEach((e) => {
+        // console.log(e.data().id);
+      });
+    }
 
-    // console.log(finalScore);
-    // let result = myScore;
-    // console.log(result);
-    // // console.log(myScore);
-    // async function getScore() {
-    //   const addObj = { myScore };
-    //   console.log(myScore);
-    //   // const result = await addDatas("ScoreBoard", addObj);
-    // }
-    // getScore();
+    let user = localStorage.getItem("id");
+    const userSpan = document.querySelector("#user");
+    userSpan.innerHTML = `${user}`;
+    userName();
 
-    // import {
-    //   db,
-    //   getDatas,
-    //   addDatas,
-    //   deleteDatas,
-    //   updateDatas,
-    // } from "./resources/js/scoreBoard.js";
-    // async function getScore() {
-    //   const addObj = { myScore };
-    //   const result = await addDatas("ScoreBoard", addObj);
-    // }
-    // getScore();
-
-    // const saveBtn = document.getElementById("saveBtn");
-    // saveBtn.addEventListener("click", async function () {
-    //   if (updateTarget) {
-    //     alert("회원정보 수정중에는 저장할 수 없습니다.");
-    //     return false;
-    //   }
-    //   const inputs = document.querySelectorAll(".form-container input");
-    //   const inputsArr = Array.from(inputs);
-    //   // const addObj = inputsArr.reduce((acc, cur) => ({...acc, [cur.name]: cur.value}), {})
-    //   const addObj = {};
-    //   inputsArr.forEach((input) => {
-    //     addObj[input.name] = input.value;
-    //   });
-    //   const result = await addDatas("member", addObj);
-    //   const { name, gender, age, email, tel } = addObj;
-    //   tableTag.firstElementChild.insertAdjacentHTML(
-    //     "afterend",
-    //     `
-    //     <tr data-id=${result.id}>
-    //         <td class="name">${name}</td>
-    //         <td class="gender">${gender}</td>
-    //         <td class="age">${age}</td>
-    //         <td class="email">${email}</td>
-    //         <td class="tel">${tel}</td>
-    //     </tr>
-    //   `
-    //   );
-    // });
+    localStorage.removeItem("userInfo");
   </script>
 </html>
