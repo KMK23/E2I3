@@ -64,22 +64,26 @@
 #overlay {
   display: none;
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background: rgba(0, 0, 0, 0.5);
   z-index: 999;
+  overflow: hidden;
+  top: 0;
+  left: 0;
 }
 .form-container {
   background-color: white;
   padding: 2rem;
   border-radius: 2rem;
   box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
-  position: relative;
+  position: fixed;
   width: 40rem;
   display: none;
   z-index: 1000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 #overlay.visible {
   display: block;
@@ -174,4 +178,7 @@
 }
 .form-container button:hover {
   background-color: #07412f;
+}
+.button-container.close-Btn {
+  background-color: white;
 }
