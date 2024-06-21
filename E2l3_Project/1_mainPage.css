@@ -89,6 +89,7 @@ body {
 }
 .welcome {
   margin-top: 1rem;
+  font-size: 1.2rem;
 }
 .login-btn,
 .signup-btn,
@@ -96,7 +97,7 @@ body {
 .logout-btn {
   padding: 5px 10px;
   margin-top: 0.8rem;
-  font-size: 14px;
+  font-size: 1rem;
   font-weight: normal;
   color: black;
   text-decoration: none;

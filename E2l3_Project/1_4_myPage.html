@@ -12,23 +12,29 @@
         <div class="first-content">
           <div class="left-area">
             <div class="user-info">
-              <img src="resources/icon/새싹.svg" />
-              <h1>***님! 오늘도 힘내서 공부해볼까요?</h1>
+              <img src="resources/img/프로필사진2.png" />
+              <h1 id="nameText">***님! 오늘도 힘내서 공부해볼까요?</h1>
             </div>
 
             <div class="my-info">
               <div class="my-classroom">
-                내 강의실 <img src="resources/icon/연필.svg" />
+                <a href="" class="my-classroom">
+                  내 강의실 <img src="resources/icon/연필.svg" />
+                </a>
+              </div>
+
+              <div class="coin">
+                <a href=""> 결제내역 <img src="resources/icon/코인.svg" /></a>
+              </div>
+              <div class="heart1">
+                <a href="">
+                  관심선생님 <img src="resources/icon/하트하트.svg" />
+                </a>
               </div>
               <div class="QandA">
-                학습 Q&A <img src="resources/icon/코멘트.svg" />
-              </div>
-              <div class="discount">
-                할인권 <img src="resources/icon/티켓.svg" />
-              </div>
-              <div class="coin">캐쉬 <img src="resources/icon/코인.svg" /></div>
-              <div class="heart1">
-                관심선생님 <img src="resources/icon/하트하트.svg" />
+                <a href="">
+                  학습 Q&A <img src="resources/icon/코멘트.svg" />
+                </a>
               </div>
             </div>
           </div>
@@ -37,16 +43,26 @@
             <div class="black-area"></div>
           </div>
         </div>
-
-        <div class="bottom-area">
-          <div class="my-classroom2"><a>내 강의실</a></div>
-          <div class="review"><a>Q&A/상담/수강평</a></div>
-          <div class="keep-basket"><a>장바구니</a></div>
-          <div class="my-subscribe"><a>나의 구독</a></div>
-          <div class="my-shipping"><a>주문/배송조회</a></div>
-          <div class="my-info2"><a>회원정보</a></div>
-        </div>
       </div>
     </div>
   </body>
+  <script type="module">
+    import {
+      db,
+      getDatas,
+      addDatas,
+      deleteDatas,
+      updateDatas,
+    } from "./resources/js/joinmembershipfirebase.js";
+
+    async function getUserData() {
+      const snapshot = await getDatas("user");
+      const nameText = document.querySelector("#nameText");
+      snapshot.forEach((doc) => {
+        const myPageUserName = doc.data().name;
+        nameText.innerHTML = `${myPageUserName}님! 오늘도 힘내고 공부해 볼까요?`;
+      });
+    }
+    getUserData();
+  </script>
 </html>

@@ -67,6 +67,8 @@ h3 > img {
   background-color: #83b4eb;
   border-radius: 50%;
   padding: 0.25rem;
+  /* width: 16rem;
+  height: 10rem; */
 }
 .my-info {
   display: flex;

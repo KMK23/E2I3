@@ -21,27 +21,27 @@
       </div>
       <div class="content">
         <div class="button-list">
-          <div class="icon">
+          <div class="icon icon1">
             <button class="list">
               <i class="fa-solid fa-ranking-star fa-2xl"></i><br /><br /><br />
               베스트 5
             </button>
           </div>
-          <div class="icon">
+          <div class="icon icon2">
             <button class="list">
               <i class="fa-regular fa-address-card fa-2xl"></i
               ><br /><br /><br />
               회원/사이트
             </button>
           </div>
-          <div class="icon">
+          <div class="icon icon3">
             <button class="list">
               <i class="fa-solid fa-credit-card fa-2xl"></i><br /><br />
               <br />
               결제/환불
             </button>
           </div>
-          <div class="icon">
+          <div class="icon icon4">
             <button class="list">
               <i class="fa-solid fa-play fa-2xl" id="top4"></i
               ><br /><br /><br />
@@ -155,16 +155,113 @@
     //   });
     // }
     // getFAQ();
+    const textList = document.querySelector(".text-list");
 
-    const arr = [
+    const Btns = document.querySelectorAll(".icon");
+    const faqArr = [
       {
         Q1: "회원가입을 하려는데 이미 가입되어있다고 나옵니다.",
         Q2: "아이디와 비밀번호가 정확한데 로그인이 되지 않습니다.",
         Q3: "도서 구입 방법을 알고 싶습니다.",
         Q4: "결제 방법에 대해 알고 싶습니다.",
-        Q5: "신청한 강의는 어디에서 수강할 수 있나요?",
+        Q5: "신청한 강의는 어디에서 수강할수 있나요?",
+        Q6: ' 자주하는 질문 <strong class="color">FAQ</strong><br />더보기',
       },
-      {},
+      {
+        Q1: "회원가입을 하려는데 이미 가입되어있다고 나옵니다.",
+        Q2: "아이디와 비밀번호가 정확한데 로그인이 되지 않습니다.",
+        Q3: "회원가입시 받게 되는 혜택은 무엇인가요?",
+        Q4: "세션이 비정상적으로 종료되었거나,로그아웃을 정상적으로 하지 않았다는...",
+        Q5: "회원가입을 하지 않아도 구매가 가능한가요?",
+        Q6: ' 자주하는 질문 <strong class="color">FAQ</strong><br />더보기',
+      },
+      {
+        Q1: "결제 방법에 대해 알고 싶습니다.",
+        Q2: "신용카드 결제시 유의사항을 자세히 알고 싶습니다.",
+        Q3: "신용카드 할부 개월 수 변경은 어떻게 하나요?",
+        Q4: "무통장 입금시 입금확인 시간을 알고 싶습니다.",
+        Q5: "입금 계좌번호를 알고 싶습니다.",
+        Q6: ' 자주하는 질문 <strong class="color">FAQ</strong><br />더보기',
+      },
+      {
+        Q1: "신청한 강의는 어디에서 수강할 수 있나요?",
+        Q2: "일시정지 신청/재개 방법에 대해서 알고 싶어요.",
+        Q3: "수강종료 기간을 알고 싶습니다.",
+        Q4: "수강기간은 어떻게 되는지요? 기간으로 제한하는지요? 횟수로 제한하는지요?",
+        Q5: "학습 진도율은 어디서 확인하나요?",
+        Q6: ' 자주하는 질문 <strong class="color">FAQ</strong><br />더보기',
+      },
     ];
+
+    Btns.forEach((btn, idx) => {
+      btn.addEventListener("click", function () {
+        let ptag = `
+      <p class="list-p">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <br />
+            ${faqArr[idx].Q1}
+          </p>
+          <p class="list-p">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <br />
+            ${faqArr[idx].Q2}
+          </p><p class="list-p">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <br />
+            ${faqArr[idx].Q3}
+          </p><p class="list-p">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <br />
+            ${faqArr[idx].Q4}
+          </p><p class="list-p">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <br />
+            ${faqArr[idx].Q5}
+          </p><p class="list-p">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <br />
+            ${faqArr[idx].Q6}
+          </p>
+      `;
+        textList.innerHTML = ptag;
+      });
+    });
+
+    // best5Btn.addEventListener("click", function () {
+    //   faqArr.forEach((info, idx) => {
+    //     let ptag = `
+    //   <p class="list-p">
+    //         <i class="fa-solid fa-magnifying-glass"></i>
+    //         <br />
+    //         ${faqArr[0].Q1}
+    //       </p>
+    //       <p class="list-p">
+    //         <i class="fa-solid fa-magnifying-glass"></i>
+    //         <br />
+    //         ${faqArr[0].Q2}
+    //       </p><p class="list-p">
+    //         <i class="fa-solid fa-magnifying-glass"></i>
+    //         <br />
+    //         ${info.Q3}
+    //       </p><p class="list-p">
+    //         <i class="fa-solid fa-magnifying-glass"></i>
+    //         <br />
+    //         ${info.Q4}
+    //       </p><p class="list-p">
+    //         <i class="fa-solid fa-magnifying-glass"></i>
+    //         <br />
+    //         ${info.Q5}
+    //       </p><p class="list-p">
+    //         <i class="fa-solid fa-magnifying-glass"></i>
+    //         <br />
+    //         ${info.Q6}
+    //       </p>
+    //   `;
+    //     console.log(faqArr[0].Q1);
+    //     console.log(faqArr[1].Q1);
+
+    //     textList.innerHTML = ptag;
+    //   });
+    // });
   </script>
 </html>

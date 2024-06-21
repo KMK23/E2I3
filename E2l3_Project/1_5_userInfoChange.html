@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원정보관리</title>
+    <style>
+      @font-face {
+        font-family: "NanumSquareRound";
+        src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot);
+        src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot?#iefix)
+            format("embedded-opentype"),
+          url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff2)
+            format("woff2"),
+          url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff)
+            format("woff"),
+          url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.ttf)
+            format("truetype");
+      }
+
+      @font-face {
+        font-family: "NanumSquareRoundB";
+        src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.eot);
+        src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.eot?#iefix)
+            format("embedded-opentype"),
+          url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.woff2)
+            format("woff2"),
+          url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.woff)
+            format("woff"),
+          url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.ttf)
+            format("truetype");
+      }
+
+      @font-face {
+        font-family: "NanumSquareRoundEB";
+        src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.eot);
+        src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.eot?#iefix)
+            format("embedded-opentype"),
+          url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.woff2)
+            format("woff2"),
+          url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.woff)
+            format("woff"),
+          url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.ttf)
+            format("truetype");
+      }
+
+      @font-face {
+        font-family: "NanumSquareRoundL";
+        src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.eot);
+        src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.eot?#iefix)
+            format("embedded-opentype"),
+          url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.woff2)
+            format("woff2"),
+          url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.woff)
+            format("woff"),
+          url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.ttf)
+            format("truetype");
+      }
+      @font-face {
+        font-family: "ONE-Mobile-POP";
+        src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-POP.woff")
+          format("woff");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "GangwonEduPowerExtraBoldA";
+        src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff")
+          format("woff");
+        font-weight: normal;
+        font-style: normal;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      /* :root {
+        font-size: 16px;
+      } */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 1.25rem;
+        background-color: #f7f7f7;
+        font-family: "NanumSquareRound";
+      }
+      .container {
+        width: 40rem;
+        margin: 2.5rem auto;
+        background-color: white;
+        padding: 1.25rem;
+        border-radius: 0.3125rem;
+        box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
+      }
+      .tabs {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.25rem;
+      }
+      .tab {
+        text-align: center;
+        padding: 0.625rem;
+        background-color: #eee;
+        border: 0.0625rem solid #ccc;
+        cursor: pointer;
+        width: 100%;
+      }
+      .tab.active {
+        background-color: white;
+        border-bottom: none;
+        font-weight: bold;
+      }
+      .form-group {
+        margin-bottom: 0.9375rem;
+      }
+      .form-group label {
+        display: block;
+        margin-bottom: 0.3125rem;
+      }
+      .form-group input,
+      .form-group select {
+        padding: 0.5rem;
+      }
+      .form-group input[type="radio"] {
+        margin-right: 0.625rem;
+      }
+      .form-group .inline {
+        display: flex;
+        align-items: center;
+      }
+      #mobile {
+        width: 12rem;
+      }
+      .form-group .inline input {
+        width: 5rem;
+        margin-right: 0.3125rem;
+      }
+      .form-group .inline select {
+        margin-left: 0.3125rem;
+        width: auto;
+      }
+      .change {
+        margin-left: 1rem;
+        border-radius: 0.3rem;
+        padding: 0.3rem;
+        width: 4rem;
+        border: 0.1rem solid black;
+      }
+      .form-group .checkbox {
+        display: inline-block;
+        margin-right: 0.625rem;
+      }
+      .form-group .info {
+        font-size: 0.9rem;
+        color: #777;
+      }
+      .buttons {
+        text-align: center;
+      }
+      .buttons button {
+        padding: 0.625rem 1.25rem;
+        margin: 0.3125rem;
+        border: none;
+        color: white;
+        background-color: #d9534f;
+        cursor: pointer;
+        border-radius: 0.1875rem;
+      }
+      .buttons button.cancel {
+        background-color: #777;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="tabs">
+        <div class="tab active">회원정보관리</div>
+        <div class="tab">비밀번호관리</div>
+        <div class="tab">회원탈퇴</div>
+      </div>
+      <div class="info">
+        <p class="user-name-text">님의 회원정보관리 페이지 입니다.</p>
+      </div>
+      <form>
+        <div class="form-group">
+          <label for="name">이름</label>
+          <input type="text" id="name" value="" />
+        </div>
+        <div class="form-group">
+          <label for="birthdate">생년월일</label>
+          <div class="inline">
+            <select id="birthyear">
+              <option value="1997" selected>1997년</option>
+            </select>
+            <select id="birthmonth">
+              <option value="05" selected>05월</option>
+            </select>
+            <select id="birthday">
+              <option value="24" selected>24일</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">이메일 주소</label>
+          <div class="inline">
+            <input type="text" id="email" value="hmj7070" />
+            @
+            <select id="emailDomain">
+              <option value="daum.net" selected>daum.net</option>
+            </select>
+            <button type="button" class="change">변경</button>
+          </div>
+        </div>
+        <div class="form-group"></div>
+        <div class="form-group">
+          <label for="mobile">휴대전화번호</label>
+          <div class="inline">
+            <input type="text" id="mobile" value="" />
+            <input type="radio" name="mobile" checked /> 있음
+            <input type="radio" name="mobile" /> 없음
+            <button type="button" class="change">변경</button>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>코딩팡팡의 다양한 정보를 받아보시겠습니까?</label>
+          <div class="checkbox">
+            <input type="checkbox" id="emailOptIn" /> 이메일
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" id="smsOptIn" /> SMS
+          </div>
+          <div class="info">
+            코딩팡팡 이메일/SMS 수신 동의를 하시면 다양한 일시/학습정보와
+            이벤트, 할인혜택 등의 주요 정보를 빠르게 확인하실 수 있습니다. 단,
+            주문 및 배송관련 정보는 수신동의와 관계없이 발송됩니다.
+          </div>
+        </div>
+        <div class="buttons">
+          <button type="submit">확인</button>
+          <button type="button" class="cancel">취소</button>
+        </div>
+      </form>
+    </div>
+  </body>
+  <script type="module">
+    import {
+      db,
+      getDatas,
+      addDatas,
+      deleteDatas,
+      updateDatas,
+    } from "./resources/js/userinfoChange.js";
+    async function getUserData() {
+      const snapshot = await getDatas("user");
+      const userNameText = document.querySelector(".user-name-text");
+      const inputUserName = document.getElementById("name");
+      const userBirth = document.getElementById("birthyear");
+      const useremail1 = document.getElementById("email");
+      const useremail2 = document.getElementById("emailDomain");
+      const userPhone = document.getElementById("mobile");
+      snapshot.forEach(() => {
+        const changeUsername = localStorage.getItem("name");
+        userNameText.innerHTML = `${changeUsername}님의 회원정보관리 페이지 입니다.
+        `;
+        inputUserName.value = `${changeUsername}`;
+
+        const changebirth = localStorage.getItem("birth");
+        userBirth.innerHTML = `${changebirth}`;
+
+        const changeEmail1 = localStorage.getItem("email1");
+        useremail1.innerHTML = `${changeEmail1}`;
+
+        const changeEmail2 = localStorage.getItem("email2");
+        useremail2.innerHTML = `${changeEmail2}`;
+
+        const changePhone = localStorage.getItem("tel");
+        console.log(changePhone);
+        userPhone.value = `${changePhone}`;
+      });
+    }
+    getUserData();
+  </script>
+</html>
