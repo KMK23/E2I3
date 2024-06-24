@@ -52,7 +52,14 @@
     </div>
   </body>
   <script type="module">
-    import { addDatas } from "../game/resources/js/scoreBoard.js";
+    import {
+      db,
+      getDatas,
+      addDatas,
+      deleteDatas,
+      updateDatas,
+      updateScore,
+    } from "../game/resources/js/scoreBoard.js";
 
     const score = document.querySelector(".score");
     let minus = 0;
@@ -289,6 +296,23 @@
         e.dataTransfer.setData("text", e.target.id);
       });
     });
+    async function endGame() {
+      console.log(`Current Score: ${myScore}`);
+      let user = localStorage.getItem("id");
+      let gameType = "pattern3";
+      const dataObj = {
+        id: user,
+        score: myScore,
+        type: gameType,
+      };
+      if (!user) {
+        alert("점수를 등록하시려면 로그인을 해주세요.");
+        return false;
+      }
+      await updateScore("scores", dataObj);
+      alert("Level3 Clear");
+    }
+
     const holes = document.querySelectorAll(".game1-holes");
 
     holes.forEach((hole) => {
@@ -400,7 +424,7 @@
     game3hole1.addEventListener("dragover", function (e) {
       e.preventDefault();
     });
-    game3hole1.addEventListener("drop", function (e) {
+    game3hole1.addEventListener("drop", async function (e) {
       e.preventDefault();
       const data = e.dataTransfer.getData("text");
       const dgEl = document.getElementById(data);
@@ -452,6 +476,7 @@
         minus++;
         updateScoreDisplay();
       }
+      endGame();
     });
 
     //로그인한 상태에서 점수 가져오려면 데이터부터
