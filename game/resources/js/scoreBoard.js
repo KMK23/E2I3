@@ -50,31 +50,35 @@ async function addDatas(collectionName, dataObj) {
   }
 }
 
-async function updateScore(type, userId, newScore) {
-  const docRef = doc(db, "scores");
+async function updateScore(collectionName, dataObj) {
+  // const docRef = doc(db, "scores");
+
   try {
-    const docSnap = await getDoc(docRef);
-    if (docSnap.exists()) {
-      const data = docSnap.data();
-      // const scores = data.scores || [];
+    // const docSnap = await getDoc(docRef);
+    const collect = await collection(db, collectionName);
+    await addDoc(collect, dataObj);
+    return true;
+    // if (docSnap.exists()) {
+    //   const data = docSnap.data();
+    //   const scores = data.scores || [];
 
-      const existingUserScore = scores.find((score) => score.id === user);
-      if (existingUserScore) {
-        // 사용자의 기존 점수를 삭제
-        await updateDoc(docRef, {
-          scores: arrayRemove(existingUserScore),
-        });
-      }
+    //   const existingUserScore = scores.find((score) => score.id === user);
+    //   if (existingUserScore) {
+    //     // 사용자의 기존 점수를 삭제
+    //     await updateDoc(docRef, {
+    //       scores: arrayRemove(existingUserScore),
+    //     });
+    //   }
 
-      // 새로운 점수를 추가
-      await updateDoc(docRef, {
-        scores: { type: gameType, id: user, score: newScore },
-      });
+    //   // 새로운 점수를 추가
+    //   // await updateDoc(docRef, {
+    //   //   scores: { id: user, score: newScore, type: gameType },
+    //   // });
 
-      console.log("Document successfully updated!");
-    } else {
-      console.log("No such document!");
-    }
+    //   console.log("Document successfully updated!");
+    // } else {
+    //   console.log("No such document!");
+    // }
   } catch (e) {
     console.error("Error updating document: ", e);
   }
