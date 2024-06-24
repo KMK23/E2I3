@@ -128,6 +128,7 @@
       deleteDatas,
       updateDatas,
       updateScore,
+      updateTotalScore,
     } from "./resources/js/scoreBoard.js";
 
     // 점수판 바꾸는 부분
@@ -160,6 +161,23 @@
       }
       await updateScore("scores", dataObj);
       alert("사랑이가 규칙에 맞게 옷을 잘 입었습니다! 점수가 저장되었습니다.");
+      const totalScoreRef = await getDatas("totalScore");
+      let totalScore = 0;
+
+      totalScoreRef.forEach(async (e) => {
+        if (e.data().id === user) {
+          totalScore = e.data().userTotalScore;
+        }
+      });
+      totalScore += myScore;
+
+      const totalDataObj = {
+        id: user,
+        userTotalScore: totalScore,
+      };
+
+      await updateScore("totalScore", totalDataObj);
+      await updateTotalScore("totalScore", totalDataObj);
     }
 
     document.querySelectorAll(".dress").forEach((item) => {
