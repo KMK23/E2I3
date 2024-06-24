@@ -17,8 +17,7 @@
           <h4 class="text">땅에 야채를 일정한 순서대로 심어 보아요.</h4>
           <h4 class="text">일정한 순서를 잘 보고 심어 보세요.</h4>
         </div>
-        <span id="user"></span>
-        <div class="score">점수 : 10 점</div>
+        <div class="score"></div>
       </div>
       <!-- 게임1번 -->
       <div class="gameStart1">
@@ -67,9 +66,15 @@
     const groundOne = document.querySelector(".ground-one");
 
     function updateScoreDisplay() {
-      myScore = 10 - minus;
-      score.innerHTML = `점수 : ${myScore} 점`;
-      console.log(`Current Score: ${myScore}`);
+      if (!user) {
+        myScore = 10 - minus;
+        score.innerHTML = `점수 : ${myScore} 점`;
+        console.log(`Current Score: ${myScore}`);
+      } else {
+        myScore = 10 - minus;
+        score.innerHTML = `${name}님의 점수 : ${myScore} 점`;
+        console.log(`Current Score: ${myScore}`);
+      }
     }
 
     const vegetables = [
@@ -481,13 +486,15 @@
 
     //로그인한 상태에서 점수 가져오려면 데이터부터
 
-    async function displayUserName() {
-      const snapshot = await getDatas("user");
-      snapshot.forEach((e) => {
-        document.querySelector("#user").textContent = e.data().id;
-      });
-    }
+    let user = localStorage.getItem("id");
+    let name = localStorage.getItem("name");
 
-    displayUserName();
+    localStorage.removeItem("userInfo");
+
+    if (!user) {
+      score.innerHTML = `점수 : ${myScore} 점`;
+    } else {
+      score.innerHTML = `${name}님의 점수 : 10 점`;
+    }
   </script>
 </html>

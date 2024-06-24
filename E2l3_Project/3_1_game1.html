@@ -17,6 +17,7 @@
           <h4 class="text">아래에 여러마리의 동물이 있어요.</h4>
           <h4 class="text">같은 동물끼리 찾아서 클릭해 보세요.</h4>
         </div>
+        <div class="score"></div>
       </div>
       <div class="content">
         <img class="dog1 dog" src="resources/img/3_1_게임체험하기 img/개.png" />
@@ -74,12 +75,28 @@
       updateDatas,
       updateScore,
     } from "../game/resources/js/scoreBoard.js";
-
+    const score = document.querySelector(".score");
+    let minus = 0;
+    let myScore = 10;
+    let user = localStorage.getItem("id");
+    let name = localStorage.getItem("name");
+    localStorage.removeItem("userInfo");
+    if (!user) {
+      score.innerHTML = `점수 : ${myScore} 점`;
+    } else {
+      score.innerHTML = `${name}님의 점수 : 10 점`;
+    }
     // 점수판 바꾸는 부분
     function updateScoreDisplay() {
-      myScore = 10 - minus;
-      score.innerHTML = `점수 : ${myScore} 점`;
-      console.log(`Current Score: ${myScore}`);
+      if (!user) {
+        myScore = 10 - minus;
+        score.innerHTML = `점수 : ${myScore} 점`;
+        console.log(`Current Score: ${myScore}`);
+      } else {
+        myScore = 10 - minus;
+        score.innerHTML = `${name}님의 점수 : ${myScore} 점`;
+        console.log(`Current Score: ${myScore}`);
+      }
     }
 
     async function endGame() {
@@ -96,8 +113,9 @@
         return false;
       }
       await updateScore("scores", dataObj);
-      alert("Level3 Clear");
+      alert("Level1 Clear");
     }
+
     const imgs = document.querySelectorAll("div img");
     let firstSelected = null;
     let clearStage = imgs.length;
@@ -123,29 +141,19 @@
               clearStage = clearStage - 2;
               if (clearStage === 0) {
                 alert("Stage Clear!!");
+                updateScoreDisplay();
+                endGame();
               }
             }, 300);
           } else {
             alert("같은 동물을 선택하세요!");
             firstSelected.classList.remove("selected");
             firstSelected = null;
+            minus++;
+            updateScoreDisplay();
           }
         }
       });
     });
-    //유저 로컬아이디 확인
-    async function userName() {
-      const snapshot = await getDatas("user");
-      snapshot.forEach((e) => {
-        console.log(e.data().id);
-      });
-    }
-
-    let user = localStorage.getItem("id");
-    const userSpan = document.querySelector("#user");
-    userSpan.innerHTML = `${user}`;
-    userName();
-
-    localStorage.removeItem("userInfo");
   </script>
 </html>
