@@ -289,20 +289,20 @@ h4 {
     width: 100%;
     height: 100%;
   }
+  .ingredient-img {
+    width: 80px;
+    height: 80px;
+  }
+  .sandwich-ingredients {
+    display: flex;
+    justify-content: space-around;
+    gap: 8px;
+  }
+  .sandwich-ingredient {
+    width: 80px;
+    height: 80px;
+  }
 }
-.ingredient-img {
-  width: 80px;
-  height: 80px;
-}
-/* .sandwich-ingredients {
-  display: flex;
-  justify-content: space-around;
-  gap: 8px;
-} */
-/* .sandwich-ingredient {
-  width: 80px;
-  height: 80px;
-} */
 @media (max-width: 480px) {
   .header {
     padding: 8px;
