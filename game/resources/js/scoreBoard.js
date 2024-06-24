@@ -50,7 +50,7 @@ async function addDatas(collectionName, dataObj) {
   }
 }
 
-async function updateScore(gameType, userId, newScore) {
+async function updateScore(type, userId, newScore) {
   const docRef = doc(db, "scores");
   try {
     const docSnap = await getDoc(docRef);
@@ -68,7 +68,7 @@ async function updateScore(gameType, userId, newScore) {
 
       // 새로운 점수를 추가
       await updateDoc(docRef, {
-        scores: arrayUnion({ id: user, score: newScore }),
+        scores: { type: gameType, id: user, score: newScore },
       });
 
       console.log("Document successfully updated!");
