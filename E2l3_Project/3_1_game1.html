@@ -65,7 +65,8 @@
       </div>
     </div>
   </body>
-  <script>
+  <script type="module">
+    import { getDatas, addDatas } from "../game/resources/js/scoreBoard.js";
     const imgs = document.querySelectorAll("div img");
     let firstSelected = null;
     let clearStage = imgs.length;
@@ -101,5 +102,21 @@
         }
       });
     });
+
+    async function getUser() {
+      const snapshot = await getDatas("user");
+      snapshot.forEach((userInfo) => {
+        const userId = userInfo.data().id;
+      });
+    }
+    async function userScoreAndGamelist() {
+      const addObj = {
+        gamyTpye: "ar1",
+        name: localStorage.getItem("id"),
+      };
+      const snapshot = await addDatas("scores", addObj);
+      console.log(snapshot);
+    }
+    userScoreAndGamelist();
   </script>
 </html>
