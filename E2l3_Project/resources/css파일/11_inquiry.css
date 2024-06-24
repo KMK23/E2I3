@@ -1,0 +1,200 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+.container {
+  width: 100%;
+  height: 100vh;
+  max-width: 81.25rem;
+  margin: 2.5rem auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+}
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* 문의 유형 스타일링 */
+.inquiryType {
+  margin-bottom: 20px;
+}
+
+.inquiry {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.big-category,
+.smli-category {
+  margin-bottom: 10px;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* 문의 내용 스타일링 */
+.inquiryDetails {
+  margin-bottom: 20px;
+}
+
+.writeDetails {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.text-wirte {
+  margin-bottom: 10px;
+}
+
+.inquiry-wirte {
+  margin-bottom: 10px;
+}
+
+textarea.write {
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  resize: none;
+}
+
+.text-span {
+  display: block;
+  margin-top: 5px;
+  color: #999;
+}
+
+/* 파일 업로드 스타일링 */
+.inputUpload {
+  margin-bottom: 10px;
+}
+
+.upload {
+  margin-bottom: 10px;
+}
+
+label.fileUpload {
+  display: block;
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: #007bff;
+}
+
+input.file-upload {
+  display: none;
+}
+
+.file-info {
+  margin-top: 10px;
+}
+
+.text-p {
+  margin-bottom: 10px;
+  color: #999;
+  font-size: 14px;
+}
+
+.fileMb {
+  margin-bottom: 20px;
+}
+
+.mb-dd {
+  font-size: 14px;
+  color: #999;
+}
+
+/* 이메일 입력 스타일링 */
+.email_enter {
+  margin-bottom: 20px;
+}
+
+.tite_email {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.email-error {
+  display: block;
+  margin-top: 5px;
+  color: red;
+  font-size: 12px;
+  visibility: hidden;
+}
+
+.emailInput {
+  margin-bottom: 10px;
+}
+
+input.emailAdder {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* 전화번호 스타일링 */
+.phoneNumber {
+  margin-bottom: 20px;
+}
+
+.tite_nuber {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.number_fill {
+  margin-bottom: 10px;
+}
+
+.number_tel {
+  display: flex;
+  align-items: center;
+}
+
+.nation_number {
+  margin-right: 10px;
+}
+
+select.country_code {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.tel-phome {
+  flex: 1;
+}
+
+input.phome {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.telError {
+  display: block;
+  margin-top: 5px;
+  color: red;
+  font-size: 12px;
+  visibility: hidden;
+}
