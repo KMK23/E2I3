@@ -11,22 +11,30 @@ body {
   height: 100vh;
   max-width: 81.25rem;
   margin: 2.5rem auto;
-  padding: 20px;
+  padding: 1.25rem;
   background-color: #f7f7f7;
 }
 h2 {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 /* 문의 유형 스타일링 */
 .inquiryType {
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
+}
+
+.iocn {
+  color: red;
+}
+
+.icon {
+  color: red;
 }
 
 .inquiry {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
   font-weight: bold;
 }
 
@@ -36,131 +44,134 @@ h2 {
 }
 
 select {
-  width: 100%;
-  padding: 10px;
+  width: 99%;
+  padding: 0.625rem;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 14px;
+  border-radius: 0.3125rem;
+  font-size: 0.875rem;
 }
 
 /* 문의 내용 스타일링 */
 .inquiryDetails {
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 .writeDetails {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
   font-weight: bold;
 }
 
 .text-wirte {
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
 }
 
 .inquiry-wirte {
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
 }
 
 textarea.write {
+  color: #999;
   width: 100%;
-  height: 150px;
-  padding: 10px;
+  height: 9.375rem;
+  padding: 0.625rem;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 14px;
+  border-radius: 0.3125rem;
+  font-size: 0.875rem;
   resize: none;
+  text-align: left;
 }
 
 .text-span {
   display: block;
-  margin-top: 5px;
+  margin-top: 0.3125rem;
   color: #999;
 }
 
 /* 파일 업로드 스타일링 */
 .inputUpload {
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
 }
 
 .upload {
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
 }
 
 label.fileUpload {
+  font-size: 1rem;
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
   cursor: pointer;
   color: #007bff;
 }
 
 input.file-upload {
   display: none;
+  color: #999 !important;
 }
 
 .file-info {
-  margin-top: 10px;
+  margin-top: 0.625rem;
 }
 
 .text-p {
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
   color: #999;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .fileMb {
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 .mb-dd {
-  font-size: 14px;
-  color: #999;
+  font-size: 1rem;
 }
 
 /* 이메일 입력 스타일링 */
 .email_enter {
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 .tite_email {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
   font-weight: bold;
 }
 
 .email-error {
   display: block;
-  margin-top: 5px;
+  margin-top: 0.3125rem;
   color: red;
-  font-size: 12px;
+  font-size: 0.75rem;
   visibility: hidden;
 }
 
 .emailInput {
-  margin-bottom: 10px;
+  margin-bottom: 0.5rem;
 }
 
 input.emailAdder {
-  width: 100%;
+  width: 98%;
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 14px;
+  border-radius: 0.3125rem;
+  font-size: 0.875rem;
 }
 
 /* 전화번호 스타일링 */
 .phoneNumber {
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 .tite_nuber {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
   font-weight: bold;
 }
 
 .number_fill {
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
 }
 
 .number_tel {
@@ -169,14 +180,15 @@ input.emailAdder {
 }
 
 .nation_number {
-  margin-right: 10px;
+  width: 99%;
+  margin-right: 0.625rem;
 }
 
 select.country_code {
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 14px;
+  border-radius: 0.3125rem;
+  font-size: 0.875rem;
 }
 
 .tel-phome {
@@ -184,17 +196,31 @@ select.country_code {
 }
 
 input.phome {
-  width: 100%;
-  padding: 10px;
+  width: 98%;
+  padding: 0.625rem;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 14px;
+  border-radius: 0.3125rem;
+  font-size: 0.875rem;
 }
 
 .telError {
   display: block;
-  margin-top: 5px;
+  margin-top: 0.3125rem;
   color: red;
-  font-size: 12px;
+  font-size: 0.75rem;
   visibility: hidden;
+}
+
+.inquiry-btn {
+  text-align: center;
+}
+
+.inquiryBtn {
+  cursor: pointer;
+  border: none;
+  background-color: #fae102;
+  color: #222222;
+  width: 24%;
+  padding: 1rem;
+  font-size: 1.25rem;
 }
