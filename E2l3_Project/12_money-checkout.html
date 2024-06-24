@@ -3,66 +3,180 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>코딩팡팡 결제창</title>
+    <title>결제 창</title>
     <link rel="stylesheet" href="12_money-checkout.css" />
   </head>
   <body>
     <div class="container">
-      <h1 class="title">코딩팡팡 유료 학습 신청</h1>
+      <h1 class="title">코딩팡팡 결제</h1>
+
+      <!-- 요금제 선택 영역 -->
       <div class="plans">
-        <div class="plan">
+        <!-- 광고형 스탠다드 -->
+        <div class="plan" data-monthly="5500" data-annual="59400">
           <div class="plan-header">
             <div class="plan-badge">광고형 스탠다드</div>
           </div>
           <div class="plan-price">
-            <p>
-              일정 분량의 광고가 포함되며, 1080P 화질과 음질을 제공하며 2명까지
-              동시 접속이 가능한 <strong>가장 저렴한 요금제</strong>입니다.
-            </p>
-            <p class="price">월 <strong>5,500원</strong></p>
+            <p>월 <strong>5,500원</strong></p>
             <p class="discount">
-              연간 결제시 10% 할인 적용 <br />
-              <strong>59,400원</strong>
+              연간 결제시 10% 할인 <strong>59,400원</strong>
             </p>
           </div>
         </div>
-        <div class="plan">
+
+        <!-- 스탠다드 -->
+        <div class="plan" data-monthly="13500" data-annual="155800">
           <div class="plan-header">
             <div class="plan-badge">스탠다드</div>
           </div>
           <div class="plan-price">
-            <p>
-              <strong>광고 없이 </strong>1080P 화질과 음질을 제공하며 2명까지
-              동시 접속이 가능합니다.
-            </p>
-            <p class="price">월 <strong>13,500원</strong></p>
+            <p>월 <strong>13,500원</strong></p>
             <p class="discount">
-              연간 결제시 10% 할인 적용 <br />
-              <strong>155,800원</strong>
+              연간 결제시 10% 할인 <strong>155,800원</strong>
             </p>
           </div>
         </div>
-        <div class="plan">
+
+        <!-- 프리미엄 -->
+        <div class="plan" data-monthly="17000" data-annual="183600">
           <div class="plan-header">
             <div class="plan-badge">프리미엄</div>
           </div>
           <div class="plan-price">
-            <p>
-              <strong
-                >광고 없이 4K(UHD) 화질과 공간음향을 제공하며 4명까지 동시
-                접속이 가능합니다​.</strong
-              >
-            </p>
-            <p class="price">월 <strong>17,000원</strong></p>
+            <p>월 <strong>17,000원</strong></p>
             <p class="discount">
-              연간 결제시 10% 할인 적용 <br />
-              <strong>183,600원</strong>
+              연간 결제시 10% 할인 <strong>183,600원</strong>
             </p>
           </div>
         </div>
       </div>
-      <button class="pay-button">결제하기</button>
-      <p class="note">※코딩팡팡은 월교재에 대한 위약금이 없습니다.</p>
+
+      <!-- 결제 버튼 -->
+      <button class="pay-button" onclick="openPaymentModal()">결제하기</button>
+
+      <!-- 결제 모달 -->
+      <div id="paymentModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closePaymentModal()">&times;</span>
+          <h2>결제 방법 선택</h2>
+
+          <!-- 결제 방법 선택 -->
+          <div class="payment-options">
+            <label>
+              <input
+                type="radio"
+                name="payment-method"
+                value="credit-card"
+                checked
+                onclick="showPaymentDetails()"
+              />
+              신용카드
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="payment-method"
+                value="bank-transfer"
+                onclick="showPaymentDetails()"
+              />
+              계좌 이체
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="payment-method"
+                value="mobile-payment"
+                onclick="showPaymentDetails()"
+              />
+              휴대폰 결제
+            </label>
+          </div>
+
+          <!-- 신용카드 선택 -->
+          <div id="credit-card-details" class="payment-detail">
+            <lavel for="credit-card">카드 종류:</lavel>
+            <select id="credit-card">
+              <option value="shinhancard">신한카드</option>
+              <option value="KBcard">KB국민카드</option>
+              <option value="NHcard">농협카드</option>
+              <option value="samsungcard">삼성카드</option>
+              <option value="hyundaicard">현대카드</option>
+              <option value="hanacard">하나카드</option>
+              <option value="wooricard">우리카드</option>
+              <option value="lottecard">롯데카드</option>
+              <option value="ibkcard">IBK기업카드</option>
+            </select>
+            <label for="credit-card-number">카드 번호:</label>
+            <input
+              type="text"
+              id="credit-card-number"
+              placeholder="카드 번호"
+            />
+            <label for="credit-card-expiry">유효 기간:</label>
+            <input type="text" id="credit-card-expiry" placeholder="MM/YY" />
+            <label for="credit-card-cvc">CVC:</label>
+            <input type="text" id="credit-card-cvc" placeholder="CVC" />
+            <!-- <label for="credit-card-name">카드 소유자 이름:</label> -->
+            <!-- <input type="text" id="credit-card-name" placeholder="이름" /> -->
+          </div>
+
+          <!-- 계좌 이체 선택 -->
+          <div id="bank-transfer-details" class="payment-detail">
+            <label for="bank">은행 선택:</label>
+            <select id="bank">
+              <option value="shinhan">신한은행</option>
+              <option value="kb">KB국민은행</option>
+              <option value="nh">농협은행</option>
+              <option value="hn">하나은행</option>
+              <option value="ibk">IBK기업은행</option>
+              <option value="jb">전북은행</option>
+              <option value="saemaul">새마을금고</option>
+              <option value="toss">토스</option>
+              <option value="sinhyub">신협은행</option>
+              <option value="post-office">우체국</option>
+            </select>
+            <label for="bank-account">계좌 번호:</label>
+            <input type="text" id="bank-account" placeholder="계좌 번호" />
+          </div>
+
+          <!-- 휴대폰 결제 선택 -->
+          <div id="mobile-payment-details" class="payment-detail">
+            <label for="mobile-carrier">통신사 선택:</label>
+            <select id="mobile-carrier">
+              <option value="sk">SKT</option>
+              <option value="kt">KT</option>
+              <option value="lg">LG U+</option>
+            </select>
+            <label for="mobile-number">전화 번호:</label>
+            <input type="text" id="mobile-number" placeholder="전화 번호" />
+          </div>
+
+          <!-- 연간 결제 여부 -->
+          <div class="annual-payment">
+            <label>
+              <input
+                type="checkbox"
+                id="annual-payment"
+                onclick="updateTotalAmount()"
+              />
+              연간 결제하기(10% 할인반영)
+            </label>
+          </div>
+
+          <!-- 총 결제 금액 -->
+          <p id="total-amount">
+            총 결제 금액: <strong id="payment-amount">0원</strong>
+          </p>
+
+          <!-- 결제 버튼 -->
+          <button class="pay-button" onclick="processPayment()">
+            결제 진행
+          </button>
+        </div>
+      </div>
     </div>
+
+    <script src="12_money-checkout.js"></script>
   </body>
 </html>
