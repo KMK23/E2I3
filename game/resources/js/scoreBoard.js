@@ -50,15 +50,13 @@ async function addDatas(collectionName, dataObj) {
   }
 }
 
-// ar1 게임에 점수 추가, 로컬아이디 확인해서 정보있으면 갱신
-
-async function updateScore(user, newScore) {
-  const docRef = doc(db, "scores", "ar1");
+async function updateScore(gameType, userId, newScore) {
+  const docRef = doc(db, "scores");
   try {
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
       const data = docSnap.data();
-      const scores = data.scores || [];
+      // const scores = data.scores || [];
 
       const existingUserScore = scores.find((score) => score.id === user);
       if (existingUserScore) {

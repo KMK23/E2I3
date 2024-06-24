@@ -55,9 +55,15 @@
     import { addDatas } from "../game/resources/js/scoreBoard.js";
 
     const score = document.querySelector(".score");
-
+    let minus = 0;
     let myScore = 10;
     const groundOne = document.querySelector(".ground-one");
+
+    function updateScoreDisplay() {
+      myScore = 10 - minus;
+      score.innerHTML = `점수 : ${myScore} 점`;
+      console.log(`Current Score: ${myScore}`);
+    }
 
     const vegetables = [
       {
@@ -278,11 +284,6 @@
       div.appendChild(img);
       gameImgs.appendChild(div);
 
-      // 점수 업데이트
-      function updateScoreDisplay() {
-        score.innerHTML = `점수 : ${myScore} 점`;
-      }
-
       // 드래그 이벤트 설정
       img.addEventListener("dragstart", function (e) {
         e.dataTransfer.setData("text", e.target.id);
@@ -308,8 +309,6 @@
           draggedElement.classList.add("dropped", "carrot");
           hole.appendChild(draggedElement);
           resetHoleStyle(hole);
-          myScore--; // 점수 감소
-          updateScoreDisplay(); // 점수 업데이트
         } else if (
           draggedElement.classList.contains("spring-onion") &&
           hole.id === "hole2"
@@ -317,10 +316,10 @@
           draggedElement.classList.add("dropped", "spring-onion");
           hole.appendChild(draggedElement);
           resetHoleStyle(hole);
-          myScore--; // 점수 감소
-          updateScoreDisplay(); // 점수 업데이트
         } else {
           alert("잘못된 선택입니다.");
+          minus++;
+          updateScoreDisplay();
         }
       });
     });
@@ -351,9 +350,10 @@
         draggedElement.classList.add("dropped", "radish");
         game2Hole1.appendChild(draggedElement);
         resetHoleStyle(game2Hole1); // hole의 스타일 초기화 함수 호출
-        updateScoreDisplay();
       } else {
         alert("잘못된 선택입니다.");
+        minus++;
+        updateScoreDisplay();
       }
     });
 
@@ -372,9 +372,10 @@
         draggedElement.classList.add("dropped", "onion");
         game2Hole2.appendChild(draggedElement);
         resetHoleStyle(game2Hole2); // hole의 스타일 초기화 함수 호출
-        updateScoreDisplay();
       } else {
         alert("잘못된 선택입니다.");
+        minus++;
+        updateScoreDisplay();
       }
     });
 
@@ -408,9 +409,10 @@
         dgEl.classList.add("dropped", "carrot");
         game3hole1.appendChild(dgEl);
         resetHoleStyle(game3hole1);
-        updateScoreDisplay();
       } else {
         alert("잘못된 선택입니다.");
+        minus++;
+        updateScoreDisplay();
       }
     });
 
@@ -426,9 +428,10 @@
         dgEl.classList.add("dropped", "spring-onion");
         game3hole2.appendChild(dgEl);
         resetHoleStyle(game3hole2);
-        updateScoreDisplay();
       } else {
         alert("잘못된 선택입니다.");
+        minus++;
+        updateScoreDisplay();
       }
     });
 
@@ -444,9 +447,10 @@
         dgEl.classList.add("dropped", "onions");
         game3hole3.appendChild(dgEl);
         resetHoleStyle(game3hole3);
-        updateScoreDisplay();
       } else {
         alert("잘못된 선택입니다.");
+        minus++;
+        updateScoreDisplay();
       }
     });
 
