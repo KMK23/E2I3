@@ -150,9 +150,8 @@
         </div>
       </div>
     </div>
-    <span id="user"></span>
     <!-- 점수판 -->
-    <div class="score">점수 : 10 점</div>
+    <div class="score"></div>
   </body>
   <script type="module">
     const ingredient = document.querySelectorAll(".sandwich-ingredient");
@@ -164,6 +163,18 @@
     let firstBreadPlaced = false;
     let minus = 0;
     let myScore = 0;
+
+    let user = localStorage.getItem("id");
+    let name = localStorage.getItem("name");
+    userName();
+
+    localStorage.removeItem("userInfo");
+
+    if (!user) {
+      score.innerHTML = `점수 : ${myScore} 점`;
+    } else {
+      score.innerHTML = `${name}님의 점수 : 10 점`;
+    }
 
     // 데이터베이스 js 부분
     import {
@@ -177,9 +188,15 @@
 
     // 점수판 바꾸는 부분
     function updateScoreDisplay() {
-      myScore = 10 - minus;
-      score.innerHTML = `점수 : ${myScore} 점`;
-      console.log(`Current Score: ${myScore}`);
+      if (!user) {
+        myScore = 10 - minus;
+        score.innerHTML = `점수 : ${myScore} 점`;
+        console.log(`Current Score: ${myScore}`);
+      } else {
+        myScore = 10 - minus;
+        score.innerHTML = `${name}님의 점수 : ${myScore} 점`;
+        console.log(`Current Score: ${myScore}`);
+      }
     }
     // 게임끝났을때 함수
     async function endGame() {
@@ -243,12 +260,5 @@
         // console.log(e.data().id);
       });
     }
-
-    let user = localStorage.getItem("id");
-    const userSpan = document.querySelector("#user");
-    userSpan.innerHTML = `${user}`;
-    userName();
-
-    localStorage.removeItem("userInfo");
   </script>
 </html>
