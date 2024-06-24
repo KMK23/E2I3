@@ -18,6 +18,7 @@
             클릭해 보세요.
           </h4>
         </div>
+        <div class="score"></div>
       </div>
       <div class="content">
         <div class="content-wrap">
@@ -165,7 +166,54 @@
       </div>
     </div>
   </body>
-  <script>
+  <script type="module">
+    import { updateScore } from "../game/resources/js/scoreBoard.js";
+
+    const score = document.querySelector(".score");
+    let minus = 0;
+    let myScore = 10;
+    let user = localStorage.getItem("id");
+    let name = localStorage.getItem("name");
+    localStorage.removeItem("userInfo");
+    let correctSelections = 0;
+    const totalCorrect = 4; // Total number of correct shapes to find
+
+    if (!user) {
+      score.innerHTML = `점수 : ${myScore} 점`;
+    } else {
+      score.innerHTML = `${name}님의 점수 : 10 점`;
+    }
+
+    // 점수판 바꾸는 부분
+    function updateScoreDisplay() {
+      if (!user) {
+        myScore = 10 - minus;
+        score.innerHTML = `점수 : ${myScore} 점`;
+        console.log(`Current Score: ${myScore}`);
+      } else {
+        myScore = 10 - minus;
+        score.innerHTML = `${name}님의 점수 : ${myScore} 점`;
+        console.log(`Current Score: ${myScore}`);
+      }
+    }
+
+    async function endGame() {
+      console.log(`Current Score: ${myScore}`);
+      let user = localStorage.getItem("id");
+      let gameType = "debugging2";
+      const dataObj = {
+        id: user,
+        score: myScore,
+        type: gameType,
+      };
+      if (!user) {
+        alert("점수를 등록하시려면 로그인을 해주세요.");
+        return false;
+      }
+      await updateScore("scores", dataObj);
+      alert("Level2 Clear");
+    }
+
     const pics = document.querySelectorAll(".overLays img");
     pics.forEach(function (pic) {
       pic.addEventListener("click", function () {
@@ -175,10 +223,20 @@
           pic.classList.contains("Figure13") ||
           pic.classList.contains("Figure20")
         ) {
-          pic.classList.add("selected");
-          alert("정답입니다!");
+          if (!pic.classList.contains("selected")) {
+            pic.classList.add("selected");
+            correctSelections++;
+            if (correctSelections === totalCorrect) {
+              alert("정답입니다!");
+              updateScoreDisplay();
+              endGame();
+            }
+          }
         } else {
           pic.classList.add("wrongSelected");
+          alert("다시 생각 해보세요");
+          minus++;
+          updateScoreDisplay();
         }
       });
     });

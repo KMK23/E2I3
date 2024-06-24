@@ -31,7 +31,7 @@
             height="100"
             id="red"
             draggable="true"
-            ondragstart="drag(event)"
+            class="dress"
           />
           <img
             src="resources/img/검정반팔.png"
@@ -39,7 +39,7 @@
             height="100"
             id="black"
             draggable="true"
-            ondragstart="drag(event)"
+            class="dress"
           />
           <img
             src="resources/img/분홍반팔.png"
@@ -47,7 +47,7 @@
             height="100"
             id="pink"
             draggable="true"
-            ondragstart="drag(event)"
+            class="dress"
           />
           <img
             src="resources/img/노란반팔.png"
@@ -55,7 +55,7 @@
             height="100"
             id="yellow"
             draggable="true"
-            ondragstart="drag(event)"
+            class="dress"
           />
           <img
             src="resources/img/보라반팔.png"
@@ -63,7 +63,7 @@
             height="100"
             id="purple"
             draggable="true"
-            ondragstart="drag(event)"
+            class="dress"
           />
           <img
             src="resources/img/파란반팔.png"
@@ -71,22 +71,19 @@
             height="100"
             id="blue"
             draggable="true"
-            ondragstart="drag(event)"
+            class="dress"
           />
         </div>
-        <div
-          class="character"
-          ondrop="drop(event)"
-          ondragover="allowDrop(event)"
-        >
+        <div class="character">
           <div class="girl">
             <img src="resources/img/여자아이.png" width="360" height="480" />
           </div>
         </div>
       </div>
     </div>
+    <div class="score"></div>
   </body>
-  <script>
+  <script type="module">
     const rule = document.querySelector(".rule");
     const arr = [
       { day: "월", color: "분홍색", src: "resources/img/분홍반팔.png" },
@@ -108,6 +105,71 @@
       );
     });
 
+    const score = document.querySelector(".score");
+    let minus = 0;
+    let myScore = 0;
+
+    let user = localStorage.getItem("id");
+    let name = localStorage.getItem("name");
+
+    localStorage.removeItem("userInfo");
+
+    if (!user) {
+      score.innerHTML = `점수 : ${myScore} 점`;
+    } else {
+      score.innerHTML = `${name}님의 점수 : 10 점`;
+    }
+
+    // 데이터베이스 js 부분
+    import {
+      db,
+      getDatas,
+      addDatas,
+      deleteDatas,
+      updateDatas,
+      updateScore,
+    } from "./resources/js/scoreBoard.js";
+
+    // 점수판 바꾸는 부분
+    function updateScoreDisplay() {
+      if (!user) {
+        myScore = 10 - minus;
+        score.innerHTML = `점수 : ${myScore} 점`;
+        console.log(`Current Score: ${myScore}`);
+      } else {
+        myScore = 10 - minus;
+        score.innerHTML = `${name}님의 점수 : ${myScore} 점`;
+        console.log(`Current Score: ${myScore}`);
+      }
+    }
+    // 게임끝났을때 함수
+    async function endGame() {
+      console.log(`Current Score: ${myScore}`);
+      let user = localStorage.getItem("id");
+      let gameType = "pattern1";
+      const dataObj = {
+        id: user,
+        score: myScore,
+        type: gameType,
+      };
+      if (!user) {
+        setTimeout(function () {
+          alert("점수를 등록하시려면 로그인을 해주세요.");
+        }, 200);
+        return false;
+      }
+      await updateScore("scores", dataObj);
+      alert("사랑이가 규칙에 맞게 옷을 잘 입었습니다! 점수가 저장되었습니다.");
+    }
+
+    document.querySelectorAll(".dress").forEach((item) => {
+      item.addEventListener("dragstart", drag);
+    });
+
+    const character = document.querySelector(".character");
+    character.addEventListener("dragover", allowDrop);
+    character.addEventListener("drop", drop);
+
     function allowDrop(event) {
       event.preventDefault();
     }
@@ -127,31 +189,43 @@
         bubble.classList.add("speech-bubble");
         bubble.innerHTML = "정답이야!";
         girl.append(bubble);
+        updateScoreDisplay();
+        endGame();
       } else if (data === "black") {
         girl.innerHTML = `<img src="resources/img/검정옷여아.png" width="360" height="480" />`;
         bubble.classList.add("speech-bubble");
         bubble.innerHTML = "규칙을 다시 생각해보자";
         girl.append(bubble);
+        minus++;
+        updateScoreDisplay();
       } else if (data === "yellow") {
         girl.innerHTML = `<img src="resources/img/노란옷여아.png" width="360" height="480" />`;
         bubble.classList.add("speech-bubble");
         bubble.innerHTML = "규칙을 다시 생각해보자";
         girl.append(bubble);
+        minus++;
+        updateScoreDisplay();
       } else if (data === "blue") {
         girl.innerHTML = `<img src="resources/img/파란옷여아.png" width="360" height="480"  />`;
         bubble.classList.add("speech-bubble");
         bubble.innerHTML = "규칙을 다시 생각해보자";
         girl.append(bubble);
+        minus++;
+        updateScoreDisplay();
       } else if (data === "purple") {
         girl.innerHTML = `<img src="resources/img/보라옷여아.png" width="360" height="480" />`;
         bubble.classList.add("speech-bubble");
         bubble.innerHTML = "규칙을 다시 생각해보자";
         girl.append(bubble);
+        minus++;
+        updateScoreDisplay();
       } else if (data === "red") {
         girl.innerHTML = `<img src="resources/img/빨간옷여아.png" width="360" height="480" />`;
         bubble.classList.add("speech-bubble");
         bubble.innerHTML = "규칙을 다시 생각해보자";
         girl.append(bubble);
+        minus++;
+        updateScoreDisplay();
       }
     }
   </script>

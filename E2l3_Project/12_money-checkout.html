@@ -18,7 +18,11 @@
             <div class="plan-badge">광고형 스탠다드</div>
           </div>
           <div class="plan-price">
-            <p>월 <strong>5,500원</strong></p>
+            <p>
+              일정 분량의 광고가 포함되며, 1080P 화질과 음질을 제공하며 2명까지
+              동시 접속이 가능한 <strong>가장 저렴한 요금제</strong>입니다.
+            </p>
+            <p class="price">월 <strong>5,500원</strong></p>
             <p class="discount">
               연간 결제시 10% 할인 <strong>59,400원</strong>
             </p>
@@ -31,6 +35,10 @@
             <div class="plan-badge">스탠다드</div>
           </div>
           <div class="plan-price">
+            <p>
+              <strong>광고 없이 </strong>1080P 화질과 음질을 제공하며 2명까지
+              동시 접속이 가능합니다.
+            </p>
             <p>월 <strong>13,500원</strong></p>
             <p class="discount">
               연간 결제시 10% 할인 <strong>155,800원</strong>
@@ -44,6 +52,10 @@
             <div class="plan-badge">프리미엄</div>
           </div>
           <div class="plan-price">
+            <p>
+              <strong>광고 없이 </strong>1080P 화질과 음질을 제공하며 2명까지
+              동시 접속이 가능합니다.
+            </p>
             <p>월 <strong>17,000원</strong></p>
             <p class="discount">
               연간 결제시 10% 할인 <strong>183,600원</strong>
@@ -117,8 +129,12 @@
             <input type="text" id="credit-card-expiry" placeholder="MM/YY" />
             <label for="credit-card-cvc">CVC:</label>
             <input type="text" id="credit-card-cvc" placeholder="CVC" />
-            <!-- <label for="credit-card-name">카드 소유자 이름:</label> -->
-            <!-- <input type="text" id="credit-card-name" placeholder="이름" /> -->
+            <label for="credit-card-name">비밀번호:</label>
+            <input
+              type="text"
+              id="credit-card-password"
+              placeholder="카드 비밀번호(4자리)"
+            />
           </div>
 
           <!-- 계좌 이체 선택 -->
@@ -131,15 +147,23 @@
               <option value="hn">하나은행</option>
               <option value="ibk">IBK기업은행</option>
               <option value="jb">전북은행</option>
+              <option value="dg">대구은행</option>
+              <option value="bs">부산은행</option>
               <option value="saemaul">새마을금고</option>
               <option value="toss">토스</option>
               <option value="sinhyub">신협은행</option>
               <option value="post-office">우체국</option>
+              <option value="kbank">케이뱅크</option>
             </select>
             <label for="bank-account">계좌 번호:</label>
             <input type="text" id="bank-account" placeholder="계좌 번호" />
+            <label for="bank-account">비밀번호</label>
+            <input
+              type="text"
+              id="bank-account"
+              placeholder="계좌 비밀번호(4자리)"
+            />
           </div>
-
           <!-- 휴대폰 결제 선택 -->
           <div id="mobile-payment-details" class="payment-detail">
             <label for="mobile-carrier">통신사 선택:</label>
@@ -150,6 +174,21 @@
             </select>
             <label for="mobile-number">전화 번호:</label>
             <input type="text" id="mobile-number" placeholder="전화 번호" />
+            <button
+              id="send-code-button"
+              onclick="sendVerificationCode()"
+              class="auth-button"
+            >
+              인증번호 발송
+            </button>
+            <div id="verification-code-container" style="display: none">
+              <label for="verification-code">인증번호:</label>
+              <input
+                type="text"
+                id="verification-code"
+                placeholder="인증번호 입력"
+              />
+            </div>
           </div>
 
           <!-- 연간 결제 여부 -->
@@ -160,7 +199,7 @@
                 id="annual-payment"
                 onclick="updateTotalAmount()"
               />
-              연간 결제하기(10% 할인반영)
+              연간 결제하기 (10% 할인이 적용된 가격입니다.)
             </label>
           </div>
 

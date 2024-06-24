@@ -150,20 +150,31 @@
         </div>
       </div>
     </div>
-    <span id="user"></span>
     <!-- 점수판 -->
-    <div class="score">점수 : 10 점</div>
+    <div class="score"></div>
   </body>
   <script type="module">
     const ingredient = document.querySelectorAll(".sandwich-ingredient");
     const sandwich = document.querySelector(".sandwich");
-    const score = document.querySelector(".score");
     let zIndexCounter = 1;
     let currentStep = 0;
     const order = ["bread", "meat", "egg", "tomato", "lettuce", "bread"];
     let firstBreadPlaced = false;
+
+    const score = document.querySelector(".score");
     let minus = 0;
     let myScore = 0;
+
+    let user = localStorage.getItem("id");
+    let name = localStorage.getItem("name");
+
+    localStorage.removeItem("userInfo");
+
+    if (!user) {
+      score.innerHTML = `점수 : ${myScore} 점`;
+    } else {
+      score.innerHTML = `${name}님의 점수 : 10 점`;
+    }
 
     // 데이터베이스 js 부분
     import {
@@ -173,19 +184,26 @@
       deleteDatas,
       updateDatas,
       updateScore,
+      updateTotalScore,
     } from "./resources/js/scoreBoard.js";
 
     // 점수판 바꾸는 부분
     function updateScoreDisplay() {
-      myScore = 10 - minus;
-      score.innerHTML = `점수 : ${myScore} 점`;
-      console.log(`Current Score: ${myScore}`);
+      if (!user) {
+        myScore = 10 - minus;
+        score.innerHTML = `점수 : ${myScore} 점`;
+        console.log(`Current Score: ${myScore}`);
+      } else {
+        myScore = 10 - minus;
+        score.innerHTML = `${name}님의 점수 : ${myScore} 점`;
+        console.log(`Current Score: ${myScore}`);
+      }
     }
     // 게임끝났을때 함수
     async function endGame() {
       console.log(`Current Score: ${myScore}`);
       let user = localStorage.getItem("id");
-      let gameType = "ar1";
+      let gameType = "algorithm1";
       const dataObj = {
         id: user,
         score: myScore,
@@ -197,6 +215,19 @@
       }
       await updateScore("scores", dataObj);
       alert("성공적으로 샌드위치를 완성했습니다! 점수가 저장되었습니다.");
+
+      const ff = await getDatas("totalScore");
+      ff.forEach(async (e) => {
+        const real = e.data().userTotalScore;
+        console.log(`테스트:${real}`);
+        const totalDataObj = {
+          id: user,
+          userTotalScore: real + myScore,
+        };
+        console.log(totalDataObj);
+        await updateScore("totalScore", totalDataObj);
+        await updateTotalScore("totalScore", totalDataObj);
+      });
     }
 
     ingredient.forEach((ingredient) => {
@@ -236,19 +267,5 @@
         updateScoreDisplay();
       });
     });
-    //유저 로컬아이디 확인
-    async function userName() {
-      const snapshot = await getDatas("user");
-      snapshot.forEach((e) => {
-        // console.log(e.data().id);
-      });
-    }
-
-    let user = localStorage.getItem("id");
-    const userSpan = document.querySelector("#user");
-    userSpan.innerHTML = `${user}`;
-    userName();
-
-    localStorage.removeItem("userInfo");
   </script>
 </html>

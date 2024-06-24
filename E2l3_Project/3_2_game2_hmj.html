@@ -17,6 +17,7 @@
             규칙을 잘 보고 마지막에 와야 할 아이스크림을 만들어보세요.
           </h4>
         </div>
+        <div class="score"></div>
       </div>
       <div class="content">
         <div class="rules">
@@ -58,7 +59,56 @@
       </div>
     </div>
   </body>
-  <script>
+  <script type="module">
+    import {
+      db,
+      getDatas,
+      addDatas,
+      deleteDatas,
+      updateDatas,
+      updateScore,
+    } from "../game/resources/js/scoreBoard.js";
+    const score = document.querySelector(".score");
+    let minus = 0;
+    let myScore = 10;
+    let user = localStorage.getItem("id");
+    let name = localStorage.getItem("name");
+    localStorage.removeItem("userInfo");
+    if (!user) {
+      score.innerHTML = `점수 : ${myScore} 점`;
+    } else {
+      score.innerHTML = `${name}님의 점수 : 10 점`;
+    }
+    // 점수판 바꾸는 부분
+    function updateScoreDisplay() {
+      if (!user) {
+        myScore = 10 - minus;
+        score.innerHTML = `점수 : ${myScore} 점`;
+        console.log(`Current Score: ${myScore}`);
+      } else {
+        myScore = 10 - minus;
+        score.innerHTML = `${name}님의 점수 : ${myScore} 점`;
+        console.log(`Current Score: ${myScore}`);
+      }
+    }
+
+    async function endGame() {
+      console.log(`Current Score: ${myScore}`);
+      let user = localStorage.getItem("id");
+      let gameType = "pattern2";
+      const dataObj = {
+        id: user,
+        score: myScore,
+        type: gameType,
+      };
+      if (!user) {
+        alert("점수를 등록하시려면 로그인을 해주세요.");
+        return false;
+      }
+      await updateScore("scores", dataObj);
+      alert("Level2 Clear");
+    }
+
     let scoopCount = 0;
     const correctOrder = ["scoop5", "scoop2", "scoop1", "scoop3"];
 
@@ -66,6 +116,8 @@
       const scoopClass = event.target.classList[0];
       if (scoopClass !== correctOrder[scoopCount]) {
         alert("다시 생각해보세요!");
+        minus++;
+        updateScoreDisplay();
         return;
       }
 
@@ -87,6 +139,8 @@
       if (scoopCount === correctOrder.length) {
         setTimeout(() => {
           alert("완성되었습니다!");
+          updateScoreDisplay();
+          endGame();
         }, 1100);
       }
     }

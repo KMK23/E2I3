@@ -77,6 +77,21 @@ function processPayment() {
   closePaymentModal();
 }
 
+function sendVerificationCode() {
+  const mobileNumber = document.getElementById('mobile-number').value;
+  if (!mobileNumber) {
+    alert('전화 번호를 입력해주세요.');
+    return;
+  }
+
+  // 인증번호 발송 로직 추가 (여기에서는 알림으로 대체)
+  alert(`인증번호가 ${mobileNumber}로 발송되었습니다.`);
+
+  // 인증번호 입력란 표시
+  document.getElementById('verification-code-container').style.display =
+    'block';
+}
+
 // 요금제 클릭 이벤트
 document.querySelectorAll('.plan').forEach((plan) => {
   plan.addEventListener('click', function () {

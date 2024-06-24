@@ -21,7 +21,25 @@
     </div>
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
-  <script>
+  <script type="module">
+    import {
+      db,
+      getDatas,
+      addDatas,
+      deleteDatas,
+      updateDatas,
+      updateScore,
+    } from "./resources/js/scoreBoard.js";
+
+    async function userPoint() {
+      const snapshot = await getDatas("scores");
+      snapshot.forEach((el) => {
+        console.log(el.data().id);
+        console.log(el.data().score);
+        // if(id)
+      });
+    }
+    userPoint();
     let myCt = document.getElementById("myChart");
 
     let myChart = new Chart(myCt, {
@@ -35,7 +53,7 @@
           {
             label: "점수", //축 제목
             fill: false, // line 형태일 때, 선 안쪽을 채우는지 여부
-            data: [10, 20, 30, 40], //dataset 값
+            data: [30, 20, 30, 40], //dataset 값
             backgroundColor: [
               //배경색
               "rgba(255, 99, 132, 0.2)",

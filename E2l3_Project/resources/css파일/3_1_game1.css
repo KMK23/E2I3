@@ -259,3 +259,21 @@ img {
   top: 0;
   left: 12%;
 }
+.score {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: #11503dec;
+  border: 9px solid #705d4e;
+  backdrop-filter: blur(6px);
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 22rem;
+  height: 6rem;
+  font-size: 1.8rem;
+  font-weight: bolder;
+  color: aliceblue;
+  box-shadow: 0 16px 10px rgba(0, 0, 0, 0.5);
+}

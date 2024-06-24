@@ -19,6 +19,7 @@
             각 스케치북 속 모양과 잘 비교한 후에 알맞는 말을 써보세요.
           </h4>
         </div>
+        <div class="score"></div>
       </div>
       <div class="content">
         <div class="first-content">
@@ -74,7 +75,56 @@
       </div>
     </div>
   </body>
-  <script>
+  <script type="module">
+    import {
+      db,
+      getDatas,
+      addDatas,
+      deleteDatas,
+      updateDatas,
+      updateScore,
+    } from "../game/resources/js/scoreBoard.js";
+    const score = document.querySelector(".score");
+    let minus = 0;
+    let myScore = 10;
+    let user = localStorage.getItem("id");
+    let name = localStorage.getItem("name");
+    localStorage.removeItem("userInfo");
+    if (!user) {
+      score.innerHTML = `점수 : ${myScore} 점`;
+    } else {
+      score.innerHTML = `${name}님의 점수 : 10 점`;
+    }
+    // 점수판 바꾸는 부분
+    function updateScoreDisplay() {
+      if (!user) {
+        myScore = 10 - minus;
+        score.innerHTML = `점수 : ${myScore} 점`;
+        console.log(`Current Score: ${myScore}`);
+      } else {
+        myScore = 10 - minus;
+        score.innerHTML = `${name}님의 점수 : ${myScore} 점`;
+        console.log(`Current Score: ${myScore}`);
+      }
+    }
+
+    async function endGame() {
+      console.log(`Current Score: ${myScore}`);
+      let user = localStorage.getItem("id");
+      let gameType = "debugging3";
+      const dataObj = {
+        id: user,
+        score: myScore,
+        type: gameType,
+      };
+      if (!user) {
+        alert("점수를 등록하시려면 로그인을 해주세요.");
+        return false;
+      }
+      await updateScore("scores", dataObj);
+      alert("Level3 Clear");
+    }
+
     const input = document.querySelector(".input");
     const check = document.querySelector(".check");
 
@@ -85,8 +135,12 @@
       }
       if (input.value == "친구들아안녕") {
         alert("정답입니다");
+        updateScoreDisplay();
+        endGame();
       } else {
         alert("다시 생각해보세요");
+        minus++;
+        updateScoreDisplay();
       }
     }
     function sendEnter(e) {

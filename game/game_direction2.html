@@ -127,7 +127,7 @@
         </div>
       </div>
     </div>
-    <div class="score">점수 : 10 점</div>
+    <div class="score"></div>
   </body>
   <script type="module">
     const boxes = document.querySelectorAll(".boxes");
@@ -139,6 +139,17 @@
     let directionIndex = 0;
     let minus = 0;
     let myScore = 0;
+
+    let user = localStorage.getItem("id");
+    let name = localStorage.getItem("name");
+
+    localStorage.removeItem("userInfo");
+
+    if (!user) {
+      score.innerHTML = `점수 : ${myScore} 점`;
+    } else {
+      score.innerHTML = `${name}님의 점수 : 10 점`;
+    }
 
     // 데이터베이스 js 부분
     import {
@@ -152,20 +163,32 @@
 
     // 점수판 바꾸는 부분
     function updateScoreDisplay() {
-      myScore = 10 - minus;
-      score.innerHTML = `점수 : ${myScore} 점`;
-      console.log(`Current Score: ${myScore}`);
+      if (!user) {
+        myScore = 10 - minus;
+        score.innerHTML = `점수 : ${myScore} 점`;
+        console.log(`Current Score: ${myScore}`);
+      } else {
+        myScore = 10 - minus;
+        score.innerHTML = `${name}님의 점수 : ${myScore} 점`;
+        console.log(`Current Score: ${myScore}`);
+      }
     }
     // 게임끝났을때 함수
     async function endGame() {
       console.log(`Current Score: ${myScore}`);
       let user = localStorage.getItem("id");
+      let gameType = "algorithm3";
+      const dataObj = {
+        id: user,
+        score: myScore,
+        type: gameType,
+      };
       if (!user) {
         alert("점수를 등록하시려면 로그인을 해주세요.");
         return false;
       }
-      await updateScore(user, myScore);
-      alert("성공적으로 배달을 완료했습니다! 점수가 저장되었습니다.");
+      await updateScore("scores", dataObj);
+      alert("성공적으로 빵을 배달했습니다! 점수가 저장되었습니다.");
     }
 
     boxes.forEach(function (box) {
@@ -214,6 +237,7 @@
         updateBoyPosition();
         if (row === 3 && col === 3) {
           document.querySelector("#house").classList.add("arrived");
+          updateScoreDisplay();
           endGame();
         }
       } else {
@@ -269,12 +293,5 @@
     async function userName() {
       const snapshot = await getDatas("user");
     }
-
-    let user = localStorage.getItem("id");
-    const userSpan = document.querySelector("#user");
-    userSpan.innerHTML = `${user}`;
-    userName();
-
-    localStorage.removeItem("userInfo");
   </script>
 </html>
