@@ -184,6 +184,7 @@
       deleteDatas,
       updateDatas,
       updateScore,
+      updateTotalScore,
     } from "./resources/js/scoreBoard.js";
 
     // 점수판 바꾸는 부분
@@ -214,6 +215,19 @@
       }
       await updateScore("scores", dataObj);
       alert("성공적으로 샌드위치를 완성했습니다! 점수가 저장되었습니다.");
+
+      const ff = await getDatas("totalScore");
+      ff.forEach(async (e) => {
+        const real = e.data().userTotalScore;
+        console.log(`테스트:${real}`);
+        const totalDataObj = {
+          id: user,
+          userTotalScore: real + myScore,
+        };
+        console.log(totalDataObj);
+        await updateScore("totalScore", totalDataObj);
+        await updateTotalScore("totalScore", totalDataObj);
+      });
     }
 
     ingredient.forEach((ingredient) => {

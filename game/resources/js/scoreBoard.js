@@ -114,6 +114,39 @@ async function updateScore(collectionName, dataObj) {
   }
 }
 
+async function updateTotalScore(collectionName, totalDataObj) {
+  try {
+    const collect = collection(db, collectionName);
+    const q = query(
+      collect,
+      where("id", "==", totalDataObj.id),
+      where("userTotalScore", "==", totalDataObj.userTotalScore)
+    );
+    const querySnapshot = await getDocs(q);
+    console.log(querySnapshot);
+    if (querySnapshot.empty) {
+      // 문서가 존재하지 않으면 새 문서 추가
+      await addDoc(collect, totalDataObj);
+      console.log("New document successfully added!");
+    } else {
+      // 문서가 존재하면 점수 업데이트
+      querySnapshot.forEach(async (doc) => {
+        const docRef = doc.ref;
+        console.log(docRef);
+        await setDoc(
+          docRef,
+          { userTotalScore: totalDataObj.userTotalScore },
+          { merge: true }
+        );
+
+        console.log("Document successfully updated!");
+      });
+    }
+  } catch (e) {
+    console.error("Error updating document: ", e);
+  }
+}
+
 async function deleteDatas(collectionName, docId) {
   const docRef = await doc(db, collectionName, docId);
   await deleteDoc(docRef);
@@ -131,5 +164,13 @@ async function updateDatas(collectionName, docId, updateinfoObj) {
   // const docData = await getDoc(docRef);
   await updateDoc(docRef, updateinfoObj);
 }
-export { db, getDatas, addDatas, deleteDatas, updateDatas, updateScore };
+export {
+  db,
+  getDatas,
+  addDatas,
+  deleteDatas,
+  updateDatas,
+  updateScore,
+  updateTotalScore,
+};
 //export 는 말그대로 내보내서 쓰는것들이니까 deleteDats를 쓴거야.
