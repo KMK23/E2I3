@@ -142,8 +142,63 @@
         </div>
       </div>
     </div>
+    <div class="score"></div>
   </body>
-  <script>
+  <script type="module">
+    let minus = 0;
+    let myScore = 0;
+
+    let user = localStorage.getItem("id");
+    let name = localStorage.getItem("name");
+
+    const score = document.querySelector(".score");
+
+    if (!user) {
+      score.innerHTML = `점수 : ${myScore} 점`;
+    } else {
+      score.innerHTML = `${name}님의 점수 : 10 점`;
+    }
+
+    // 데이터베이스 js 부분
+    import {
+      db,
+      getDatas,
+      addDatas,
+      deleteDatas,
+      updateDatas,
+      updateScore,
+    } from "./resources/js/scoreBoard.js";
+
+    // 점수판 바꾸는 부분
+    function updateScoreDisplay() {
+      if (!user) {
+        myScore = 10 - minus;
+        score.innerHTML = `점수 : ${myScore} 점`;
+        console.log(`Current Score: ${myScore}`);
+      } else {
+        myScore = 10 - minus;
+        score.innerHTML = `${name}님의 점수 : ${myScore} 점`;
+        console.log(`Current Score: ${myScore}`);
+      }
+    }
+    // 게임끝났을때 함수
+    async function endGame() {
+      console.log(`Current Score: ${myScore}`);
+      let user = localStorage.getItem("id");
+      let gameType = "algorithm2";
+      const dataObj = {
+        id: user,
+        score: myScore,
+        type: gameType,
+      };
+      if (!user) {
+        alert("점수를 등록하시려면 로그인을 해주세요.");
+        return false;
+      }
+      await updateScore("scores", dataObj);
+      alert("성공적으로 빵을 진열했습니다! 점수가 저장되었습니다.");
+    }
+
     const imgs = document.querySelectorAll(".answer");
     imgs.forEach((img) => {
       img.addEventListener("dragstart", (event) => {
@@ -162,8 +217,20 @@
         const type = event.dataTransfer.getData("text/plain");
         if (item.dataset.type === type) {
           item.classList.remove("shadow");
+          checkCompletion();
+        } else {
+          minus++;
+          updateScoreDisplay();
         }
       });
     });
+
+    function checkCompletion() {
+      const remainingShadows = document.querySelectorAll(".shadow");
+      if (remainingShadows.length === 0) {
+        updateScoreDisplay();
+        endGame();
+      }
+    }
   </script>
 </html>

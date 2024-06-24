@@ -166,14 +166,14 @@ h4 {
   justify-items: center;
   align-items: center;
 }
-.dress {
+/* .dress {
   display: flex;
   justify-content: center;
   align-items: center;
   border: 0.1875em solid #c7b199;
   background-color: #e9e0d5;
   border-radius: 0.5em;
-}
+} */
 
 .speech-bubble {
   position: absolute;
@@ -215,4 +215,23 @@ h4 {
   border-top-color: #c2e1f5;
   border-width: 2.25em;
   margin-left: -2.25em;
+}
+
+.score {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: #11503dec;
+  border: 9px solid #705d4e;
+  backdrop-filter: blur(6px);
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 22rem;
+  height: 6rem;
+  font-size: 1.8rem;
+  font-weight: bolder;
+  color: aliceblue;
+  box-shadow: 0 16px 10px rgba(0, 0, 0, 0.5);
 }
