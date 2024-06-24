@@ -233,9 +233,6 @@
     //유저 로컬아이디 확인
     async function userName() {
       const snapshot = await getDatas("user");
-      snapshot.forEach((e) => {
-        // console.log(e.data().id);
-      });
     }
 
     let user = localStorage.getItem("id");

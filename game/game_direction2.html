@@ -127,14 +127,46 @@
         </div>
       </div>
     </div>
+    <div class="score">점수 : 10 점</div>
   </body>
-  <script>
+  <script type="module">
     const boxes = document.querySelectorAll(".boxes");
     const boy = document.getElementById("boy");
+    const score = document.querySelector(".score");
     let boyPosition = { row: 0, col: 0 };
     let previousPosition = null;
     const directions = ["right", "down", "right", "down", "right", "down"]; // 암호문에 있는 방향
     let directionIndex = 0;
+    let minus = 0;
+    let myScore = 0;
+
+    // 데이터베이스 js 부분
+    import {
+      db,
+      getDatas,
+      addDatas,
+      deleteDatas,
+      updateDatas,
+      updateScore,
+    } from "./resources/js/scoreBoard.js";
+
+    // 점수판 바꾸는 부분
+    function updateScoreDisplay() {
+      myScore = 10 - minus;
+      score.innerHTML = `점수 : ${myScore} 점`;
+      console.log(`Current Score: ${myScore}`);
+    }
+    // 게임끝났을때 함수
+    async function endGame() {
+      console.log(`Current Score: ${myScore}`);
+      let user = localStorage.getItem("id");
+      if (!user) {
+        alert("점수를 등록하시려면 로그인을 해주세요.");
+        return false;
+      }
+      await updateScore(user, myScore);
+      alert("성공적으로 배달을 완료했습니다! 점수가 저장되었습니다.");
+    }
 
     boxes.forEach(function (box) {
       box.addEventListener("click", boxClickHandler);
@@ -147,6 +179,8 @@
       // 방문한 상자인지 확인
       if (this.classList.contains("visited")) {
         alert("이미 방문한 칸입니다!");
+        minus++;
+        updateScoreDisplay();
         return;
       }
 
@@ -160,6 +194,8 @@
         previousPosition.col === col
       ) {
         alert("올바르지 않은 방향입니다!");
+        minus++;
+        updateScoreDisplay();
         return;
       }
 
@@ -178,9 +214,12 @@
         updateBoyPosition();
         if (row === 3 && col === 3) {
           document.querySelector("#house").classList.add("arrived");
+          endGame();
         }
       } else {
         alert("올바르지 않은 방향입니다!");
+        minus++;
+        updateScoreDisplay();
         document.querySelector(
           `.boxes[data-row="${row}"][data-col="${col}"] .tree`
         ).style.display = "block";
@@ -226,5 +265,16 @@
     }
 
     updateBoyPosition();
+
+    async function userName() {
+      const snapshot = await getDatas("user");
+    }
+
+    let user = localStorage.getItem("id");
+    const userSpan = document.querySelector("#user");
+    userSpan.innerHTML = `${user}`;
+    userName();
+
+    localStorage.removeItem("userInfo");
   </script>
 </html>
