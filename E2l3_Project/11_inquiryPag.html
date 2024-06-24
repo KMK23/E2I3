@@ -18,11 +18,13 @@
             <div class="big-category">
               <select name="inquiry-type" id="inquiry-type" required>
                 <option value="" class="option">선택 해주세요</option>
+                <option value="" class="option">기타</option>
               </select>
             </div>
             <div class="smli-category">
-              <select name="inquiry-type" id="inquiry-type" required>
+              <select name="inquiry-type" id="smli-inquiry" required>
                 <option value="" class="option">선택해주세요</option>
+                <option value="" class="option">기타</option>
               </select>
             </div>
           </div>
@@ -30,7 +32,9 @@
 
         <div class="inquiryDetails">
           <strong class="writeDetails">
-            <label class="detail">문의내용 <span class="iocn">*</span></label>
+            <label for="text-content" class="detail"
+              >문의내용 <span class="iocn">*</span></label
+            >
           </strong>
           <div class="text-wirte">
             <div class="inquiry-wirte">
@@ -42,7 +46,7 @@
                 spellcheck="false"
                 placeholder=" 신속하고 정확한 안내를 위하여 '문의유형'과 '주문번호'를 선택(또는 입력)해 주세요
         
-                ※ 상담사에게 폭언, 욕설 등을 하지 말아 주세요. 답변을 받지 못하거나 사전안내없이 삭제될 수 있습니다"
+                              ※ 상담사에게 폭언, 욕설 등을 하지 말아 주세요. 답변을 받지 못하거나 사전안내없이 삭제될 수 있습니다"
               >
               </textarea>
               <span class="text-span">3000자 이내에 적어주세요</span>
@@ -57,7 +61,9 @@
                 type="file"
                 id="file_upload"
                 class="file-upload"
+                multiple
                 title="문의에 필요한 파일 첨부"
+                onchange="updateFileCount()"
               />
               <div class="file-info" id="fileInfo"></div>
             </div>
@@ -75,7 +81,7 @@
         </div>
         <div class="email_enter">
           <strong class="tite_email">
-            <label for="adder" class="email_adder"
+            <label for="emadil-adder" class="email_adder"
               >이메일주소<span class="icon">*</span></label
             >
             <span class="email-error">형식에 맞지않은 이메일주소 입니다</span>
@@ -83,8 +89,8 @@
           <div class="emailInput">
             <input
               type="text"
-              name="email"
-              id="adder"
+              name="emadil-adder"
+              id="emadil-adder"
               class="emailAdder"
               placeholder="예）example@gmail.com"
               maxlength="11"
@@ -127,18 +133,69 @@
     </div>
   </body>
   <script>
-    document.getElementById("file").addEventListener("click", function () {
-      document.getElementById("file_upload").click();
-    });
+    // 파일 리스트 코드
+    document.addEventListener("DOMContentLoaded", function () {
+      const fileInput = document.getElementById("file_upload");
+      const fileInfo = document.getElementById("fileInfo");
+      let fileList = [];
 
-    const textarea = document.getElementById("text-content");
-    textarea.addEventListener("focus", function () {
-      this.classList.add("clicked");
-    });
-    textarea.addEventListener("blur", function () {
-      if (this.value === "") {
-        this.classList.remove("clicked");
+      fileInput.addEventListener("change", function () {
+        const newFiles = Array.from(fileInput.files);
+        fileList = [...fileList, ...newFiles];
+        updateFileList();
+      });
+
+      function updateFileList() {
+        fileInfo.innerHTML = "";
+
+        fileList.forEach((file, index) => {
+          const fileItem = document.createElement("div");
+          fileItem.className = "file-item";
+          fileItem.innerHTML = `
+            ${file.name}
+            <button class="remove-btn" data-index="${index}">삭제</button>
+          `;
+          fileInfo.appendChild(fileItem);
+        });
+
+        document.querySelectorAll(".remove-btn").forEach((button) => {
+          button.addEventListener("click", function () {
+            const index = this.getAttribute("data-index");
+            removeFile(index);
+          });
+        });
+      }
+
+      function removeFile(index) {
+        fileList.splice(index, 1);
+        updateFileList();
       }
     });
+
+    // 파일 추가 할때 카운트가 올라가는 코드
+    function updateFileCount() {
+      let input = document.getElementById("file_upload");
+      let fileCount = input.files.length;
+      let maxFiles = 10;
+
+      if (fileCount > maxFiles) {
+        alert("최대" + maxFiles + "개의 파일까지 첨부할 수 있습니다.");
+        input.value = "";
+        fileCount = 0;
+      }
+
+      let fileLabel = document.getElementById("fileLabel");
+      let fileInfo = document.getElementById("fileInfo");
+      fileLabel.textContent = fileLabel.textContent =
+        "파일 첨부하기 (" + fileCount + "/" + maxFiles + ")";
+
+      fileInfo.innerHTML = "";
+      for (let i = 0; i < fileCount; i++) {
+        let fileName = input.files[i].name;
+        let fileSize = input.files[i].size;
+        fileInfo.innerHTML +=
+          "<p>" + fileName + " (" + fileSize + " bytes)</p>";
+      }
+    }
   </script>
 </html>

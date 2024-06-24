@@ -83,9 +83,9 @@ textarea.write {
   transition: all 0.3s ease;
 }
 
-.write.clicked {
+textarea.write.clickedr {
   padding-left: 1.25rem;
-  border-color: black;
+  border-color: #222222;
 }
 
 .text-span {
@@ -228,4 +228,22 @@ input.phome {
   width: 24%;
   padding: 1rem;
   font-size: 1.25rem;
+}
+
+.file-item {
+  padding: 0.3125rem;
+  border: 1px solid #ccc;
+  border-radius: 0.3125rem;
+  margin-bottom: 0.3125rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.remove-btn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 0.3125rem;
+  cursor: pointer;
+  border-radius: 0.1875rem;
 }
