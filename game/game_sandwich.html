@@ -166,7 +166,6 @@
 
     let user = localStorage.getItem("id");
     let name = localStorage.getItem("name");
-    userName();
 
     localStorage.removeItem("userInfo");
 
@@ -202,7 +201,7 @@
     async function endGame() {
       console.log(`Current Score: ${myScore}`);
       let user = localStorage.getItem("id");
-      let gameType = "ar1";
+      let gameType = "algorithm1";
       const dataObj = {
         id: user,
         score: myScore,
@@ -253,12 +252,5 @@
         updateScoreDisplay();
       });
     });
-    //유저 로컬아이디 확인
-    async function userName() {
-      const snapshot = await getDatas("user");
-      snapshot.forEach((e) => {
-        // console.log(e.data().id);
-      });
-    }
   </script>
 </html>
