@@ -36,16 +36,8 @@ async function getDatas(collectionName) {
 
 async function addDatas(collectionName, dataObj) {
   try {
-    // 문서 ID 수동
-    // const saveDoc = await doc(db, collectionName, "2");
-    // console.log(`Doc(결과)${saveDoc}`);
-    // const saveResult = await setDoc(saveDoc, dataObj);
-    // setDoc 은 return 이 없어서 처리를 해주어야 한다.
-    // console.log(`setDoc(결과)${saveResult}`);
-    // 문서 ID 자동
     const collect = await collection(db, collectionName);
     await addDoc(collect, dataObj);
-
     return true;
   } catch (error) {
     return false;
@@ -104,7 +96,6 @@ async function updateScore(collectionName, dataObj) {
       // 문서가 존재하면 점수 업데이트
       querySnapshot.forEach(async (doc) => {
         const docRef = doc.ref;
-        console.log(docRef);
         await setDoc(docRef, { score: dataObj.score }, { merge: true });
         console.log("Document successfully updated!");
       });
@@ -117,13 +108,9 @@ async function updateScore(collectionName, dataObj) {
 async function updateTotalScore(collectionName, totalDataObj) {
   try {
     const collect = collection(db, collectionName);
-    const q = query(
-      collect,
-      where("id", "==", totalDataObj.id),
-      where("userTotalScore", "==", totalDataObj.userTotalScore)
-    );
+    const q = query(collect, where("id", "==", totalDataObj.id));
     const querySnapshot = await getDocs(q);
-    console.log(querySnapshot);
+
     if (querySnapshot.empty) {
       // 문서가 존재하지 않으면 새 문서 추가
       await addDoc(collect, totalDataObj);
@@ -132,13 +119,9 @@ async function updateTotalScore(collectionName, totalDataObj) {
       // 문서가 존재하면 점수 업데이트
       querySnapshot.forEach(async (doc) => {
         const docRef = doc.ref;
-        console.log(docRef);
-        await setDoc(
-          docRef,
-          { userTotalScore: totalDataObj.userTotalScore },
-          { merge: true }
-        );
-
+        await updateDoc(docRef, {
+          userTotalScore: totalDataObj.userTotalScore,
+        });
         console.log("Document successfully updated!");
       });
     }
