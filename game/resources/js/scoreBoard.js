@@ -11,6 +11,7 @@ import {
   updateDoc,
   getDoc,
   arrayUnion,
+  arrayRemove,
 } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -62,13 +63,44 @@ async function addScore(score) {
   }
 }
 
-async function updateScore(user, score) {
+// async function updateScore(user, score) {
+//   const docRef = doc(db, "scores", "ar1");
+//   try {
+//     await updateDoc(docRef, {
+//       scores: arrayUnion({ id: user, score: score }),
+//     });
+//     console.log("Document successfully updated!");
+//   } catch (e) {
+//     console.error("Error updating document: ", e);
+//   }
+// }
+
+// ar1 게임에 점수 추가, 로컬아이디 확인해서 정보있으면 갱신
+async function updateScore(user, newScore) {
   const docRef = doc(db, "scores", "ar1");
   try {
-    await updateDoc(docRef, {
-      scores: arrayUnion({ id: user, score: score }),
-    });
-    console.log("Document successfully updated!");
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+      const data = docSnap.data();
+      const scores = data.scores || [];
+
+      const existingUserScore = scores.find((score) => score.id === user);
+      if (existingUserScore) {
+        // 사용자의 기존 점수를 삭제
+        await updateDoc(docRef, {
+          scores: arrayRemove(existingUserScore),
+        });
+      }
+
+      // 새로운 점수를 추가
+      await updateDoc(docRef, {
+        scores: arrayUnion({ id: user, score: newScore }),
+      });
+
+      console.log("Document successfully updated!");
+    } else {
+      console.log("No such document!");
+    }
   } catch (e) {
     console.error("Error updating document: ", e);
   }
