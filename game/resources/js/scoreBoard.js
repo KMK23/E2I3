@@ -11,6 +11,8 @@ import {
   getDoc,
   arrayUnion,
   arrayRemove,
+  where,
+  query,
 } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -50,30 +52,62 @@ async function addDatas(collectionName, dataObj) {
   }
 }
 
-async function updateScore(type, userId, newScore) {
-  const docRef = doc(db, "scores");
+// async function updateScore(collectionName, dataObj) {
+//   // const docRef = doc(db, "scores");
+
+//   try {
+//     // const docSnap = await getDoc(docRef);
+//     const collect = await collection(db, collectionName);
+//     await addDoc(collect, dataObj);
+//     return true;
+//     // if (docSnap.exists()) {
+//     //   const data = docSnap.data();
+//     //   const scores = data.scores || [];
+
+//     //   const existingUserScore = scores.find((score) => score.id === user);
+//     //   if (existingUserScore) {
+//     //     // 사용자의 기존 점수를 삭제
+//     //     await updateDoc(docRef, {
+//     //       scores: arrayRemove(existingUserScore),
+//     //     });
+//     //   }
+
+//     //   // 새로운 점수를 추가
+//     //   // await updateDoc(docRef, {
+//     //   //   scores: { id: user, score: newScore, type: gameType },
+//     //   // });
+
+//     //   console.log("Document successfully updated!");
+//     // } else {
+//     //   console.log("No such document!");
+//     // }
+//   } catch (e) {
+//     console.error("Error updating document: ", e);
+//   }
+// }
+
+async function updateScore(collectionName, dataObj) {
   try {
-    const docSnap = await getDoc(docRef);
-    if (docSnap.exists()) {
-      const data = docSnap.data();
-      // const scores = data.scores || [];
+    const collect = collection(db, collectionName);
+    const q = query(
+      collect,
+      where("id", "==", dataObj.id),
+      where("type", "==", dataObj.type)
+    );
+    const querySnapshot = await getDocs(q);
 
-      const existingUserScore = scores.find((score) => score.id === user);
-      if (existingUserScore) {
-        // 사용자의 기존 점수를 삭제
-        await updateDoc(docRef, {
-          scores: arrayRemove(existingUserScore),
-        });
-      }
-
-      // 새로운 점수를 추가
-      await updateDoc(docRef, {
-        scores: { type: gameType, id: user, score: newScore },
-      });
-
-      console.log("Document successfully updated!");
+    if (querySnapshot.empty) {
+      // 문서가 존재하지 않으면 새 문서 추가
+      await addDoc(collect, dataObj);
+      console.log("New document successfully added!");
     } else {
-      console.log("No such document!");
+      // 문서가 존재하면 점수 업데이트
+      querySnapshot.forEach(async (doc) => {
+        const docRef = doc.ref;
+        console.log(docRef);
+        await setDoc(docRef, { score: dataObj.score }, { merge: true });
+        console.log("Document successfully updated!");
+      });
     }
   } catch (e) {
     console.error("Error updating document: ", e);
