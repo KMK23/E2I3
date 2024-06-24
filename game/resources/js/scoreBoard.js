@@ -6,7 +6,6 @@ import {
   setDoc,
   doc,
   addDoc,
-  //여기에 쓰는건 firebase.js 에서 필요한것들..
   deleteDoc,
   updateDoc,
   getDoc,
@@ -51,38 +50,13 @@ async function addDatas(collectionName, dataObj) {
   }
 }
 
-async function addScore(score) {
-  try {
-    const docRef = await addDoc(collection(db, "scores"), {
-      score: score,
-      timestamp: new Date(),
-    });
-    console.log("Document written with ID: ", docRef.id);
-  } catch (e) {
-    console.error("Error adding document: ", e);
-  }
-}
-
-// async function updateScore(user, score) {
-//   const docRef = doc(db, "scores", "ar1");
-//   try {
-//     await updateDoc(docRef, {
-//       scores: arrayUnion({ id: user, score: score }),
-//     });
-//     console.log("Document successfully updated!");
-//   } catch (e) {
-//     console.error("Error updating document: ", e);
-//   }
-// }
-
-// ar1 게임에 점수 추가, 로컬아이디 확인해서 정보있으면 갱신
-async function updateScore(user, newScore) {
-  const docRef = doc(db, "scores", "ar1");
+async function updateScore(type, userId, newScore) {
+  const docRef = doc(db, "scores");
   try {
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
       const data = docSnap.data();
-      const scores = data.scores || [];
+      // const scores = data.scores || [];
 
       const existingUserScore = scores.find((score) => score.id === user);
       if (existingUserScore) {
@@ -94,7 +68,7 @@ async function updateScore(user, newScore) {
 
       // 새로운 점수를 추가
       await updateDoc(docRef, {
-        scores: arrayUnion({ id: user, score: newScore }),
+        scores: { type: gameType, id: user, score: newScore },
       });
 
       console.log("Document successfully updated!");
@@ -123,13 +97,5 @@ async function updateDatas(collectionName, docId, updateinfoObj) {
   // const docData = await getDoc(docRef);
   await updateDoc(docRef, updateinfoObj);
 }
-export {
-  db,
-  getDatas,
-  addDatas,
-  deleteDatas,
-  updateDatas,
-  addScore,
-  updateScore,
-};
+export { db, getDatas, addDatas, deleteDatas, updateDatas, updateScore };
 //export 는 말그대로 내보내서 쓰는것들이니까 deleteDats를 쓴거야.

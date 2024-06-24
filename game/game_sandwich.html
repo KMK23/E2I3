@@ -151,6 +151,7 @@
       </div>
     </div>
     <span id="user"></span>
+    <!-- 점수판 -->
     <div class="score">점수 : 10 점</div>
   </body>
   <script type="module">
@@ -164,42 +165,32 @@
     let minus = 0;
     let myScore = 0;
 
+    // 데이터베이스 js 부분
     import {
       db,
       getDatas,
       addDatas,
       deleteDatas,
       updateDatas,
-      addScore,
       updateScore,
     } from "./resources/js/scoreBoard.js";
 
-    // function updateScore() {
-    //   myScore = 10 - minus;
-    //   score.innerHTML = `점수 : ${myScore} 점`;
-    //   console.log(`Current Score: ${myScore}`);
-    // }
-    // function endGame() {
-    //   console.log(`Current Score: ${myScore}`);
-    //   addScore(myScore).then(() => {
-    //     alert("성공적으로 샌드위치를 완성했습니다! 점수가 저장되었습니다.");
-    //   });
-    // }
-
+    // 점수판 바꾸는 부분
     function updateScoreDisplay() {
       myScore = 10 - minus;
       score.innerHTML = `점수 : ${myScore} 점`;
       console.log(`Current Score: ${myScore}`);
     }
-
+    // 게임끝났을때 함수
     async function endGame() {
       console.log(`Current Score: ${myScore}`);
       let user = localStorage.getItem("id");
+      let gameType = "ar1";
       if (!user) {
         alert("점수를 등록하시려면 로그인을 해주세요.");
         return false;
       }
-      await updateScore(user, myScore);
+      await updateScore(type, userId, newScore);
       alert("성공적으로 샌드위치를 완성했습니다! 점수가 저장되었습니다.");
     }
 
@@ -240,7 +231,7 @@
         updateScoreDisplay();
       });
     });
-
+    //유저 로컬아이디 확인
     async function userName() {
       const snapshot = await getDatas("user");
       snapshot.forEach((e) => {
