@@ -130,11 +130,11 @@
       newScoop.src = scoopImage;
       newScoop.className = "stacked-scoop";
 
-      const bottomPosition = 60 + scoopCount * 5;
-      newScoop.style.setProperty("--bottom-position", `${bottomPosition}%`);
+      const bottomPosition = 9 + scoopCount * 2;
+      newScoop.style.setProperty("--bottom-position", `${bottomPosition}rem`);
 
       setTimeout(() => {
-        newScoop.style.bottom = `${bottomPosition}%`;
+        newScoop.style.bottom = `${bottomPosition}rem`;
       }, 1000);
 
       stack.appendChild(newScoop);
