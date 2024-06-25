@@ -479,7 +479,63 @@ body {
   gap: 0.625rem;
   padding-left: 2rem;
 }
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+  .aside {
+    width: 90%;
+    height: auto;
+    padding: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    transform: none;
+    left: 50%;
+    bottom: 1rem;
+  }
+  
+  .aside-text {
+    font-size: 1.25rem;
+    padding: 0.5rem;
+  }
 
+  .special {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+  }
+
+  .aside-btns {
+    padding-left: 0;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .aside {
+    width: 100%;
+    height: auto;
+    padding: 0.5rem;
+    border-radius: 0;
+    flex-direction: column;
+  }
+  
+  .aside-text {
+    font-size: 1rem;
+    padding: 0.25rem;
+  }
+
+  .special {
+    font-size: 1.25rem;
+    padding: 0.25rem;
+  }
+
+  .aside-btns {
+    padding-left: 0;
+    gap: 0.25rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
 .fir-btn {
   color: white;
   background-color: rgb(164, 164, 255);
@@ -516,6 +572,98 @@ section {
   background-color: white;
   box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
   border-radius: 0.625rem;
+}
+/* 기본 스타일 */
+.fir-btn {
+  color: white;
+  background-color: rgb(164, 164, 255);
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 1.875rem;
+  cursor: pointer;
+  padding: 0.625rem 1.25rem;
+  transition: background-color 0.3s ease, font-size 0.3s ease;
+}
+
+.sec-btn {
+  color: black;
+  background-color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 1.25rem;
+  cursor: pointer;
+  padding: 0.625rem 1.25rem;
+  transition: background-color 0.3s ease, font-size 0.3s ease;
+  border: none;
+}
+
+.fir-btn:hover,
+.sec-btn:hover {
+  font-size: 1.25rem;
+}
+
+section {
+  padding: 2rem;
+  max-width: 75rem;
+  margin: 2rem auto;
+  background-color: white;
+  box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.625rem;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 1024px) {
+  .fir-btn, .sec-btn {
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .fir-btn:hover,
+  .sec-btn:hover {
+    font-size: 1rem;
+  }
+
+  section {
+    padding: 1.5rem;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .fir-btn, .sec-btn {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .fir-btn:hover,
+  .sec-btn:hover {
+    font-size: 0.875rem;
+  }
+
+  section {
+    padding: 1rem;
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  .fir-btn, .sec-btn {
+    font-size: 0.625rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .fir-btn:hover,
+  .sec-btn:hover {
+    font-size: 0.75rem;
+  }
+
+  section {
+    padding: 0.5rem;
+    max-width: 100%;
+    margin: 1rem 0.5rem;
+    box-shadow: none;
+  }
 }
 
 /* 배경 버블 */
@@ -580,7 +728,77 @@ section {
   -webkit-animation-duration: 8s;
   animation-duration: 8s;
 }
+/* 반응형 스타일 */
+@media (max-width: 1024px) {
+  .bubbles span {
+    height: 10vw;
+    width: 10vw;
+  }
+}
 
+@media (max-width: 768px) {
+  .bubbles span {
+    height: 15vw;
+    width: 15vw;
+  }
+
+  .bubbles span.b1 {
+    -webkit-animation-duration: 25s;
+    animation-duration: 25s;
+  }
+
+  .bubbles span.b2 {
+    -webkit-animation-duration: 15s;
+    animation-duration: 15s;
+  }
+
+  .bubbles span.b3 {
+    -webkit-animation-duration: 8s;
+    animation-duration: 8s;
+  }
+
+  .bubbles span.b4 {
+    -webkit-animation-duration: 6s;
+    animation-duration: 6s;
+  }
+
+  .bubbles span.b5 {
+    -webkit-animation-duration: 6.5s;
+    animation-duration: 6.5s;
+  }
+}
+
+@media (max-width: 480px) {
+  .bubbles span {
+    height: 20vw;
+    width: 20vw;
+  }
+
+  .bubbles span.b1 {
+    -webkit-animation-duration: 20s;
+    animation-duration: 20s;
+  }
+
+  .bubbles span.b2 {
+    -webkit-animation-duration: 12s;
+    animation-duration: 12s;
+  }
+
+  .bubbles span.b3 {
+    -webkit-animation-duration: 6s;
+    animation-duration: 6s;
+  }
+
+  .bubbles span.b4 {
+    -webkit-animation-duration: 4.5s;
+    animation-duration: 4.5s;
+  }
+
+  .bubbles span.b5 {
+    -webkit-animation-duration: 5s;
+    animation-duration: 5s;
+  }
+}
 @-webkit-keyframes bubbelUp {
   0% {
     opacity: 0.3;
@@ -614,5 +832,108 @@ section {
     opacity: 0.1;
     -webkit-transform: translateY(0) scale(1.7);
     transform: translateY(0) scale(1.7);
+  }
+}
+
+/* 반응형 스타일 */
+@media (max-width: 1024px) {
+  @-webkit-keyframes bubbelUp {
+    0% {
+      opacity: 0.3;
+      -webkit-transform: translateY(100rem) scale(0.5);
+      transform: translateY(100rem) scale(0.5);
+    }
+    75% {
+      opacity: 0.8;
+    }
+    to {
+      opacity: 0.1;
+      -webkit-transform: translateY(0) scale(1.4);
+      transform: translateY(0) scale(1.4);
+    }
+  }
+
+  @keyframes bubbelUp {
+    0% {
+      opacity: 0.3;
+      -webkit-transform: translateY(100rem) scale(0.5);
+      transform: translateY(100rem) scale(0.5);
+    }
+    75% {
+      opacity: 0.8;
+    }
+    to {
+      opacity: 0.1;
+      -webkit-transform: translateY(0) scale(1.4);
+      transform: translateY(0) scale(1.4);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  @-webkit-keyframes bubbelUp {
+    0% {
+      opacity: 0.3;
+      -webkit-transform: translateY(70rem) scale(0.6);
+      transform: translateY(70rem) scale(0.6);
+    }
+    75% {
+      opacity: 0.8;
+    }
+    to {
+      opacity: 0.1;
+      -webkit-transform: translateY(0) scale(1.3);
+      transform: translateY(0) scale(1.3);
+    }
+  }
+
+  @keyframes bubbelUp {
+    0% {
+      opacity: 0.3;
+      -webkit-transform: translateY(70rem) scale(0.6);
+      transform: translateY(70rem) scale(0.6);
+    }
+    75% {
+      opacity: 0.8;
+    }
+    to {
+      opacity: 0.1;
+      -webkit-transform: translateY(0) scale(1.3);
+      transform: translateY(0) scale(1.3);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  @-webkit-keyframes bubbelUp {
+    0% {
+      opacity: 0.3;
+      -webkit-transform: translateY(50rem) scale(0.7);
+      transform: translateY(50rem) scale(0.7);
+    }
+    75% {
+      opacity: 0.8;
+    }
+    to {
+      opacity: 0.1;
+      -webkit-transform: translateY(0) scale(1.2);
+      transform: translateY(0) scale(1.2);
+    }
+  }
+
+  @keyframes bubbelUp {
+    0% {
+      opacity: 0.3;
+      -webkit-transform: translateY(50rem) scale(0.7);
+      transform: translateY(50rem) scale(0.7);
+    }
+    75% {
+      opacity: 0.8;
+    }
+    to {
+      opacity: 0.1;
+      -webkit-transform: translateY(0) scale(1.2);
+      transform: translateY(0) scale(1.2);
+    }
   }
 }
