@@ -130,7 +130,10 @@
       newScoop.src = scoopImage;
       newScoop.className = "stacked-scoop";
 
-      const bottomPosition = 9 + scoopCount * 2;
+      let bottomPosition = 9 + scoopCount * 2;
+      if (window.matchMedia("(max-width: 872px)").matches) {
+        bottomPosition = 5 + scoopCount * 1.5;
+      }
       newScoop.style.setProperty("--bottom-position", `${bottomPosition}rem`);
 
       setTimeout(() => {
@@ -147,6 +150,33 @@
         }, 1100);
       }
     }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const scoops = document.querySelectorAll(".scoop");
+      scoops.forEach((scoop) => {
+        scoop.addEventListener("click", addScoop);
+      });
+
+      // 특정 화면 크기에서만 적용할 스크립트
+      function handleResize() {
+        document.querySelectorAll(".stacked-scoop").forEach((scoop, index) => {
+          let bottomPosition = 9 + index * 2;
+          if (window.matchMedia("(max-width: 872px)").matches) {
+            bottomPosition = 5 + index * 1.5;
+          }
+          scoop.style.setProperty("--bottom-position", `${bottomPosition}rem`);
+          scoop.style.bottom = `${bottomPosition}rem`;
+        });
+      }
+
+      // 초기 실행 및 리사이즈 이벤트 리스너 추가
+      handleResize();
+      window.addEventListener("resize", handleResize);
+    });
+
+    // 초기 실행 및 리사이즈 이벤트 리스너 추가
+    handleResize();
+    window.addEventListener("resize", handleResize);
 
     document.addEventListener("DOMContentLoaded", () => {
       const scoops = document.querySelectorAll(".scoop");

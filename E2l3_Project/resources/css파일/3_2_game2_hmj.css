@@ -207,13 +207,34 @@ h4 {
   color: aliceblue;
   box-shadow: 0 16px 10px rgba(0, 0, 0, 0.5);
 }
-@media screen and (max-height: 953px) {
-  .container {
-    max-height: 953px;
-  }
-}
+
 @media screen and (max-width: 872px) {
   .container {
     max-width: 62.5rem; /* 기본 값 */
+  }
+  #answer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* 아이스크림이 아래에서부터 쌓이도록 설정 */
+    height: 45vh; /* 화면 세로 높이의 50% */
+    max-height: 18.75rem;
+  }
+
+  #answer img {
+    width: 5rem;
+  }
+
+  @keyframes drop {
+    0% {
+      bottom: 150%;
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      bottom: var(--bottom-position); /* End at calculated position */
+    }
   }
 }
