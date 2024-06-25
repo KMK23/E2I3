@@ -155,20 +155,20 @@
         deleteDatas,
         updateDatas,
         updateScore,
-      } from "./resources/js/joinmembershipfirebase.js";
+      } from './resources/js/joinmembershipfirebase.js';
 
-      const joinBtn = document.querySelector(".join");
-      const checkIdBtn = document.getElementById("checkIdBtn");
-      const idinput = document.querySelector(".id-input");
-      const IdcheckResult = document.getElementById("idCheckResult");
+      const joinBtn = document.querySelector('.join');
+      const checkIdBtn = document.getElementById('checkIdBtn');
+      const idinput = document.querySelector('.id-input');
+      const IdcheckResult = document.getElementById('idCheckResult');
       const sendVerificationBtn = document.getElementById(
-        "sendVerificationBtn"
+        'sendVerificationBtn'
       );
       const emailVerificationResult = document.getElementById(
-        "emailVerificationResult"
+        'emailVerificationResult'
       );
 
-      joinBtn.addEventListener("click", async function (e) {
+      joinBtn.addEventListener('click', async function (e) {
         e.preventDefault();
 
         const formEl = document.querySelector("form[id='join_form']");
@@ -179,21 +179,21 @@
           addObj[key] = value;
         });
 
-        const result = await addDatas("user", addObj);
+        const result = await addDatas('user', addObj);
         console.log(result);
 
-        localStorage.setItem("name", addObj.name);
-        localStorage.setItem("id", addObj.id);
+        localStorage.setItem('name', addObj.name);
+        localStorage.setItem('id', addObj.id);
 
-        location.href = "1_mainPage.html";
+        location.href = '1_mainPage.html';
       });
       // 아이디 중복확인
-      checkIdBtn.addEventListener("click", async function () {
+      checkIdBtn.addEventListener('click', async function () {
         const idvalue = idinput.value.trim();
-        if (idvalue === "") {
-          IdcheckResult.textContent = "ID를 입력하세요.";
-          IdcheckResult.style.color = "red";
-          IdcheckResult.classList.remove("hide");
+        if (idvalue === '') {
+          IdcheckResult.textContent = 'ID를 입력하세요.';
+          IdcheckResult.style.color = 'red';
+          IdcheckResult.classList.remove('hide');
           return;
         }
 
@@ -201,21 +201,21 @@
           const idExists = await getId(idvalue);
 
           if (idExists) {
-            IdcheckResult.textContent = "이미 사용 중인 ID입니다.";
-            IdcheckResult.style.color = "red";
+            IdcheckResult.textContent = '이미 사용 중인 ID입니다.';
+            IdcheckResult.style.color = 'red';
           } else {
-            IdcheckResult.textContent = "사용 가능한 ID입니다.";
-            IdcheckResult.style.color = "green";
+            IdcheckResult.textContent = '사용 가능한 ID입니다.';
+            IdcheckResult.style.color = 'green';
           }
-          IdcheckResult.classList.remove("hide");
+          IdcheckResult.classList.remove('hide');
         } catch (error) {
-          console.error("Error checking ID:", error);
+          console.error('Error checking ID:', error);
         }
       });
 
       async function getId(idvalue) {
         try {
-          const snapshot = await getDatas("user");
+          const snapshot = await getDatas('user');
           let idExists = false;
 
           snapshot.forEach((doc) => {
@@ -228,13 +228,13 @@
 
           return idExists;
         } catch (error) {
-          console.error("Error getting documents:", error);
+          console.error('Error getting documents:', error);
           throw error;
         }
       }
 
       async function getID2() {
-        const snapshot = await getDatas("user");
+        const snapshot = await getDatas('user');
         snapshot.forEach((doc) => {
           console.log(doc.data().id);
         });
