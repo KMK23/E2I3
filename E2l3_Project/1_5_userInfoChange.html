@@ -254,28 +254,12 @@
       const snapshot = await getDatas("user");
       const userNameText = document.querySelector(".user-name-text");
       const inputUserName = document.getElementById("name");
-      const userBirth = document.getElementById("birthyear");
-      const useremail1 = document.getElementById("email");
-      const useremail2 = document.getElementById("emailDomain");
-      const userPhone = document.getElementById("mobile");
+
       snapshot.forEach(() => {
         const changeUsername = localStorage.getItem("name");
         userNameText.innerHTML = `${changeUsername}님의 회원정보관리 페이지 입니다.
         `;
         inputUserName.value = `${changeUsername}`;
-
-        const changebirth = localStorage.getItem("birth");
-        userBirth.innerHTML = `${changebirth}`;
-
-        const changeEmail1 = localStorage.getItem("email1");
-        useremail1.innerHTML = `${changeEmail1}`;
-
-        const changeEmail2 = localStorage.getItem("email2");
-        useremail2.innerHTML = `${changeEmail2}`;
-
-        const changePhone = localStorage.getItem("tel");
-        console.log(changePhone);
-        userPhone.value = `${changePhone}`;
       });
     }
     getUserData();
