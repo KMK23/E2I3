@@ -186,3 +186,65 @@ body {
 .list-p:hover .fa-plus {
   color: #190b07;
 }
+
+@media (max-width: 1200px) {
+  .text-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .search {
+    width: 25rem;
+  }
+}
+@media (max-width: 992px) {
+  .text-list {
+    grid-template-columns: 1fr;
+  }
+  .search {
+    width: 20rem;
+  }
+  .container {
+    margin: 2rem 0;
+    padding: 0 1.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .text {
+    font-size: 2rem;
+  }
+  .content {
+    padding: 1.5rem 2rem;
+  }
+  .search {
+    width: 100%;
+  }
+  .icon {
+    width: 5rem;
+    height: 7rem;
+  }
+}
+@media (max-width: 576px) {
+  .text {
+    font-size: 1.5rem;
+  }
+  .container {
+    padding: 0 1rem;
+  }
+  .searchIconBox {
+    right: 5%;
+  }
+  .text-list {
+    margin: 1rem;
+  }
+  .list-p {
+    width: calc(100% - 1rem);
+    margin: 0.5rem;
+  }
+  .search {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 0.875rem;
+  }
+  .searchIconBox img {
+    width: 85%;
+  }
+}
