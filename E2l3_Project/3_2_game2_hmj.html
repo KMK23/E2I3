@@ -174,10 +174,6 @@
       window.addEventListener("resize", handleResize);
     });
 
-    // 초기 실행 및 리사이즈 이벤트 리스너 추가
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
     document.addEventListener("DOMContentLoaded", () => {
       const scoops = document.querySelectorAll(".scoop");
       scoops.forEach((scoop) => {
