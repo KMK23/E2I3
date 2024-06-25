@@ -19,32 +19,85 @@
             <div class="my-info">
               <div class="my-classroom">
                 <a href="1_mainPage.html" class="my-classroom">
-                  내 강의실 <img src="resources/icon/연필.svg" />
+                  진행상태
+                  <img src="resources/icon/연필.svg" class="btnImg" />
                 </a>
               </div>
 
               <div class="coin">
-                <a href=""> 결제내역 <img src="resources/icon/코인.svg" /></a>
+                <a href="12_money-checkout.html" class="cashBtn">
+                  결제내역 <img src="resources/icon/코인.svg" class="btnImg"
+                /></a>
               </div>
               <div class="heart1">
-                <a href="">
-                  관심선생님 <img src="resources/icon/하트하트.svg" />
+                <a href="" class="fav">
+                  관심선생님
+                  <img src="resources/icon/하트하트.svg" class="btnImg" />
                 </a>
               </div>
               <div class="QandA">
-                <a href="">
-                  학습 Q&A <img src="resources/icon/코멘트.svg" />
+                <a href="11_inquiryPag.html">
+                  1:1문의하기
+                  <img src="resources/icon/코멘트.svg" class="btnImg" />
                 </a>
               </div>
             </div>
           </div>
           <div class="right-area">
-            <h3>최근 받은 알림 <img src="resources/icon/알림종.svg" /></h3>
+            <h3>
+              최근 받은 알림
+              <img src="resources/icon/알림종.svg" class="btnImg" />
+            </h3>
             <div class="black-area"></div>
           </div>
         </div>
       </div>
     </div>
+    <section id="team">
+      <h2>선생님 소개</h2>
+      <div class="intro">
+        <div class="team-member">
+          <img src="resources/img/김길제.jpg" alt="선생님 사진" />
+          <div class="textbox">
+            <p>김경문</p>
+            <p>주임 선생님</p>
+            <p class="motto">"최선을 다해 애들을 가르치겠습니다!"</p>
+          </div>
+        </div>
+        <div class="team-member">
+          <img src="resources/img/김예은.png" alt="선생님 사진" />
+          <div class="textbox">
+            <p>김예은</p>
+            <p>부주임 선생님</p>
+            <p class="motto">"아이들의 성장을 돕겠습니다!"</p>
+          </div>
+        </div>
+        <div class="team-member">
+          <img src="resources/img/홍명주.jpg" alt="선생님 사진" />
+          <div class="textbox">
+            <p>홍명주</p>
+            <p>수석 선생님</p>
+            <p class="motto">"창의력을 키우겠습니다!"</p>
+          </div>
+        </div>
+        <div class="team-member">
+          <img src="resources/img/양주원.jpg" alt="선생님 사진" />
+          <div class="textbox">
+            <p>양주원</p>
+            <p>전임 선생님</p>
+            <p class="motto">"문제 해결 능력을 높이겠습니다!"</p>
+          </div>
+        </div>
+        <div class="team-member">
+          <img src="resources/img/김원진.jpg" alt="선생님 사진" />
+          <div class="textbox">
+            <p>김원진</p>
+            <p>신입 선생님</p>
+            <p class="motto">"열정을 다하겠습니다!"</p>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
   <script type="module">
     import {
@@ -64,5 +117,42 @@
       });
     }
     getUserData();
+
+    const cashBtn = document.querySelector(".cashBtn");
+    cashBtn.addEventListener("click", function () {
+      alert("미결제로 인하여 결제창으로 이동합니다.");
+    });
+
+    const favBtn = document.querySelector(".fav");
+    const team = document.querySelector("#team");
+    favBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      if (team.style.display === "none") {
+        team.style.display = "block";
+      } else {
+        team.style.display = "none";
+      }
+    });
+
+    const contect = document.querySelectorAll(".team-member");
+    contect.forEach((el) => {
+      el.addEventListener("click", function () {
+        contect.forEach((member) => {
+          member.classList.remove("expanded");
+        });
+        if (!el.classList.contains("expanded")) {
+          el.classList.add("expanded");
+        } else {
+          el.classList.remove("expanded");
+        }
+        event.stopPropagation();
+      });
+    });
+
+    document.addEventListener("click", function () {
+      contect.forEach((member) => {
+        member.classList.remove("expanded");
+      });
+    });
   </script>
 </html>

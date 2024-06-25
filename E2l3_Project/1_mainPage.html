@@ -405,51 +405,38 @@
 
     <!-- 선생님 소개 부분 시작-->
     <section id="team">
-      <h2>선생진 소개</h2>
-      <div class="team-member">
-        <img
-          src="resources/img/2.소개인사 예시 이미지/피카츄.jpg"
-          alt="선생님 사진"
-        />
-        <p>김경문</p>
-        <p>주임 선생님</p>
-        <p class="motto">"최선을 다해 애들을 가르치겠습니다!"</p>
-      </div>
-      <div class="team-member">
-        <img
-          src="resources/img/2.소개인사 예시 이미지/꼬부기.jpg"
-          alt="선생님 사진"
-        />
-        <p>김예은</p>
-        <p>부주임 선생님</p>
-        <p class="motto">"아이들의 성장을 돕겠습니다!"</p>
-      </div>
-      <div class="team-member">
-        <img
-          src="resources/img/2.소개인사 예시 이미지/푸린.jpg"
-          alt="선생님 사진"
-        />
-        <p>홍명주</p>
-        <p>수석 선생님</p>
-        <p class="motto">"창의력을 키우겠습니다!"</p>
-      </div>
-      <div class="team-member">
-        <img
-          src="resources/img/2.소개인사 예시 이미지/이브이.jpg"
-          alt="선생님 사진"
-        />
-        <p>양주원</p>
-        <p>전임 선생님</p>
-        <p class="motto">"문제 해결 능력을 높이겠습니다!"</p>
-      </div>
-      <div class="team-member">
-        <img
-          src="resources/img/2.소개인사 예시 이미지/피츄.jpg"
-          alt="선생님 사진"
-        />
-        <p>김원진</p>
-        <p>신입 선생님</p>
-        <p class="motto">"열정을 다하겠습니다!"</p>
+      <h2>선생님 소개</h2>
+      <div class="intro">
+        <div class="team-member">
+          <img src="resources/img/김길제.jpg" alt="선생님 사진" />
+          <p>김경문</p>
+          <p>주임 선생님</p>
+          <p class="motto">"최선을 다해 애들을 가르치겠습니다!"</p>
+        </div>
+        <div class="team-member">
+          <img src="resources/img/김예은.png" alt="선생님 사진" />
+          <p>김예은</p>
+          <p>부주임 선생님</p>
+          <p class="motto">"아이들의 성장을 돕겠습니다!"</p>
+        </div>
+        <div class="team-member">
+          <img src="resources/img/홍명주.jpg" alt="선생님 사진" />
+          <p>홍명주</p>
+          <p>수석 선생님</p>
+          <p class="motto">"창의력을 키우겠습니다!"</p>
+        </div>
+        <div class="team-member">
+          <img src="resources/img/양주원.jpg" alt="선생님 사진" />
+          <p>양주원</p>
+          <p>전임 선생님</p>
+          <p class="motto">"문제 해결 능력을 높이겠습니다!"</p>
+        </div>
+        <div class="team-member">
+          <img src="resources/img/김원진.jpg" alt="선생님 사진" />
+          <p>김원진</p>
+          <p>신입 선생님</p>
+          <p class="motto">"열정을 다하겠습니다!"</p>
+        </div>
       </div>
     </section>
     <!-- 선생님 소개 부분 끝 -->
@@ -700,7 +687,17 @@
   <script src="resources/js/gamePreview.js"></script>
   <script src="resources/js/introGame.js"></script>
   <script src="8_counseling.js"></script>
-  <script>
+  <script type="module">
+    import {
+      db,
+      getDatas,
+      addDatas,
+      deleteDatas,
+      updateDatas,
+      updateScore,
+      updateTotalScore,
+    } from "../game/resources/js/COPYscoreBoard.js";
+
     let scrollToTopButton = document.querySelector(".button-up");
 
     // 사용자가 문서의 20px 아래로 스크롤하면 버튼을 표시
@@ -763,5 +760,11 @@
     if (userid != "") {
       mypageBtn.style.display = "block";
     }
+
+    const startBtn = document.querySelector(".fir-btn");
+    startBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      location.href = "3_1_game2.html";
+    });
   </script>
 </html>

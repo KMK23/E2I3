@@ -74,32 +74,30 @@ section h2 {
   justify-content: flex-start;
 }
 
-/* section p {
-  height: 80%;
-} */
-
-/* section p,
-section blockquote {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-} */
-
 #team {
-  /* text-align: center; */
   padding: 1rem;
-}
-
-#team h2 {
-  width: 100%;
-  margin-bottom: 2rem;
-}
-
-#team {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
 
+#team h2 {
+  width: 100%;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+}
+.textbox {
+  margin: 1rem;
+}
 #team .team-member {
   text-align: center;
   margin: 1rem;
@@ -109,6 +107,10 @@ section blockquote {
   border-radius: 10px;
   padding: 1rem;
   background-color: #fff;
+  min-height: 350px; /* Minimum height to ensure all items have the same height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensures the items are spaced out evenly */
 }
 
 #team .team-member img {
