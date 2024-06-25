@@ -213,7 +213,7 @@
     async function endGame() {
       console.log(`Current Score: ${myScore}`);
       let user = localStorage.getItem("id");
-      let gameType = "algorithm3"; // 현재 게임 타입 (예: 알고리즘 1단계)
+      let gameType = "algorithm1"; // 현재 게임 타입 (예: 알고리즘 1단계)
       const dataObj = {
         id: user,
         score: myScore,
@@ -223,31 +223,9 @@
         alert("점수를 등록하시려면 로그인을 해주세요.");
         return false;
       }
-      const previousScoreRef = await getDatas("scores");
-      let previousScore = 0;
-
-      previousScoreRef.forEach((e) => {
-        if (e.data().id === user && e.data().type === gameType) {
-          previousScore = e.data().score;
-        }
-      });
       await updateScore("scores", dataObj);
       alert("성공적으로 샌드위치를 완성했습니다! 점수가 저장되었습니다.");
 
-      totalScoreRef.forEach(async (e) => {
-        if (e.data().id === user) {
-          totalScore = e.data().userTotalScore;
-        }
-      });
-      totalScore = totalScore - previousScore + myScore;
-
-      const totalDataObj = {
-        id: user,
-        userTotalScore: totalScore,
-      };
-
-      await updateScore("totalScore", totalDataObj);
-      await updateTotalScore("totalScore", totalDataObj);
       // location.href = "../E2l3_Project/3_1_game1.html";
     }
 
