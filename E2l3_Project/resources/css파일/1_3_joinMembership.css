@@ -215,29 +215,25 @@ select {
   font-family: "NanumSquareRound";
 }
 @media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    padding: 0.5rem;
-  }
-  .fieldset {
+  fieldset {
     padding: 1.5rem;
   }
   legend {
-    font-size: 1.5rem;
-    width: 100%;
+    font-size: 1.25rem;
+
+    padding: 1rem;
   }
-  form div p {
-    text-align: center;
-    width: 100%;
+  form p {
+    font-size: 0.875rem;
   }
   input {
-    margin-left: 0;
+    font-size: 1rem;
   }
-  #checkIdBtn,
-  #addrBtn {
-    margin-left: 0;
+  .btn2 {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
   }
-  .btns {
-    justify-content: center;
+  select {
+    font-size: 1rem;
   }
 }

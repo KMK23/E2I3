@@ -140,12 +140,18 @@ h4 {
   width: 14%;
 }
 #answer {
+  top: 7rem;
+  position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end; /* 아이스크림이 아래에서부터 쌓이도록 설정 */
+  height: 45vh; /* 화면 세로 높이의 50% */
+  max-height: 18.75rem;
 }
 #answer img {
-  width: 10%;
+  width: 10rem; /* 화면 너비의 10% */
+  position: absolute;
+  bottom: 0; /* 아래쪽에서부터 쌓이도록 설정 */
 }
 .right {
   width: 20%;
@@ -155,7 +161,7 @@ h4 {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 5px dotted red;
+  border: 5px dashed red;
   gap: 3%;
   margin-bottom: 2%;
   border-radius: 1rem;
@@ -166,7 +172,7 @@ h4 {
 }
 .stacked-scoop {
   position: absolute;
-  bottom: 50%;
+  bottom: 100%;
   left: 50%;
   transform: translateX(-50%);
   width: 10%;
@@ -174,7 +180,7 @@ h4 {
 }
 @keyframes drop {
   0% {
-    bottom: 80%;
+    bottom: 150%;
     opacity: 0;
   }
   50% {
@@ -201,4 +207,36 @@ h4 {
   font-weight: bolder;
   color: aliceblue;
   box-shadow: 0 16px 10px rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (max-width: 872px) {
+  .container {
+    max-width: 62.5rem; /* 기본 값 */
+  }
+  #answer {
+    top: 0rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* 아이스크림이 아래에서부터 쌓이도록 설정 */
+    height: 45vh; /* 화면 세로 높이의 50% */
+    max-height: 18.75rem;
+  }
+
+  #answer img {
+    width: 5rem;
+  }
+
+  @keyframes drop {
+    0% {
+      bottom: 150%;
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      bottom: var(--bottom-position); /* End at calculated position */
+    }
+  }
 }
