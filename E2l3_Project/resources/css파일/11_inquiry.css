@@ -247,3 +247,14 @@ input.phome {
   cursor: pointer;
   border-radius: 0.1875rem;
 }
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  .h2 {
+    font-size: 1.5rem;
+  }
+  .inquiryBtn {
+    width: 100%;
+  }
+}

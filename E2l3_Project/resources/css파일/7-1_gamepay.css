@@ -91,16 +91,12 @@ body {
   display: inline-block;
 }
 
-/* 반응형 스타일 - 작은 화면 */
-@media (max-width: 600px) {
+@media (max-width: 1200px) {
   .payBtn {
-    width: 15%;
-
-    top: 90%;
-    max-width: 7.5rem;
+    right: 5rem;
   }
-  .content {
-    width: 75%;
+  .container {
+    max-width: 70rem;
   }
 }
 .payBtn:hover {
@@ -108,37 +104,51 @@ body {
 }
 
 /* 반응형 스타일 - 중간 크기 화면 */
-@media (min-width: 37.5625rem) and (max-width: 64rem) {
+@media (max-width: 992px) {
   .payBtn {
-    width: 10%;
-    top: 90%;
-    min-width: 8.75rem;
-    right: 70%;
+    bottom: 3rem;
+    right: 3rem;
   }
   .content {
-    width: 85%;
+    grid-template-columns: 1fr;
+  }
+  .container {
+    max-width: 60rem;
   }
 }
 /* 반응형 스타일 - 큰 화면 */
-@media (min-width: 1024px) and (max-width: 1900px) {
+@media (max-width: 768) {
   .payBtn {
-    width: 10%;
-    left: 85%;
-    top: 90%;
+    width: auto;
+    bottom: 2rem;
+    right: 2rem;
+    padding: 0.5rem 1rem;
   }
-  .content {
-    width: 85%;
+  .container {
+    max-width: 100%;
+  }
+  .list {
+    width: 90%;
+  }
+  .headerH2 {
+    font-size: 1.25rem;
   }
 }
 
 /* 반응형 스타일 - 최대 축소 화면 */
-@media (min-width: 767px) and (max-width: 500px) {
+@media (max-width: 576px) {
   .payBtn {
-    width: 16%;
-    top: 90%;
+    width: 100%;
+    bottom: 1rem;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
   }
-  .content {
-    width: 65%;
+  .list {
+    width: 100%;
+  }
+  .headH2 {
+    font-size: 1rem;
   }
 }
 

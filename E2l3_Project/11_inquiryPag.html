@@ -173,29 +173,17 @@
     });
 
     // 파일 추가 할때 카운트가 올라가는 코드
-    function updateFileCount() {
-      let input = document.getElementById("file_upload");
-      let fileCount = input.files.length;
-      let maxFiles = 10;
+    document.addEventListener("DOMContentLoaded", function () {
+      const input = document.getElementById("file_upload");
+      const fileInfo = document.getElementById("fileInfo");
+      let fileCount = 0;
+      const maxFiles = 10;
 
-      if (fileCount > maxFiles) {
-        alert("최대" + maxFiles + "개의 파일까지 첨부할 수 있습니다.");
-        input.value = "";
-        fileCount = 0;
-      }
-
-      let fileLabel = document.getElementById("fileLabel");
-      let fileInfo = document.getElementById("fileInfo");
-      fileLabel.textContent = fileLabel.textContent =
-        "파일 첨부하기 (" + fileCount + "/" + maxFiles + ")";
-
-      fileInfo.innerHTML = "";
-      for (let i = 0; i < fileCount; i++) {
-        let fileName = input.files[i].name;
-        let fileSize = input.files[i].size;
-        fileInfo.innerHTML +=
-          "<p>" + fileName + " (" + fileSize + " bytes)</p>";
-      }
-    }
+      input.addEventListener("change", function () {
+        const files = input.files;
+        fileCount = files.length > maxFiles ? maxFiles : files.length;
+        updateFileCount(fileCount);
+      });
+    });
   </script>
 </html>
