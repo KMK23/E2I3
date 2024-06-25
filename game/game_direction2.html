@@ -188,6 +188,14 @@
         alert("점수를 등록하시려면 로그인을 해주세요.");
         return false;
       }
+      const previousScoreRef = await getDatas("scores");
+      let previousScore = 0;
+
+      previousScoreRef.forEach((e) => {
+        if (e.data().id === user && e.data().type === gameType) {
+          previousScore = e.data().score;
+        }
+      });
       await updateScore("scores", dataObj);
       alert("성공적으로 빵을 배달했습니다! 점수가 저장되었습니다.");
       const totalScoreRef = await getDatas("totalScore");
@@ -198,7 +206,7 @@
           totalScore = e.data().userTotalScore;
         }
       });
-      totalScore += myScore;
+      totalScore = totalScore - previousScore + myScore;
 
       const totalDataObj = {
         id: user,
