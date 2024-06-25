@@ -92,10 +92,18 @@
     function updateScoreDisplay() {
       if (!user) {
         myScore = 10 - minus;
+        if (myScore < 0) {
+          myScore = 0;
+          return myScore;
+        }
         score.innerHTML = `점수 : ${myScore} 점`;
         console.log(`Current Score: ${myScore}`);
       } else {
         myScore = 10 - minus;
+        if (myScore < 0) {
+          myScore = 0;
+          return myScore;
+        }
         score.innerHTML = `${name}님의 점수 : ${myScore} 점`;
         console.log(`Current Score: ${myScore}`);
       }
@@ -119,12 +127,63 @@
 
       // location.href = "../E2l3_Project/3_1_game1.html";
     }
-
-    const imgs = document.querySelectorAll("div img");
     let firstSelected = null;
-    let clearStage = imgs.length;
+    let clearStage = document.querySelectorAll("img").length;
 
-    imgs.forEach(function (img) {
+    function getRandomPosition(maxWidth, maxHeight, imgWidth, imgHeight) {
+      const x = Math.random() * (maxWidth - imgWidth);
+      const y = Math.random() * (maxHeight - imgHeight);
+      return { x, y };
+    }
+
+    function isOverlapping(pos1, pos2, size) {
+      return (
+        Math.abs(pos1.x - pos2.x) < size && Math.abs(pos1.y - pos2.y) < size
+      );
+    }
+
+    function setPositionRandomly(
+      img,
+      positions,
+      maxWidth,
+      maxHeight,
+      imgWidth,
+      imgHeight
+    ) {
+      let pos;
+      do {
+        pos = getRandomPosition(maxWidth, maxHeight, imgWidth, imgHeight);
+      } while (positions.some((p) => isOverlapping(p, pos, imgWidth)));
+      positions.push(pos);
+      img.style.left = `${pos.x}px`;
+      img.style.top = `${pos.y}px`;
+    }
+
+    window.onload = function () {
+      const content = document.querySelector(".content");
+      const contentWidth = content.clientWidth;
+      const contentHeight = content.clientHeight;
+      const imgWidth =
+        contentWidth * 0.15; /* 이미지 너비를 content 너비의 15%로 설정 */
+      const imgHeight = imgWidth; /* 정사각형으로 설정 */
+      const positions = [];
+
+      const imgs = document.querySelectorAll("img");
+      imgs.forEach((img) => {
+        img.style.width = `${imgWidth}px`; /* 이미지 크기 설정 */
+        img.style.height = `${imgHeight}px`; /* 이미지 크기 설정 */
+        setPositionRandomly(
+          img,
+          positions,
+          contentWidth,
+          contentHeight,
+          imgWidth,
+          imgHeight
+        );
+      });
+    };
+
+    document.querySelectorAll("img").forEach(function (img) {
       img.addEventListener("click", function () {
         if (firstSelected === null) {
           firstSelected = img;
@@ -158,6 +217,23 @@
           }
         }
       });
+    });
+
+    let resizeTimer;
+
+    window.addEventListener("resize", function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function () {
+        // 화면 크기 변화가 멈춘 후 실행될 코드
+        const currentWidth = window.innerWidth;
+        const currentHeight = window.innerHeight;
+
+        // 예시: content 영역의 최대 너비를 화면 너비의 80%로 설정
+        const container = document.querySelector(".container");
+        container.style.maxWidth = `${currentWidth * 0.8}px`;
+
+        // 추가적으로 필요한 작업들을 여기에 추가할 수 있음
+      }, 250); // 250ms 딜레이 후 실행 (원하는 딜레이 시간으로 설정 가능)
     });
   </script>
 </html>

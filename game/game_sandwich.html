@@ -188,10 +188,18 @@
     function updateScoreDisplay() {
       if (!user) {
         myScore = 10 - minus;
+        if (myScore < 0) {
+          myScore = 0;
+          return myScore;
+        }
         score.innerHTML = `점수 : ${myScore} 점`;
         console.log(`Current Score: ${myScore}`);
       } else {
         myScore = 10 - minus;
+        if (myScore < 0) {
+          myScore = 0;
+          return myScore;
+        }
         score.innerHTML = `${name}님의 점수 : ${myScore} 점`;
         console.log(`Current Score: ${myScore}`);
       }
@@ -252,5 +260,6 @@
         updateScoreDisplay();
       });
     });
+    updateScoreDisplay();
   </script>
 </html>

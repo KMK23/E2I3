@@ -140,6 +140,7 @@ h4 {
   width: 14%;
 }
 #answer {
+  top: 7rem;
   position: relative;
   display: flex;
   justify-content: center;
@@ -213,6 +214,7 @@ h4 {
     max-width: 62.5rem; /* 기본 값 */
   }
   #answer {
+    top: 0rem;
     position: relative;
     display: flex;
     justify-content: center;

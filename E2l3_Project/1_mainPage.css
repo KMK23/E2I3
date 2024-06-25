@@ -1,69 +1,71 @@
 @font-face {
-  font-family: "NanumSquareRound";
+  font-family: 'NanumSquareRound';
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot);
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot?#iefix)
-      format("embedded-opentype"),
+      format('embedded-opentype'),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff2)
-      format("woff2"),
+      format('woff2'),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff)
-      format("woff"),
+      format('woff'),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.ttf)
-      format("truetype");
+      format('truetype');
 }
 
 @font-face {
-  font-family: "NanumSquareRoundB";
+  font-family: 'NanumSquareRoundB';
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.eot);
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.eot?#iefix)
-      format("embedded-opentype"),
+      format('embedded-opentype'),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.woff2)
-      format("woff2"),
+      format('woff2'),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.woff)
-      format("woff"),
+      format('woff'),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.ttf)
-      format("truetype");
+      format('truetype');
 }
 
 @font-face {
-  font-family: "NanumSquareRoundEB";
+  font-family: 'NanumSquareRoundEB';
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.eot);
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.eot?#iefix)
-      format("embedded-opentype"),
+      format('embedded-opentype'),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.woff2)
-      format("woff2"),
+      format('woff2'),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.woff)
-      format("woff"),
+      format('woff'),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.ttf)
-      format("truetype");
+      format('truetype');
 }
 
 @font-face {
-  font-family: "NanumSquareRoundL";
+  font-family: 'NanumSquareRoundL';
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.eot);
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.eot?#iefix)
-      format("embedded-opentype"),
+      format('embedded-opentype'),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.woff2)
-      format("woff2"),
+      format('woff2'),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.woff)
-      format("woff"),
+      format('woff'),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.ttf)
-      format("truetype");
+      format('truetype');
 }
 @font-face {
-  font-family: "ONE-Mobile-POP";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-POP.woff")
-    format("woff");
+  font-family: 'ONE-Mobile-POP';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-POP.woff')
+    format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "GangwonEduPowerExtraBoldA";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff")
-    format("woff");
+  font-family: 'GangwonEduPowerExtraBoldA';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff')
+    format('woff');
   font-weight: normal;
   font-style: normal;
 }
+
+/* 기본 스타일 */
 
 * {
   box-sizing: border-box;
@@ -73,12 +75,8 @@ body {
   width: 100%;
   height: 100%;
   margin: 0;
-  /* background-image: url("resources/img/home-image.jpg"); */
-  /* background-color: RED; */
-  /* background-repeat: no-repeat; */
-  /* background-size: cover;   */
   height: 100vh;
-  font-family: "NanumSquareRound";
+  font-family: 'NanumSquareRound';
 }
 
 .three-btns {
@@ -87,15 +85,17 @@ body {
   justify-content: flex-end;
   align-items: center;
 }
+
 .welcome {
   margin-top: 1rem;
   font-size: 1.2rem;
 }
+
 .login-btn,
 .signup-btn,
 .mypage-btn,
 .logout-btn {
-  padding: 5px 10px;
+  padding: 0.3125rem 0.625rem;
   margin-top: 0.8rem;
   font-size: 1rem;
   font-weight: normal;
@@ -103,7 +103,7 @@ body {
   text-decoration: none;
   border: 1px solid #fff;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 0.625rem;
   cursor: pointer;
   transition: background-color 0.3s ease, border 0.3s ease;
 }
@@ -119,27 +119,24 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* font-weight: normal; */
-  font-family: "ONE-Mobile-POP";
-  /* background-color: pink; */
-  border-radius: none;
+  font-family: 'ONE-Mobile-POP';
   color: black;
-  padding: 20px;
+  padding: 1.25rem;
 }
+
 #mainIcon {
   filter: invert(90%) sepia(8%) saturate(295%) hue-rotate(169deg)
     brightness(81%) contrast(85%);
   width: 6rem;
   height: 6rem;
-  /* padding-right: 6px; */
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .logo-wrapper {
   display: flex;
   justify-content: center;
-  /* height: 100px; */
 }
 
 .logo1 {
@@ -151,7 +148,7 @@ body {
 .logo1 a {
   color: black;
   text-decoration: none;
-  font-family: "ONE-Mobile-POP";
+  font-family: 'ONE-Mobile-POP';
   color: #44474b;
   font-size: 3.6rem;
   display: flex;
@@ -163,11 +160,11 @@ body {
 
 .main-container {
   position: sticky;
-  top: 0; /* header 아래에 위치 */
-  z-index: 999; /* header 아래에 위치 */
+  top: 0;
+  z-index: 999;
   background-color: rgba(235, 243, 250, 0.658);
   backdrop-filter: blur(10px);
-  padding: 10px 0;
+  padding: 0.625rem 0;
 }
 
 .main {
@@ -175,7 +172,7 @@ body {
   justify-content: center;
   align-items: center;
   list-style: none;
-  gap: 50px;
+  gap: 3.125rem;
 }
 
 .main .sub a {
@@ -184,16 +181,13 @@ body {
 
 .main .sub a:hover,
 .main .sub a:active {
-  font-size: 30px; /* 마우스를 대거나 포커스 시 크기 증가 */
-  color: rgb(115, 187, 255); /* 마우스를 대거나 포커스 시 색상 변경 */
-  /* background-color: rgb(215, 151, 228); */
-  /* border-radius: 2.5rem; */
-  /* padding: 1.25rem; */
+  font-size: 1.875rem;
+  color: rgb(115, 187, 255);
 }
 
 .sub {
   list-style-type: none;
-  font-size: 25px;
+  font-size: 1.5625rem;
   color: black;
 }
 
@@ -206,10 +200,101 @@ body {
   color: black;
 }
 
+/* 반응형 스타일 */
+
+/* 태블릿 화면용 (예: 768px 이하) */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .three-btns {
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+  }
+
+  .logo1 a {
+    font-size: 2.5rem;
+    width: 280px;
+  }
+
+  .main {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .sub {
+    font-size: 1.25rem;
+  }
+
+  .main .sub a:hover,
+  .main .sub a:active {
+    font-size: 1.5rem;
+  }
+
+  .welcome {
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .login-btn,
+  .signup-btn,
+  .mypage-btn,
+  .logout-btn {
+    font-size: 0.9rem;
+    padding: 0.25rem 0.5rem;
+  }
+}
+
+/* 모바일 화면용 (예: 480px 이하) */
+@media (max-width: 480px) {
+  .header {
+    padding: 5px;
+  }
+
+  .logo1 a {
+    font-size: 2rem;
+    width: 200px;
+  }
+
+  .sub {
+    font-size: 1rem;
+  }
+
+  .main .sub a:hover,
+  .main .sub a:active {
+    font-size: 1.25rem;
+  }
+
+  .welcome {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  .login-btn,
+  .signup-btn,
+  .mypage-btn,
+  .logout-btn {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.4rem;
+  }
+
+  .main-container {
+    padding: 0.5rem 0;
+  }
+
+  .main {
+    gap: 15px;
+  }
+}
+
+/* 기본 스타일 */
+
 .content {
   position: relative;
   height: 42rem;
-  /* background-color: #fff9db; */
   background-color: transparent;
   box-shadow: none;
   background-position: center;
@@ -219,16 +304,19 @@ body {
   text-align: center;
   gap: 0;
 }
+
 .content-text {
-  font-size: 70px;
+  font-size: 4.375rem;
   font-weight: bold;
   color: rgb(71, 71, 71);
 }
+
 .content-title {
   color: #087f5b;
-  font-family: "GangwonEduPowerExtraBoldA";
+  font-family: 'GangwonEduPowerExtraBoldA';
   font-size: 5rem;
 }
+
 .content-subtitle {
   font-size: 1.8rem;
 }
@@ -243,8 +331,6 @@ body {
   text-decoration: none;
   font-size: inherit;
   font-family: inherit;
-}
-.content-btn {
   font-weight: 200;
   color: #3f3833;
   text-transform: uppercase;
@@ -256,9 +342,10 @@ body {
   transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
     background 150ms cubic-bezier(0, 0, 0.58, 1);
 }
+
 .content-btn::before {
   position: absolute;
-  content: "";
+  content: '';
   width: 100%;
   height: 100%;
   top: 0;
@@ -272,25 +359,81 @@ body {
   transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
     box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
 }
+
 .content-btn:hover {
   background: #ffe9e9;
-  transform: translate(0, 0.0625em); /* 0.25em -> 0.0625em */
+  transform: translate(0, 0.0625em);
 }
+
 .content-btn:hover::before {
-  box-shadow: 0 0 0 0.5px #b18597, 0 0.125em 0 0 #ffe3e2; /* 2px -> 0.5px, 0.5em -> 0.125em */
-  transform: translate3d(
-    0,
-    0.125em,
-    -0.25em
-  ); /* 0.5em -> 0.125em, -1em -> -0.25em */
+  box-shadow: 0 0 0 0.5px #b18597, 0 0.125em 0 0 #ffe3e2;
+  transform: translate3d(0, 0.125em, -0.25em);
 }
+
 .content-btn:active {
   background: #ffe9e9;
-  transform: translate(0em, 0.1875em); /* 0.75em -> 0.1875em */
+  transform: translate(0em, 0.1875em);
 }
+
 .content-btn:active::before {
-  box-shadow: 0 0 0 0.5px #b18597, 0 0 #ffe3e2; /* 2px -> 0.5px */
-  transform: translate3d(0, 0, -0.25em); /* -1em -> -0.25em */
+  box-shadow: 0 0 0 0.5px #b18597, 0 0 #ffe3e2;
+  transform: translate3d(0, 0, -0.25em);
+}
+
+/* 반응형 스타일 */
+
+/* 태블릿 화면용 (예: 768px 이하) */
+@media (max-width: 768px) {
+  .content {
+    height: 30rem; /* 높이를 줄여 태블릿에 맞춤 */
+    padding: 1rem;
+    flex-direction: column;
+    gap: 1rem; /* 텍스트와 버튼 간의 간격 추가 */
+  }
+
+  .content-text {
+    font-size: 3rem; /* 텍스트 크기 축소 */
+  }
+
+  .content-title {
+    font-size: 3.5rem; /* 타이틀 크기 축소 */
+  }
+
+  .content-subtitle {
+    font-size: 1.5rem; /* 서브타이틀 크기 축소 */
+  }
+
+  .content-btn {
+    font-size: 1rem; /* 버튼 크기 축소 */
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* 모바일 화면용 (예: 480px 이하) */
+@media (max-width: 480px) {
+  .content {
+    height: auto; /* 콘텐츠 높이를 자동으로 설정 */
+    padding: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .content-text {
+    font-size: 2rem; /* 텍스트 크기 더 축소 */
+  }
+
+  .content-title {
+    font-size: 2.5rem; /* 타이틀 크기 더 축소 */
+  }
+
+  .content-subtitle {
+    font-size: 1.2rem; /* 서브타이틀 크기 더 축소 */
+  }
+
+  .content-btn {
+    font-size: 0.8rem; /* 버튼 크기 더 축소 */
+    padding: 0.5rem 0.75rem; /* 패딩 크기 조정 */
+  }
 }
 
 .aside {
@@ -299,9 +442,9 @@ body {
   align-items: center;
   justify-content: space-around;
   background-color: rgb(226, 255, 182);
-  width: 800px;
-  height: 80px;
-  border-radius: 50px;
+  width: 50rem;
+  height: 5rem;
+  border-radius: 3.125rem;
   position: fixed;
   bottom: 1rem;
   transform: translateX(-50%);
@@ -314,8 +457,8 @@ body {
   justify-content: center;
   align-items: center;
   /* justify-content: space-evenly; */
-  padding-left: 10px;
-  font-size: 30px;
+  padding-left: 0.625rem;
+  font-size: 1.875rem;
 }
 
 .aside-text a {
@@ -326,7 +469,7 @@ body {
 .special {
   color: #5395db;
   font-size: 2.1875rem;
-  font-family: "ONE-Mobile-POP";
+  font-family: 'ONE-Mobile-POP';
   padding: 0.6rem;
 }
 

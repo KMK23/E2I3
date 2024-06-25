@@ -175,10 +175,79 @@ h4 {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 22rem;
+  /* width: 22rem; */
+  width: 15%;
   height: 6rem;
   font-size: 1.8rem;
   font-weight: bolder;
   color: aliceblue;
   box-shadow: 0 16px 10px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+  .level {
+    width: auto;
+    font-size: 1rem;
+  }
+  .w {
+    padding-left: 1rem;
+  }
+  .title {
+    font-size: 1.5rem;
+  }
+  .text {
+    font-size: 0.875rem;
+    padding-left: 0.5rem;
+  }
+  .wrapper {
+    height: 80%;
+  }
+  .plate img,
+  .bakery img {
+    width: 80px;
+    height: 80px;
+  }
+  .score {
+    width: 25%;
+    font-size: 1.2rem;
+  }
+  .chef img {
+    width: 100px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .level {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .w {
+    padding-left: 0;
+  }
+  .title {
+    font-size: 1.25rem;
+  }
+  .text {
+    font-size: 0.75rem;
+    padding-left: 0;
+  }
+  .plate img,
+  .bakery img {
+    width: 60px;
+    height: 60px;
+  }
+  .score {
+    width: 35%;
+    font-size: 1rem;
+  }
+  .chef img {
+    width: 80px;
+    height: 250px;
+  }
 }

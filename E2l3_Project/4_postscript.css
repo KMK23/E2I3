@@ -131,7 +131,7 @@ body {
   text-align: center;
   word-break: keep-all;
   background-color: #ffffff;
-  transition: all 0.3s ease-in-out;
+  /* transition: all 0.3s ease-in-out; */
 }
 
 .text-box {
