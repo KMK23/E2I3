@@ -172,6 +172,7 @@
     const score = document.querySelector(".score");
     let minus = 0;
     let myScore = 0;
+    let totalScore = 0;
 
     let user = localStorage.getItem("id");
     let name = localStorage.getItem("name");
@@ -215,24 +216,22 @@
       alert("성공적으로 샌드위치를 완성했습니다! 점수가 저장되었습니다.");
 
       const totalScoreRef = await getDatas("totalScore");
-      let totalScore = 0;
 
       totalScoreRef.forEach(async (e) => {
         if (e.data().id === user) {
           totalScore = e.data().userTotalScore;
+          totalScore += myScore;
+
+          const totalDataObj = {
+            id: user,
+            userTotalScore: totalScore,
+          };
+          await updateScore("totalScore", totalDataObj);
+          await updateTotalScore("totalScore", totalDataObj);
         }
       });
 
-      totalScore += myScore;
-
-      const totalDataObj = {
-        id: user,
-        userTotalScore: totalScore,
-      };
-      await updateScore("totalScore", totalDataObj);
-      await updateTotalScore("totalScore", totalDataObj);
-
-      location.href = "../E2l3_Project/3_1_game1.html";
+      // location.href = "../E2l3_Project/3_1_game1.html";
     }
 
     // 이벤트 리스너
