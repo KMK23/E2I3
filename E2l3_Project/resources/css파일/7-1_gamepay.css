@@ -103,7 +103,6 @@ body {
   background-color: #07f10c;
 }
 
-/* 반응형 스타일 - 중간 크기 화면 */
 @media (max-width: 992px) {
   .payBtn {
     bottom: 3rem;
@@ -116,7 +115,7 @@ body {
     max-width: 60rem;
   }
 }
-/* 반응형 스타일 - 큰 화면 */
+
 @media (max-width: 768) {
   .payBtn {
     width: auto;
@@ -135,20 +134,23 @@ body {
   }
 }
 
-/* 반응형 스타일 - 최대 축소 화면 */
 @media (max-width: 576px) {
   .payBtn {
-    width: 100%;
+    width: 95%;
+    position: fixed;
     bottom: 1rem;
-    right: 0;
-    left: 0;
-    margin: 0 auto;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
   }
   .list {
     width: 100%;
   }
   .headH2 {
     font-size: 1rem;
+  }
+  body {
+    overflow-y: auto;
   }
 }
 
