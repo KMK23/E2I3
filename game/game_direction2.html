@@ -160,7 +160,7 @@
       updateDatas,
       updateScore,
       updateTotalScore,
-    } from "./resources/js/scoreBoard.js";
+    } from "./resources/js/COPYscoreBoard.js";
 
     // 점수판 바꾸는 부분
     function updateScoreDisplay() {
@@ -175,10 +175,45 @@
       }
     }
     // 게임끝났을때 함수
+    // async function endGame() {
+    //   console.log(`Current Score: ${myScore}`);
+    //   let user = localStorage.getItem("id");
+    //   let gameType = "algorithm3";
+    //   const dataObj = {
+    //     id: user,
+    //     score: myScore,
+    //     type: gameType,
+    //   };
+    //   if (!user) {
+    //     alert("점수를 등록하시려면 로그인을 해주세요.");
+    //     return false;
+    //   }
+    //   await updateScore("scores", dataObj);
+    //   alert("성공적으로 빵을 배달했습니다! 점수가 저장되었습니다.");
+    //   const totalScoreRef = await getDatas("totalScore");
+    //   let totalScore = 0;
+
+    //   totalScoreRef.forEach(async (e) => {
+    //     if (e.data().id === user) {
+    //       totalScore = e.data().userTotalScore;
+    //     }
+    //   });
+    //   totalScore += myScore;
+
+    //   const totalDataObj = {
+    //     id: user,
+    //     userTotalScore: totalScore,
+    //   };
+
+    //   await updateScore("totalScore", totalDataObj);
+    //   await updateTotalScore("totalScore", totalDataObj);
+    // }
+
+    //******************************//
     async function endGame() {
       console.log(`Current Score: ${myScore}`);
       let user = localStorage.getItem("id");
-      let gameType = "algorithm3";
+      let gameType = "algorithm3"; // 현재 게임 타입 (예: 알고리즘 1단계)
       const dataObj = {
         id: user,
         score: myScore,
@@ -189,24 +224,9 @@
         return false;
       }
       await updateScore("scores", dataObj);
-      alert("성공적으로 빵을 배달했습니다! 점수가 저장되었습니다.");
-      const totalScoreRef = await getDatas("totalScore");
-      let totalScore = 0;
+      alert("성공적으로 샌드위치를 완성했습니다! 점수가 저장되었습니다.");
 
-      totalScoreRef.forEach(async (e) => {
-        if (e.data().id === user) {
-          totalScore = e.data().userTotalScore;
-        }
-      });
-      totalScore += myScore;
-
-      const totalDataObj = {
-        id: user,
-        userTotalScore: totalScore,
-      };
-
-      await updateScore("totalScore", totalDataObj);
-      await updateTotalScore("totalScore", totalDataObj);
+      // location.href = "../E2l3_Project/3_1_game1.html";
     }
 
     boxes.forEach(function (box) {
