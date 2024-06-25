@@ -92,6 +92,7 @@ async function updateScore(collectionName, dataObj) {
     if (!querySnapshot.empty) {
       querySnapshot.forEach((doc) => {
         previousScore = doc.data().score;
+        console.log(previousScore);
       });
     }
 
@@ -117,12 +118,14 @@ async function updateScore(collectionName, dataObj) {
     if (!totalQuerySnapshot.empty) {
       totalQuerySnapshot.forEach((doc) => {
         totalScore = doc.data().userTotalScore;
+        console.log(`1번:${totalScore}`);
       });
     }
 
     // 이전 점수 제거하고 새 점수 추가
     totalScore = totalScore - previousScore + dataObj.score;
-
+    console.log(`2번:${totalScore}`);
+    console.log(`데이터객체스코어:${dataObj.score}`);
     const totalDataObj = {
       id: dataObj.id,
       userTotalScore: totalScore,
@@ -158,6 +161,7 @@ async function updateTotalScore(collectionName, totalDataObj) {
     console.error("Error updating document: ", e);
   }
 }
+
 async function deleteDatas(collectionName, docId) {
   const docRef = await doc(db, collectionName, docId);
   await deleteDoc(docRef);

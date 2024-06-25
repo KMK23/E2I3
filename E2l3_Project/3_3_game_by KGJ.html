@@ -58,7 +58,8 @@
       deleteDatas,
       updateDatas,
       updateScore,
-    } from "../game/resources/js/scoreBoard.js";
+      updateTotalScore,
+    } from "../game/resources/js/COPYscoreBoard.js";
 
     const score = document.querySelector(".score");
     let minus = 0;
@@ -304,7 +305,7 @@
     async function endGame() {
       console.log(`Current Score: ${myScore}`);
       let user = localStorage.getItem("id");
-      let gameType = "pattern3";
+      let gameType = "pattern3"; // 현재 게임 타입 (예: 알고리즘 1단계)
       const dataObj = {
         id: user,
         score: myScore,
@@ -315,9 +316,10 @@
         return false;
       }
       await updateScore("scores", dataObj);
-      alert("Level3 Clear");
-    }
+      alert("규칙에 맞게 야채를 모두 심었습니다! 점수가 저장되었습니다.");
 
+      // location.href = "../E2l3_Project/3_1_game1.html";
+    }
     const holes = document.querySelectorAll(".game1-holes");
 
     holes.forEach((hole) => {
@@ -483,7 +485,6 @@
       }
       endGame();
     });
-
     //로그인한 상태에서 점수 가져오려면 데이터부터
 
     let user = localStorage.getItem("id");

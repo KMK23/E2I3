@@ -167,7 +167,8 @@
       deleteDatas,
       updateDatas,
       updateScore,
-    } from "./resources/js/scoreBoard.js";
+      updateTotalScore,
+    } from "./resources/js/COPYscoreBoard.js";
 
     // 점수판 바꾸는 부분
     function updateScoreDisplay() {
@@ -181,11 +182,12 @@
         console.log(`Current Score: ${myScore}`);
       }
     }
-    // 게임끝났을때 함수
+
+    // 게임 끝났을 때 함수
     async function endGame() {
       console.log(`Current Score: ${myScore}`);
       let user = localStorage.getItem("id");
-      let gameType = "algorithm2";
+      let gameType = "algorithm2"; // 현재 게임 타입 (예: 알고리즘 1단계)
       const dataObj = {
         id: user,
         score: myScore,
@@ -196,7 +198,9 @@
         return false;
       }
       await updateScore("scores", dataObj);
-      alert("성공적으로 빵을 진열했습니다! 점수가 저장되었습니다.");
+      alert("빵 진열을 완료했습니다! 점수가 저장되었습니다.");
+
+      // location.href = "../E2l3_Project/3_1_game1.html";
     }
 
     const imgs = document.querySelectorAll(".answer");

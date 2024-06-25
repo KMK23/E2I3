@@ -128,7 +128,8 @@
       deleteDatas,
       updateDatas,
       updateScore,
-    } from "./resources/js/scoreBoard.js";
+      updateTotalScore,
+    } from "./resources/js/COPYscoreBoard.js";
 
     // 점수판 바꾸는 부분
     function updateScoreDisplay() {
@@ -146,20 +147,20 @@
     async function endGame() {
       console.log(`Current Score: ${myScore}`);
       let user = localStorage.getItem("id");
-      let gameType = "pattern1";
+      let gameType = "pattern1"; // 현재 게임 타입 (예: 알고리즘 1단계)
       const dataObj = {
         id: user,
         score: myScore,
         type: gameType,
       };
       if (!user) {
-        setTimeout(function () {
-          alert("점수를 등록하시려면 로그인을 해주세요.");
-        }, 200);
+        alert("점수를 등록하시려면 로그인을 해주세요.");
         return false;
       }
       await updateScore("scores", dataObj);
-      alert("사랑이가 규칙에 맞게 옷을 잘 입었습니다! 점수가 저장되었습니다.");
+      alert("사랑이가 옷을 규칙에 맞게 잘 입었습니다! 점수가 저장되었습니다.");
+
+      // location.href = "../E2l3_Project/3_1_game1.html";
     }
 
     document.querySelectorAll(".dress").forEach((item) => {
