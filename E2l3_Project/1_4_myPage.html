@@ -18,7 +18,7 @@
 
             <div class="my-info">
               <div class="my-classroom">
-                <a href="" class="my-classroom">
+                <a href="1_mainPage.html" class="my-classroom">
                   내 강의실 <img src="resources/icon/연필.svg" />
                 </a>
               </div>
@@ -59,7 +59,7 @@
       const snapshot = await getDatas("user");
       const nameText = document.querySelector("#nameText");
       snapshot.forEach((doc) => {
-        const myPageUserName = doc.data().name;
+        const myPageUserName = localStorage.getItem("name");
         nameText.innerHTML = `${myPageUserName}님! 오늘도 힘내고 공부해 볼까요?`;
       });
     }
