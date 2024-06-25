@@ -204,10 +204,37 @@ h4 {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 22rem;
+  width: 15%;
   height: 6rem;
   font-size: 1.8rem;
   font-weight: bolder;
   color: aliceblue;
   box-shadow: 0 16px 10px rgba(0, 0, 0, 0.5);
+}
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem; /* 16px -> 1rem */
+  }
+
+  .level {
+    width: 100%;
+    margin-bottom: 1rem; /* 16px -> 1rem */
+    font-size: 1.25rem; /* 20px -> 1.25rem */
+  }
+
+  .w {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 1.5rem; /* 24px -> 1.5rem */
+  }
+
+  .text {
+    font-size: 0.875rem; /* 14px -> 0.875rem */
+    padding-left: 0;
+  }
 }
