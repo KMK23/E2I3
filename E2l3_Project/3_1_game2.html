@@ -175,7 +175,7 @@
       deleteDatas,
       updateDatas,
       updateTotalScore,
-    } from "../game/resources/js/scoreBoard.js";
+    } from "../game/resources/js/COPYscoreBoard.js";
 
     const score = document.querySelector(".score");
     let minus = 0;
@@ -208,7 +208,7 @@
     async function endGame() {
       console.log(`Current Score: ${myScore}`);
       let user = localStorage.getItem("id");
-      let gameType = "debugging2";
+      let gameType = "debugging2"; // 현재 게임 타입 (예: 알고리즘 1단계)
       const dataObj = {
         id: user,
         score: myScore,
@@ -219,24 +219,9 @@
         return false;
       }
       await updateScore("scores", dataObj);
-      alert("Level2 Clear");
+      alert("다른모양의 색종이를 모두 찾았습니다! 점수가 저장되었습니다.");
 
-      const totalScoreRef = await getDatas("totalScore");
-      let totalScore = 0;
-
-      totalScoreRef.forEach(async (e) => {
-        if (e.data().id === user) {
-          totalScore = e.data().userTotalScore;
-        }
-      });
-      totalScore += myScore;
-
-      const totalDataObj = {
-        id: user,
-        userTotalScore: totalScore,
-      };
-      await updateScore("totalScore", totalDataObj);
-      await updateTotalScore("totalScore", totalDataObj);
+      // location.href = "../E2l3_Project/3_1_game1.html";
     }
 
     const pics = document.querySelectorAll(".overLays img");

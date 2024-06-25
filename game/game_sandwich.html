@@ -197,51 +197,6 @@
       }
     }
 
-    // 게임 끝났을때 함수
-    // async function endGame() {
-    //   console.log(`Current Score: ${myScore}`);
-    //   let user = localStorage.getItem("id");
-    //   let gameType = "algorithm1"; // 현재 게임 타입 (예: 알고리즘 1단계)
-    //   const dataObj = {
-    //     id: user,
-    //     score: myScore,
-    //     type: gameType,
-    //   };
-    //   if (!user) {
-    //     alert("점수를 등록하시려면 로그인을 해주세요.");
-    //     return false;
-    //   }
-    //   await updateScore("scores", dataObj);
-    //   alert("성공적으로 샌드위치를 완성했습니다! 점수가 저장되었습니다.");
-
-    //   const scoreSnapshot = await getDocs(collection(db, "scores"));
-    //   let totalScore = 0;
-    //   let latestScores = {};
-
-    //   scoreSnapshot.forEach((doc) => {
-    //     const data = doc.data();
-    //     if (data.id === user) {
-    //       latestScores[data.type] = data.score;
-    //     }
-    //   });
-
-    //   for (let key in latestScores) {
-    //     totalScore += latestScores[key];
-    //   }
-
-    //   const totalDataObj = {
-    //     id: user,
-    //     userTotalScore: totalScore,
-    //   };
-
-    //   await updateScore("totalScore", totalDataObj);
-    //   await updateTotalScore("totalScore", totalDataObj);
-
-    //   // location.href = "../E2l3_Project/3_1_game1.html";
-    // }
-
-    //************테스트******************/
-
     async function endGame() {
       console.log(`Current Score: ${myScore}`);
       let user = localStorage.getItem("id");
