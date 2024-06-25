@@ -11,6 +11,7 @@
     }
     body {
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
     }
@@ -19,6 +20,7 @@
     <div class="ranking">
       <canvas id="myChart" width="600" height="600"></canvas>
     </div>
+    <h1>점수표</h1>
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
   <script type="module">
@@ -29,92 +31,120 @@
       deleteDatas,
       updateDatas,
       updateScore,
-    } from "./resources/js/scoreBoard.js";
+    } from "./resources/js/COPYscoreBoard.js";
 
     async function userPoint() {
-      const snapshot = await getDatas("scores");
+      const snapshot = await getDatas("totalScore");
+      const userArr = [];
       snapshot.forEach((el) => {
         console.log(el.data().id);
-        console.log(el.data().score);
+        console.log(el.data().userTotalScore);
+        const userObj = {
+          user: el.data().id,
+          score: el.data().userTotalScore,
+        };
+        userArr.push(userObj);
+      });
+      userArr.sort(function (a, b) {
+        return b.score - a.score;
+      });
+      console.log(userArr);
+
+      const id = [];
+      const score = [];
+      userArr.forEach((e) => {
+        id.push(e.user);
+        score.push(e.score);
+      });
+      console.log(id);
+
+      const id1 = [];
+      const score2 = [];
+      for (let i = 0; i < 11; i++) {
+        id1.push(id[i]);
+        score2.push(score[i]);
+      }
+      console.log(id1);
+      console.log(score2);
+
+      let myCt = document.getElementById("myChart");
+
+      let myChart = new Chart(myCt, {
+        type: "bar",
+        //차트에 표시할 데이터, dateset 객체들을 담고 있음
+        data: {
+          // x 축 데이터
+          labels: id1,
+          //데이더 속성
+          datasets: [
+            {
+              label: "점수", //축 제목
+              fill: false, // line 형태일 때, 선 안쪽을 채우는지 여부
+              data: score2, //dataset 값
+              backgroundColor: [
+                //배경색
+                "rgba(255, 99, 132, 0.2)",
+                "rgba(54, 162, 235, 0.2)",
+                "rgba(255, 206, 86, 0.2)",
+                "rgba(75, 192, 192, 0.2)",
+                "rgba(153, 102, 255, 0.2)",
+                "rgba(255, 159, 64, 0.2)",
+              ],
+              borderColor: [
+                //테두리 색상
+                "rgba(255, 99, 132, 1)",
+                "rgba(54, 162, 235, 1)",
+                "rgba(255, 206, 86, 1)",
+                "rgba(75, 192, 192, 1)",
+                "rgba(153, 102, 255, 1)",
+                "rgba(255, 159, 64, 1)",
+              ],
+              borderWidth: 1, //테두리 두께
+              maxBarThickness: 300, //최대 bar의 두께 설정
+            },
+          ],
+        },
+        options: {
+          responsive: false, // 반응형 여부 (기본값 true)
+          maintainAspectRatio: false, // 크기 고정
+          plugins: {
+            tooltip: {
+              // 튤팁 스타일링
+              enabled: true, // 튤팁 활성화 (기본값 true)
+              backgroundColor: "#000", // 튤팁 색상
+              padding: 10, // 튤팁 패딩
+            },
+            legend: {
+              // 범례 스타일링
+              display: true, // 범례 활성화 (기본값 true)
+              position: "bottom", // 범례 위치
+            },
+          },
+          scales: {
+            // x축과 y축에 대한 설정
+            x: {
+              grid: {
+                // 축에 대한 격자선
+                display: false, // grid 활성화 (기본값 true)
+              },
+            },
+            y: {
+              min: 0, // y축에 대한 최소값
+              max: 50, // y축에 대한 최대값
+              border: {
+                // 축에 대한 테두리 속성
+                dash: [5, 5], // 점선 형태
+              },
+            },
+          },
+          plugins: {
+            legend: {
+              display: false,
+            },
+          },
+        },
       });
     }
     userPoint();
-    let myCt = document.getElementById("myChart");
-
-    let myChart = new Chart(myCt, {
-      type: "bar",
-      //차트에 표시할 데이터, dateset 객체들을 담고 있음
-      data: {
-        // x 축 데이터
-        labels: ["2020", "2021", "2022", "2023"],
-        //데이더 속성
-        datasets: [
-          {
-            label: "점수", //축 제목
-            fill: false, // line 형태일 때, 선 안쪽을 채우는지 여부
-            data: [30, 20, 30, 40], //dataset 값
-            backgroundColor: [
-              //배경색
-              "rgba(255, 99, 132, 0.2)",
-              "rgba(54, 162, 235, 0.2)",
-              "rgba(255, 206, 86, 0.2)",
-              "rgba(75, 192, 192, 0.2)",
-              "rgba(153, 102, 255, 0.2)",
-              "rgba(255, 159, 64, 0.2)",
-            ],
-            borderColor: [
-              //테두리 색상
-              "rgba(255, 99, 132, 1)",
-              "rgba(54, 162, 235, 1)",
-              "rgba(255, 206, 86, 1)",
-              "rgba(75, 192, 192, 1)",
-              "rgba(153, 102, 255, 1)",
-              "rgba(255, 159, 64, 1)",
-            ],
-            borderWidth: 1, //테두리 두께
-            maxBarThickness: 300, //최대 bar의 두께 설정
-          },
-        ],
-      },
-      options: {
-        responsive: false, // 반응형 여부 (기본값 true)
-        maintainAspectRatio: false, // 크기 고정
-        plugins: {
-          tooltip: {
-            // 튤팁 스타일링
-            enabled: true, // 튤팁 활성화 (기본값 true)
-            backgroundColor: "#000", // 튤팁 색상
-            padding: 10, // 튤팁 패딩
-          },
-          legend: {
-            // 범례 스타일링
-            display: true, // 범례 활성화 (기본값 true)
-            position: "bottom", // 범례 위치
-          },
-        },
-        scales: {
-          // x축과 y축에 대한 설정
-          x: {
-            grid: {
-              // 축에 대한 격자선
-              display: false, // grid 활성화 (기본값 true)
-            },
-          },
-          y: {
-            min: 0, // y축에 대한 최소값
-            max: 50, // y축에 대한 최대값
-            border: {
-              // 축에 대한 테두리 속성
-              dash: [5, 5], // 점선 형태
-            },
-          },
-        },
-        plugins: {
-          legend: {
-            display: false,
-          },
-        },
-      },
-    });
   </script>
 </html>
