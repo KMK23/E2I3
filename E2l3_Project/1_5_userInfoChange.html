@@ -271,7 +271,7 @@
           inputUserName.value = userData.name;
           inputBirthdate.value = userData.birth;
           inputEmail.value = userData.email;
-          inputMobile.value = userData.tel;
+          inputMobile.value = userData.mobile;
           checkboxEmailOptIn.checked = userData.emailOptIn;
           checkboxSmsOptIn.checked = userData.smsOptIn;
 
@@ -338,12 +338,23 @@
 
         // 성공적으로 업데이트되었음을 사용자에게 알림 (예시)
         alert("휴대전화번호 정보가 업데이트 되었습니다.");
+
+        // 마이페이지 화면 업데이트 함수 호출
+        updateMyPage(); // 이 함수는 마이페이지 UI를 업데이트하는 함수입니다.
       } catch (error) {
         console.error("Error updating mobile:", error);
         alert("휴대전화번호 정보 업데이트에 실패했습니다.");
       }
-    }
 
+      function updateMyPage() {
+        // 여기에 마이페이지 UI 업데이트 로직을 작성합니다.
+        // 예시: 휴대전화번호 입력 필드 업데이트
+        const mobileInput = document.getElementById("mobile");
+        mobileInput.value = newMobile; // newMobile은 업데이트된 휴대전화번호
+
+        // 추가적으로 필요한 UI 업데이트 로직을 작성합니다.
+      }
+    }
     // 예시: 이메일 변경 버튼 클릭 시
     const emailChangeButton = document.querySelector("#change1");
     emailChangeButton.addEventListener("click", () => {
