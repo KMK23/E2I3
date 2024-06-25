@@ -1,4 +1,7 @@
 /* 기존 코드 유지 */
+* {
+  box-sizing: border-box;
+}
 
 body {
   font-family: 'NanumSquareRound';
@@ -7,21 +10,26 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  margin: 0;
+  margin: 0, auto;
+  /* max-width: 1200px; */
+  width: 100%;
 }
 
 .container {
   background-color: #ffffff;
-  padding: 2rem;
   border-radius: 0.9375rem;
   box-shadow: 0 0 0.9375rem rgba(0, 0, 0, 0.1);
   text-align: center;
-  margin: 0 1rem;
-  max-width: 90%;
+
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .title {
-  font-size: 2.5rem; /* 글자 크기 */
+  font-size: 2.6rem; /* 글자 크기 */
   font-weight: bold; /* 굵은 글꼴 */
   background-color: #e6f7ff; /* 파스텔톤 배경색 */
   color: #007acc; /* 밝은 텍스트 색상 */
@@ -65,18 +73,14 @@ body {
 }
 
 .plan-badge {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: bold;
   color: #007acc;
 }
 
 .plan-price {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #666666;
-}
-.price {
-  font-size: 1.6rem;
-  height: 2rem;
 }
 
 .discount {
@@ -165,30 +169,42 @@ body {
 }
 
 /* 반응형 스타일 */
-@media (max-width: 768px) {
-  .plan {
-    flex: 1 1 calc(50% - 1rem);
-    max-width: calc(50% - 1rem);
-  }
-}
-
 @media (max-width: 480px) {
-  .plan {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
-
   .title {
-    font-size: 1.25rem; /* 작은 화면에서는 글자 크기 줄이기 */
+    font-size: 1.5rem; /* 더 작은 화면에서는 글자 크기를 조정 */
+    margin-bottom: 1rem; /* 여백 조정 */
   }
 
-  .pay-button {
-    font-size: 0.875rem; /* 버튼 글자 크기 줄이기 */
+  .plans {
+    margin-bottom: 1rem; /* 여백 조정 */
+    flex-direction: column; /* 요금제들을 세로로 배치 */
+    align-items: center; /* 가운데 정렬 */
+  }
+
+  .plan {
+    width: 100%; /* 전체 너비로 조정 */
+    margin-bottom: 1rem; /* 각 요금제 사이 여백 조정 */
+  }
+
+  .plan-header,
+  .plan-price {
+    text-align: center; /* 가운데 정렬 */
   }
 
   .modal-content {
-    margin: 15% auto; /* 모바일에서도 상하 여백 확보 */
+    margin: 10% auto; /* 모바일에서 상하 여백 조정 */
     width: 90%; /* 모바일 너비 조정 */
-    max-width: none; /* 모바일에서는 최대 너비 제한 해제 */
+    max-width: 90%; /* 최대 너비 조정 */
+    padding: 1rem; /* 패딩 조정 */
+  }
+
+  .payment-detail input[type='text'] {
+    width: calc(100% - 2rem); /* 입력 필드 너비 조정 */
+    margin: 0.5rem 0; /* 여백 조정 */
+  }
+
+  .pay-button {
+    font-size: 1rem; /* 버튼 글자 크기 원래대로 복구 */
+    margin-top: 1.5rem; /* 여백 조정 */
   }
 }
