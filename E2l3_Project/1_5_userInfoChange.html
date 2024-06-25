@@ -198,7 +198,7 @@
         <div class="form-group">
           <label for="email">이메일 주소</label>
           <div class="inline">
-            <input type="text" id="email" value="hmj7070" />
+            <input type="text" id="email" value="" />
             @
             <select id="emailDomain">
               <option value="naver.com" selected>naver.com</option>
@@ -271,7 +271,7 @@
           inputUserName.value = userData.name;
           inputBirthdate.value = userData.birth;
           inputEmail.value = userData.email;
-          inputMobile.value = userData.mobile;
+          inputMobile.value = userData.tel;
           checkboxEmailOptIn.checked = userData.emailOptIn;
           checkboxSmsOptIn.checked = userData.smsOptIn;
 
@@ -297,7 +297,7 @@
         });
 
         // 업데이트할 정보 객체 생성
-        const updateInfoObj = {
+        let updateInfoObj = {
           email: newEmail,
         };
 
@@ -330,7 +330,7 @@
 
         // 업데이트할 정보 객체 생성
         const updateInfoObj = {
-          mobile: newMobile,
+          tel: newMobile,
         };
 
         // Firestore 업데이트 함수 호출
