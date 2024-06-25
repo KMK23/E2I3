@@ -228,13 +228,13 @@ h4 {
   .header {
     flex-direction: column;
     align-items: center;
-    padding: 16px;
+    padding: 1rem; /* 16px -> 1rem */
   }
 
   .level {
     width: 100%;
-    margin-bottom: 16px;
-    font-size: 20px;
+    margin-bottom: 1rem; /* 16px -> 1rem */
+    font-size: 1.25rem; /* 20px -> 1.25rem */
   }
 
   .w {
@@ -243,11 +243,11 @@ h4 {
   }
 
   .title {
-    font-size: 24px;
+    font-size: 1.5rem; /* 24px -> 1.5rem */
   }
 
   .text {
-    font-size: 14px;
+    font-size: 0.875rem; /* 14px -> 0.875rem */
     padding-left: 0;
   }
 
@@ -258,23 +258,23 @@ h4 {
   }
 
   .recipe {
-    top: -20px;
+    top: -1.25rem; /* -20px -> -1.25rem */
     left: 50%;
     transform: translateX(-50%);
-    padding: 8px 40px;
-    font-size: 14px;
+    padding: 0.5rem 2.5rem; /* 8px 40px -> 0.5rem 2.5rem */
+    font-size: 0.875rem; /* 14px -> 0.875rem */
   }
 
   .play-game {
     flex-direction: column;
-    gap: 16px;
+    gap: 1rem; /* 16px -> 1rem */
   }
 
   .plate {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
-    height: 400px;
+    margin-top: 1.25rem; /* 20px -> 1.25rem */
+    height: 25rem; /* 400px -> 25rem */
   }
 
   .plate-img {
@@ -294,57 +294,24 @@ h4 {
     height: 100%;
     left: 10%;
   }
+
   .ingredient-img {
-    width: 80px;
-    height: 80px;
+    width: 5rem; /* 80px -> 5rem */
+    height: 5rem; /* 80px -> 5rem */
   }
+
   .sandwich-ingredients {
     display: flex;
     justify-content: space-around;
-    gap: 8px;
+    gap: 0.5rem; /* 8px -> 0.5rem */
   }
+
   .sandwich-ingredient {
-    width: 80px;
-    height: 80px;
+    width: 5rem; /* 80px -> 5rem */
+    height: 5rem; /* 80px -> 5rem */
   }
 }
 
-/* @media (max-width: 480px) {
-  .header {
-    padding: 8px;
-  }
-
-  .level {
-    font-size: 16px;
-  }
-
-  .title {
-    font-size: 20px;
-  }
-
-  .text {
-    font-size: 12px;
-  }
-
-  .wrapper {
-    padding: 8%;
-  }
-
-  .recipe {
-    font-size: 12px;
-  }
-
-  .plate-img {
-    max-width: 300px;
-  }
-
-  .sandwich {
-    width: 90%;
-    height: 90%;
-    top: 5%;
-    left: 5%;
-  }
-} */
-
 @media screen and (max-width: 578px) {
+  /* Add styles if needed */
 }
