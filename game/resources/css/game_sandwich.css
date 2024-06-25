@@ -215,7 +215,8 @@ h4 {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 22rem;
+  /* width: 22rem; */
+  width: 15%;
   height: 6rem;
   font-size: 1.8rem;
   font-weight: bolder;
@@ -270,12 +271,15 @@ h4 {
   }
 
   .plate {
+    display: flex;
+    justify-content: center;
     margin-top: 20px;
+    height: 400px;
   }
 
   .plate-img {
-    width: 100%;
-    max-width: 400px;
+    width: 85%;
+    /* max-width: 400px; */
   }
 
   .sandwich {
@@ -286,8 +290,9 @@ h4 {
   }
 
   .selected {
-    width: 100%;
+    width: 70%;
     height: 100%;
+    left: 10%;
   }
   .ingredient-img {
     width: 80px;
@@ -303,7 +308,8 @@ h4 {
     height: 80px;
   }
 }
-@media (max-width: 480px) {
+
+/* @media (max-width: 480px) {
   .header {
     padding: 8px;
   }
@@ -338,4 +344,7 @@ h4 {
     top: 5%;
     left: 5%;
   }
+} */
+
+@media screen and (max-width: 578px) {
 }
