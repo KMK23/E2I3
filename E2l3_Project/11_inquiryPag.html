@@ -263,21 +263,5 @@
     });
 
     // mb 올라가는 코드 //
-    document.addEventListener("DOMContentLoaded", function () {
-      const fileInput = document.getElementById("fileInput");
-      const fileSizeMb = 20;
-      let totalSizeInBytes = 0.0;
-
-      for (let i = 0; i < files.length; i++) {
-        totalSizeInBytes += files[i].size;
-      }
-
-      const totalSizeInMb = totalSizeInBytes / (1024 * 1024);
-
-      const mbDisplay = document.getElementById("dd");
-      mbDisplay.textContent = `${totalSizeInMB.toFixed(
-        2
-      )}/${fileSizeLimitMB}MB`;
-    });
   </script>
 </html>
