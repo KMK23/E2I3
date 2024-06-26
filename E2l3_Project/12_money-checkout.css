@@ -1,58 +1,58 @@
 /* 기존 코드 유지 */
 @font-face {
-  font-family: 'NanumSquareRound';
+  font-family: "NanumSquareRound";
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot);
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot?#iefix)
-      format('embedded-opentype'),
+      format("embedded-opentype"),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff2)
-      format('woff2'),
+      format("woff2"),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff)
-      format('woff'),
+      format("woff"),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.ttf)
-      format('truetype');
+      format("truetype");
 }
 
 @font-face {
-  font-family: 'NanumSquareRoundB';
+  font-family: "NanumSquareRoundB";
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.eot);
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.eot?#iefix)
-      format('embedded-opentype'),
+      format("embedded-opentype"),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.woff2)
-      format('woff2'),
+      format("woff2"),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.woff)
-      format('woff'),
+      format("woff"),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.ttf)
-      format('truetype');
+      format("truetype");
 }
 
 @font-face {
-  font-family: 'NanumSquareRoundEB';
+  font-family: "NanumSquareRoundEB";
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.eot);
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.eot?#iefix)
-      format('embedded-opentype'),
+      format("embedded-opentype"),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.woff2)
-      format('woff2'),
+      format("woff2"),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.woff)
-      format('woff'),
+      format("woff"),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.ttf)
-      format('truetype');
+      format("truetype");
 }
 
 @font-face {
-  font-family: 'NanumSquareRoundL';
+  font-family: "NanumSquareRoundL";
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.eot);
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.eot?#iefix)
-      format('embedded-opentype'),
+      format("embedded-opentype"),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.woff2)
-      format('woff2'),
+      format("woff2"),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.woff)
-      format('woff'),
+      format("woff"),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.ttf)
-      format('truetype');
+      format("truetype");
 }
 
 body {
-  font-family: 'NanumSquareRound';
+  font-family: "NanumSquareRound";
   background-color: #f4f4f4;
   display: flex;
   justify-content: center;
@@ -73,7 +73,7 @@ body {
 }
 
 .title {
-  font-family: 'NanumSquareRoundEB';
+  font-family: "NanumSquareRoundEB";
   font-size: 2.5rem; /* 글자 크기 */
   font-weight: bold; /* 굵은 글꼴 */
   /* background-color: #e5f5fc;  */
@@ -109,7 +109,7 @@ h1 {
   background-color: #fafafa;
   border-radius: 0.9375rem;
   padding: 0.9375rem;
-  box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1); */
   border: 1px solid #e0e0e0;
   cursor: pointer;
   box-sizing: border-box;
@@ -247,7 +247,7 @@ h1 {
   margin: 0.3125rem 0;
 }
 
-.payment-detail input[type='text'] {
+.payment-detail input[type="text"] {
   width: 100%;
   padding: 0.3125rem;
   border: 1px solid #ccc;
