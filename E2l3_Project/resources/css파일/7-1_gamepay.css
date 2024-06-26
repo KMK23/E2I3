@@ -31,7 +31,7 @@ body {
 }
 .headH2 {
   margin: 0.75rem;
-  font-weight: 500;
+
   font-size: 2rem;
   font-weight: 700;
   text-align: center;
@@ -104,7 +104,7 @@ body {
   background-color: #66f8cc9c;
 }
 
-@media (max-width: 1200px) {
+@media screen and (max-width: 1200px) {
   .payBtn {
     bottom: 4%;
     left: 83%;
@@ -121,7 +121,7 @@ body {
   }
 }
 
-@media (max-width: 768) {
+@media screen and (max-width: 768) {
   .payBtn {
     width: auto;
     bottom: 2rem;
@@ -142,7 +142,7 @@ body {
   }
 }
 
-@media (max-width: 576px) {
+@media screen and (max-width: 480px) {
   .payBtn {
     width: 95%;
     position: fixed;
