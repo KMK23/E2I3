@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>동물을 찾아요</title>
     <link rel="stylesheet" href="resources/css파일/3_1_game1.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <div class="container">
@@ -17,7 +24,6 @@
           <h4 class="text">아래에 여러마리의 동물이 있어요.</h4>
           <h4 class="text">같은 동물끼리 찾아서 클릭해 보세요.</h4>
         </div>
-        <div class="score"></div>
       </div>
       <div class="content">
         <img class="dog1 dog" src="resources/img/3_1_게임체험하기 img/개.png" />
@@ -64,6 +70,10 @@
         <div class="grass grass8"></div>
         <div class="grass grass9"></div>
       </div>
+    </div>
+    <div class="score"></div>
+    <div class="homeBtn">
+      <i class="fa-solid fa-house fa-2xl"></i>
     </div>
   </body>
   <script type="module">
@@ -231,5 +241,11 @@
     });
 
     let resizeTimer;
+
+    updateScoreDisplay();
+    const home = document.querySelector(".homeBtn");
+    home.addEventListener("click", function () {
+      location.href = "1_mainPage.html";
+    });
   </script>
 </html>

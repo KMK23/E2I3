@@ -152,6 +152,9 @@
     </div>
     <!-- 점수판 -->
     <div class="score"></div>
+    <div class="homeBtn">
+      <img src="resources/img/홈버튼.svg" width="40" height="40" />
+    </div>
   </body>
   <script type="module">
     import {
@@ -261,5 +264,9 @@
       });
     });
     updateScoreDisplay();
+    const home = document.querySelector(".homeBtn");
+    home.addEventListener("click", function () {
+      location.href = "../E2l3_Project/1_mainPage.html";
+    });
   </script>
 </html>
