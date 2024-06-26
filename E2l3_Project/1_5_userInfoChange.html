@@ -435,6 +435,7 @@
       </div>
     </div>
   </body>
+
   <script type="module">
     import {
       db,
@@ -611,16 +612,69 @@
         document.querySelector(".message").textContent =
           "비밀번호 변경 중 오류가 발생했습니다.";
       }
+      reset();
     });
+    function reset(input) {
+      document.getElementById("currentPassword").value = "";
+      document.getElementById("newPassword").value = "";
+      document.getElementById("confirmPassword").value = "";
+    }
+
+    async function getUserId() {
+      const snapshot = await getDatas("user");
+      let userId = null;
+      snapshot.forEach((doc) => {
+        userId = doc.data().id;
+      });
+      return userId;
+    }
+
+    async function getUserEmail() {
+      const snapshot = await getDatas("user");
+      let userEmail = null;
+      snapshot.forEach((doc) => {
+        userEmail = doc.data().email;
+      });
+      return userEmail;
+    }
+
+    async function updateUserStatus(userId, newStatus) {
+      const userRef = firebase.firestore().collection("users").doc(userId);
+      await userRef.update({ status: newStatus });
+      console.log(`User ${userId} status updated to ${newStatus}`);
+    }
 
     const deleteBtn = document.querySelector(".deleteBtn");
-    deleteBtn.addEventListener("click", function (e) {
+    deleteBtn.addEventListener("click", async function (e) {
       e.preventDefault();
       const withdrawReason = document.getElementById("withdrawReason").value;
 
-      if (withdrawReason == "") {
+      if (withdrawReason === "") {
         alert("탈퇴 이유를 입력해주세요.");
         return false;
+      }
+
+      try {
+        const userId = await getUserId(); // await를 사용하여 사용자 ID를 비동기적으로 가져옴
+        const userEmail = await getUserEmail(); // await를 사용하여 사용자 이메일을 비동기적으로 가져옴
+        const withdrawDate = new Date().toISOString();
+
+        const reasonObj = {
+          userId: userId,
+          email: userEmail,
+          reason: withdrawReason,
+          date: withdrawDate,
+        };
+
+        const result = await addDatas("withdrawReasons", reasonObj);
+
+        document.getElementById("withdrawReason").value = "";
+
+        await updateUserStatus(userId, "withdrawn");
+
+        alert("회원 탈퇴가 처리되었습니다.");
+      } catch (error) {
+        console.error("Error during withdrawal process:", error);
       }
     });
   </script>

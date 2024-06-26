@@ -49,7 +49,9 @@
         const userObj = {
           user: el.data().id,
           score: el.data().userTotalScore,
+          name: el.data().name,
         };
+        console.log(userObj.name);
         userArr.push(userObj);
       });
       userArr.sort(function (a, b) {
@@ -176,5 +178,119 @@
       });
     }
     userPoint();
+
+    // import {
+    //   db,
+    //   getDatas,
+    //   addDatas,
+    //   deleteDatas,
+    //   updateDatas,
+    //   updateScore,
+    // } from "./resources/js/COPYscoreBoard.js";
+
+    // async function userPoint() {
+    //   try {
+    //     const snapshot = await getDatas("totalScore");
+    //     const userArr = [];
+
+    //     snapshot.forEach((doc) => {
+    //       const userData = doc.data();
+    //       const userObj = {
+    //         id: doc.id,
+    //         score: userData.userTotalScore,
+    //         name: userData.name,
+    //       };
+    //       userArr.push(userObj);
+    //     });
+
+    //     userArr.sort((a, b) => b.score - a.score);
+
+    //     const topTenUsers = userArr.slice(0, 10); // 상위 10명만 추출
+
+    //     const id1 = topTenUsers.map((user) => user.name);
+    //     const score2 = topTenUsers.map((user) => user.score);
+
+    //     document.getElementById("firstPlace").innerHTML = 🥇 1등 : ${id1[0]} <span class='score'>( 점수 : ${score2[0]}점 )</span>;
+    //     document.getElementById("secondPlace").innerHTML = 🥈 2등 : ${id1[1]} <span class='score'>( 점수 : ${score2[1]}점 )</span>;
+    //     document.getElementById("thirdPlace").innerHTML = 🥉 3등 : ${id1[2]} <span class='score'>( 점수 : ${score2[2]}점 )</span>;
+
+    //     const myCt = document.getElementById("myChart");
+
+    //     const myChart = new Chart(myCt, {
+    //       type: "bar",
+    //       data: {
+    //         labels: id1,
+    //         datasets: [
+    //           {
+    //             label: "점수",
+    //             data: score2,
+    //             backgroundColor: [
+    //               "rgba(255, 1, 0, 0.2)",
+    //               "rgba(254, 132, 0 ,0.2)",
+    //               "rgba(255, 255, 0 ,0.2)",
+    //               "rgba(66, 203, 121 ,0.2)",
+    //               "rgba(0, 137, 41 ,0.2)",
+    //               "rgba(0, 151, 189 ,0.2)",
+    //               "rgba(0, 82, 166 ,0.2)",
+    //               "rgba(0, 42, 149 ,0.2)",
+    //               "rgba(152, 18, 141 ,0.2)",
+    //               "rgba(222, 5, 106 ,0.2)",
+    //             ],
+    //             borderColor: [
+    //               "rgba(255, 1, 0, 1)",
+    //               "rgba(254, 132, 0 ,1)",
+    //               "rgba(255, 255, 0 ,1)",
+    //               "rgba(66, 203, 121 ,1)",
+    //               "rgba(0, 137, 41 ,1)",
+    //               "rgba(0, 151, 189 ,1)",
+    //               "rgba(0, 82, 166 ,1)",
+    //               "rgba(0, 42, 149 ,1)",
+    //               "rgba(152, 18, 141 ,1)",
+    //               "rgba(222, 5, 106 ,1)",
+    //             ],
+    //             borderWidth: 1,
+    //             maxBarThickness: 300,
+    //           },
+    //         ],
+    //       },
+    //       options: {
+    //         responsive: true,
+    //         maintainAspectRatio: false,
+    //         plugins: {
+    //           tooltip: {
+    //             enabled: true,
+    //             backgroundColor: "#000",
+    //             padding: 10,
+    //           },
+    //           legend: {
+    //             display: false,
+    //           },
+    //         },
+    //         scales: {
+    //           x: {
+    //             grid: {
+    //               display: false,
+    //             },
+    //           },
+    //           y: {
+    //             min: 0,
+    //             max: 100,
+    //             border: {
+    //               dash: [7, 5],
+    //             },
+    //           },
+    //         },
+    //         animation: {
+    //           duration: 2500,
+    //           easing: "easeOutElastic",
+    //         },
+    //       },
+    //     });
+    //   } catch (error) {
+    //     console.error("Error fetching data:", error);
+    //   }
+    // }
+
+    // userPoint();
   </script>
 </html>

@@ -321,11 +321,13 @@
     async function endGame() {
       console.log(`Current Score: ${myScore}`);
       let user = localStorage.getItem("id");
+      let userName = localStorage.getItem("name");
       let gameType = "pattern3"; // 현재 게임 타입 (예: 알고리즘 1단계)
       const dataObj = {
         id: user,
         score: myScore,
         type: gameType,
+        name: userName,
       };
       if (!user) {
         alert("점수를 등록하시려면 로그인을 해주세요.");
