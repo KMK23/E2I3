@@ -94,14 +94,14 @@ body {
   width: 3rem;
 }
 .header {
-  gap: 1rem;
+  /* gap: 1rem; */
   margin-top: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 18.75rem;
   height: 4rem;
-  background-color: rgba(81, 204, 163, 0.651);
+  background-color: rgba(81, 204, 163, 0.322);
   border-radius: 1rem;
   padding: 0.7rem;
 }
@@ -109,6 +109,7 @@ body {
   font-family: "NanumSquareRoundEB";
   font-weight: bold;
   margin: 0;
+  font-size: 1.85rem;
 }
 #topThree {
   margin: 0;
