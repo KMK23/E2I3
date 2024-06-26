@@ -10,45 +10,47 @@
     <div class="container">
       <div class="content">
         <div class="first-content">
-          <div class="left-area">
-            <div class="user-info">
-              <img src="resources/img/프로필사진2.png" />
-              <h1 id="nameText">***님! 오늘도 힘내서 공부해볼까요?</h1>
-            </div>
-
-            <div class="my-info">
-              <div class="my-classroom">
-                <a href="1_mainPage.html" class="my-classroom">
-                  진행상태
-                  <img src="resources/icon/연필.svg" class="btnImg" />
-                </a>
+          <div class="area">
+            <div class="left-area">
+              <div class="user-info">
+                <img src="resources/img/프로필사진2.png" />
+                <h1 id="nameText">***님! <br />오늘도 힘내서 공부해볼까요?</h1>
               </div>
 
-              <div class="coin">
-                <a href="12_money-checkout.html" class="cashBtn">
-                  결제내역 <img src="resources/icon/코인.svg" class="btnImg"
-                /></a>
-              </div>
-              <div class="heart1">
-                <a href="" class="fav">
-                  관심선생님
-                  <img src="resources/icon/하트하트.svg" class="btnImg" />
-                </a>
-              </div>
-              <div class="QandA">
-                <a href="QS.html">
-                  1:1문의하기
-                  <img src="resources/icon/코멘트.svg" class="btnImg" />
-                </a>
+              <div class="my-info">
+                <div class="my-classroom">
+                  <a href="1_mainPage.html" class="my-classroom">
+                    진행상태
+                    <img src="resources/icon/연필.svg" class="btnImg" />
+                  </a>
+                </div>
+
+                <div class="coin">
+                  <a href="12_money-checkout.html" class="cashBtn coin">
+                    결제내역 <img src="resources/icon/코인.svg" class="btnImg"
+                  /></a>
+                </div>
+                <div class="heart1">
+                  <a href="" class="fav heart1">
+                    관심선생님
+                    <img src="resources/icon/하트하트.svg" class="btnImg" />
+                  </a>
+                </div>
+                <div class="QandA">
+                  <a href="QS.html" class="QandA">
+                    1:1문의하기
+                    <img src="resources/icon/코멘트.svg" class="btnImg" />
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="right-area">
-            <h3>
-              최근 받은 알림
-              <img src="resources/icon/알림종.svg" class="btnImg" />
-            </h3>
-            <div class="black-area"></div>
+            <div class="right-area">
+              <h3>
+                최근 받은 알림
+                <img src="resources/icon/알림종.svg" class="btnImg" />
+              </h3>
+              <div class="black-area"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -113,7 +115,7 @@
       const nameText = document.querySelector("#nameText");
       snapshot.forEach((doc) => {
         const myPageUserName = localStorage.getItem("name");
-        nameText.innerHTML = `${myPageUserName}님! 오늘도 힘내고 공부해 볼까요?`;
+        nameText.innerHTML = `${myPageUserName}님! <br/>오늘도 힘내서 공부해 볼까요?`;
       });
     }
     getUserData();

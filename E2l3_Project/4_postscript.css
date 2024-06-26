@@ -85,7 +85,7 @@ body {
   align-items: center;
 }
 .icon {
-  width: 7rem;
+  width: 8rem;
   height: 9rem;
   display: flex;
   justify-content: center;
@@ -132,6 +132,9 @@ body {
   word-break: keep-all;
   background-color: #ffffff;
   /* transition: all 0.3s ease-in-out; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .text-box {

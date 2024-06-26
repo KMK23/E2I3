@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>코딩팡팡 문의</title>
   </head>
   <style>
     * {
@@ -17,56 +17,113 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
     }
     .container {
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: #eee;
-      border-radius: 50px;
-      width: 25%;
-      padding: 5rem;
+      background-color: #ffffff;
+      border-radius: 20px;
+      width: 40%;
+      padding: 3rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
     #contact {
       width: 100%;
       height: 100%;
       display: flex;
       flex-direction: column;
+      align-items: center;
     }
     #contact form {
       display: flex;
       flex-direction: column;
+      width: 100%;
     }
-
     #contact form label {
       margin: 0.5rem 0 0.25rem;
+      font-size: 1.1rem;
+      color: #333;
     }
-
     #contact form input,
     #contact form textarea {
-      padding: 0.5rem;
-      border: 1px solid #ccc;
+      padding: 0.75rem;
+      border: 2px solid #ccc;
       border-radius: 5px;
       font-size: 1rem;
+      margin-bottom: 1rem;
+      transition: border-color 0.3s;
+    }
+    #contact form input:focus,
+    #contact form textarea:focus {
+      border-color: #4285f4; /* 구글 블루 */
+      outline: none;
     }
     textarea {
       resize: none;
       width: 100%;
-      height: 20rem;
+      height: 10rem;
     }
     #contact form button {
       margin-top: 1rem;
       padding: 0.75rem;
-      background-color: #ccc;
+      background-color: #4285f4; /* 구글 블루 */
       color: white;
       border: none;
       border-radius: 5px;
       font-size: 1.2rem;
       cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+    #contact form button:hover {
+      background-color: #3367d6; /* 어두운 구글 블루 */
+      transform: translateY(-3px);
+    }
+    #contact form button:active {
+      background-color: #2a56c6; /* 더 어두운 구글 블루 */
     }
 
-    #contact form button:hover {
-      background-color: #45a049;
+    /* Responsive design for different screen sizes */
+    @media (max-width: 1200px) {
+      .container {
+        width: 35%;
+        padding: 4rem;
+      }
+      textarea {
+        height: 18rem;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .container {
+        width: 45%;
+        padding: 3rem;
+      }
+      textarea {
+        height: 16rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        width: 60%;
+        padding: 2.5rem;
+      }
+      textarea {
+        height: 14rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .container {
+        width: 80%;
+        padding: 2rem;
+      }
+      textarea {
+        height: 12rem;
+      }
     }
   </style>
   <body>
