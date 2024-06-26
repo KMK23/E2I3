@@ -250,6 +250,9 @@ h4 {
   font-size: 1rem;
   cursor: pointer;
 }
+.check:hover {
+  background-color: #085e5e;
+}
 
 @font-face {
   font-family: "UhBeemysen";
@@ -263,7 +266,7 @@ h4 {
   top: 1rem;
   right: 1rem;
   background-color: #11503dec;
-  border: 9px solid #705d4e;
+  border: 0.5625rem solid #705d4e;
   backdrop-filter: blur(6px);
   border-radius: 1rem;
   display: flex;
@@ -271,8 +274,96 @@ h4 {
   align-items: center;
   width: 22rem;
   height: 6rem;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   font-weight: bolder;
   color: aliceblue;
   box-shadow: 0 16px 10px rgba(0, 0, 0, 0.5);
+}
+@media (max-width: 1200px) {
+  .wrapper {
+    height: 60%;
+  }
+  .score {
+    width: 20%;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem; /* 16px -> 1rem */
+  }
+
+  .level {
+    width: 100%;
+    margin-bottom: 1rem; /* 16px -> 1rem */
+    font-size: 1.25rem; /* 20px -> 1.25rem */
+  }
+
+  .w {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 1.5rem; /* 24px -> 1.5rem */
+  }
+
+  .text {
+    font-size: 0.875rem; /* 14px -> 0.875rem */
+    padding-left: 0;
+  }
+
+  .wrapper {
+    height: 50%;
+  }
+  .score {
+    width: 25%;
+    font-size: 1.2rem;
+    text-align: center;
+    word-break: keep-all;
+  }
+  .img-area {
+    width: 8rem;
+    height: 6rem;
+    margin-right: 2rem;
+  }
+  .second-area {
+    width: 20rem;
+  }
+  .second-area img {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+  .board {
+    width: 70%;
+    height: 15rem;
+  }
+  .input {
+    font-family: "UhBeemysen";
+    border: none;
+    width: 100%;
+    height: 100%;
+  }
+  .word {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  .icon img {
+    width: 2rem;
+    height: 2rem;
+  }
+  .exercise5 img {
+    width: 1.2rem;
+  }
+  .icon5 img {
+    width: 1.2rem;
+  }
+  .check {
+    padding: 0.9rem;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+  }
 }
