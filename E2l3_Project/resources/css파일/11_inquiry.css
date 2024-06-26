@@ -1,7 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
 @font-face {
   font-family: "NanumSquareRound";
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot);
@@ -15,19 +11,29 @@
       format("truetype");
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "NanumSquareRound";
   width: 100%;
   height: 100%;
   margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f7f7;
 }
 .container {
   width: 100%;
   height: 100vh;
-  max-width: 81.25rem;
-  margin: 2.5rem auto;
-  padding: 1.25rem;
-  background-color: #f7f7f7;
+  max-width: 65rem;
+  padding: 2rem 6rem 2rem 6rem;
+  background-color: #fff;
+}
+.form {
+  padding: 0 8rem 0 8rem;
 }
 h2 {
   text-align: center;
@@ -98,7 +104,7 @@ textarea.write {
   transition: all 0.3s ease;
 }
 
-textarea.write.clickedr {
+textarea.write.clicker {
   padding-left: 1.25rem;
   border-color: #222222;
 }
@@ -192,6 +198,9 @@ input.emailAdder {
 
 .number_fill {
   margin-bottom: 0.625rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .number_tel {
@@ -239,6 +248,7 @@ input.phome {
   cursor: pointer;
   border: none;
   background-color: #fae102;
+  border-radius: 16px;
   color: #222222;
   width: 24%;
   padding: 1rem;
