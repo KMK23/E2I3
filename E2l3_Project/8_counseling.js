@@ -256,3 +256,7 @@ function updateGugun() {
     });
   }
 }
+document.getElementById("closeBtn").addEventListener("click", function () {
+  document.querySelector(".form-container").style.display = "none";
+  document.getElementById("overlay").style.display = "none";
+});
