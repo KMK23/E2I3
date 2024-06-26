@@ -250,35 +250,36 @@ a {
 .game {
   margin: 1rem;
   display: flex;
-  gap: 8rem;
+  gap: 2rem;
 }
 .game button {
   padding: 1.5rem;
   border: none;
-  border-radius: 1rem;
-  font-size: 1rem;
+  border-radius: 0.7rem;
+  font-size: 1.5rem;
   font-weight: bold;
-  width: 11rem;
+  width: 15rem;
+  height: 5rem;
   cursor: pointer;
   box-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.3);
 }
 .game1 button {
-  background-color: #9d8cff;
+  background-color: #ffffe09c;
 }
 .game1 button:hover {
-  background-color: #8877ec;
+  background-color: #dfdfa99c;
 }
 .game2 button {
-  background-color: #99e9f2;
+  background-color: #add8e69a;
 }
 .game2 button:hover {
-  background-color: #75ced8;
+  background-color: #7199a79a;
 }
 .game3 button {
-  background-color: #fa7e7e;
+  background-color: #fff0f5b7;
 }
 .game3 button:hover {
-  background-color: #df6969;
+  background-color: #e6c0cdb7;
 }
 .game button:active {
   transform: translateY(2%);

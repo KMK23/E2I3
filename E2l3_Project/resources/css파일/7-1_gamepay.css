@@ -102,27 +102,22 @@ body {
 
 @media (max-width: 1200px) {
   .payBtn {
-    right: 5rem;
+    bottom: 4%;
+    left: 83%;
+    width: 15%;
   }
   .container {
     max-width: 70rem;
   }
+  .content {
+    width: 90%;
+  }
+  body {
+    overflow-y: auto;
+  }
 }
 .payBtn:hover {
   background-color: #07f10c;
-}
-
-@media (max-width: 992px) {
-  .payBtn {
-    bottom: 3rem;
-    right: 3rem;
-  }
-  .content {
-    grid-template-columns: 1fr;
-  }
-  .container {
-    max-width: 60rem;
-  }
 }
 
 @media (max-width: 768) {
@@ -141,6 +136,9 @@ body {
   .headerH2 {
     font-size: 1.25rem;
   }
+  body {
+    overflow-y: auto;
+  }
 }
 
 @media (max-width: 576px) {
@@ -154,12 +152,17 @@ body {
   }
   .list {
     width: 100%;
+    font-size: 1rem;
   }
   .headH2 {
     font-size: 1rem;
   }
   body {
     overflow-y: auto;
+  }
+  .content {
+    width: 95%;
+    height: auto;
   }
 }
 
