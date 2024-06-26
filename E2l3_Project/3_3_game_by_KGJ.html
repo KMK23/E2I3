@@ -49,6 +49,9 @@
       </div>
       <div class="gameImgs"></div>
     </div>
+    <div class="homeBtn">
+      <img src="resources/img/홈버튼.svg" width="40" height="40" />
+    </div>
   </body>
   <script type="module">
     import {
@@ -542,5 +545,10 @@
     } else {
       score.innerHTML = `${name}님의 점수 : 10 점`;
     }
+    updateScoreDisplay();
+    const home = document.querySelector(".homeBtn");
+    home.addEventListener("click", function () {
+      location.href = "1_mainPage.html";
+    });
   </script>
 </html>

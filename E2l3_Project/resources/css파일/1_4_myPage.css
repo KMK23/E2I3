@@ -181,7 +181,8 @@ a {
 }
 /* Responsive design for different screen sizes */
 
-#team h2 {
+#team h2,
+#games h2 {
   width: 100%;
   margin-bottom: 2rem;
   display: flex;
@@ -189,7 +190,8 @@ a {
   align-items: center;
 }
 
-#team {
+#team,
+#games {
   display: none;
 }
 
@@ -238,6 +240,49 @@ a {
 #team .team-member.expanded {
   background-color: pink;
   transform: scale(1.2, 1.2);
+}
+
+.game-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.game {
+  margin: 1rem;
+  display: flex;
+  gap: 2rem;
+}
+.game button {
+  padding: 1.5rem;
+  border: none;
+  border-radius: 0.7rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  width: 15rem;
+  height: 5rem;
+  cursor: pointer;
+  box-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.3);
+}
+.game1 button {
+  background-color: #ffffe09c;
+}
+.game1 button:hover {
+  background-color: #dfdfa99c;
+}
+.game2 button {
+  background-color: #add8e69a;
+}
+.game2 button:hover {
+  background-color: #7199a79a;
+}
+.game3 button {
+  background-color: #fff0f5b7;
+}
+.game3 button:hover {
+  background-color: #e6c0cdb7;
+}
+.game button:active {
+  transform: translateY(2%);
 }
 /* Responsive design for different screen sizes */
 @media (max-width: 1200px) {

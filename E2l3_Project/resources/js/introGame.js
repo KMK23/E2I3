@@ -43,10 +43,10 @@ gameBtn1.addEventListener("click", function () {
   location.href = "../game/game_sandwich.html";
 });
 gameBtn2.addEventListener("click", function () {
-  location.href = "../game/game_sandwich.html";
+  location.href = "3_1_game1.html";
 });
 gameBtn3.addEventListener("click", function () {
-  location.href = "../game/game_sandwich.html";
+  location.href = "../game/game_changecloth.html";
 });
 
 // 동영상 플레이
