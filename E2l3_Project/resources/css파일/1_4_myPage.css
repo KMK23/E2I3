@@ -1,18 +1,18 @@
 * {
   box-sizing: border-box;
-  font-family: "NanumSquareRound";
+  font-family: 'NanumSquareRound';
 }
 @font-face {
-  font-family: "NanumSquareRound";
+  font-family: 'NanumSquareRound';
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot);
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot?#iefix)
-      format("embedded-opentype"),
+      format('embedded-opentype'),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff2)
-      format("woff2"),
+      format('woff2'),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff)
-      format("woff"),
+      format('woff'),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.ttf)
-      format("truetype");
+      format('truetype');
 }
 * {
   box-sizing: border-box;
@@ -211,4 +211,50 @@ a {
 #team .team-member.expanded {
   background-color: pink;
   transform: scale(1.2, 1.2);
+}
+@media (max-width: 1200px) {
+  .first-content {
+    gap: 8rem;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .first-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .right-area {
+    border-left: none;
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .bottom-area {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .first-content {
+    gap: 1rem;
+  }
+
+  .right-area {
+    border-left: none;
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .bottom-area {
+    grid-template-columns: 1fr;
+  }
+
+  .first-content {
+    gap: 1rem;
+    padding: 1rem;
+    border-width: 1rem;
+  }
 }

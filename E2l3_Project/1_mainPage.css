@@ -199,94 +199,66 @@ body {
   text-decoration: none;
   color: black;
 }
-
-/* 반응형 스타일 */
-
-/* 태블릿 화면용 (예: 768px 이하) */
-@media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    padding: 10px;
-  }
-
-  .three-btns {
-    flex-direction: column;
-    gap: 5px;
-    justify-content: center;
-  }
-
-  .logo1 a {
-    font-size: 2.5rem;
-    width: 280px;
-  }
-
-  .main {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .sub {
-    font-size: 1.25rem;
-  }
-
-  .main .sub a:hover,
-  .main .sub a:active {
-    font-size: 1.5rem;
-  }
-
-  .welcome {
-    text-align: center;
-    font-size: 1rem;
-  }
-
-  .login-btn,
-  .signup-btn,
-  .mypage-btn,
-  .logout-btn {
-    font-size: 0.9rem;
-    padding: 0.25rem 0.5rem;
-  }
-}
-
-/* 모바일 화면용 (예: 480px 이하) */
-@media (max-width: 480px) {
-  .header {
-    padding: 5px;
-  }
-
-  .logo1 a {
-    font-size: 2rem;
-    width: 200px;
-  }
-
-  .sub {
-    font-size: 1rem;
-  }
-
-  .main .sub a:hover,
-  .main .sub a:active {
-    font-size: 1.25rem;
-  }
-
-  .welcome {
-    text-align: center;
-    font-size: 0.9rem;
-  }
-
-  .login-btn,
-  .signup-btn,
-  .mypage-btn,
-  .logout-btn {
-    font-size: 0.8rem;
-    padding: 0.2rem 0.4rem;
-  }
-
+/* 반응형 미디어 쿼리 */
+@media (max-width: 1200px) {
   .main-container {
     padding: 0.5rem 0;
   }
-
   .main {
-    gap: 15px;
+    gap: 2rem;
+  }
+  .logo1 a {
+    font-size: 3rem;
+  }
+  .sub {
+    font-size: 1.375rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .header {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .logo1 a {
+    font-size: 2.5rem;
+  }
+  .sub {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .logo1 a {
+    font-size: 2rem;
+  }
+  .sub {
+    font-size: 1.125rem;
+  }
+  .three-btns {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .main {
+    gap: 1rem;
+  }
+  .logo1 a {
+    font-size: 1.5rem;
+  }
+  .sub {
+    font-size: 1rem;
+  }
+  .login-btn,
+  .signup-btn,
+  .mypage-btn,
+  .logout-btn {
+    font-size: 0.875rem;
   }
 }
 
@@ -380,61 +352,6 @@ body {
   transform: translate3d(0, 0, -0.25em);
 }
 
-/* 반응형 스타일 */
-
-/* 태블릿 화면용 (예: 768px 이하) */
-@media (max-width: 768px) {
-  .content {
-    height: 30rem; /* 높이를 줄여 태블릿에 맞춤 */
-    padding: 1rem;
-    flex-direction: column;
-    gap: 1rem; /* 텍스트와 버튼 간의 간격 추가 */
-  }
-
-  .content-text {
-    font-size: 3rem; /* 텍스트 크기 축소 */
-  }
-
-  .content-title {
-    font-size: 3.5rem; /* 타이틀 크기 축소 */
-  }
-
-  .content-subtitle {
-    font-size: 1.5rem; /* 서브타이틀 크기 축소 */
-  }
-
-  .content-btn {
-    font-size: 1rem; /* 버튼 크기 축소 */
-    padding: 0.5rem 1rem;
-  }
-}
-
-/* 모바일 화면용 (예: 480px 이하) */
-@media (max-width: 480px) {
-  .content {
-    height: auto; /* 콘텐츠 높이를 자동으로 설정 */
-    padding: 1rem;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .content-text {
-    font-size: 2rem; /* 텍스트 크기 더 축소 */
-  }
-
-  .content-title {
-    font-size: 2.5rem; /* 타이틀 크기 더 축소 */
-  }
-
-  .content-subtitle {
-    font-size: 1.2rem; /* 서브타이틀 크기 더 축소 */
-  }
-
-  .content-btn {
-    font-size: 0.8rem; /* 버튼 크기 더 축소 */
-    padding: 0.5rem 0.75rem; /* 패딩 크기 조정 */
-  }
-}
 
 .aside {
   display: flex;
@@ -479,7 +396,114 @@ body {
   gap: 0.625rem;
   padding-left: 2rem;
 }
+/* 반응형 미디어 쿼리 */
+@media (max-width: 1200px) {
+  .content {
+    height: 35rem;
+  }
+  .content-text {
+    font-size: 3.75rem;
+  }
+  .content-title {
+    font-size: 4.5rem;
+  }
+  .content-subtitle {
+    font-size: 1.6rem;
+  }
+  .aside {
+    width: 40rem;
+    height: 4rem;
+  }
+  .aside-text {
+    font-size: 1.5rem;
+  }
+  .special {
+    font-size: 2rem;
+  }
+}
 
+@media (max-width: 992px) {
+  .content {
+    height: 30rem;
+    flex-direction: column;
+    text-align: center;
+  }
+  .content-text {
+    font-size: 3.5rem;
+  }
+  .content-title {
+    font-size: 4rem;
+  }
+  .content-subtitle {
+    font-size: 1.4rem;
+  }
+  .aside {
+    width: 35rem;
+    height: 3.5rem;
+  }
+  .aside-text {
+    font-size: 1.375rem;
+  }
+  .special {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    height: 25rem;
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+  .content-text {
+    font-size: 3rem;
+  }
+  .content-title {
+    font-size: 3.5rem;
+  }
+  .content-subtitle {
+    font-size: 1.2rem;
+  }
+  .aside {
+    width: 30rem;
+    height: 3rem;
+  }
+  .aside-text {
+    font-size: 1.25rem;
+  }
+  .special {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .content {
+    height: 20rem;
+    flex-direction: column;
+    text-align: center;
+    padding: 0.5rem;
+  }
+  .content-text {
+    font-size: 2.5rem;
+  }
+  .content-title {
+    font-size: 3rem;
+  }
+  .content-subtitle {
+    font-size: 1rem;
+  }
+  .aside {
+    width: 25rem;
+    height: 2.5rem;
+  }
+  .aside-text {
+    font-size: 1rem;
+  }
+  .special {
+    font-size: 1.25rem;
+  }
+}
 .fir-btn {
   color: white;
   background-color: rgb(164, 164, 255);
@@ -516,6 +540,101 @@ section {
   background-color: white;
   box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
   border-radius: 0.625rem;
+}
+/* 기본 스타일 */
+.fir-btn {
+  color: white;
+  background-color: rgb(164, 164, 255);
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 1.875rem;
+  cursor: pointer;
+  padding: 0.625rem 1.25rem;
+  transition: background-color 0.3s ease, font-size 0.3s ease;
+}
+
+.sec-btn {
+  color: black;
+  background-color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 1.25rem;
+  cursor: pointer;
+  padding: 0.625rem 1.25rem;
+  transition: background-color 0.3s ease, font-size 0.3s ease;
+  border: none;
+}
+
+.fir-btn:hover,
+.sec-btn:hover {
+  font-size: 1.25rem;
+}
+
+section {
+  padding: 2rem;
+  max-width: 75rem;
+  margin: 2rem auto;
+  background-color: white;
+  box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.625rem;
+}
+
+/* 반응형 미디어 쿼리 */
+@media (max-width: 1200px) {
+  .fir-btn, .sec-btn {
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+  }
+  .fir-btn:hover, .sec-btn:hover {
+    font-size: 1.125rem;
+  }
+  section {
+    padding: 1.5rem;
+    max-width: 70rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .fir-btn, .sec-btn {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.875rem;
+  }
+  .fir-btn:hover, .sec-btn:hover {
+    font-size: 1rem;
+  }
+  section {
+    padding: 1.25rem;
+    max-width: 60rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .fir-btn, .sec-btn {
+    font-size: 0.75rem;
+    padding: 0.375rem 0.75rem;
+  }
+  .fir-btn:hover, .sec-btn:hover {
+    font-size: 0.875rem;
+  }
+  section {
+    padding: 1rem;
+    max-width: 50rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .fir-btn, .sec-btn {
+    font-size: 0.625rem;
+    padding: 0.3125rem 0.625rem;
+  }
+  .fir-btn:hover, .sec-btn:hover {
+    font-size: 0.75rem;
+  }
+  section {
+    padding: 0.875rem;
+    max-width: 40rem;
+  }
 }
 
 /* 배경 버블 */
@@ -580,7 +699,41 @@ section {
   -webkit-animation-duration: 8s;
   animation-duration: 8s;
 }
+/* 반응형 미디어 쿼리 */
+@media (max-width: 1200px) {
+  .bubbles span {
+    height: 9vw;
+    width: 9vw;
+  }
+}
 
+@media (max-width: 992px) {
+  .bubbles span {
+    height: 11vw;
+    width: 11vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .bubbles {
+    justify-content: space-between;
+  }
+  .bubbles span {
+    height: 13vw;
+    width: 13vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .bubbles {
+    flex-direction: column;
+    align-items: center;
+  }
+  .bubbles span {
+    height: 15vw;
+    width: 15vw;
+  }
+}
 @-webkit-keyframes bubbelUp {
   0% {
     opacity: 0.3;
@@ -614,5 +767,158 @@ section {
     opacity: 0.1;
     -webkit-transform: translateY(0) scale(1.7);
     transform: translateY(0) scale(1.7);
+  }
+}
+
+/* 반응형 미디어 쿼리 */
+@media (max-width: 1200px) {
+  @-webkit-keyframes bubbelUp {
+    0% {
+      opacity: 0.3;
+      -webkit-transform: translateY(150rem) scale(0.5);
+      transform: translateY(150rem) scale(0.5);
+    }
+
+    75% {
+      opacity: 0.8;
+    }
+
+    to {
+      opacity: 0.1;
+      -webkit-transform: translateY(0) scale(1.5);
+      transform: translateY(0) scale(1.5);
+    }
+  }
+
+  @keyframes bubbelUp {
+    0% {
+      opacity: 0.3;
+      -webkit-transform: translateY(150rem) scale(0.5);
+      transform: translateY(150rem) scale(0.5);
+    }
+
+    75% {
+      opacity: 0.8;
+    }
+
+    to {
+      opacity: 0.1;
+      -webkit-transform: translateY(0) scale(1.5);
+      transform: translateY(0) scale(1.5);
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  @-webkit-keyframes bubbelUp {
+    0% {
+      opacity: 0.3;
+      -webkit-transform: translateY(120rem) scale(0.6);
+      transform: translateY(120rem) scale(0.6);
+    }
+
+    75% {
+      opacity: 0.8;
+    }
+
+    to {
+      opacity: 0.1;
+      -webkit-transform: translateY(0) scale(1.3);
+      transform: translateY(0) scale(1.3);
+    }
+  }
+
+  @keyframes bubbelUp {
+    0% {
+      opacity: 0.3;
+      -webkit-transform: translateY(120rem) scale(0.6);
+      transform: translateY(120rem) scale(0.6);
+    }
+
+    75% {
+      opacity: 0.8;
+    }
+
+    to {
+      opacity: 0.1;
+      -webkit-transform: translateY(0) scale(1.3);
+      transform: translateY(0) scale(1.3);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  @-webkit-keyframes bubbelUp {
+    0% {
+      opacity: 0.3;
+      -webkit-transform: translateY(100rem) scale(0.7);
+      transform: translateY(100rem) scale(0.7);
+    }
+
+    75% {
+      opacity: 0.8;
+    }
+
+    to {
+      opacity: 0.1;
+      -webkit-transform: translateY(0) scale(1.2);
+      transform: translateY(0) scale(1.2);
+    }
+  }
+
+  @keyframes bubbelUp {
+    0% {
+      opacity: 0.3;
+      -webkit-transform: translateY(100rem) scale(0.7);
+      transform: translateY(100rem) scale(0.7);
+    }
+
+    75% {
+      opacity: 0.8;
+    }
+
+    to {
+      opacity: 0.1;
+      -webkit-transform: translateY(0) scale(1.2);
+      transform: translateY(0) scale(1.2);
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  @-webkit-keyframes bubbelUp {
+    0% {
+      opacity: 0.3;
+      -webkit-transform: translateY(75rem) scale(0.8);
+      transform: translateY(75rem) scale(0.8);
+    }
+
+    75% {
+      opacity: 0.8;
+    }
+
+    to {
+      opacity: 0.1;
+      -webkit-transform: translateY(0) scale(1);
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes bubbelUp {
+    0% {
+      opacity: 0.3;
+      -webkit-transform: translateY(75rem) scale(0.8);
+      transform: translateY(75rem) scale(0.8);
+    }
+
+    75% {
+      opacity: 0.8;
+    }
+
+    to {
+      opacity: 0.1;
+      -webkit-transform: translateY(0) scale(1);
+      transform: translateY(0) scale(1);
+    }
   }
 }

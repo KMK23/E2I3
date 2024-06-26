@@ -88,6 +88,7 @@
     } else {
       score.innerHTML = `${name}님의 점수 : 10 점`;
     }
+
     // 점수판 바꾸는 부분
     function updateScoreDisplay() {
       if (!user) {
@@ -124,9 +125,8 @@
       }
       await updateScore("scores", dataObj);
       alert("모든 동물이 짝을 찾았습니다! 점수가 저장되었습니다.");
-
-      // location.href = "../E2l3_Project/3_1_game1.html";
     }
+
     let firstSelected = null;
     let clearStage = document.querySelectorAll("img").length;
 
@@ -159,7 +159,7 @@
       img.style.top = `${pos.y}px`;
     }
 
-    window.onload = function () {
+    function updateImages() {
       const content = document.querySelector(".content");
       const contentWidth = content.clientWidth;
       const contentHeight = content.clientHeight;
@@ -181,7 +181,18 @@
           imgHeight
         );
       });
+    }
+
+    window.onload = function () {
+      updateImages();
     };
+
+    window.addEventListener("resize", function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function () {
+        updateImages();
+      }, 100);
+    });
 
     document.querySelectorAll("img").forEach(function (img) {
       img.addEventListener("click", function () {
@@ -220,20 +231,5 @@
     });
 
     let resizeTimer;
-
-    window.addEventListener("resize", function () {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(function () {
-        // 화면 크기 변화가 멈춘 후 실행될 코드
-        const currentWidth = window.innerWidth;
-        const currentHeight = window.innerHeight;
-
-        // 예시: content 영역의 최대 너비를 화면 너비의 80%로 설정
-        const container = document.querySelector(".container");
-        container.style.maxWidth = `${currentWidth * 0.8}px`;
-
-        // 추가적으로 필요한 작업들을 여기에 추가할 수 있음
-      }, 250); // 250ms 딜레이 후 실행 (원하는 딜레이 시간으로 설정 가능)
-    });
   </script>
 </html>

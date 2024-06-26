@@ -66,6 +66,88 @@ section {
   width: 70%;
   height: 80%;
 }
+
+/* 반응형 미디어 쿼리 */
+@media (max-width: 1200px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  nav ul li a {
+    font-size: 1rem;
+  }
+  section {
+    max-width: 1000px;
+    padding: 1.5rem;
+  }
+  #about {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  header h1 {
+    font-size: 1.75rem;
+  }
+  nav ul li a {
+    font-size: 0.9rem;
+  }
+  section {
+    max-width: 800px;
+    padding: 1rem;
+  }
+  #about {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+  nav ul {
+    flex-direction: column;
+    margin-top: 0;
+  }
+  nav ul li {
+    margin: 0.5rem 0;
+  }
+  nav ul li a {
+    font-size: 0.85rem;
+  }
+  section {
+    max-width: 600px;
+    padding: 0.75rem;
+  }
+  #about {
+    gap: 0.75rem;
+  }
+  .part p {
+    width: 80%;
+  }
+}
+
+@media (max-width: 576px) {
+  header h1 {
+    font-size: 1.25rem;
+  }
+  nav ul li a {
+    font-size: 0.75rem;
+  }
+  section {
+    max-width: 400px;
+    padding: 0.5rem;
+    margin: 1rem auto;
+  }
+  #about {
+    gap: 0.5rem;
+  }
+  .part p {
+    width: 90%;
+  }
+}
+
 section h2 {
   font-size: 2rem;
   /* margin-bottom: 1rem; */
@@ -129,7 +211,75 @@ section h2 {
   color: #888;
   font-style: italic;
 }
+/* 반응형 미디어 쿼리 */
+@media (max-width: 1200px) {
+  section h2 {
+    font-size: 1.8rem;
+  }
+  #team .team-member {
+    flex: 1 1 180px;
+    max-width: 200px;
+    min-height: 320px;
+  }
+  #team .team-member img {
+    width: 130px;
+    height: 130px;
+  }
+}
 
+@media (max-width: 992px) {
+  section h2 {
+    font-size: 1.6rem;
+  }
+  #team {
+    padding: 0.5rem;
+  }
+  #team .team-member {
+    flex: 1 1 160px;
+    max-width: 180px;
+    min-height: 300px;
+  }
+  #team .team-member img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  section h2 {
+    font-size: 1.4rem;
+  }
+  #team {
+    padding: 0.5rem;
+  }
+  #team .team-member {
+    flex: 1 1 140px;
+    max-width: 160px;
+    min-height: 280px;
+  }
+  #team .team-member img {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+@media (max-width: 576px) {
+  section h2 {
+    font-size: 1.2rem;
+  }
+  #team {
+    padding: 0.5rem;
+  }
+  #team .team-member {
+    flex: 1 1 120px;
+    max-width: 140px;
+    min-height: 260px;
+  }
+  #team .team-member img {
+    width: 100px;
+    height: 100px;
+  }
+}
 #programs .program {
   margin-bottom: 1.5rem;
 }
@@ -197,4 +347,82 @@ footer div p {
   border-radius: 50%;
   background-color: #c790e0d3;
   cursor: pointer;
+}
+/* 반응형 미디어 쿼리 */
+@media (max-width: 1200px) {
+  #contact form input,
+  #contact form textarea {
+    font-size: 0.9rem;
+  }
+  #contact form button {
+    font-size: 1.1rem;
+  }
+  footer div {
+    font-size: 0.55rem;
+  }
+}
+
+@media (max-width: 992px) {
+  #contact form input,
+  #contact form textarea {
+    font-size: 0.85rem;
+  }
+  #contact form button {
+    font-size: 1rem;
+  }
+  footer {
+    height: 7rem;
+  }
+  footer div {
+    font-size: 0.5rem;
+    margin-right: 2rem;
+  }
+  .button-up {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #contact form input,
+  #contact form textarea {
+    font-size: 0.8rem;
+  }
+  #contact form button {
+    font-size: 0.95rem;
+  }
+  footer {
+    height: 6.5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  footer div {
+    font-size: 0.45rem;
+    margin-right: 0;
+  }
+  .button-up {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  #contact form input,
+  #contact form textarea {
+    font-size: 0.75rem;
+  }
+  #contact form button {
+    font-size: 0.9rem;
+  }
+  footer {
+    height: 6rem;
+  }
+  footer div {
+    font-size: 0.4rem;
+  }
+  .button-up {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 }
