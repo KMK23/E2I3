@@ -102,3 +102,19 @@ body {
   justify-content: flex-start;
   flex-direction: column;
 }
+
+@media (max-width: 786px) {
+  .sub-title {
+    font-size: 1.125rem;
+  }
+  .main-title,
+  .strong {
+    font-size: 1.5rem;
+  }
+  .kids {
+    max-width: 15rem;
+  }
+  .reviewText {
+    width: 100%;
+  }
+}
