@@ -173,6 +173,7 @@
 
     const favBtn = document.querySelector(".fav");
     const team = document.querySelector("#team");
+    team.style.display = "none";
     favBtn.addEventListener("click", function (e) {
       e.preventDefault();
       if (team.style.display === "none") {
@@ -185,6 +186,8 @@
 
     const gameBtn = document.querySelector(".my-game");
     const games = document.getElementById("games");
+    games.style.display = "none";
+
     gameBtn.addEventListener("click", function (e) {
       e.preventDefault();
       if (games.style.display === "none") {
