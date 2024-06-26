@@ -137,6 +137,14 @@
           >
         </div>
       </div>
+      <div class="rank">
+        <img
+          src="../game/resources/img/트로피 아이콘.png"
+          width="40"
+          height="60"
+        />
+        랭킹보기
+      </div>
     </section>
   </body>
   <script type="module">
@@ -206,6 +214,11 @@
       contect.forEach((member) => {
         member.classList.remove("expanded");
       });
+    });
+
+    const rankBtn = document.querySelector(".rank");
+    rankBtn.addEventListener("click", function () {
+      location.href = "../game/rank.html";
     });
   </script>
 </html>
