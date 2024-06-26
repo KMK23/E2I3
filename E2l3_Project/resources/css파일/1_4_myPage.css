@@ -49,78 +49,7 @@ h3 > img {
   width: 3rem;
   height: 3rem;
 }
-/* Responsive design for different screen sizes */
-@media (max-width: 1200px) {
-  .container {
-    max-width: 50rem;
-  }
-  .content {
-    gap: 1.2rem;
-  }
-  div > img,
-  h3 > img {
-    width: 2.5rem;
-    height: 2rem;
-  }
-  .btnImg {
-    width: 2.5rem;
-    height: 2.5rem;
-  }
-}
 
-@media (max-width: 992px) {
-  .container {
-    max-width: 40rem;
-  }
-  .content {
-    gap: 1rem;
-  }
-  div > img,
-  h3 > img {
-    width: 2rem;
-    height: 1.5rem;
-  }
-  .btnImg {
-    width: 2rem;
-    height: 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .container {
-    max-width: 30rem;
-  }
-  .content {
-    gap: 0.8rem;
-  }
-  div > img,
-  h3 > img {
-    width: 1.5rem;
-    height: 1.2rem;
-  }
-  .btnImg {
-    width: 1.5rem;
-    height: 1.5rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .container {
-    max-width: 20rem;
-  }
-  .content {
-    gap: 0.5rem;
-  }
-  div > img,
-  h3 > img {
-    width: 1rem;
-    height: 0.8rem;
-  }
-  .btnImg {
-    width: 1rem;
-    height: 1rem;
-  }
-}
 .first-content {
   display: flex;
   align-items: flex-start;
@@ -130,13 +59,23 @@ h3 > img {
   border-radius: 32px;
   padding: 2rem;
 }
+.area {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+#nameText {
+  width: 25rem;
+}
 .left-area {
   display: flex;
   flex-direction: column;
+  width: 70%;
   gap: 3rem;
 }
 .user-info {
   gap: 3.25rem;
+  width: 80%;
   display: flex;
   align-items: center;
 }
@@ -147,20 +86,21 @@ h3 > img {
   /* width: 16rem;
   height: 10rem; */
 }
-.my-info {
+/* .my-info {
   display: flex;
   gap: 3rem;
   cursor: pointer;
   justify-content: center;
   align-items: center;
-}
-.my-info div {
+} */
+.my-info {
   font-size: 1rem;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   gap: 0.5rem;
   justify-content: center;
   align-items: center;
+  justify-content: space-around;
 }
 .my-info div:hover {
   text-decoration: underline;
@@ -183,7 +123,165 @@ h3 > img {
   border-radius: 50%;
   padding: 0.25rem;
 }
+
+.my-classroom,
+.coin,
+.heart1,
+.QandA {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 3.75rem;
+  gap: 0.8rem;
+}
+
+.bottom-area {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  font-size: 1.25rem;
+  background-color: rgb(117, 197, 153);
+  justify-items: center;
+  align-items: center;
+}
+.my-classroom2,
+.review,
+.keep-basket,
+.my-subscribe,
+.my-shipping,
+.my-info2 {
+  display: grid;
+  border: 0.1rem solid white;
+  width: 100%;
+  text-align: center;
+  padding: 1.25rem;
+  cursor: pointer;
+}
+.bottom-area p {
+  margin: 0.5rem;
+}
+.my-classroom2:hover,
+.review:hover,
+.keep-basket:hover,
+.my-subscribe:hover,
+.my-shipping:hover,
+.my-info2:hover {
+  text-decoration: underline;
+}
+.my-classroom1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
 /* Responsive design for different screen sizes */
+
+#team h2 {
+  width: 100%;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#team {
+  display: none;
+}
+
+.intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+}
+.textbox {
+  margin: 1rem;
+}
+#team .team-member {
+  text-align: center;
+  margin: 1rem;
+  flex: 1 1 200px; /* Each member will take up at least 200px but can grow */
+  max-width: 220px; /* Ensures the maximum width of each member block */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: #fff;
+  min-height: 350px; /* Minimum height to ensure all items have the same height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensures the items are spaced out evenly */
+  transition: all 0.3s ease;
+}
+
+#team .team-member img {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+#team .team-member p {
+  margin: 0.5rem 0;
+}
+
+#team .team-member .motto {
+  color: #888;
+  font-style: italic;
+}
+
+#team .team-member.expanded {
+  background-color: pink;
+  transform: scale(1.2, 1.2);
+}
+/* Responsive design for different screen sizes */
+@media (max-width: 1200px) {
+  #team .team-member {
+    max-width: 200px;
+    min-height: 320px;
+  }
+}
+
+@media (max-width: 992px) {
+  #team .team-member {
+    flex: 1 1 180px;
+    max-width: 180px;
+    min-height: 300px;
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #team .team-member {
+    flex: 1 1 160px;
+    max-width: 160px;
+    min-height: 280px;
+    padding: 0.5rem;
+  }
+
+  .intro {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 576px) {
+  #team .team-member {
+    flex: 1 1 140px;
+    max-width: 140px;
+    min-height: 260px;
+    padding: 0.25rem;
+  }
+
+  .textbox {
+    margin: 0.5rem;
+  }
+}
+
 @media (max-width: 1200px) {
   .first-content {
     gap: 10rem;
@@ -315,208 +413,5 @@ h3 > img {
   }
   .right-area h3 {
     font-size: 1rem;
-  }
-}
-.bottom-area {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-content: center;
-  font-size: 1.25rem;
-  background-color: rgb(117, 197, 153);
-  justify-items: center;
-  align-items: center;
-}
-.my-classroom2,
-.review,
-.keep-basket,
-.my-subscribe,
-.my-shipping,
-.my-info2 {
-  display: grid;
-  border: 0.1rem solid white;
-  width: 100%;
-  text-align: center;
-  padding: 1.25rem;
-  cursor: pointer;
-}
-.bottom-area p {
-  margin: 0.5rem;
-}
-.my-classroom2:hover,
-.review:hover,
-.keep-basket:hover,
-.my-subscribe:hover,
-.my-shipping:hover,
-.my-info2:hover {
-  text-decoration: underline;
-}
-.my-classroom1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-a {
-  text-decoration: none;
-  color: black;
-}
-/* Responsive design for different screen sizes */
-@media (max-width: 1200px) {
-  .bottom-area {
-    grid-template-columns: repeat(2, 1fr);
-    font-size: 1.2rem;
-  }
-  .my-classroom2,
-  .review,
-  .keep-basket,
-  .my-subscribe,
-  .my-shipping,
-  .my-info2 {
-    padding: 1rem;
-  }
-}
-
-@media (max-width: 992px) {
-  .bottom-area {
-    grid-template-columns: 1fr;
-    font-size: 1.1rem;
-  }
-  .my-classroom2,
-  .review,
-  .keep-basket,
-  .my-subscribe,
-  .my-shipping,
-  .my-info2 {
-    padding: 0.75rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .bottom-area {
-    grid-template-columns: 1fr;
-    font-size: 1rem;
-  }
-  .my-classroom2,
-  .review,
-  .keep-basket,
-  .my-subscribe,
-  .my-shipping,
-  .my-info2 {
-    padding: 0.5rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .bottom-area {
-    grid-template-columns: 1fr;
-    font-size: 0.9rem;
-  }
-  .my-classroom2,
-  .review,
-  .keep-basket,
-  .my-subscribe,
-  .my-shipping,
-  .my-info2 {
-    padding: 0.25rem;
-  }
-}
-#team h2 {
-  width: 100%;
-  margin-bottom: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#team {
-  display: none;
-}
-
-.intro {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap; /* Allow items to wrap to the next line */
-}
-.textbox {
-  margin: 1rem;
-}
-#team .team-member {
-  text-align: center;
-  margin: 1rem;
-  flex: 1 1 200px; /* Each member will take up at least 200px but can grow */
-  max-width: 220px; /* Ensures the maximum width of each member block */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  padding: 1rem;
-  background-color: #fff;
-  min-height: 350px; /* Minimum height to ensure all items have the same height */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* Ensures the items are spaced out evenly */
-  transition: all 0.3s ease;
-}
-
-#team .team-member img {
-  border-radius: 50%;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  margin-bottom: 1rem;
-}
-
-#team .team-member p {
-  margin: 0.5rem 0;
-}
-
-#team .team-member .motto {
-  color: #888;
-  font-style: italic;
-}
-
-#team .team-member.expanded {
-  background-color: pink;
-  transform: scale(1.2, 1.2);
-}
-/* Responsive design for different screen sizes */
-@media (max-width: 1200px) {
-  #team .team-member {
-    max-width: 200px;
-    min-height: 320px;
-  }
-}
-
-@media (max-width: 992px) {
-  #team .team-member {
-    flex: 1 1 180px;
-    max-width: 180px;
-    min-height: 300px;
-    padding: 0.75rem;
-  }
-}
-
-@media (max-width: 768px) {
-  #team .team-member {
-    flex: 1 1 160px;
-    max-width: 160px;
-    min-height: 280px;
-    padding: 0.5rem;
-  }
-
-  .intro {
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 576px) {
-  #team .team-member {
-    flex: 1 1 140px;
-    max-width: 140px;
-    min-height: 260px;
-    padding: 0.25rem;
-  }
-
-  .textbox {
-    margin: 0.5rem;
   }
 }
