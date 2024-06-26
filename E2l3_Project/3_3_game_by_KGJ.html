@@ -90,52 +90,50 @@
       {
         src: "resources/img/그림1.png",
         className: "carrot",
-        left: "1.25rem", // 20
-        width: "1.875rem", // 30
+        left: "5%", // 1.25rem -> 5%
+        width: "3%", // 1.875rem -> 6.25%
       },
       {
         src: "resources/img/그림3.png",
         className: "spring-onion",
-        left: "5rem", // 80
-        width: "8.125rem", // 130
+        left: "15%", // 5rem -> 20%
+        width: "12%", // 8.125rem -> 20.625%
       },
       {
         src: "resources/img/그림1.png",
         className: "carrot",
-        left: "15rem", // 240
-        width: "1.875rem", // 30
+        left: "35%", // 15rem -> 62.5%
+        width: "3%", // 1.875rem -> 6.25%
       },
       {
         src: "resources/img/그림3.png",
         className: "spring-onion",
-        left: "18.75rem", // 300
-        width: "8.125rem", // 130
+        left: "45%", // 18.75rem -> 75%
+        width: "12%", // 8.125rem -> 20.625%
       },
       {
         src: "resources/img/그림1.png",
         className: "carrot",
-        left: "28.75rem", // 460
-        width: "1.875rem", // 30
+        left: "35%", // 28.75rem -> 92.5%
+        width: "3%", // 1.875rem -> 6.25%
       },
       {
         src: "resources/img/그림3.png",
         className: "spring-onion",
-        left: "32.5rem", // 520
-        width: "8.125rem", // 130
-      },
-      {
-        src: "resources/img/그림1.png",
-        className: "carrot",
-        left: "54.375rem", // 870
-        width: "1.875rem", // 30
-      },
-      {
-        src: "resources/img/그림3.png",
-        className: "spring-onion",
-        left: "56.25rem", // 900
-        width: "8.125rem", // 130
+        left: "60%", // 32.5rem -> 81.25%
+        width: "12%", // 8.125rem -> 20.625%
       },
     ];
+
+    vegetables.forEach((vege) => {
+      const img = document.createElement("img");
+      img.src = vege.src;
+      img.className = `vege ${vege.className}`;
+      img.style.position = "absolute";
+      img.style.left = vege.left;
+      img.style.width = vege.width;
+      groundOne.appendChild(img);
+    });
 
     vegetables.forEach((vege) => {
       const img = document.createElement("img");
@@ -153,46 +151,50 @@
       {
         src: "resources/img/무1-removebg-preview.png",
         className: "radish",
-        left: "1.25rem", // 20
-        width: "2.5rem", // 40
+        left: "5%", // 1.25rem -> 5%
+        width: "3.5%", // 2.5rem -> 12.5%
       },
       {
         src: "resources/img/무1-removebg-preview.png",
         className: "radish",
-        left: "8.125rem", // 130
-        width: "2.5rem", // 40
+        left: "17%", // 8.125rem -> 20.625%
+        width: "3.5%", // 2.5rem -> 12.5%
       },
       {
         src: "resources/img/양파1-removebg-preview.png",
         className: "onion",
-        left: "15rem", // 240
-        width: "3.75rem", // 60
+        left: "28%", // 15rem -> 62.5%
+        width: "5%", // 3.75rem -> 18.75%
       },
       {
         src: "resources/img/무1-removebg-preview.png",
         className: "radish",
-        left: "23.75rem", // 380
-        width: "2.5rem", // 40
+        left: "40%", // 23.75rem -> 47.5%
+        width: "3.5%", // 2.5rem -> 12.5%
       },
       {
         src: "resources/img/무1-removebg-preview.png",
         className: "radish",
-        left: "31.25rem", // 500
-        width: "2.5rem", // 40
+        left: "50%", // 31.25rem -> 78.125%
+        width: "3.5%", // 2.5rem -> 12.5%
       },
       {
         src: "resources/img/양파1-removebg-preview.png",
         className: "onion",
-        left: "37.5rem", // 600
-        width: "3.75rem", // 60
-      },
-      {
-        src: "resources/img/무1-removebg-preview.png",
-        className: "radish",
-        left: "51.25rem", // 820
-        width: "2.5rem", // 40
+        left: "62%", // 37.5rem -> 93.75%
+        width: "5%", // 3.75rem -> 18.75%
       },
     ];
+
+    vegetables2.forEach((el) => {
+      const img = document.createElement("img");
+      img.src = el.src;
+      img.className = `vege2 ${el.className}`;
+      img.style.position = "absolute";
+      img.style.left = el.left;
+      img.style.width = el.width;
+      groundTwo.appendChild(img);
+    });
     vegetables2.forEach((el) => {
       const img = document.createElement("img");
       img.src = el.src;
@@ -209,38 +211,38 @@
       {
         src: "resources/img/그림1.png",
         className: "carrot",
-        left: "1.25rem", // 20
-        width: "1.875rem", // 30
+        left: "5%", // 1.25rem -> 5%
+        width: "3%", // 1.875rem -> 6.25%
       },
       {
         src: "resources/img/그림3.png",
         className: "spring-onion",
-        left: "5rem", // 80
-        width: "8.125rem", // 130
+        left: "11%", // 5rem -> 20.625%
+        width: "12%", // 8.125rem -> 20.625%
       },
       {
         src: "resources/img/양파1-removebg-preview.png",
         className: "onion",
-        left: "15rem", // 240
-        width: "3.75rem", // 60
+        left: "25%", // 15rem -> 62.5%
+        width: "5%", // 3.75rem -> 18.75%
       },
       {
         src: "resources/img/그림1.png",
         className: "carrot",
-        left: "23.125rem", // 370
-        width: "1.875rem", // 30
+        left: "36%", // 23.125rem -> 57.8125%
+        width: "3%", // 1.875rem -> 6.25%
       },
       {
         src: "resources/img/그림3.png",
         className: "spring-onion",
-        left: "26.875rem", // 430
-        width: "8.125rem", // 130
+        left: "42%", // 26.875rem -> 67.1875%
+        width: "12%", // 8.125rem -> 20.625%
       },
       {
         src: "resources/img/양파1-removebg-preview.png",
         className: "onion",
-        left: "36.875rem", // 590
-        width: "3.75rem", // 60
+        left: "58%", // 36.875rem -> 92.1875%
+        width: "5%", // 3.75rem -> 18.75%
       },
     ];
     vegetable3.forEach((el) => {
@@ -257,37 +259,37 @@
     const vegetablesImg = [
       {
         src: "resources/img/그림1.png",
-        width: "1.875rem",
+        width: "15%", // 1.875rem -> 6.25%
         className: "carrot",
-      }, // 30
+      },
       {
         src: "resources/img/그림3.png",
-        width: "8.125rem",
+        width: "80%", // 8.125rem -> 20.625%
         className: "spring-onion",
-      }, // 130
+      },
       {
         src: "resources/img/양파1-removebg-preview.png",
-        width: "3.75rem", // 60
+        width: "28%", // 3.75rem -> 18.75%
         className: "onion",
       },
       {
         src: "resources/img/무1-removebg-preview.png",
-        width: "2.5rem", // 40
+        width: "20%", // 2.5rem -> 12.5%
         className: "radish",
       },
       {
         src: "resources/img/그림1.png",
-        width: "1.875rem",
+        width: "15%", // 1.875rem -> 6.25%
         className: "carrot",
-      }, // 30
+      },
       {
         src: "resources/img/그림3.png",
-        width: "8.125rem",
+        width: "80%", // 8.125rem -> 20.625%
         className: "spring-onion",
-      }, // 130
+      },
       {
         src: "resources/img/양파1-removebg-preview.png",
-        width: "3.75rem", // 60
+        width: "28%", // 3.75rem -> 18.75%
         className: "onion",
       },
     ];
@@ -306,9 +308,6 @@
       gameImgs.appendChild(div);
 
       // 드래그 이벤트 설정
-      img.addEventListener("dragstart", function (e) {
-        e.dataTransfer.setData("text", e.target.id);
-      });
     });
     async function endGame() {
       console.log(`Current Score: ${myScore}`);
@@ -360,19 +359,13 @@
           minus++;
           updateScoreDisplay();
         }
+        checkAllHolesFilled();
       });
     });
 
     const dragImgs = document.querySelectorAll(".vegetablesImgs");
     const game2Hole1 = document.getElementById("game2-hole1");
     const game2Hole2 = document.getElementById("game2-hole2");
-
-    // 드래그 가능한 이미지에 드래그 이벤트 설정
-    dragImgs.forEach((img) => {
-      img.addEventListener("dragstart", function (e) {
-        e.dataTransfer.setData("text", e.target.id);
-      });
-    });
 
     // game2-hole1에 대한 드래그 오버 및 드롭 이벤트 설정
     game2Hole1.addEventListener("dragover", function (e) {
@@ -394,6 +387,7 @@
         minus++;
         updateScoreDisplay();
       }
+      checkAllHolesFilled();
     });
 
     // game2-hole2에 대한 드래그 오버 및 드롭 이벤트 설정
@@ -416,30 +410,26 @@
         minus++;
         updateScoreDisplay();
       }
+      checkAllHolesFilled();
     });
 
     // hole의 스타일 초기화 함수
     function resetHoleStyle(hole) {
       hole.style.backgroundColor = "transparent";
-      hole.style.borderRadius = "0";
-      hole.style.width = "auto";
-      hole.style.height = "auto";
+      // hole.style.borderRadius = "0";
+      hole.style.width = "20%";
+      hole.style.height = "20%";
     }
 
     const game3hole1 = document.querySelector("#game3-hole1");
     const game3hole2 = document.querySelector("#game3-hole2");
     const game3hole3 = document.querySelector("#game3-hole3");
-    // 드래그 시작
-    dragImgs.forEach((img) => {
-      img.addEventListener("dragstart", function (e) {
-        e.dataTransfer.setData("text", e.target.id);
-      });
-    });
+
     // game3hole1 시작
     game3hole1.addEventListener("dragover", function (e) {
       e.preventDefault();
     });
-    game3hole1.addEventListener("drop", async function (e) {
+    game3hole1.addEventListener("drop", function (e) {
       e.preventDefault();
       const data = e.dataTransfer.getData("text");
       const dgEl = document.getElementById(data);
@@ -453,6 +443,8 @@
         minus++;
         updateScoreDisplay();
       }
+
+      checkAllHolesFilled(); // 모든 구멍이 채워졌는지 확인
     });
 
     game3hole2.addEventListener("dragover", function (e) {
@@ -472,6 +464,8 @@
         minus++;
         updateScoreDisplay();
       }
+
+      checkAllHolesFilled(); // 모든 구멍이 채워졌는지 확인
     });
 
     game3hole3.addEventListener("dragover", function (e) {
@@ -483,7 +477,7 @@
       const dgEl = document.getElementById(data);
 
       if (dgEl.classList.contains("onion")) {
-        dgEl.classList.add("dropped", "onions");
+        dgEl.classList.add("dropped", "onion");
         game3hole3.appendChild(dgEl);
         resetHoleStyle(game3hole3);
       } else {
@@ -491,9 +485,52 @@
         minus++;
         updateScoreDisplay();
       }
-      endGame();
+
+      checkAllHolesFilled(); // 모든 구멍이 채워졌는지 확인
     });
-    //로그인한 상태에서 점수 가져오려면 데이터부터
+
+    // 모든 구멍이 채워졌는지 확인하는 함수
+    function checkAllHolesFilled() {
+      // 게임 1의 모든 구멍 확인
+      const game1HolesFilled = Array.from(
+        document.querySelectorAll(".game1-holes")
+      ).every((hole) => hole.children.length > 0);
+
+      // 게임 2의 모든 구멍 확인
+      const game2HolesFilled = Array.from(
+        document.querySelectorAll(".game2-holes")
+      ).every((hole) => hole.children.length > 0);
+
+      // 게임 3의 모든 구멍 확인
+      const game3HolesFilled = Array.from(
+        document.querySelectorAll(".game3-holes")
+      ).every((hole) => hole.children.length > 0);
+
+      // 모든 게임 레벨에서 모든 구멍이 채워졌는지 확인 후 endGame() 호출
+      if (game1HolesFilled && game2HolesFilled && game3HolesFilled) {
+        endGame(); // 모든 구멍이 채워졌으면 endGame() 함수 호출
+      }
+    }
+
+    // 각 구멍에 야채가 드롭될 때마다 호출되는 드롭 이벤트 리스너 등록 예시
+    holes.forEach((hole) => {
+      hole.addEventListener("drop", function (e) {
+        e.preventDefault();
+        const data = e.dataTransfer.getData("text");
+        const draggedElement = document.getElementById(data);
+
+        // 드롭된 야채를 구멍에 추가하는 로직
+
+        checkAllHolesFilled(); // 모든 구멍이 채워졌는지 확인
+      });
+    });
+
+    // 드래그 가능한 이미지에 대한 드래그 이벤트 설정
+    dragImgs.forEach((img) => {
+      img.addEventListener("dragstart", function (e) {
+        e.dataTransfer.setData("text", e.target.id);
+      });
+    });
 
     let user = localStorage.getItem("id");
     let name = localStorage.getItem("name");
