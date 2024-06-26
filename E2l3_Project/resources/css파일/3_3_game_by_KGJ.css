@@ -132,7 +132,7 @@ h4 {
   border-radius: 0 0 50% 50%; /* 원형으로 설정 */
   position: absolute;
   top: 0;
-  right: 18%; /* px에서 rem으로 변경 */
+  right: 13%; /* px에서 rem으로 변경 */
 }
 
 #game2-hole2 {
