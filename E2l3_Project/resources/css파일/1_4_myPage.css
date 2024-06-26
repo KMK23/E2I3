@@ -284,6 +284,7 @@ a {
 .game button:active {
   transform: translateY(2%);
 }
+
 /* Responsive design for different screen sizes */
 @media (max-width: 1200px) {
   #team .team-member {
