@@ -1,18 +1,18 @@
 * {
   box-sizing: border-box;
-  font-family: 'NanumSquareRound';
+  font-family: "NanumSquareRound";
 }
 @font-face {
-  font-family: 'NanumSquareRound';
+  font-family: "NanumSquareRound";
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot);
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot?#iefix)
-      format('embedded-opentype'),
+      format("embedded-opentype"),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff2)
-      format('woff2'),
+      format("woff2"),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff)
-      format('woff'),
+      format("woff"),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.ttf)
-      format('truetype');
+      format("truetype");
 }
 * {
   box-sizing: border-box;
@@ -127,6 +127,7 @@ h3 > img {
   justify-content: space-around;
   gap: 12rem;
   border: 1.875rem solid rgb(196, 247, 180);
+  border-radius: 32px;
   padding: 2rem;
 }
 .left-area {

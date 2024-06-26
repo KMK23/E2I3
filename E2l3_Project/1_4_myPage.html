@@ -13,7 +13,7 @@
           <div class="left-area">
             <div class="user-info">
               <img src="resources/img/프로필사진2.png" />
-              <h1 id="nameText">***님! 오늘도 힘내서 공부해볼까요?</h1>
+              <h1 id="nameText">***님! <br />오늘도 힘내서 공부해볼까요?</h1>
             </div>
 
             <div class="my-info">
@@ -113,7 +113,7 @@
       const nameText = document.querySelector("#nameText");
       snapshot.forEach((doc) => {
         const myPageUserName = localStorage.getItem("name");
-        nameText.innerHTML = `${myPageUserName}님! 오늘도 힘내고 공부해 볼까요?`;
+        nameText.innerHTML = `${myPageUserName}님! <br/>오늘도 힘내서 공부해 볼까요?`;
       });
     }
     getUserData();
