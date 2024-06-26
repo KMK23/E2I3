@@ -218,6 +218,27 @@ h1 {
   border-radius: 0.625rem;
   text-align: left;
 }
+#credit-card-details input {
+  width: 85%;
+}
+#credit-card-details label {
+  margin: 1rem 0 1rem 0;
+}
+#bank-transfer-details input {
+  width: 85%;
+}
+#bank-transfer-details label {
+  margin: 1rem 0 1rem 0;
+}
+#mobile-payment-details input {
+  width: 85%;
+}
+#mobile-payment-details label {
+  margin: 1rem 0 1rem 0;
+}
+#mobile-number {
+  margin-bottom: 0.3rem;
+}
 
 .close {
   color: #aaaaaa;
