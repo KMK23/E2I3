@@ -257,7 +257,7 @@ function updateGugun() {
   }
 }
 
-const closeBtn = document.getElementById("closeBtn");
+const closeBtn = document.querySelector("#closeBtn");
 const formcontainer = document.querySelector(".form-container");
 const overlay = document.getElementById("overlay");
 
