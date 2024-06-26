@@ -7,10 +7,28 @@
   </head>
   <link rel="stylesheet" href="resources/css/rank.css" />
   <body>
-    <div class="ranking">
-      <canvas id="myChart" width="600" height="600"></canvas>
+    <div class="container">
+      <div class="header">
+        <img src="resources/img/트로피 아이콘.png" class="icon" />
+        <h2>명예의 전당</h2>
+        <img src="resources/img/하트뱃지 아이콘.png" class="icon" />
+      </div>
+      <ol id="topThree">
+        <li id="firstPlace">
+          <img src="resources/img/금메달.png" class="ranking-icon" /> 1위:
+        </li>
+        <li id="secondPlace">
+          <img src="resources/img/은메달.png" class="ranking-icon" /> 2위:
+        </li>
+        <li id="thirdPlace">
+          <img src="resources/img/동메달.png" class="ranking-icon" /> 3위:
+        </li>
+      </ol>
+      <div class="ranking">
+        <canvas id="myChart" width="600" height="600"></canvas>
+      </div>
+      <h1>점수표</h1>
     </div>
-    <h1>점수표</h1>
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
   <script type="module">
@@ -56,6 +74,16 @@
       }
       console.log(id1);
       console.log(score2);
+      // 명예의 전당 업데이트
+      document.getElementById(
+        "firstPlace"
+      ).innerHTML = `🥇 1위: ${id1[0]} (점수: ${score2[0]})`;
+      document.getElementById(
+        "secondPlace"
+      ).innerHTML = `🥈 2위: ${id1[1]} (점수: ${score2[1]})`;
+      document.getElementById(
+        "thirdPlace"
+      ).innerHTML = `🥉 3위: ${id1[2]} (점수: ${score2[2]})`;
 
       let myCt = document.getElementById("myChart");
 
