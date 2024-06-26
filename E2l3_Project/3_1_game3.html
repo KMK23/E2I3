@@ -74,6 +74,9 @@
         </div>
       </div>
     </div>
+    <div class="homeBtn">
+      <img src="resources/img/홈버튼.svg" width="40" height="40" />
+    </div>
   </body>
   <script type="module">
     import {
@@ -162,5 +165,10 @@
     }
     check.addEventListener("click", textSend);
     input.addEventListener("keypress", sendEnter);
+    updateScoreDisplay();
+    const home = document.querySelector(".homeBtn");
+    home.addEventListener("click", function () {
+      location.href = "1_mainPage.html";
+    });
   </script>
 </html>

@@ -287,6 +287,14 @@ img {
   color: aliceblue;
   box-shadow: 0 16px 10px rgba(0, 0, 0, 0.5);
 }
+.homeBtn {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  filter: invert(14%) sepia(6%) saturate(2611%) hue-rotate(182deg)
+    brightness(98%) contrast(83%);
+}
+
 @media (max-height: 768px) and (max-width: 1200px) {
   .container {
     max-width: 80%; /* 예시: content 영역이 전체 너비의 80%로 줄어들도록 설정 */

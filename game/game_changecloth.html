@@ -82,6 +82,9 @@
       </div>
     </div>
     <div class="score"></div>
+    <div class="homeBtn">
+      <img src="resources/img/홈버튼.svg" width="40" height="40" />
+    </div>
   </body>
   <script type="module">
     const rule = document.querySelector(".rule");
@@ -237,5 +240,10 @@
         updateScoreDisplay();
       }
     }
+    updateScoreDisplay();
+    const home = document.querySelector(".homeBtn");
+    home.addEventListener("click", function () {
+      location.href = "../E2l3_Project/1_mainPage.html";
+    });
   </script>
 </html>

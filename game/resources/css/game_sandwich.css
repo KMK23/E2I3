@@ -224,6 +224,14 @@ h4 {
   box-shadow: 0 16px 10px rgba(0, 0, 0, 0.5);
 }
 
+.homeBtn {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  filter: invert(14%) sepia(6%) saturate(2611%) hue-rotate(182deg)
+    brightness(98%) contrast(83%);
+}
+
 @media (max-width: 1200px) {
   .wrapper {
     height: 60%;
