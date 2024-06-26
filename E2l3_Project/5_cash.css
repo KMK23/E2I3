@@ -35,3 +35,19 @@
   color: #453f36;
   font-size: 36px;
 }
+
+@media (max-width: 480px) {
+  .content1 {
+    padding: 3rem 2rem;
+  }
+  .text-p {
+    font-size: 1.5rem;
+  }
+  .text-h2 {
+    font-family: 2rem;
+  }
+  .code-link {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}

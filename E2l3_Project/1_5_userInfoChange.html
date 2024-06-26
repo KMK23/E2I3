@@ -6,68 +6,68 @@
     <title>회원정보관리</title>
     <style>
       @font-face {
-        font-family: 'NanumSquareRound';
+        font-family: "NanumSquareRound";
         src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot);
         src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot?#iefix)
-            format('embedded-opentype'),
+            format("embedded-opentype"),
           url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff2)
-            format('woff2'),
+            format("woff2"),
           url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff)
-            format('woff'),
+            format("woff"),
           url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.ttf)
-            format('truetype');
+            format("truetype");
       }
 
       @font-face {
-        font-family: 'NanumSquareRoundB';
+        font-family: "NanumSquareRoundB";
         src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.eot);
         src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.eot?#iefix)
-            format('embedded-opentype'),
+            format("embedded-opentype"),
           url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.woff2)
-            format('woff2'),
+            format("woff2"),
           url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.woff)
-            format('woff'),
+            format("woff"),
           url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.ttf)
-            format('truetype');
+            format("truetype");
       }
 
       @font-face {
-        font-family: 'NanumSquareRoundEB';
+        font-family: "NanumSquareRoundEB";
         src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.eot);
         src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.eot?#iefix)
-            format('embedded-opentype'),
+            format("embedded-opentype"),
           url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.woff2)
-            format('woff2'),
+            format("woff2"),
           url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.woff)
-            format('woff'),
+            format("woff"),
           url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.ttf)
-            format('truetype');
+            format("truetype");
       }
 
       @font-face {
-        font-family: 'NanumSquareRoundL';
+        font-family: "NanumSquareRoundL";
         src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.eot);
         src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.eot?#iefix)
-            format('embedded-opentype'),
+            format("embedded-opentype"),
           url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.woff2)
-            format('woff2'),
+            format("woff2"),
           url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.woff)
-            format('woff'),
+            format("woff"),
           url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.ttf)
-            format('truetype');
+            format("truetype");
       }
       @font-face {
-        font-family: 'ONE-Mobile-POP';
-        src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-POP.woff')
-          format('woff');
+        font-family: "ONE-Mobile-POP";
+        src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-POP.woff")
+          format("woff");
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
-        font-family: 'GangwonEduPowerExtraBoldA';
-        src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff')
-          format('woff');
+        font-family: "GangwonEduPowerExtraBoldA";
+        src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff")
+          format("woff");
         font-weight: normal;
         font-style: normal;
       }
@@ -82,10 +82,11 @@
         margin: 0;
         padding: 1.25rem;
         background-color: #f7f7f7;
-        font-family: 'NanumSquareRound';
+        font-family: "NanumSquareRound";
       }
       .container {
         width: 40rem;
+        height: 35rem;
         margin: 2.5rem auto;
         background-color: white;
         padding: 1.25rem;
@@ -142,6 +143,13 @@
         border-bottom: none;
         font-weight: bold;
       }
+      .tab-content {
+        display: none;
+      }
+
+      .tab-content.active {
+        display: block;
+      }
       .form-group {
         margin-bottom: 0.9375rem;
       }
@@ -153,7 +161,7 @@
       .form-group select {
         padding: 0.5rem;
       }
-      .form-group input[type='radio'] {
+      .form-group input[type="radio"] {
         margin-right: 0.625rem;
       }
       .form-group .inline {
@@ -269,8 +277,13 @@
       }
       .buttons {
         text-align: center;
+        position: absolute;
+        top: 35rem;
+        left: 50%;
+        transform: translateX(-50%);
       }
       .buttons button {
+        position: relative;
         padding: 0.625rem 1.25rem;
         margin: 0.3125rem;
         border: none;
@@ -315,69 +328,110 @@
   <body>
     <div class="container">
       <div class="tabs">
-        <div class="tab active">회원정보관리</div>
-        <div class="tab">비밀번호관리</div>
-        <div class="tab">회원탈퇴</div>
+        <div class="tab active" data-tab="tab1">회원정보관리</div>
+        <div class="tab" data-tab="tab2">비밀번호관리</div>
+        <div class="tab" data-tab="tab3">회원탈퇴</div>
       </div>
-      <div class="info">
-        <p class="user-name-text">님의 회원정보관리 페이지 입니다.</p>
+      <div class="tab-content tab1 active">
+        <div class="info">
+          <p class="user-name-text">님의 회원정보관리 페이지 입니다.</p>
+        </div>
+        <form>
+          <div class="form-group">
+            <label for="name">이름</label>
+            <input type="text" id="name" value="" />
+          </div>
+          <div class="form-group">
+            <label for="birthdate">생년월일</label>
+            <div class="inline">
+              <input class="birthdaydate" type="date" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">이메일 주소</label>
+            <div class="inline">
+              <input type="text" id="email" value="" />
+              @
+              <select id="emailDomain">
+                <option value="naver.com" selected>naver.com</option>
+                <option value="gmail.com" selected>gmail.com</option>
+                <option value="daum.net" selected>daum.net</option>
+                <option value="hanmail.net" selected>hanmail.net</option>
+                <option value="nate.com" selected>nate.com</option>
+                <option value="" selected>직접 입력</option>
+              </select>
+              <button type="button" class="change" id="change1">변경</button>
+            </div>
+          </div>
+          <div class="form-group"></div>
+          <div class="form-group">
+            <label for="mobile">휴대전화번호</label>
+            <div class="inline">
+              <input type="text" id="mobile" value="" />
+              <input type="radio" name="mobile" checked /> 있음
+              <input type="radio" name="mobile" /> 없음
+              <button type="button" class="change" id="change2">변경</button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>코딩팡팡의 다양한 정보를 받아보시겠습니까?</label>
+            <div class="checkbox">
+              <input type="checkbox" id="emailOptIn" /> 이메일
+            </div>
+            <div class="checkbox">
+              <input type="checkbox" id="smsOptIn" /> SMS
+            </div>
+            <div class="info">
+              코딩팡팡 이메일/SMS 수신 동의를 하시면 다양한 일시/학습정보와
+              이벤트, 할인혜택 등의 주요 정보를 빠르게 확인하실 수 있습니다. 단,
+              주문 및 배송관련 정보는 수신동의와 관계없이 발송됩니다.
+            </div>
+          </div>
+          <div class="buttons">
+            <button type="submit">확인</button>
+            <button type="button" class="cancel">취소</button>
+          </div>
+        </form>
       </div>
-      <form>
-        <div class="form-group">
-          <label for="name">이름</label>
-          <input type="text" id="name" value="" />
+
+      <div class="tab-content tab2">
+        <div class="info">
+          <p>비밀번호관리 페이지입니다.</p>
         </div>
-        <div class="form-group">
-          <label for="birthdate">생년월일</label>
-          <div class="inline">
-            <input class="birthdaydate" type="date" />
+        <form>
+          <div class="form-group">
+            <label for="currentPassword">현재 비밀번호</label>
+            <input type="password" id="currentPassword" />
           </div>
+          <div class="form-group">
+            <label for="newPassword">새 비밀번호</label>
+            <input type="password" id="newPassword" />
+          </div>
+          <div class="form-group">
+            <label for="confirmPassword">새 비밀번호 확인</label>
+            <input type="password" id="confirmPassword" />
+          </div>
+          <div class="buttons">
+            <button type="submit">변경</button>
+            <button type="button" class="cancel">취소</button>
+          </div>
+        </form>
+      </div>
+      <div class="tab-content tab3">
+        <div class="info">
+          <p>회원탈퇴 페이지입니다.</p>
         </div>
-        <div class="form-group">
-          <label for="email">이메일 주소</label>
-          <div class="inline">
-            <input type="text" id="email" value="" />
-            @
-            <select id="emailDomain">
-              <option value="naver.com" selected>naver.com</option>
-              <option value="gmail.com" selected>gmail.com</option>
-              <option value="daum.net" selected>daum.net</option>
-              <option value="hanmail.net" selected>hanmail.net</option>
-              <option value="nate.com" selected>nate.com</option>
-              <option value="" selected>직접 입력</option>
-            </select>
-            <button type="button" class="change" id="change1">변경</button>
+        <form>
+          <div class="form-group">
+            <label for="withdrawReason">탈퇴 이유</label>
+            <textarea id="withdrawReason"></textarea>
           </div>
-        </div>
-        <div class="form-group"></div>
-        <div class="form-group">
-          <label for="mobile">휴대전화번호</label>
-          <div class="inline">
-            <input type="text" id="mobile" value="" />
-            <input type="radio" name="mobile" checked /> 있음
-            <input type="radio" name="mobile" /> 없음
-            <button type="button" class="change" id="change2">변경</button>
+          <div class="buttons">
+            <button type="submit">탈퇴</button>
+            <button type="button" class="cancel">취소</button>
           </div>
-        </div>
-        <div class="form-group">
-          <label>코딩팡팡의 다양한 정보를 받아보시겠습니까?</label>
-          <div class="checkbox">
-            <input type="checkbox" id="emailOptIn" /> 이메일
-          </div>
-          <div class="checkbox">
-            <input type="checkbox" id="smsOptIn" /> SMS
-          </div>
-          <div class="info">
-            코딩팡팡 이메일/SMS 수신 동의를 하시면 다양한 일시/학습정보와
-            이벤트, 할인혜택 등의 주요 정보를 빠르게 확인하실 수 있습니다. 단,
-            주문 및 배송관련 정보는 수신동의와 관계없이 발송됩니다.
-          </div>
-        </div>
-        <div class="buttons">
-          <button type="submit">확인</button>
-          <button type="button" class="cancel">취소</button>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   </body>
   <script type="module">
@@ -387,19 +441,41 @@
       addDatas,
       deleteDatas,
       updateDatas,
-    } from './resources/js/userinfoChange.js';
+    } from "./resources/js/userinfoChange.js";
+
+    document.querySelectorAll(".tab").forEach((tab) => {
+      tab.addEventListener("click", () => {
+        // 모든 탭에서 'active' 클래스 제거
+        document
+          .querySelectorAll(".tab")
+          .forEach((t) => t.classList.remove("active"));
+        // 클릭된 탭에 'active' 클래스 추가
+        tab.classList.add("active");
+
+        // 탭의 data-tab 값 가져오기
+        const tabContentClass = tab.getAttribute("data-tab");
+
+        // 모든 탭 콘텐츠에서 'active' 클래스 제거
+        document
+          .querySelectorAll(".tab-content")
+          .forEach((tc) => tc.classList.remove("active"));
+
+        // 해당 탭 콘텐츠에 'active' 클래스 추가
+        document.querySelector(`.${tabContentClass}`).classList.add("active");
+      });
+    });
 
     async function getUserData() {
-      const snapshot = await getDatas('user');
-      const userNameText = document.querySelector('.user-name-text');
-      const inputUserName = document.getElementById('name');
-      const inputBirthdate = document.querySelector('.birthdaydate');
-      const inputEmail = document.getElementById('email');
-      const inputMobile = document.getElementById('mobile');
-      const checkboxEmailOptIn = document.getElementById('emailOptIn');
-      const checkboxSmsOptIn = document.getElementById('smsOptIn');
+      const snapshot = await getDatas("user");
+      const userNameText = document.querySelector(".user-name-text");
+      const inputUserName = document.getElementById("name");
+      const inputBirthdate = document.querySelector(".birthdaydate");
+      const inputEmail = document.getElementById("email");
+      const inputMobile = document.getElementById("mobile");
+      const checkboxEmailOptIn = document.getElementById("emailOptIn");
+      const checkboxSmsOptIn = document.getElementById("smsOptIn");
 
-      const changeUsername = localStorage.getItem('name');
+      const changeUsername = localStorage.getItem("name");
       snapshot.forEach((doc) => {
         const userData = doc.data();
 
@@ -419,8 +495,8 @@
     }
     getUserData();
     async function updateUserEmail(newEmail) {
-      const collectionName = 'user'; // Firestore의 사용자 정보 collection 이름
-      const changeUsername = localStorage.getItem('name'); // localStorage에서 사용자 이름 가져오기 (예시)
+      const collectionName = "user"; // Firestore의 사용자 정보 collection 이름
+      const changeUsername = localStorage.getItem("name"); // localStorage에서 사용자 이름 가져오기 (예시)
 
       try {
         // Firestore에서 해당 사용자의 정보를 가져오기
@@ -443,16 +519,16 @@
         await updateDatas(collectionName, userId, updateInfoObj);
 
         // 성공적으로 업데이트되었음을 사용자에게 알림 (예시)
-        alert('이메일 정보가 업데이트 되었습니다.');
+        alert("이메일 정보가 업데이트 되었습니다.");
       } catch (error) {
-        console.error('Error updating email:', error);
-        alert('이메일 정보 업데이트에 실패했습니다.');
+        console.error("Error updating email:", error);
+        alert("이메일 정보 업데이트에 실패했습니다.");
       }
     }
 
     async function updateUserMobile(newMobile) {
-      const collectionName = 'user'; // Firestore의 사용자 정보 collection 이름
-      const changeUsername = localStorage.getItem('name'); // localStorage에서 사용자 이름 가져오기 (예시)
+      const collectionName = "user"; // Firestore의 사용자 정보 collection 이름
+      const changeUsername = localStorage.getItem("name"); // localStorage에서 사용자 이름 가져오기 (예시)
 
       try {
         // Firestore에서 해당 사용자의 정보를 가져오기
@@ -475,35 +551,35 @@
         await updateDatas(collectionName, userId, updateInfoObj);
 
         // 성공적으로 업데이트되었음을 사용자에게 알림 (예시)
-        alert('휴대전화번호 정보가 업데이트 되었습니다.');
+        alert("휴대전화번호 정보가 업데이트 되었습니다.");
 
         // 마이페이지 화면 업데이트 함수 호출
         updateMyPage(); // 이 함수는 마이페이지 UI를 업데이트하는 함수입니다.
       } catch (error) {
-        console.error('Error updating mobile:', error);
-        alert('휴대전화번호 정보 업데이트에 실패했습니다.');
+        console.error("Error updating mobile:", error);
+        alert("휴대전화번호 정보 업데이트에 실패했습니다.");
       }
 
       function updateMyPage() {
         // 여기에 마이페이지 UI 업데이트 로직을 작성합니다.
         // 예시: 휴대전화번호 입력 필드 업데이트
-        const mobileInput = document.getElementById('mobile');
+        const mobileInput = document.getElementById("mobile");
         mobileInput.value = newMobile; // newMobile은 업데이트된 휴대전화번호
 
         // 추가적으로 필요한 UI 업데이트 로직을 작성합니다.
       }
     }
     // 예시: 이메일 변경 버튼 클릭 시
-    const emailChangeButton = document.querySelector('#change1');
-    emailChangeButton.addEventListener('click', () => {
-      const newEmail = document.getElementById('email').value.trim(); // 변경할 이메일 가져오기
+    const emailChangeButton = document.querySelector("#change1");
+    emailChangeButton.addEventListener("click", () => {
+      const newEmail = document.getElementById("email").value.trim(); // 변경할 이메일 가져오기
       updateUserEmail(newEmail);
     });
 
     // 예시: 휴대전화번호 변경 버튼 클릭 시
-    const mobileChangeButton = document.querySelector('#change2');
-    mobileChangeButton.addEventListener('click', () => {
-      const newMobile = document.getElementById('mobile').value.trim(); // 변경할 휴대전화번호 가져오기
+    const mobileChangeButton = document.querySelector("#change2");
+    mobileChangeButton.addEventListener("click", () => {
+      const newMobile = document.getElementById("mobile").value.trim(); // 변경할 휴대전화번호 가져오기
       updateUserMobile(newMobile);
     });
   </script>
