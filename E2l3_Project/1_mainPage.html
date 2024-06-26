@@ -52,7 +52,7 @@
     </div>
     <div class="main-container">
       <ul class="main">
-        <li class="sub"><a href="#about" class="part">소개인사</a></li>
+        <li class="sub"><a href="#playBtn" class="part">소개인사</a></li>
         <li class="sub">
           <a href="#intro_game" class="part">체험하기</a>
         </li>
@@ -73,7 +73,7 @@
           다져보세요.
         </div>
         <br />
-        <button class="content-btn">Let's play!</button>
+        <button class="content-btn" id="playBtn">Let's play!</button>
       </div>
     </section>
     <div class="aside">
@@ -549,7 +549,7 @@
           <h2 class="text-h2">무료체험을 시작해 보세요.</h2>
         </div>
         <div class="paymone">
-          <a href="#" class="code-link" target="_blank"
+          <a href="12_money-checkout.html" class="code-link" target="_parent"
             >0원으로 7일간 무료체험을 시작해보세요</a
           >
         </div>
@@ -766,6 +766,11 @@
     startBtn.addEventListener("click", function (e) {
       e.preventDefault();
       location.href = "3_1_game2.html";
+    });
+    const playBtn = document.querySelector(".content-btn");
+    playBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      location.href = "7-1_gamepaymone.html";
     });
   </script>
 </html>

@@ -121,6 +121,7 @@ form p {
   color: #fff;
   border: none;
   border-radius: 0.5rem;
+  cursor: pointer;
 }
 .errorMessage {
   font-size: 1rem;
@@ -129,6 +130,7 @@ form p {
 }
 .btn {
   font-size: 1.25rem;
+  cursor: pointer;
 }
 .joinId {
   margin: 0;
@@ -194,6 +196,7 @@ input {
   color: #fff;
   border: none;
   border-radius: 0.5rem;
+  cursor: pointer;
 }
 #emailaddr {
   margin-left: 1rem;

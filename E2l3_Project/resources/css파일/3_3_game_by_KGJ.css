@@ -293,8 +293,7 @@ h4 {
   }
 
   .title {
-    font-size: 1.5rem; /* 예시: 768px 이하에서 제목 폰트 크기 조정 */
-    width: 50%;
+    font-size: 1.4rem; /* 예시: 768px 이하에서 제목 폰트 크기 조정 */
   }
 
   .level {

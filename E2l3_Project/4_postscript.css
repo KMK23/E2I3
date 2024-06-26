@@ -101,12 +101,13 @@ body {
 }
 
 .selected {
-  background-color: red;
+  background-color: #ff9d00;
+  border-radius: 1rem;
   position: relative;
   padding: 0.5rem;
 }
 .selected::after {
-  border-top: 0.625rem solid red;
+  border-top: 0.625rem solid #ff9d00;
   border-left: 0.625rem solid transparent;
   border-right: 0.625rem solid transparent;
   border-bottom: 0px solid transparent;
@@ -135,6 +136,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  height: 10rem;
 }
 
 .text-box {
