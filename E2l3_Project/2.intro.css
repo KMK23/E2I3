@@ -192,7 +192,6 @@ section h2 {
   min-height: 350px; /* Minimum height to ensure all items have the same height */
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Ensures the items are spaced out evenly */
 }
 
 #team .team-member img {
