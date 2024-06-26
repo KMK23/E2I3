@@ -40,7 +40,6 @@ h2 {
   margin-bottom: 1.25rem;
 }
 
-/* 문의 유형 스타일링 */
 .inquiryType {
   margin-bottom: 1.25rem;
 }
@@ -72,7 +71,6 @@ select {
   font-size: 0.875rem;
 }
 
-/* 문의 내용 스타일링 */
 .inquiryDetails {
   margin-bottom: 1.25rem;
 }
@@ -115,7 +113,6 @@ textarea.write.clicker {
   color: #999;
 }
 
-/* 파일 업로드 스타일링 */
 .inputUpload {
   margin-bottom: 0.625rem;
 }
@@ -154,7 +151,6 @@ input.file-upload {
   font-size: 1rem;
 }
 
-/* 이메일 입력 스타일링 */
 .email_enter {
   margin-bottom: 1.25rem;
 }
@@ -185,7 +181,6 @@ input.emailAdder {
   font-size: 0.875rem;
 }
 
-/* 전화번호 스타일링 */
 .phoneNumber {
   margin-bottom: 1.25rem;
 }
