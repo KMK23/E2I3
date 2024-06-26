@@ -398,7 +398,7 @@
         <div class="info">
           <p>비밀번호관리 페이지입니다.</p>
         </div>
-        <form>
+        <form id="passwordForm">
           <div class="form-group">
             <label for="currentPassword">현재 비밀번호</label>
             <input type="password" id="currentPassword" />
@@ -412,9 +412,10 @@
             <input type="password" id="confirmPassword" />
           </div>
           <div class="buttons">
-            <button type="submit">변경</button>
+            <button type="submit" class="changeBtn">변경</button>
             <button type="button" class="cancel">취소</button>
           </div>
+          <p class="message"></p>
         </form>
       </div>
       <div class="tab-content tab3">
@@ -427,7 +428,7 @@
             <textarea id="withdrawReason"></textarea>
           </div>
           <div class="buttons">
-            <button type="submit">탈퇴</button>
+            <button type="submit" class="deleteBtn">탈퇴</button>
             <button type="button" class="cancel">취소</button>
           </div>
         </form>
@@ -441,6 +442,7 @@
       addDatas,
       deleteDatas,
       updateDatas,
+      changePassword,
     } from "./resources/js/userinfoChange.js";
 
     document.querySelectorAll(".tab").forEach((tab) => {
@@ -581,6 +583,49 @@
     mobileChangeButton.addEventListener("click", () => {
       const newMobile = document.getElementById("mobile").value.trim(); // 변경할 휴대전화번호 가져오기
       updateUserMobile(newMobile);
+    });
+
+    //패스워드
+    const changeBtn = document.querySelector(".changeBtn");
+    changeBtn.addEventListener("click", async (e) => {
+      e.preventDefault();
+      const currentPassword = document.getElementById("currentPassword").value;
+      const newPassword = document.getElementById("newPassword").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
+
+      if (!currentPassword || !newPassword || !confirmPassword) {
+        alert("모든 필드를 입력하세요.");
+        return;
+      }
+
+      if (newPassword !== confirmPassword) {
+        alert("새 비밀번호가 일치하지 않습니다.");
+        return;
+      }
+
+      const success = await changePassword(currentPassword, newPassword);
+      if (success) {
+        document.querySelector(".message").textContent =
+          "비밀번호가 성공적으로 변경되었습니다!";
+      } else {
+        document.querySelector(".message").textContent =
+          "비밀번호 변경 중 오류가 발생했습니다.";
+      }
+    });
+
+    const deleteBtn = document.querySelector(".deleteBtn");
+    deleteBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      const withdrawReason = document.getElementById("withdrawReason").value;
+
+      if (withdrawReason == "") {
+        alert("탈퇴 이유를 입력해주세요.");
+        return false;
+      }
+
+      try{
+
+      }
     });
   </script>
 </html>
