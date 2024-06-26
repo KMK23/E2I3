@@ -173,6 +173,8 @@
 }
 #content {
   resize: none;
+  width: 30rem;
+  height: 7rem;
 }
 
 .button-container {
