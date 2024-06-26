@@ -8,7 +8,7 @@
     <!-- <link rel="stylesheet" href="./estilos.css" /> -->
   </head>
   <style>
-    @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,700;1,700&display=swap");
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,700;1,700&display=swap');
     * {
       box-sizing: border-box;
     }
@@ -57,6 +57,56 @@
       border-radius: 2rem;
       margin: 1% 0;
     }
+
+    /* 반응형 스타일 */
+
+    /* 1200px 이하 */
+    @media (max-width: 1200px) {
+      .title {
+        font-size: 2.5rem;
+      }
+
+      .title-desc {
+        font-size: 1rem;
+      }
+    }
+
+    /* 992px 이하 */
+    @media (max-width: 992px) {
+      .title {
+        font-size: 2rem;
+      }
+
+      .title-desc {
+        font-size: 0.9rem;
+      }
+    }
+
+    /* 768px 이하 */
+    @media (max-width: 768px) {
+      .title {
+        font-size: 1.5rem;
+      }
+
+      .title-desc {
+        font-size: 0.8rem;
+      }
+    }
+
+    /* 576px 이하 */
+    @media (max-width: 576px) {
+      .title {
+        font-size: 1.2rem;
+      }
+
+      .title-desc {
+        font-size: 0.7rem;
+      }
+
+      .textBox .logo {
+        padding: 2% 3%;
+      }
+    }
     body {
       margin: 0;
       min-height: 100vh;
@@ -87,7 +137,39 @@
       height: var(--heightItem);
       perspective: 1000px;
     }
+    /* 반응형 스타일 */
 
+    /* 1200px 이하 */
+    @media (max-width: 1200px) {
+      .container-carrossel {
+        --widthItem: 130px;
+        --heightItem: 90px;
+      }
+    }
+
+    /* 992px 이하 */
+    @media (max-width: 992px) {
+      .container-carrossel {
+        --widthItem: 110px;
+        --heightItem: 80px;
+      }
+    }
+
+    /* 768px 이하 */
+    @media (max-width: 768px) {
+      .container-carrossel {
+        --widthItem: 90px;
+        --heightItem: 70px;
+      }
+    }
+
+    /* 576px 이하 */
+    @media (max-width: 576px) {
+      .container-carrossel {
+        --widthItem: 70px;
+        --heightItem: 60px;
+      }
+    }
     .carrossel {
       --rotatey: 0;
       font-size: 4rem;
@@ -125,14 +207,14 @@
       --rotatey: 0;
       transform: rotatey(var(--rotatey)) translatez(var(--tz));
       /* background: linear-gradient(-229deg, #fbd52d, #ef3a7b); */
-      background-image: url("resources/img/원본_게임1.png");
+      background-image: url('resources/img/원본_게임1.png');
       background-size: cover;
     }
 
     .carrossel-item:nth-child(2) {
       --rotatey: 0;
       transform: rotatey(var(--rotatey)) translatez(var(--tz));
-      background-image: url("resources/img/원본_게임2.png");
+      background-image: url('resources/img/원본_게임2.png');
       background-size: cover;
     }
 
@@ -140,14 +222,14 @@
       --rotatey: 0;
       transform: rotatey(var(--rotatey)) translatez(var(--tz));
       /* background: linear-gradient(-229deg, #0cebeb, #29ffc6); */
-      background-image: url("resources/img/원본_게임3.png");
+      background-image: url('resources/img/원본_게임3.png');
       background-size: cover;
     }
     .carrossel-item:nth-child(4) {
       --rotatey: 0;
       transform: rotatey(var(--rotatey)) translatez(var(--tz));
       /* background: linear-gradient(-229deg, #88f7f9, #048fff); */
-      background-image: url("resources/img/게임\ 사이즈\ 조절.png");
+      background-image: url('resources/img/게임\ 사이즈\ 조절.png');
       background-size: cover;
     }
 
@@ -155,7 +237,7 @@
       --rotate: 0;
       transform: rotatey(var(--rotatey)) translatez(var(--tz));
       /* background: linear-gradient(-229deg, #0093e9, #80d0c7); */
-      background-image: url("resources/img/게임6.png");
+      background-image: url('resources/img/게임6.png');
       background-size: cover;
     }
 
@@ -163,7 +245,7 @@
       --rotatey: 0;
       transform: rotatey(var(--rotatey)) translatez(var(--tz));
       /* background: linear-gradient(-229deg, #cf91ff, #5782f5); */
-      background-image: url("resources/img/게임7.png");
+      background-image: url('resources/img/게임7.png');
       background-size: cover;
     }
 
@@ -171,6 +253,40 @@
       .container-carrossel {
         --widthItem: 25rem;
         --heightItem: 22rem;
+      }
+    }
+
+    /* 반응형 스타일 */
+
+    /* 1200px 이하 */
+    @media (max-width: 1200px) {
+      .container-carrossel {
+        --widthItem: 20rem;
+        --heightItem: 18rem;
+      }
+    }
+
+    /* 992px 이하 */
+    @media (max-width: 992px) {
+      .container-carrossel {
+        --widthItem: 18rem;
+        --heightItem: 16rem;
+      }
+    }
+
+    /* 768px 이하 */
+    @media (max-width: 768px) {
+      .container-carrossel {
+        --widthItem: 16rem;
+        --heightItem: 14rem;
+      }
+    }
+
+    /* 576px 이하 */
+    @media (max-width: 576px) {
+      .container-carrossel {
+        --widthItem: 14rem;
+        --heightItem: 12rem;
       }
     }
   </style>
@@ -215,10 +331,10 @@
     <script src="./script.js"></script>
   </body>
   <script>
-    const container = document.querySelector(".container");
-    const containercarrossel = container.querySelector(".container-carrossel");
-    const carrossel = container.querySelector(".carrossel");
-    const carrosselItems = carrossel.querySelectorAll(".carrossel-item");
+    const container = document.querySelector('.container');
+    const containercarrossel = container.querySelector('.container-carrossel');
+    const carrossel = container.querySelector('.carrossel');
+    const carrosselItems = carrossel.querySelectorAll('.carrossel-item');
 
     // Iniciamos variables que cambiaran su estado.
     let isMouseDown = false;
@@ -237,13 +353,13 @@
       const fov = calculateFov(carrosselProps);
       const height = calculateHeight(tz);
 
-      container.style.width = tz * 2 + gap * length + "px";
-      container.style.height = height + "px";
+      container.style.width = tz * 2 + gap * length + 'px';
+      container.style.height = height + 'px';
 
       carrosselItems.forEach((item, i) => {
-        const degressByItem = degress * i + "deg";
-        item.style.setProperty("--rotatey", degressByItem);
-        item.style.setProperty("--tz", tz + "px");
+        const degressByItem = degress * i + 'deg';
+        item.style.setProperty('--rotatey', degressByItem);
+        item.style.setProperty('--tz', tz + 'px');
       });
     };
 
@@ -269,7 +385,7 @@
     const calculateFov = (carrosselProps) => {
       const perspective = window
         .getComputedStyle(containercarrossel)
-        .perspective.split("px")[0];
+        .perspective.split('px')[0];
 
       const length =
         Math.sqrt(carrosselProps.w * carrosselProps.w) +
@@ -289,10 +405,10 @@
 
     const update = () => {
       lastMoveTo = lerp(moveTo, lastMoveTo, 0.05);
-      carrossel.style.setProperty("--rotatey", lastMoveTo + "deg");
+      carrossel.style.setProperty('--rotatey', lastMoveTo + 'deg');
       carrosselItems.forEach((item) => {
         const angle =
-          (parseFloat(item.style.getPropertyValue("--rotatey")) + lastMoveTo) %
+          (parseFloat(item.style.getPropertyValue('--rotatey')) + lastMoveTo) %
           360;
         if (angle < 0) {
           angle += 360;
@@ -323,9 +439,9 @@
       const middleX = window.innerWidth / 2;
 
       if (rect.left > middleX) {
-        return "right";
+        return 'right';
       } else if (rect.right < middleX) {
-        return "left";
+        return 'left';
       }
 
       return null;
@@ -333,18 +449,18 @@
 
     const initEvents = () => {
       carrosselItems.forEach((item) => {
-        item.addEventListener("click", () => {
+        item.addEventListener('click', () => {
           const direction = getDirection(item);
 
-          if (direction === "left") {
+          if (direction === 'left') {
             moveTo += 60; // 왼쪽으로 회전
-          } else if (direction === "right") {
+          } else if (direction === 'right') {
             moveTo -= 60; // 오른쪽으로 회전
           }
         });
       });
 
-      window.addEventListener("resize", createcarrossel);
+      window.addEventListener('resize', createcarrossel);
 
       update();
       createcarrossel();
