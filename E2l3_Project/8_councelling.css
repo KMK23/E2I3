@@ -171,6 +171,9 @@
   display: flex;
   align-items: center;
 }
+#content {
+  resize: none;
+}
 
 .button-container {
   display: flex;
