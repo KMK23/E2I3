@@ -10,13 +10,12 @@
     <div class="container">
       <div class="head">
         <h2 class="headH2">
-          생동감 넘치는<br />게임 콘텐츠<strong class="color"
-            >업그레이드</strong
-          >
+          생동감 넘치는<br />게임 콘텐츠
+          <strong class="color">업그레이드</strong>
         </h2>
       </div>
       <div class="content">
-        <div class="list">
+        <div class="list left">
           <img
             class="gameImg"
             src="resources/img/프로그램 소개/모양 색종이.png"
@@ -29,7 +28,7 @@
             <strong>코딩 학습게임 추가</strong>
           </h4>
         </div>
-        <div class="list">
+        <div class="list right">
           <img
             class="gameImg"
             src="resources/img/프로그램 소개/비밀 글자.png"
@@ -42,7 +41,7 @@
             <strong>3단계로 세분화된 난이도</strong>
           </h4>
         </div>
-        <div class="list">
+        <div class="list left">
           <img
             class="gameImg"
             src="resources/img/프로그램 소개/야채심기.png"
@@ -55,7 +54,7 @@
             <strong>코딩 게임을 통해 창의력 향상하기</strong>
           </h4>
         </div>
-        <div class="list">
+        <div class="list right">
           <img
             class="gameImg"
             src="resources/img/프로그램 소개/game4-3.png"
@@ -63,14 +62,14 @@
             height="310px"
           />
           <h4 class="list-tite">
-            <br />
+            다양한 컨텐츠들을 <br />
+            <strong>지금 바로 즐겨보세요!</strong>
           </h4>
-          <strong></strong>
         </div>
       </div>
     </div>
     <div class="payBtncontiner">
-      <button class="payBtn" onclick="paymoneBtn()">결제하기</button>
+      <button class="payBtn">결제하기</button>
     </div>
     <div class="bubbles">
       <span class="purple b3"></span><span class="pink b2"></span
@@ -82,5 +81,10 @@
       ><span class="pink b4"></span>
     </div>
   </body>
-  <script></script>
+  <script>
+    const btn = document.querySelector(".payBtn");
+    btn.addEventListener("click", function () {
+      location.href = "12_money-checkout.html";
+    });
+  </script>
 </html>
