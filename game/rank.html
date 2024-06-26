@@ -27,7 +27,6 @@
       <div class="ranking">
         <canvas id="myChart" width="600" height="600"></canvas>
       </div>
-      <h1>점수표</h1>
     </div>
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
@@ -77,13 +76,13 @@
       // 명예의 전당 업데이트
       document.getElementById(
         "firstPlace"
-      ).innerHTML = `🥇 1위: ${id1[0]} (점수: ${score2[0]})`;
+      ).innerHTML = `🥇 1등 : ${id1[0]} <span class='score'>( 점수 : ${score2[0]}점 )</span>`;
       document.getElementById(
         "secondPlace"
-      ).innerHTML = `🥈 2위: ${id1[1]} (점수: ${score2[1]})`;
+      ).innerHTML = `🥈 2등 : ${id1[1]} <span class='score'>( 점수 : ${score2[1]}점 )</span>`;
       document.getElementById(
         "thirdPlace"
-      ).innerHTML = `🥉 3위: ${id1[2]} (점수: ${score2[2]})`;
+      ).innerHTML = `🥉 3등 : ${id1[2]} <span class='score'>( 점수 : ${score2[2]}점 )</span>`;
 
       let myCt = document.getElementById("myChart");
 
@@ -101,21 +100,29 @@
               data: score2, //dataset 값
               backgroundColor: [
                 //배경색
-                "rgba(255, 99, 132, 0.2)",
-                "rgba(54, 162, 235, 0.2)",
+                "rgba(255, 99, 160, 0.2)",
+                "rgba(255, 180, 64, 0.2)",
+                "rgba(255, 206, 86, 0.2)",
                 "rgba(255, 206, 86, 0.2)",
                 "rgba(75, 192, 192, 0.2)",
+                "rgba(75, 192, 192, 0.2)",
+                "rgba(54, 162, 235, 0.2)",
+                "rgba(54, 162, 235, 0.2)",
                 "rgba(153, 102, 255, 0.2)",
-                "rgba(255, 159, 64, 0.2)",
+                "rgba(153, 102, 255, 0.2)",
               ],
               borderColor: [
                 //테두리 색상
-                "rgba(255, 99, 132, 1)",
-                "rgba(54, 162, 235, 1)",
+                "rgba(255, 99, 160, 1)",
+                "rgba(255, 180, 64, 1)",
                 "rgba(255, 206, 86, 1)",
+                "rgba(255, 210, 86, 1)",
                 "rgba(75, 192, 192, 1)",
+                "rgba(75, 192, 192, 1)",
+                "rgba(54, 162, 235, 1)",
+                "rgba(54, 162, 235, 1)",
                 "rgba(153, 102, 255, 1)",
-                "rgba(255, 159, 64, 1)",
+                "rgba(153, 102, 255, 1)",
               ],
               borderWidth: 1, //테두리 두께
               maxBarThickness: 300, //최대 bar의 두께 설정

@@ -82,13 +82,14 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1rem;
 }
 .icon {
   width: 3rem;
 }
 .header {
   gap: 1rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -114,8 +115,15 @@ ol li {
   border-radius: 0.4rem;
   padding: 1rem;
   box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: space-between;
 }
 
 .ranking-icon {
   width: 2rem;
+}
+
+.score {
+  color: rgb(90, 90, 90);
+  padding-left: 0.9rem;
 }
