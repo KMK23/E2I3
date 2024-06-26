@@ -286,6 +286,7 @@ h4 {
   left: 2rem;
   filter: invert(14%) sepia(6%) saturate(2611%) hue-rotate(182deg)
     brightness(98%) contrast(83%);
+  cursor: pointer;
 }
 @media only screen and (max-width: 1200px) {
   .groundImg,
