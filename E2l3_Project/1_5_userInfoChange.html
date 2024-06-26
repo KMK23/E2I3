@@ -6,68 +6,68 @@
     <title>회원정보관리</title>
     <style>
       @font-face {
-        font-family: "NanumSquareRound";
+        font-family: 'NanumSquareRound';
         src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot);
         src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot?#iefix)
-            format("embedded-opentype"),
+            format('embedded-opentype'),
           url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff2)
-            format("woff2"),
+            format('woff2'),
           url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff)
-            format("woff"),
+            format('woff'),
           url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.ttf)
-            format("truetype");
+            format('truetype');
       }
 
       @font-face {
-        font-family: "NanumSquareRoundB";
+        font-family: 'NanumSquareRoundB';
         src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.eot);
         src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.eot?#iefix)
-            format("embedded-opentype"),
+            format('embedded-opentype'),
           url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.woff2)
-            format("woff2"),
+            format('woff2'),
           url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.woff)
-            format("woff"),
+            format('woff'),
           url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.ttf)
-            format("truetype");
+            format('truetype');
       }
 
       @font-face {
-        font-family: "NanumSquareRoundEB";
+        font-family: 'NanumSquareRoundEB';
         src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.eot);
         src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.eot?#iefix)
-            format("embedded-opentype"),
+            format('embedded-opentype'),
           url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.woff2)
-            format("woff2"),
+            format('woff2'),
           url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.woff)
-            format("woff"),
+            format('woff'),
           url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.ttf)
-            format("truetype");
+            format('truetype');
       }
 
       @font-face {
-        font-family: "NanumSquareRoundL";
+        font-family: 'NanumSquareRoundL';
         src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.eot);
         src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.eot?#iefix)
-            format("embedded-opentype"),
+            format('embedded-opentype'),
           url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.woff2)
-            format("woff2"),
+            format('woff2'),
           url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.woff)
-            format("woff"),
+            format('woff'),
           url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.ttf)
-            format("truetype");
+            format('truetype');
       }
       @font-face {
-        font-family: "ONE-Mobile-POP";
-        src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-POP.woff")
-          format("woff");
+        font-family: 'ONE-Mobile-POP';
+        src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-POP.woff')
+          format('woff');
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
-        font-family: "GangwonEduPowerExtraBoldA";
-        src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff")
-          format("woff");
+        font-family: 'GangwonEduPowerExtraBoldA';
+        src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff')
+          format('woff');
         font-weight: normal;
         font-style: normal;
       }
@@ -82,7 +82,7 @@
         margin: 0;
         padding: 1.25rem;
         background-color: #f7f7f7;
-        font-family: "NanumSquareRound";
+        font-family: 'NanumSquareRound';
       }
       .container {
         width: 40rem;
@@ -91,6 +91,38 @@
         padding: 1.25rem;
         border-radius: 0.3125rem;
         box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
+      }
+      /* Responsive design for different screen sizes */
+      @media (max-width: 1200px) {
+        .container {
+          width: 35rem;
+          margin: 2rem auto;
+          padding: 1rem;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .container {
+          width: 30rem;
+          margin: 1.5rem auto;
+          padding: 0.75rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          width: 25rem;
+          margin: 1rem auto;
+          padding: 0.5rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .container {
+          width: 20rem;
+          margin: 0.5rem auto;
+          padding: 0.25rem;
+        }
       }
       .tabs {
         display: flex;
@@ -121,7 +153,7 @@
       .form-group select {
         padding: 0.5rem;
       }
-      .form-group input[type="radio"] {
+      .form-group input[type='radio'] {
         margin-right: 0.625rem;
       }
       .form-group .inline {
@@ -157,6 +189,84 @@
         font-size: 0.9rem;
         color: #777;
       }
+      /* Responsive design for different screen sizes */
+      @media (max-width: 1200px) {
+        .form-group input,
+        .form-group select {
+          padding: 0.45rem;
+        }
+        #mobile {
+          width: 10rem;
+        }
+        .birthdaydate {
+          width: 18rem;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .tab {
+          padding: 0.5rem;
+        }
+        .form-group input,
+        .form-group select {
+          padding: 0.4rem;
+        }
+        #mobile {
+          width: 9rem;
+        }
+        .form-group .inline input {
+          width: 6rem;
+        }
+        .birthdaydate {
+          width: 16rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .tabs {
+          flex-direction: column;
+        }
+        .tab {
+          width: 100%;
+          padding: 0.4rem;
+        }
+        .form-group input,
+        .form-group select {
+          padding: 0.35rem;
+        }
+        #mobile {
+          width: 8rem;
+        }
+        .form-group .inline input {
+          width: 5rem;
+        }
+        .birthdaydate {
+          width: 14rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .tabs {
+          flex-direction: column;
+        }
+        .tab {
+          width: 100%;
+          padding: 0.3rem;
+        }
+        .form-group input,
+        .form-group select {
+          padding: 0.3rem;
+        }
+        #mobile {
+          width: 7rem;
+        }
+        .form-group .inline input {
+          width: 4.5rem;
+        }
+        .birthdaydate {
+          width: 12rem;
+        }
+      }
       .buttons {
         text-align: center;
       }
@@ -171,6 +281,34 @@
       }
       .buttons button.cancel {
         background-color: #777;
+      }
+      /* Responsive design for different screen sizes */
+      @media (max-width: 1200px) {
+        .buttons button {
+          padding: 0.6rem 1.2rem;
+          margin: 0.3rem;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .buttons button {
+          padding: 0.55rem 1.1rem;
+          margin: 0.275rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .buttons button {
+          padding: 0.5rem 1rem;
+          margin: 0.25rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .buttons button {
+          padding: 0.45rem 0.9rem;
+          margin: 0.225rem;
+        }
       }
     </style>
   </head>
@@ -249,19 +387,19 @@
       addDatas,
       deleteDatas,
       updateDatas,
-    } from "./resources/js/userinfoChange.js";
+    } from './resources/js/userinfoChange.js';
 
     async function getUserData() {
-      const snapshot = await getDatas("user");
-      const userNameText = document.querySelector(".user-name-text");
-      const inputUserName = document.getElementById("name");
-      const inputBirthdate = document.querySelector(".birthdaydate");
-      const inputEmail = document.getElementById("email");
-      const inputMobile = document.getElementById("mobile");
-      const checkboxEmailOptIn = document.getElementById("emailOptIn");
-      const checkboxSmsOptIn = document.getElementById("smsOptIn");
+      const snapshot = await getDatas('user');
+      const userNameText = document.querySelector('.user-name-text');
+      const inputUserName = document.getElementById('name');
+      const inputBirthdate = document.querySelector('.birthdaydate');
+      const inputEmail = document.getElementById('email');
+      const inputMobile = document.getElementById('mobile');
+      const checkboxEmailOptIn = document.getElementById('emailOptIn');
+      const checkboxSmsOptIn = document.getElementById('smsOptIn');
 
-      const changeUsername = localStorage.getItem("name");
+      const changeUsername = localStorage.getItem('name');
       snapshot.forEach((doc) => {
         const userData = doc.data();
 
@@ -281,8 +419,8 @@
     }
     getUserData();
     async function updateUserEmail(newEmail) {
-      const collectionName = "user"; // Firestore의 사용자 정보 collection 이름
-      const changeUsername = localStorage.getItem("name"); // localStorage에서 사용자 이름 가져오기 (예시)
+      const collectionName = 'user'; // Firestore의 사용자 정보 collection 이름
+      const changeUsername = localStorage.getItem('name'); // localStorage에서 사용자 이름 가져오기 (예시)
 
       try {
         // Firestore에서 해당 사용자의 정보를 가져오기
@@ -305,16 +443,16 @@
         await updateDatas(collectionName, userId, updateInfoObj);
 
         // 성공적으로 업데이트되었음을 사용자에게 알림 (예시)
-        alert("이메일 정보가 업데이트 되었습니다.");
+        alert('이메일 정보가 업데이트 되었습니다.');
       } catch (error) {
-        console.error("Error updating email:", error);
-        alert("이메일 정보 업데이트에 실패했습니다.");
+        console.error('Error updating email:', error);
+        alert('이메일 정보 업데이트에 실패했습니다.');
       }
     }
 
     async function updateUserMobile(newMobile) {
-      const collectionName = "user"; // Firestore의 사용자 정보 collection 이름
-      const changeUsername = localStorage.getItem("name"); // localStorage에서 사용자 이름 가져오기 (예시)
+      const collectionName = 'user'; // Firestore의 사용자 정보 collection 이름
+      const changeUsername = localStorage.getItem('name'); // localStorage에서 사용자 이름 가져오기 (예시)
 
       try {
         // Firestore에서 해당 사용자의 정보를 가져오기
@@ -337,35 +475,35 @@
         await updateDatas(collectionName, userId, updateInfoObj);
 
         // 성공적으로 업데이트되었음을 사용자에게 알림 (예시)
-        alert("휴대전화번호 정보가 업데이트 되었습니다.");
+        alert('휴대전화번호 정보가 업데이트 되었습니다.');
 
         // 마이페이지 화면 업데이트 함수 호출
         updateMyPage(); // 이 함수는 마이페이지 UI를 업데이트하는 함수입니다.
       } catch (error) {
-        console.error("Error updating mobile:", error);
-        alert("휴대전화번호 정보 업데이트에 실패했습니다.");
+        console.error('Error updating mobile:', error);
+        alert('휴대전화번호 정보 업데이트에 실패했습니다.');
       }
 
       function updateMyPage() {
         // 여기에 마이페이지 UI 업데이트 로직을 작성합니다.
         // 예시: 휴대전화번호 입력 필드 업데이트
-        const mobileInput = document.getElementById("mobile");
+        const mobileInput = document.getElementById('mobile');
         mobileInput.value = newMobile; // newMobile은 업데이트된 휴대전화번호
 
         // 추가적으로 필요한 UI 업데이트 로직을 작성합니다.
       }
     }
     // 예시: 이메일 변경 버튼 클릭 시
-    const emailChangeButton = document.querySelector("#change1");
-    emailChangeButton.addEventListener("click", () => {
-      const newEmail = document.getElementById("email").value.trim(); // 변경할 이메일 가져오기
+    const emailChangeButton = document.querySelector('#change1');
+    emailChangeButton.addEventListener('click', () => {
+      const newEmail = document.getElementById('email').value.trim(); // 변경할 이메일 가져오기
       updateUserEmail(newEmail);
     });
 
     // 예시: 휴대전화번호 변경 버튼 클릭 시
-    const mobileChangeButton = document.querySelector("#change2");
-    mobileChangeButton.addEventListener("click", () => {
-      const newMobile = document.getElementById("mobile").value.trim(); // 변경할 휴대전화번호 가져오기
+    const mobileChangeButton = document.querySelector('#change2');
+    mobileChangeButton.addEventListener('click', () => {
+      const newMobile = document.getElementById('mobile').value.trim(); // 변경할 휴대전화번호 가져오기
       updateUserMobile(newMobile);
     });
   </script>
