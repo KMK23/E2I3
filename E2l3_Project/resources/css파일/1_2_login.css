@@ -133,7 +133,7 @@ i {
 .forgot-signIn {
   display: flex;
   flex-direction: column;
-  margin-top: 4.375rem; /* 70px -> 4.375rem */
+  margin-top: 3rem;
   justify-content: center;
   align-items: center;
 }
@@ -153,8 +153,8 @@ a:hover {
 
 .signInBtn {
   border: transparent;
-  padding: 0.625rem; /* 10px -> 0.625rem */
-  font-size: 1.5rem; /* 24px -> 1.5rem */
+  padding: 1rem; /* 10px -> 0.625rem */
+  font-size: 1rem; /* 24px -> 1.5rem */
   width: 18.75rem; /* 300px -> 18.75rem */
   border-radius: 0.9375rem; /* 15px -> 0.9375rem */
   cursor: pointer;
