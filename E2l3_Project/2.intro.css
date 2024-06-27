@@ -5,7 +5,7 @@ body {
   margin: 0;
   padding: 0;
   border: 0;
-  font-family: "NanumSquareRound";
+  font-family: 'NanumSquareRound';
   box-sizing: border-box;
 }
 body {
@@ -206,6 +206,7 @@ section h2 {
   height: 350px; /* Minimum height to ensure all items have the same height */
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-between; /* Ensures the items are spaced out evenly */
 }
 
