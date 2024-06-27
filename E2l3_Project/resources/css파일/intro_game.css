@@ -1,53 +1,53 @@
 @font-face {
-  font-family: "NanumSquareRound";
+  font-family: 'NanumSquareRound';
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot);
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot?#iefix)
-      format("embedded-opentype"),
+      format('embedded-opentype'),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff2)
-      format("woff2"),
+      format('woff2'),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff)
-      format("woff"),
+      format('woff'),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.ttf)
-      format("truetype");
+      format('truetype');
 }
 
 @font-face {
-  font-family: "NanumSquareRoundB";
+  font-family: 'NanumSquareRoundB';
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.eot);
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.eot?#iefix)
-      format("embedded-opentype"),
+      format('embedded-opentype'),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.woff2)
-      format("woff2"),
+      format('woff2'),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.woff)
-      format("woff"),
+      format('woff'),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.ttf)
-      format("truetype");
+      format('truetype');
 }
 
 @font-face {
-  font-family: "NanumSquareRoundEB";
+  font-family: 'NanumSquareRoundEB';
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.eot);
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.eot?#iefix)
-      format("embedded-opentype"),
+      format('embedded-opentype'),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.woff2)
-      format("woff2"),
+      format('woff2'),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.woff)
-      format("woff"),
+      format('woff'),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.ttf)
-      format("truetype");
+      format('truetype');
 }
 
 @font-face {
-  font-family: "NanumSquareRoundL";
+  font-family: 'NanumSquareRoundL';
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.eot);
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.eot?#iefix)
-      format("embedded-opentype"),
+      format('embedded-opentype'),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.woff2)
-      format("woff2"),
+      format('woff2'),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.woff)
-      format("woff"),
+      format('woff'),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.ttf)
-      format("truetype");
+      format('truetype');
 }
 
 .bubbles {
@@ -150,7 +150,7 @@
 
 * {
   box-sizing: border-box;
-  font-family: "NanumSquareRoundEB";
+  font-family: 'NanumSquareRoundEB';
 }
 
 /* body {
@@ -337,6 +337,284 @@
   background-image: url(../img/옷입히기이미지.JPG);
   background-size: cover;
 }
+.nav-bar {
+  height: 4rem;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: 2%; */
+  background-color: #fff9db;
+  border-radius: 0.8rem;
+}
+.nav-bar ul {
+  list-style-type: none;
+  display: flex;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: white;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0;
+  /* padding: 1%; */
+}
+
+.nav {
+  width: 80%;
+  height: 100%;
+}
+.nav-item {
+  width: 100%;
+  text-align: center;
+}
+.nav-bar ul li a {
+  color: rgb(0, 0, 0);
+  padding: 5%;
+  margin: 0;
+  border-radius: 1rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+.container {
+  position: relative;
+  padding-bottom: 10rem;
+}
+.wrap-text {
+  display: flex;
+  gap: 1.6rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  word-break: keep-all;
+  height: 100%;
+}
+
+.title-label {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: #21c480;
+  padding: 1rem;
+  font-weight: 900;
+}
+.sub-title1 {
+  font-size: 1.2rem;
+  color: #33383d;
+  font-weight: 600;
+}
+.title {
+  font-size: 1.8rem;
+  color: #ffd43b;
+  margin: 0.5rem;
+}
+.title-text {
+  background-color: #3fd898;
+  padding: 1.3rem;
+  border-radius: 2rem;
+  word-break: keep-all;
+  text-align: center;
+  font-weight: bold;
+}
+.active {
+  background-color: #c1e493;
+  color: #e9ecef;
+  width: 40%;
+  height: 100%;
+}
+.game-bar1 {
+  padding: 0;
+}
+.gameName {
+  flex-basis: 25%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+}
+.active1 {
+  background-color: rgba(128, 128, 128, 0.486);
+  border-radius: 2rem;
+  color: white;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  width: fit-content;
+}
+
+.gameAll {
+  position: relative;
+}
+.gameBtn1 {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  right: -10rem;
+  border: none;
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  font-weight: 800;
+  cursor: pointer;
+  background-color: rgba(255, 224, 122, 0.479);
+}
+
+.game-bar ul {
+  display: flex;
+  list-style-type: none;
+  background-color: #e9ecef;
+  font-size: 1rem;
+  /* padding: 1.2rem; */
+  margin: 0;
+  height: 100%;
+  border-radius: 2rem;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.game-bar {
+  width: 60%;
+  height: 4rem;
+}
+.gameLink {
+  color: #495057;
+  text-decoration: none;
+  font-weight: 600;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.selected {
+  width: 60%;
+  height: 100%;
+}
+.gameImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 636px;
+  height: 550px;
+}
+.gameImg img {
+  display: block;
+  margin: 0 auto;
+  border: 3px solid #bbdee7;
+  border-radius: 6%;
+}
+
+#img1 {
+  background-image: url(../img/샌드위치게임이미지.JPG);
+  background-size: cover;
+}
+#img2 {
+  background-image: url(../img/같은거찾기이미지.JPG);
+  background-size: cover;
+}
+#img3 {
+  background-image: url(../img/옷입히기이미지.JPG);
+  background-size: cover;
+}
+
+/* 반응형 스타일 */
+@media screen and (max-width: 1200px) {
+  .title-label {
+    font-size: 1.4rem;
+  }
+  .sub-title1 {
+    font-size: 1.1rem;
+  }
+  .title {
+    font-size: 1.6rem;
+  }
+  .title-text {
+    padding: 1.2rem;
+  }
+  .game-bar {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .title-label {
+    font-size: 1.3rem;
+  }
+  .sub-title1 {
+    font-size: 1rem;
+  }
+  .title {
+    font-size: 1.4rem;
+  }
+  .title-text {
+    padding: 1rem;
+  }
+  .game-bar {
+    width: 80%;
+  }
+  /* .game-bar ul {
+    flex-direction: column;
+  } */
+  .game-bar ul li {
+    margin: 10px 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .title-label {
+    font-size: 1.2rem;
+  }
+  .sub-title1 {
+    font-size: 0.9rem;
+  }
+  .title {
+    font-size: 1.2rem;
+  }
+  .nav-bar ul {
+    font-size: 1rem;
+  }
+  .title-text {
+    padding: 0.8rem;
+  }
+  .game-bar {
+    width: 90%;
+  }
+  /* .game-bar ul {
+    flex-direction: column;
+  } */
+  .gameBtn1 {
+    width: 6rem;
+    height: 6rem;
+    bottom: -27%;
+    right: 0rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .title-label {
+    font-size: 1.1rem;
+  }
+  .sub-title1 {
+    font-size: 0.8rem;
+  }
+  .title {
+    font-size: 1rem;
+  }
+  .title-text {
+    padding: 0.6rem;
+  }
+  .game-bar {
+    width: 100%;
+  }
+  .game-bar ul {
+    flex-direction: column;
+  }
+  .gameBtn1 {
+    width: 5rem;
+    height: 5rem;
+    bottom: -27%;
+    right: 0rem;
+  }
+}
+
 /* AI 학습 리포트 */
 
 .AI-content {
@@ -358,11 +636,11 @@
   font-size: 2rem;
   font-weight: bold;
   /* font-style: italic; */
-  font-family: "NanumSquareRound";
+  font-family: 'NanumSquareRound';
 }
 .AI-text-img h3 {
   color: #087f5b;
-  font-family: "NanumSquareRound";
+  font-family: 'NanumSquareRound';
   font-size: 1rem;
   text-align: center;
 }
@@ -372,7 +650,7 @@
 
 .dsec {
   color: rgb(7, 4, 4);
-  font-family: "NanumSquareRound";
+  font-family: 'NanumSquareRound';
 }
 .dsec h4 {
   font-size: 1.5rem;
@@ -466,7 +744,7 @@
   width: 80%;
 }
 .lists li {
-  font-family: "NanumSquareRound";
+  font-family: 'NanumSquareRound';
   background-color: #fff9ea;
   border-radius: 16px;
   padding: 0.8rem;
@@ -484,7 +762,7 @@
   height: 80%;
 }
 #listInP {
-  font-family: "NanumSquareRound";
+  font-family: 'NanumSquareRound';
   text-align: center;
   word-break: keep-all;
 }
@@ -522,22 +800,309 @@
   place-items: center;
 }
 #AI-img1 {
-  background-image: url("../img/AIgame2.png");
+  background-image: url('../img/AIgame2.png');
   background-size: cover;
   background-position: center;
 }
 #AI-img2 {
-  background-image: url("../img/AI게임1.png");
+  background-image: url('../img/AI게임1.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
 #AI-img3 {
-  background-image: url("../img/Aigame4.png");
+  background-image: url('../img/Aigame4.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
 #AI-img4 {
-  background-image: url("../img/Aigame5.png");
+  background-image: url('../img/Aigame5.png');
   background-size: cover;
   background-repeat: no-repeat;
+}
+.AI-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 5%;
+  background-color: #eaf0ff;
+  padding: 3%;
+  border-radius: 5%;
+}
+.AI-text-img {
+  display: flex;
+  flex-direction: column;
+  border-radius: 3rem;
+  padding: 2rem;
+  gap: 10%;
+}
+.AI-text-img h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  /* font-style: italic; */
+  font-family: 'NanumSquareRound';
+}
+.AI-text-img h3 {
+  color: #087f5b;
+  font-family: 'NanumSquareRound';
+  font-size: 1rem;
+  text-align: center;
+}
+.AI-stu-img img {
+  border-radius: 50%;
+}
+
+.dsec {
+  color: rgb(7, 4, 4);
+  font-family: 'NanumSquareRound';
+}
+.dsec h4 {
+  font-size: 1.5rem;
+}
+.dsec p {
+  font-size: 1rem;
+}
+.sc-text {
+  margin: 0.5rem;
+  text-align: center;
+}
+.AI-desc1 {
+  background-color: #ac75fc;
+  border-radius: 32px;
+  margin: 0;
+  height: auto;
+  padding: 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20rem;
+}
+
+.AI-desc2 {
+  background-color: #ff9d00;
+  border-radius: 32px;
+  margin: 0;
+  height: auto;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20rem;
+}
+.AI-desc3 {
+  background-color: #9dc300;
+  border-radius: 32px;
+  margin: 0;
+  height: auto;
+  padding: 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20rem;
+}
+
+/* 아래 부분을 추가 */
+.content-desc {
+  display: flex;
+  gap: 20px;
+  /* width: 80%; */
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* 디지털 학습 */
+
+#basic-coding {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50px;
+  padding: 50px;
+}
+.AI-main-title {
+  font-size: 3rem;
+  /* font-style: italic; */
+  font-weight: 800;
+}
+.AI-sub-title {
+  font-size: 1.3rem;
+  text-align: center;
+  color: rgb(99, 99, 99);
+}
+.lists {
+  list-style-type: none;
+  /* background-color: #fa9a85; */
+  font-size: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 15px;
+  width: 80%;
+}
+.lists li {
+  font-family: 'NanumSquareRound';
+  background-color: #fff9ea;
+  border-radius: 16px;
+  padding: 0.8rem;
+  flex-basis: 30%;
+  text-align: center;
+  word-break: keep-all;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.lists-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+}
+#listInP {
+  font-family: 'NanumSquareRound';
+  text-align: center;
+  word-break: keep-all;
+}
+.mini-title {
+  height: 10%;
+  font-size: 1.2rem;
+  color: #42b87d;
+  font-weight: bold;
+}
+.AI-imgs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.AI-img {
+  width: 17rem;
+  height: 17rem;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+.button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  cursor: pointer;
+  filter: invert(44%) sepia(35%) saturate(3291%) hue-rotate(303deg)
+    brightness(86%) contrast(89%);
+}
+
+.AI-imgs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10%;
+  width: 80%;
+  height: 100%;
+  place-items: center;
+}
+#AI-img1 {
+  background-image: url('../img/AIgame2.png');
+  background-size: cover;
+  background-position: center;
+}
+#AI-img2 {
+  background-image: url('../img/AI게임1.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#AI-img3 {
+  background-image: url('../img/Aigame4.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#AI-img4 {
+  background-image: url('../img/Aigame5.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* 반응형 스타일 */
+@media screen and (max-width: 1200px) {
+  .AI-content {
+    gap: 2%;
+  }
+  .AI-text-img h1 {
+    font-size: 1.8rem;
+  }
+  .AI-desc1,
+  .AI-desc2,
+  .AI-desc3 {
+    width: 18rem;
+  }
+  .AI-imgs {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .AI-content {
+    padding: 2%;
+  }
+  .AI-text-img h1 {
+    font-size: 1.6rem;
+  }
+  .AI-desc1,
+  .AI-desc2,
+  .AI-desc3 {
+    width: 16rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .AI-content {
+    padding: 1%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .AI-text-img h1 {
+    font-size: 1.4rem;
+  }
+  .AI-desc1,
+  .AI-desc2,
+  .AI-desc3 {
+    width: 100%;
+  }
+  .AI-main-title {
+    font-size: 2.5rem;
+  }
+  .lists {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+  .lists li {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .AI-content {
+    padding: 1%;
+    flex-direction: column;
+    gap: 1%;
+  }
+  .AI-text-img h1 {
+    font-size: 1.2rem;
+  }
+  .AI-desc1,
+  .AI-desc2,
+  .AI-desc3 {
+    width: 12rem;
+  }
+  .AI-main-title {
+    font-size: 2rem;
+  }
+  .AI-sub-title {
+    font-size: 1rem;
+  }
+  .AI-img {
+    width: 14rem;
+    height: 14rem;
+  }
 }

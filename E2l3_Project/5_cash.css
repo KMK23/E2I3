@@ -1,8 +1,8 @@
 .content1 {
   /* border: 2px solid beige; */
   background-color: rgb(255, 255, 255);
-  border-radius: 16px;
-  padding: 80px 50px;
+  border-radius: 1rem;
+  padding: 5rem 3.125rem;
   display: flex;
   flex-direction: column;
 }
@@ -11,29 +11,29 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0px 0px 18px;
+  margin: 0px 0px 1.125rem;
 }
 .text-p {
-  margin: 0 0 8px;
+  margin: 0 0 0.5rem;
   color: #a8a281;
-  font-size: 36px;
+  font-size: 2.25rem;
 }
 .text-h2 {
   font-weight: 700;
   color: #453f36;
-  font-size: 40px;
+  font-size: 2.5rem;
 }
 .paymone {
   text-align: center;
 }
 .code-link {
   background: linear-gradient(45deg, #fffce7, #fced9a);
-  padding: 32px;
-  border-width: 8px;
-  border-radius: 16px;
+  padding: 2rem;
+  border-width: 0.5rem;
+  border-radius: 1rem;
   text-decoration: none;
   color: #453f36;
-  font-size: 36px;
+  font-size: 2.25rem;
 }
 .homeBtn {
   position: absolute;
@@ -43,7 +43,12 @@
     brightness(98%) contrast(83%);
   cursor: pointer;
 }
-
+@media (max-width: 768px) {
+  .code-link {
+    padding: 1rem;
+    font-size: 1.25rem;
+  }
+}
 @media (max-width: 480px) {
   .content1 {
     padding: 3rem 2rem;
