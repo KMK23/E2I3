@@ -152,6 +152,9 @@
           </div>
         </fieldset>
       </form>
+      <div class="homeBtn">
+        <img src="resources/img/홈버튼.svg" width="40" height="40" />
+      </div>
     </div>
     <!-- <script src="resources/js/joinmembershipfirebase.js"></script> -->
     <script src="resources/js/1_3_joinMembership.js"></script>
@@ -248,6 +251,10 @@
         });
       }
       getID2();
+      const home = document.querySelector(".homeBtn");
+      home.addEventListener("click", function () {
+        location.href = "1_mainPage.html";
+      });
     </script>
   </body>
 </html>

@@ -171,3 +171,11 @@ a:hover {
   filter: invert(51%) sepia(7%) saturate(457%) hue-rotate(169deg)
     brightness(86%) contrast(86%);
 }
+.homeBtn {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  filter: invert(14%) sepia(6%) saturate(2611%) hue-rotate(182deg)
+    brightness(98%) contrast(83%);
+  cursor: pointer;
+}
