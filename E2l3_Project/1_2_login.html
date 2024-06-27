@@ -37,18 +37,12 @@
                 />
               </div>
               <div class="forgot-signIn">
-                <a href="1_3_joinMembership.html"
-                  ><p>아직 회원이 아니신가요? 회원가입 하러가기</p></a
-                >
                 <button class="signInBtn">로그인</button>
               </div>
             </form>
           </div>
         </div>
       </div>
-    </div>
-    <div class="homeBtn">
-      <img src="resources/img/홈버튼.svg" width="40" height="40" />
     </div>
   </body>
   <script type="module">
@@ -65,6 +59,7 @@
      const loginId = document.querySelector("#login-id");
      const loginpassword = document.querySelector("#login-password");
 
+<<<<<<< Updated upstream
      async function getIdandPassword() {
        const snapshot = await getDatas("user");
        return snapshot.docs.map((doc) => doc.data());
@@ -106,5 +101,37 @@
      home.addEventListener("click", function () {
        location.href = "1_mainPage.html";
      });
+=======
+    async function getIdandPassword() {
+      const snapshot = await getDatas("user");
+      return snapshot.docs.map((doc) => doc.data());
+    }
+
+    loginBtn.addEventListener("click", async function (e) {
+      e.preventDefault();
+      const idValue = loginId.value.trim();
+      const passwordValue = loginpassword.value.trim();
+      const users = await getIdandPassword();
+      const user = users.find(
+        (user) => user.id === idValue && user.password === passwordValue
+      );
+
+      if (user) {
+        // 사용자가 존재할 때
+        if (user.active === true) {
+          localStorage.setItem("name", user.name);
+          localStorage.setItem("id", user.id);
+          alert(`${user.name}님 반갑습니다😁`);
+          location.href = "1_mainPage.html";
+        } else {
+          // 사용자가 존재하지만 active가 false인 경우
+          alert("계정이 비활성화되었습니다. 관리자에게 문의하세요.");
+        }
+      } else {
+        // 사용자가 존재하지 않거나 비밀번호가 일치하지 않을 때
+        alert("아이디 또는 비밀번호가 잘못되었습니다.");
+      }
+    });
+>>>>>>> Stashed changes
   </script>
 </html>
