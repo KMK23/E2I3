@@ -292,24 +292,59 @@
       }
     });
 
-    // 클릭 코드 //
-    // document.addEventListener("DOMContentLoaded", function () {
-    //   const button = document.getElementById("click");
+    // mb 카운터 코드 //
+    document.addEventListener("DOMContentLoaded", function () {
+      const input = document.getElementById("file_upload");
+      const fileInfo = document.getElementById("fileInfo");
+      const ddElement = document.getElementById("dd");
 
-    //   button.addEventListener("click", function (event) {
-    //     event.preventDefault();
-    // alert('Button clicked, but page navigation prevented!');
-    // document.body.style.backgroundColor = "lightblue";
-    //   });
-    // });
+      let fileList = [];
+      const maxFileSize = 20 * 1024 * 1024;
 
-    // document.addEventListener("DOMContentLoaded", function () {
-    //   const click = document.getElementById("click");
+      input.addEventListener("change", function () {
+        const files = Array.from(input.files);
+        files.forEach((file) => {
+          fileList.push(file);
+        });
+        updateFileSize();
+        displayFileInfo(fileList);
+      });
+      function updateFileSize() {
+        let totalSize = fileList.reduce((acc, file) => acc + file.size, 0);
+        ddElement.textContent = `${formatFileSize(totalSize)}/${formatFileSize(
+          maxFileSize
+        )}`;
+      }
 
-    //   click.addEventListener("click", function (event) {
-    //     event.preventDefault();
-    // alert("버튼이 클릭되었습니다!");
-    //   });
-    // });
+      function displayFileInfo(files) {
+        fileInfo.innerHTML = "";
+        files.forEach((file) => {
+          const fileName = file.name;
+          const fileSize = formatFileSize(file.size);
+          const fileItem = document.createElement("div");
+          fileItem.classList.add("file-item");
+          fileItem.innerHTML = `
+                        <span>${fileName} (${fileSize})</span>
+                         <button class="remove-btn" data-file-name="${fileName}">삭제</button>`;
+          fileInfo.appendChild(fileItem);
+        });
+      }
+      function formatFileSize(size) {
+        if (size === 0) return "0 Bytes";
+        const k = 1024;
+        const sizes = ["Bytes", "KB", "MB", "GB", "TB"];
+        const i = Math.floor(Math.log(size) / Math.log(k));
+        return parseFloat((size / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
+      }
+
+      fileInfo.addEventListener("click", function (e) {
+        if (e.target.classList.contains("remove-btn")) {
+          const fileName = e.target.getAttribute("data-file-name");
+          fileList = fileList.filter((file) => file.name !== fileName);
+          updateFileSize();
+          displayFileInfo(fileList);
+        }
+      });
+    });
   </script>
 </html>
