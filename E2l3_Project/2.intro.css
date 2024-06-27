@@ -5,7 +5,7 @@ body {
   margin: 0;
   padding: 0;
   border: 0;
-  font-family: 'NanumSquareRound';
+  font-family: "NanumSquareRound";
   box-sizing: border-box;
 }
 body {
@@ -203,7 +203,7 @@ section h2 {
   border-radius: 10px;
   padding: 1rem;
   background-color: #fff;
-  min-height: 350px; /* Minimum height to ensure all items have the same height */
+  height: 350px; /* Minimum height to ensure all items have the same height */
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* Ensures the items are spaced out evenly */
@@ -218,12 +218,15 @@ section h2 {
 }
 
 #team .team-member p {
-  margin: 0.5rem 0;
+  margin: 0;
+  height: 16px;
 }
 
 #team .team-member .motto {
   color: #888;
   font-style: italic;
+  height: 55px;
+  word-break: keep-all;
 }
 /* 반응형 디자인 */
 @media screen and (max-width: 1200px) {
