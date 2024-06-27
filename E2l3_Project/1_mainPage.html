@@ -384,7 +384,7 @@
             <i class="fa-solid fa-circle-play fa-2xl"></i>
           </button>
           <div class="reviewText">
-            <span class="reviewSpans">Real-Review</span>&nbsp 지루하지 않는
+            <span class="reviewSpans">Real-Review</span>&nbsp 지루하지 않은
             게임들과 더 높은 점수를 받기 위해 지속적으로 학습 하는 모습이 보여
             좋아요!
           </div>
@@ -655,7 +655,7 @@
         </div>
         <div class="button-container">
           <button type="submit">상담 신청하기</button>
-          <button class="close-Btn">닫기</button>
+          <button class="close-Btn" id="closeBtn">닫기</button>
         </div>
       </form>
     </div>
@@ -752,11 +752,12 @@
       logoutBtn.style.display = "inline-block";
     }
 
-    logoutBtn.addEventListener("click", function () {
+    logoutBtn.addEventListener("click", logout);
+    function logout() {
       localStorage.removeItem("name");
       localStorage.removeItem("id");
       location.reload();
-    });
+    }
 
     if (userid != "") {
       mypageBtn.style.display = "block";

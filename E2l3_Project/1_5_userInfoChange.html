@@ -444,6 +444,8 @@
       deleteDatas,
       updateDatas,
       changePassword,
+      updateUserStatus,
+      getUser,
     } from "./resources/js/userinfoChange.js";
 
     document.querySelectorAll(".tab").forEach((tab) => {
@@ -620,14 +622,14 @@
       document.getElementById("confirmPassword").value = "";
     }
 
-    async function getUserId() {
-      const snapshot = await getDatas("user");
-      let userId = null;
-      snapshot.forEach((doc) => {
-        userId = doc.data().id;
-      });
-      return userId;
-    }
+    // async function getUserId() {
+    //   const snapshot = await getDatas("user");
+    //   let userId = null;
+    //   snapshot.forEach((doc) => {
+    //     userId = doc.data().id;
+    //   });
+    //   return userId;
+    // }
 
     async function getUserEmail() {
       const snapshot = await getDatas("user");
@@ -636,12 +638,6 @@
         userEmail = doc.data().email;
       });
       return userEmail;
-    }
-
-    async function updateUserStatus(userId, newStatus) {
-      const userRef = firebase.firestore().collection("users").doc(userId);
-      await userRef.update({ status: newStatus });
-      console.log(`User ${userId} status updated to ${newStatus}`);
     }
 
     const deleteBtn = document.querySelector(".deleteBtn");
@@ -655,10 +651,11 @@
       }
 
       try {
-        const userId = await getUserId(); // await를 사용하여 사용자 ID를 비동기적으로 가져옴
-        const userEmail = await getUserEmail(); // await를 사용하여 사용자 이메일을 비동기적으로 가져옴
+        const userId = localStorage.getItem("id"); // 사용자 ID 가져오기
+        const userEmail = await getUserEmail(); // 사용자 이메일 가져오기
         const withdrawDate = new Date().toISOString();
 
+        // 탈퇴 이유 및 날짜를 포함한 객체 생성
         const reasonObj = {
           userId: userId,
           email: userEmail,
@@ -666,13 +663,17 @@
           date: withdrawDate,
         };
 
+        // Firestore에 탈퇴 이유 기록
         const result = await addDatas("withdrawReasons", reasonObj);
-        const docId = localStorage.getItem("id");
 
-        const updateUserStatus = await updateDatas("user", docId, {
-          active: false,
-        });
-        console.log("User status updated:", updateUserStatus);
+        // 사용자의 active 필드를 false로 업데이트
+        const snapshot = await getUser(userId);
+        const userDocId = snapshot.docs[0].id;
+        await updateDatas("user", userDocId, { active: false });
+        // 입력 필드 초기화
+        document.getElementById("withdrawReason").value = "";
+
+        // 사용자에게 탈퇴 처리 완료 메시지 표시
         alert("회원 탈퇴가 처리되었습니다.");
       } catch (error) {
         console.error("Error during withdrawal process:", error);

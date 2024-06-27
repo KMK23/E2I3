@@ -7,6 +7,8 @@ import {
   deleteDoc,
   updateDoc,
   doc,
+  query,
+  where,
 } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -70,7 +72,10 @@ async function changePassword(currentPassword, newPassword) {
       const userData = doc.data();
       if (userData.password === currentPassword) {
         // 비밀번호 일치 시 해당 사용자의 비밀번호 업데이트
-        await updateDatas("user", doc.id, { password: newPassword });
+        await updateDatas("user", doc.id, {
+          password: newPassword,
+          password2: newPassword,
+        });
         success = true;
         console.log("비밀번호가 성공적으로 변경되었습니다.");
         break; // 비밀번호가 일치하는 사용자를 찾으면 반복문을 멈춥니다
@@ -88,5 +93,33 @@ async function changePassword(currentPassword, newPassword) {
     return false;
   }
 }
+async function getUser(userId) {
+  const collect = collection(db, "user");
+  const q = query(collect, where("id", "==", userId));
+  const snapshot = await getDocs(q);
+  return snapshot;
+}
 
-export { db, getDatas, addDatas, deleteDatas, updateDatas, changePassword };
+async function findActive() {
+  const collect = collection(db, "user");
+  const q = query(collect, where("active", "==", "false"));
+  const snapshot = await getDocs(q);
+  return snapshot;
+}
+async function updateUserStatus(userId, newStatus) {
+  const userRef = collection(doc); // db 변수를 사용하여 Firestore 컬렉션 참조
+  await userRef.update({ active: newStatus }); // 사용자 문서 업데이트
+  console.log(`User ${userId} status updated to ${newStatus}`);
+}
+
+export {
+  db,
+  getDatas,
+  addDatas,
+  deleteDatas,
+  updateDatas,
+  changePassword,
+  updateUserStatus,
+  getUser,
+  findActive,
+};

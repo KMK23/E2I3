@@ -181,6 +181,63 @@
 
       joinBtn.addEventListener("click", async function (e) {
         e.preventDefault();
+        // 필수 입력 필드 확인
+        const nameInput = document.querySelector(".name-input");
+        const idInput = document.querySelector(".id-input");
+        const passwordInput = document.querySelector(".password-input");
+        const password2Input = document.querySelector(".password2-input");
+        const birthInput = document.querySelector(".birth-input");
+        const emailInput = document.querySelector(".email-input");
+        const telInput = document.querySelector(".tel-input");
+        const agreeCheckbox = document.querySelector(".agree-input");
+
+        if (!nameInput.value.trim()) {
+          alert("이름을 입력해 주세요");
+          return;
+        }
+
+        if (!idInput.value.trim()) {
+          alert("아이디를 입력해 주세요");
+          return;
+        }
+
+        if (!passwordInput.value.trim()) {
+          alert("비밀번호를 입력해 주세요");
+          return;
+        }
+
+        if (!password2Input.value.trim()) {
+          alert("비밀번호 확인을 입력해 주세요");
+          return;
+        }
+
+        if (!birthInput.value.trim()) {
+          alert("생년월일을 입력해 주세요");
+          return;
+        }
+
+        if (!emailInput.value.trim()) {
+          alert("이메일을 입력해 주세요");
+          return;
+        }
+
+        if (!telInput.value.trim()) {
+          alert("전화번호를 입력해 주세요");
+          return;
+        }
+
+        // 약관 동의 체크박스 확인
+
+        const agreeError = document.querySelector(".err-agree");
+
+        if (!agreeCheckbox.checked) {
+          agreeError.style.color = "red";
+          agreeError.classList.remove("hide");
+          alert("약관 동의가 필요합니다.");
+          return;
+        } else {
+          agreeError.classList.add("hide");
+        }
 
         const formEl = document.querySelector("form[id='join_form']");
         const formData = new FormData(formEl);
