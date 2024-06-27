@@ -93,6 +93,14 @@
         border-radius: 0.3125rem;
         box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
       }
+      .homeBtn {
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+        filter: invert(14%) sepia(6%) saturate(2611%) hue-rotate(182deg)
+          brightness(98%) contrast(83%);
+        cursor: pointer;
+      }
       /* Responsive design for different screen sizes */
       @media (max-width: 1200px) {
         .container {
@@ -434,6 +442,9 @@
         </form>
       </div>
     </div>
+    <div class="homeBtn">
+      <img src="resources/img/홈버튼.svg" width="40" height="40" />
+    </div>
   </body>
 
   <script type="module">
@@ -671,6 +682,8 @@
 
         // 사용자에게 탈퇴 처리 완료 메시지 표시
         alert("회원 탈퇴가 처리되었습니다.");
+        localStorage.removeItem("name");
+        localStorage.removeItem("id");
       } catch (error) {
         console.error("회원 탈퇴 처리 중 오류 발생:", error);
         alert("회원 탈퇴 처리 중 오류가 발생했습니다. 관리자에게 문의하세요.");
@@ -685,5 +698,9 @@
       });
       return userEmail;
     }
+    const home = document.querySelector(".homeBtn");
+    home.addEventListener("click", function () {
+      location.href = "1_mainPage.html";
+    });
   </script>
 </html>
