@@ -33,6 +33,14 @@ async function getDatas(collectionName) {
   return snapshot;
 }
 
+async function getUser(userId) {
+  const collect = collection(db, "user");
+  const q = query(collect, where("id", "==", userId));
+  // const userData = await getDocs(q).docs;
+  const userData = await getDocs(q);
+  return userData.docs[0];
+}
+
 async function addDatas(collectionName, dataObj) {
   try {
     // 문서 ID 수동
@@ -97,5 +105,13 @@ async function updateScore(collectionName, dataObj) {
   }
 }
 
-export { db, getDatas, addDatas, deleteDatas, updateDatas, updateScore };
+export {
+  db,
+  getDatas,
+  addDatas,
+  deleteDatas,
+  updateDatas,
+  updateScore,
+  getUser,
+};
 //export 는 말그대로 내보내서 쓰는것들이니까 deleteDats를 쓴거야.
