@@ -654,13 +654,12 @@
       }
 
       try {
-        const userEmail = await getUserEmail(); // 사용자 이메일 가져오기
         const withdrawDate = new Date().toISOString();
 
         // 탈퇴 이유 및 날짜를 포함한 객체 생성
         const reasonObj = {
           userId: userId,
-          email: userEmail,
+
           reason: withdrawReason,
           date: withdrawDate,
         };
@@ -682,25 +681,16 @@
 
         // 사용자에게 탈퇴 처리 완료 메시지 표시
         alert("회원 탈퇴가 처리되었습니다.");
+        // 로컬 스토리지에서 사용자 정보 삭제
         localStorage.removeItem("name");
         localStorage.removeItem("id");
+
+        // 메인 페이지로 이동
+        location.href = "1_mainPage.html";
       } catch (error) {
         console.error("회원 탈퇴 처리 중 오류 발생:", error);
         alert("회원 탈퇴 처리 중 오류가 발생했습니다. 관리자에게 문의하세요.");
       }
-    });
-
-    async function getUserEmail() {
-      const snapshot = await getDatas("user");
-      let userEmail = null;
-      snapshot.forEach((doc) => {
-        userEmail = doc.data().email;
-      });
-      return userEmail;
-    }
-    const home = document.querySelector(".homeBtn");
-    home.addEventListener("click", function () {
-      location.href = "1_mainPage.html";
     });
   </script>
 </html>
