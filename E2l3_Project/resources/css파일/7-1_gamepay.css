@@ -111,69 +111,6 @@ body {
   cursor: pointer;
 }
 
-@media screen and (max-width: 1200px) {
-  .payBtn {
-    bottom: 4%;
-    left: 83%;
-    width: 15%;
-  }
-  .container {
-    max-width: 70rem;
-  }
-  .content {
-    width: 90%;
-  }
-  body {
-    overflow-y: auto;
-  }
-}
-
-@media screen and (max-width: 768) {
-  .payBtn {
-    width: auto;
-    bottom: 2rem;
-    right: 2rem;
-    padding: 0.5rem 1rem;
-  }
-  .container {
-    max-width: 100%;
-  }
-  .list {
-    width: 100%;
-  }
-  .headerH2 {
-    font-size: 1.25rem;
-  }
-  body {
-    overflow-y: auto;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .payBtn {
-    width: 100%;
-    position: fixed;
-    bottom: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-  }
-  .list {
-    width: 100%;
-    font-size: 1rem;
-  }
-  .headH2 {
-    font-size: 1rem;
-  }
-  body {
-    overflow-y: auto;
-  }
-  .content {
-    width: 95%;
-    height: auto;
-  }
-}
-
 .bubbles {
   display: flex;
   justify-content: space-around;
@@ -269,5 +206,77 @@ body {
     opacity: 0.1;
     -webkit-transform: translateY(0) scale(1.7);
     transform: translateY(0) scale(1.7);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .payBtn {
+    bottom: 4%;
+    left: 83%;
+    width: 15%;
+  }
+  .container {
+    max-width: 70rem;
+  }
+  .content {
+    width: 90%;
+  }
+  body {
+    overflow-y: auto;
+  }
+  .content {
+    font-size: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 768) {
+  .payBtn {
+    width: auto;
+    bottom: 2rem;
+    right: 2rem;
+    padding: 0.5rem 1rem;
+  }
+  .container {
+    max-width: 100%;
+  }
+  .list {
+    width: 100%;
+  }
+  .headerH2 {
+    font-size: 1.25rem;
+  }
+  body {
+    overflow-y: auto;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .payBtn {
+    width: 100%;
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+  .list {
+    width: 100%;
+  }
+  .headH2 {
+    font-size: 1rem;
+  }
+  body {
+    overflow-y: auto;
+  }
+  .content {
+    padding: 0.625rem;
+    width: 100%;
+    height: auto;
+  }
+  .list-tite > strong {
+    font-size: 0.75rem;
+  }
+  .list-tite {
+    font-size: 0.625rem;
   }
 }
