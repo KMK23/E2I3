@@ -667,11 +667,12 @@
         };
 
         const result = await addDatas("withdrawReasons", reasonObj);
+        const docId = localStorage.getItem("id");
 
-        document.getElementById("withdrawReason").value = "";
-
-        await updateUserStatus(userId, "withdrawn");
-
+        const updateUserStatus = await updateDatas("user", docId, {
+          active: false,
+        });
+        console.log("User status updated:", updateUserStatus);
         alert("회원 탈퇴가 처리되었습니다.");
       } catch (error) {
         console.error("Error during withdrawal process:", error);
