@@ -1066,6 +1066,10 @@
   .AI-text-img h1 {
     font-size: 1.4rem;
   }
+  .Ai-imgs {
+    justify-content: center;
+    align-items: center;
+  }
   .AI-desc1,
   .AI-desc2,
   .AI-desc3 {
