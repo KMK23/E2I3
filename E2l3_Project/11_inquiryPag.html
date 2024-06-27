@@ -9,12 +9,7 @@
   <body>
     <div class="container">
       <h2>1:1 문의하기</h2>
-      <form
-        action="http://127.0.0.1:5502/E2l3_Project/11_inquiryPag.html"
-        method="post"
-        enctype="multipart/form-data"
-        class="form"
-      >
+      <form class="form" id="inquiryForm">
         <div class="content">
           <div class="inquiryType">
             <label for="inquiry-type" class="inquiry"
@@ -50,6 +45,7 @@
                 class="write"
                 spellcheck="false"
                 placeholder=" 신속하고 정확한 안내를 위하여 '문의유형'과 '주문번호'를 선택(또는 입력)해 주세요 ※ 상담사에게 폭언, 욕설 등을 하지 말아 주세요. 답변을 받지 못하거나 사전안내없이 삭제될 수 있습니다"
+                required
               ></textarea>
               <span class="text-span">3000자 이내에 적어주세요</span>
             </div>
@@ -96,6 +92,7 @@
               class="emailAdder"
               placeholder="예）example@gmail.com"
               maxlength="50"
+              required
             />
           </div>
         </div>
@@ -238,16 +235,15 @@
 
     // 이메일 에러 코드 and 전화번호 에러//
     document.addEventListener("DOMContentLoaded", function () {
-      const form = document.querySelector(".form");
+      const form = document.getElementById("inquiryForm");
       const emailInput = document.getElementById("email-adder");
+      const emailError = document.getElementById("email-error");
       const phoneInput = document.getElementById("phon");
-      const emailError = document.querySelector(".email-error");
-      const telError = document.getElementById("Error");
+      const phoneError = document.getElementById("telError");
 
       form.addEventListener("submit", function (event) {
         let valid = true;
 
-        // 이메일 검증
         if (!validateEmail(emailInput.value)) {
           emailError.style.visibility = "visible";
           valid = false;
@@ -255,16 +251,37 @@
           emailError.style.visibility = "hidden";
         }
 
-        // 전화번호 검증
         if (!validatePhone(phoneInput.value)) {
-          telError.style.visibility = "visible";
+          phoneError.style.visibility = "visible";
           valid = false;
         } else {
-          telError.style.visibility = "hidden";
+          phoneError.style.visibility = "hidden";
         }
 
+        const requiredFields = document.querySelectorAll("[required]");
+        requiredFields.forEach(function (field) {
+          if (!field.value.trim()) {
+            field.classList.add("error");
+            valid = false;
+          } else {
+            field.classList.remove("error");
+          }
+        });
+
         if (!valid) {
-          event.preventDefault(); // 검증 실패 시 폼 제출을 막음
+          event.preventDefault();
+        }
+      });
+
+      emailInput.addEventListener("input", function () {
+        if (validateEmail(emailInput.value)) {
+          emailError.style.visibility = "hidden";
+        }
+      });
+
+      phoneInput.addEventListener("input", function () {
+        if (validatePhone(phoneInput.value)) {
+          phoneError.style.visibility = "hidden";
         }
       });
 
@@ -298,28 +315,5 @@
     // alert("버튼이 클릭되었습니다!");
     //   });
     // });
-
-    // 서버 코드
-    document.addEventListener("DOMContentLoaded", function () {
-      const form = document.querySelector(".form");
-      form.addEventListener("submit", function (event) {
-        event.preventDefault();
-
-        const formData = new FormData(form);
-        fetch(form.action, {
-          method: form.method,
-          body: formData,
-        })
-          .then((response) => response.text())
-          .then((result) => {
-            console.log("Success:", result);
-            alert("문의가 성공적으로 접수되었습니다.");
-          })
-          .catch((error) => {
-            console.error("Error:", error);
-            alert("문의 접수 중 오류가 발생했습니다.");
-          });
-      });
-    });
   </script>
 </html>
