@@ -129,6 +129,7 @@ async function updateScore(collectionName, dataObj) {
     const totalDataObj = {
       id: dataObj.id,
       userTotalScore: totalScore,
+      name: dataObj.name,
     };
 
     await updateTotalScore("totalScore", totalDataObj);
@@ -153,6 +154,7 @@ async function updateTotalScore(collectionName, totalDataObj) {
         const docRef = doc.ref;
         await updateDoc(docRef, {
           userTotalScore: totalDataObj.userTotalScore,
+          name: totalDataObj.name,
         });
         console.log("Document successfully updated!");
       });

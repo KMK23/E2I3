@@ -3,14 +3,10 @@ import {
   getFirestore,
   collection,
   getDocs,
-  setDoc,
-  doc,
   addDoc,
-
-  //여기에 쓰는건 firebase.js 에서 필요한것들..
   deleteDoc,
   updateDoc,
-  getDoc,
+  doc,
 } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -23,49 +19,74 @@ const firebaseConfig = {
   measurementId: "G-FEPJ5215YB",
 };
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+// Firebase 초기화
+const firebaseApp = initializeApp(firebaseConfig);
+const db = getFirestore(firebaseApp);
 
 async function getDatas(collectionName) {
-  const collect = await collection(db, collectionName);
+  const collect = collection(db, collectionName);
   const snapshot = await getDocs(collect);
   return snapshot;
 }
 
 async function addDatas(collectionName, dataObj) {
   try {
-    // 문서 ID 수동
-    // const saveDoc = await doc(db, collectionName, "2");
-    // console.log(`Doc(결과)${saveDoc}`);
-    // const saveResult = await setDoc(saveDoc, dataObj);
-    // setDoc 은 return 이 없어서 처리를 해주어야 한다.
-    // console.log(`setDoc(결과)${saveResult}`);
-    // 문서 ID 자동
-    const collect = await collection(db, collectionName);
+    const collect = collection(db, collectionName);
     await addDoc(collect, dataObj);
-
     return true;
   } catch (error) {
+    console.error("추가 오류:", error);
     return false;
   }
 }
 
 async function deleteDatas(collectionName, docId) {
-  const docRef = await doc(db, collectionName, docId);
-  await deleteDoc(docRef);
-  // deleteDoc("삭제할 문서 객체")
+  try {
+    const docRef = doc(db, collectionName, docId);
+    await deleteDoc(docRef);
+    console.log("삭제 성공");
+  } catch (error) {
+    console.error("삭제 오류:", error);
+  }
 }
 
-//이게 결국에 firebase 에 내용을 가져오고 수정하고 저장하고 삭제하고 이런것들을
-//하기위해 이쪽에 함수를 만드는거야.
 async function updateDatas(collectionName, docId, updateinfoObj) {
-  // doc(db, collectionName, 문서ID);
-  // getDoc(문서레퍼런스 )
-  // updateDoc(문서데이터, 수정할 정보객체 )
-
-  const docRef = await doc(db, collectionName, docId);
-  // const docData = await getDoc(docRef);
-  await updateDoc(docRef, updateinfoObj);
+  try {
+    const docRef = doc(db, collectionName, docId);
+    await updateDoc(docRef, updateinfoObj);
+    console.log("업데이트 성공");
+  } catch (error) {
+    console.error("업데이트 오류:", error);
+  }
 }
-export { db, getDatas, addDatas, deleteDatas, updateDatas };
-//export 는 말그대로 내보내서 쓰는것들이니까 deleteDats를 쓴거야.
+
+async function changePassword(currentPassword, newPassword) {
+  try {
+    // Firestore에서 users 컬렉션에서 사용자 정보 가져오기
+    const snapshot = await getDocs(collection(db, "user"));
+    let success = false;
+
+    for (const doc of snapshot.docs) {
+      const userData = doc.data();
+      if (userData.password === currentPassword) {
+        // 비밀번호 일치 시 해당 사용자의 비밀번호 업데이트
+        await updateDatas("user", doc.id, { password: newPassword });
+        success = true;
+        console.log("비밀번호가 성공적으로 변경되었습니다.");
+        break; // 비밀번호가 일치하는 사용자를 찾으면 반복문을 멈춥니다
+      }
+    }
+
+    if (!success) {
+      console.log("현재 비밀번호가 일치하지 않습니다.");
+      return false;
+    }
+
+    return true;
+  } catch (error) {
+    console.error("비밀번호 변경 중 오류:", error);
+    return false;
+  }
+}
+
+export { db, getDatas, addDatas, deleteDatas, updateDatas, changePassword };

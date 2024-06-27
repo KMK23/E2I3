@@ -1,7 +1,7 @@
 @font-face {
-  font-family: "LeferiBaseType-RegularA";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiBaseType-RegularA.woff")
-    format("woff");
+  font-family: 'LeferiBaseType-RegularA';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiBaseType-RegularA.woff')
+    format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -103,18 +103,87 @@ body {
   flex-direction: column;
 }
 
-@media (max-width: 786px) {
+/* 반응형 디자인 */
+@media screen and (max-width: 1200px) {
   .sub-title {
-    font-size: 1.125rem;
+    font-size: 1.8rem;
   }
+
   .main-title,
   .strong {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
   }
+
   .kids {
-    max-width: 15rem;
+    width: 18rem;
+    height: 18rem;
   }
+
+  .reviewText {
+    width: 120%;
+    font-size: 0.75rem;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .sub-title {
+    font-size: 1.6rem;
+  }
+
+  .main-title,
+  .strong {
+    font-size: 2.2rem;
+  }
+
+  .kids {
+    width: 16rem;
+    height: 16rem;
+  }
+
+  .reviewText {
+    width: 110%;
+    font-size: 0.7rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sub-title {
+    font-size: 1.4rem;
+  }
+
+  .main-title,
+  .strong {
+    font-size: 2rem;
+  }
+
+  .kids {
+    width: 14rem;
+    height: 14rem;
+  }
+
   .reviewText {
     width: 100%;
+    font-size: 0.65rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .sub-title {
+    font-size: 1.2rem;
+  }
+
+  .main-title,
+  .strong {
+    font-size: 1.8rem;
+  }
+
+  .kids {
+    width: 12rem;
+    height: 12rem;
+  }
+
+  .reviewText {
+    width: 90%;
+    font-size: 0.6rem;
   }
 }

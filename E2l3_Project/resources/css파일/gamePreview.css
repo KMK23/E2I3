@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,700;1,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,700;1,700&display=swap');
 
 .conteudo__geral {
   display: flex;
@@ -27,10 +27,10 @@
   align-items: center;
   line-height: 76px;
   height: 90px;
-  font-family: "ONE-Mobile-POP";
+  font-family: 'ONE-Mobile-POP';
 }
 #font-pop {
-  font-family: "ONE-Mobile-POP";
+  font-family: 'ONE-Mobile-POP';
   color: aliceblue;
   letter-spacing: 0.22rem;
   font-size: 4rem;
@@ -108,6 +108,114 @@ img {
   border-radius: 5px;
   transition: opacity 0.5s;
 }
+/* 반응형 디자인 */
+@media screen and (max-width: 1200px) {
+  .textBox {
+    margin-top: 5rem;
+  }
+
+  #font-pop {
+    font-size: 3.5rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .span {
+    font-size: 3rem;
+  }
+
+  .title-desc {
+    font-size: 1rem;
+  }
+
+  .container-carrossel {
+    --widthItem: 140px;
+    --heightItem: 90px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .textBox {
+    margin-top: 4rem;
+  }
+
+  #font-pop {
+    font-size: 3rem;
+  }
+
+  .title {
+    font-size: 2.25rem;
+  }
+
+  .span {
+    font-size: 2.75rem;
+  }
+
+  .title-desc {
+    font-size: 0.9rem;
+  }
+
+  .container-carrossel {
+    --widthItem: 130px;
+    --heightItem: 80px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .textBox {
+    margin-top: 3rem;
+  }
+
+  #font-pop {
+    font-size: 2.5rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .span {
+    font-size: 2.5rem;
+  }
+
+  .title-desc {
+    font-size: 0.8rem;
+  }
+
+  .container-carrossel {
+    --widthItem: 120px;
+    --heightItem: 70px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .textBox {
+    margin-top: 2rem;
+  }
+
+  #font-pop {
+    font-size: 2rem;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .span {
+    font-size: 2rem;
+  }
+
+  .title-desc {
+    font-size: 0.75rem;
+  }
+
+  .container-carrossel {
+    --widthItem: 100px;
+    --heightItem: 60px;
+  }
+}
 /* .imgscale {
   transform: scale(0.7);
 } */
@@ -126,14 +234,14 @@ img {
   --rotatey: 0;
   transform: rotatey(var(--rotatey)) translatez(var(--tz));
   /* background: linear-gradient(-229deg, #fbd52d, #ef3a7b); */
-  background-image: url("../img/원본_게임1.png");
+  background-image: url('../img/원본_게임1.png');
   background-size: cover;
 }
 
 .carrossel-item:nth-child(2) {
   --rotatey: 0;
   transform: rotatey(var(--rotatey)) translatez(var(--tz));
-  background-image: url("../img/원본_게임2.png");
+  background-image: url('../img/원본_게임2.png');
   background-size: cover;
 }
 
@@ -141,14 +249,14 @@ img {
   --rotatey: 0;
   transform: rotatey(var(--rotatey)) translatez(var(--tz));
   /* background: linear-gradient(-229deg, #0cebeb, #29ffc6); */
-  background-image: url("../img/원본_게임3.png");
+  background-image: url('../img/원본_게임3.png');
   background-size: cover;
 }
 .carrossel-item:nth-child(4) {
   --rotatey: 0;
   transform: rotatey(var(--rotatey)) translatez(var(--tz));
   /* background: linear-gradient(-229deg, #88f7f9, #048fff); */
-  background-image: url("../img/게임\ 사이즈\ 조절.png");
+  background-image: url('../img/게임\ 사이즈\ 조절.png');
   background-size: cover;
 }
 
@@ -156,7 +264,7 @@ img {
   --rotate: 0;
   transform: rotatey(var(--rotatey)) translatez(var(--tz));
   /* background: linear-gradient(-229deg, #0093e9, #80d0c7); */
-  background-image: url("../img/게임6.png");
+  background-image: url('../img/게임6.png');
   background-size: cover;
 }
 
@@ -164,7 +272,7 @@ img {
   --rotatey: 0;
   transform: rotatey(var(--rotatey)) translatez(var(--tz));
   /* background: linear-gradient(-229deg, #cf91ff, #5782f5); */
-  background-image: url("../img/게임7.png");
+  background-image: url('../img/게임7.png');
   background-size: cover;
 }
 
@@ -178,4 +286,48 @@ img {
 #gamePr {
   background-color: #0f193f;
   height: 120vh;
+}
+/* 반응형 디자인 */
+@media screen and (max-width: 1200px) {
+  .container-carrossel {
+    --widthItem: 22rem;
+    --heightItem: 20rem;
+  }
+
+  #gamePr {
+    height: 110vh;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .container-carrossel {
+    --widthItem: 20rem;
+    --heightItem: 18rem;
+  }
+
+  #gamePr {
+    height: 100vh;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container-carrossel {
+    --widthItem: 18rem;
+    --heightItem: 16rem;
+  }
+
+  #gamePr {
+    height: 90vh;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .container-carrossel {
+    --widthItem: 15rem;
+    --heightItem: 14rem;
+  }
+
+  #gamePr {
+    height: 80vh;
+  }
 }

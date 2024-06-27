@@ -186,7 +186,7 @@
         formData.forEach((value, key) => {
           addObj[key] = value;
         });
-
+        addObj.active = true;
         const result = await addDatas("user", addObj);
         console.log(result);
 
