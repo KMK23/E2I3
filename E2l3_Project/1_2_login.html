@@ -52,58 +52,59 @@
     </div>
   </body>
   <script type="module">
-    import {
-      db,
-      getDatas,
-      addDatas,
-      deleteDatas,
-      updateDatas,
-    } from "./resources/js/joinmembershipfirebase.js";
-    // 우선 가져오자
-    const loginBtn = document.querySelector(".signInBtn");
-    const loginId = document.querySelector("#login-id");
-    const loginpassword = document.querySelector("#login-password");
+     import {
+       db,
+       getDatas,
+       addDatas,
+       deleteDatas,
+       updateDatas,
+       findActive,
+     } from "./resources/js/joinmembershipfirebase.js";
+     // 우선 가져오자
+     const loginBtn = document.querySelector(".signInBtn");
+     const loginId = document.querySelector("#login-id");
+     const loginpassword = document.querySelector("#login-password");
 
-    async function getIdandPassword() {
-      const snapshot = await getDatas("user");
-      return snapshot.docs.map((doc) => doc.data());
-    }
-    async function findActive(userId) {
-      const snapshot = await getDatas("user");
-      let activeClass = null;
-      snapshot.forEach((doc) => {
-        if (doc.id === userId) {
-          activeClass = doc.data().active;
-        }
-      });
-      return activeClass;
-    }
-    loginBtn.addEventListener("click", async function (e) {
-      e.preventDefault();
-      const idValue = loginId.value.trim();
-      const passwordValue = loginpassword.value.trim();
-      const users = await getIdandPassword();
-      const user = users.find(
-        (user) => user.id === idValue && user.password === passwordValue
-      );
+     async function getIdandPassword() {
+       const snapshot = await getDatas("user");
+       return snapshot.docs.map((doc) => doc.data());
+     }
+    findActive(userId) {
+       const snapshot = await getDatas("user");
+       let activeClass = null;
+       snapshot.forEach((doc) => {
+         if (doc.id === userId) {
+           activeClass = doc.data().active;
+         }
+       });
+       return activeClass;
+     }
+     loginBtn.addEventListener("click", async function (e) {
+       e.preventDefault();
+       const idValue = loginId.value.trim();
+       const passwordValue = loginpassword.value.trim();
+       const users = await getIdandPassword();
+       const user = users.find(
+         (user) => user.id === idValue && user.password === passwordValue
+       );
 
-      if (user) {
-        const isActive = await findActive(user.id);
-        if (isActive === true || isActive === "true") {
-          localStorage.setItem("name", user.name);
-          localStorage.setItem("id", user.id);
-          alert(`${user.name}님 반갑습니다😁`);
-          location.href = "1_mainPage.html";
-        } else {
-          alert("계정이 비활성화되었습니다. 관리자에게 문의하세요.");
-        }
-      } else {
-        alert("아이디 또는 비밀번호가 잘못되었습니다.");
-      }
-    });
-    const home = document.querySelector(".homeBtn");
-    home.addEventListener("click", function () {
-      location.href = "1_mainPage.html";
-    });
+       if (user) {
+         const isActive = await findActive(user.id);
+         if (isActive === true || isActive === "true") {
+           localStorage.setItem("name", user.name);
+           localStorage.setItem("id", user.id);
+           alert(`${user.name}님 반갑습니다😁`);
+           location.href = "1_mainPage.html";
+         } else {
+           alert("계정이 비활성화되었습니다. 관리자에게 문의하세요.");
+         }
+       } else {
+         alert("아이디 또는 비밀번호가 잘못되었습니다.");
+       }
+     });
+     const home = document.querySelector(".homeBtn");
+     home.addEventListener("click", function () {
+       location.href = "1_mainPage.html";
+     });
   </script>
 </html>

@@ -100,12 +100,6 @@ async function getUser(userId) {
   return snapshot;
 }
 
-async function findActive() {
-  const collect = collection(db, "user");
-  const q = query(collect, where("active", "==", "false"));
-  const snapshot = await getDocs(q);
-  return snapshot;
-}
 async function updateUserStatus(userId, newStatus) {
   const userRef = collection(doc); // db 변수를 사용하여 Firestore 컬렉션 참조
   await userRef.update({ active: newStatus }); // 사용자 문서 업데이트
@@ -121,5 +115,4 @@ export {
   changePassword,
   updateUserStatus,
   getUser,
-  findActive,
 };
