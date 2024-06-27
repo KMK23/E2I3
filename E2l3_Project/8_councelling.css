@@ -1,58 +1,58 @@
 @font-face {
-  font-family: 'NanumSquareRound';
+  font-family: "NanumSquareRound";
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot);
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot?#iefix)
-      format('embedded-opentype'),
+      format("embedded-opentype"),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff2)
-      format('woff2'),
+      format("woff2"),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff)
-      format('woff'),
+      format("woff"),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.ttf)
-      format('truetype');
+      format("truetype");
 }
 
 @font-face {
-  font-family: 'NanumSquareRoundB';
+  font-family: "NanumSquareRoundB";
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.eot);
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.eot?#iefix)
-      format('embedded-opentype'),
+      format("embedded-opentype"),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.woff2)
-      format('woff2'),
+      format("woff2"),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.woff)
-      format('woff'),
+      format("woff"),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.ttf)
-      format('truetype');
+      format("truetype");
 }
 
 @font-face {
-  font-family: 'NanumSquareRoundEB';
+  font-family: "NanumSquareRoundEB";
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.eot);
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.eot?#iefix)
-      format('embedded-opentype'),
+      format("embedded-opentype"),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.woff2)
-      format('woff2'),
+      format("woff2"),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.woff)
-      format('woff'),
+      format("woff"),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.ttf)
-      format('truetype');
+      format("truetype");
 }
 
 @font-face {
-  font-family: 'NanumSquareRoundL';
+  font-family: "NanumSquareRoundL";
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.eot);
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.eot?#iefix)
-      format('embedded-opentype'),
+      format("embedded-opentype"),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.woff2)
-      format('woff2'),
+      format("woff2"),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.woff)
-      format('woff'),
+      format("woff"),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.ttf)
-      format('truetype');
+      format("truetype");
 }
 @font-face {
-  font-family: 'Pretendard-Regular';
-  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
-    format('woff');
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
   font-weight: 400;
   font-style: normal;
 }
@@ -70,7 +70,7 @@
 } */
 
 #from99 {
-  font-family: 'Pretendard-Regular';
+  font-family: "Pretendard-Regular";
 }
 #overlay {
   display: none;
@@ -147,10 +147,10 @@
   border-radius: 0.3125rem;
 }
 
-.group input[type='radio'] {
+.group input[type="radio"] {
   width: auto;
 }
-.group input[type='checkbox'] {
+.group input[type="checkbox"] {
   width: 2.5rem;
 }
 .group .radio-group label {
