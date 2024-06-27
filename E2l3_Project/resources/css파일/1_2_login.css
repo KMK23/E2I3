@@ -141,14 +141,16 @@ i {
 .forgot-text a {
   text-decoration: none;
   color: black;
-  font-size: 1.5rem; /* 24px -> 1.5rem */
+  font-size: 1.5rem;
+}
+a {
+  text-decoration: none;
+  color: gray;
+  font-size: 0.85rem;
 }
 
 a:hover {
-  background-color: black;
-  color: white;
-  border-radius: 0.9375rem; /* 15px -> 0.9375rem */
-  padding: 0.625rem; /* 10px -> 0.625rem */
+  text-decoration: underline;
 }
 
 .signInBtn {
@@ -170,4 +172,12 @@ a:hover {
   padding-left: 0.2rem;
   filter: invert(51%) sepia(7%) saturate(457%) hue-rotate(169deg)
     brightness(86%) contrast(86%);
+}
+.homeBtn {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  filter: invert(14%) sepia(6%) saturate(2611%) hue-rotate(182deg)
+    brightness(98%) contrast(83%);
+  cursor: pointer;
 }

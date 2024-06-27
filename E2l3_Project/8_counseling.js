@@ -263,7 +263,7 @@ const overlay = document.getElementById("overlay");
 
 closeBtn.addEventListener("click", function () {
   formcontainer.style.display = "none";
-  overlay.style.display = "none;";
+  overlay.style.display = "none";
 });
 
 // document.getElementById("closeBtn").addEventListener("click", function () {
