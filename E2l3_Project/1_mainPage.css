@@ -254,7 +254,7 @@ body {
     width: 150px;
   }
   .main {
-    flex-direction: column;
+    /* flex-direction: column; */
     gap: 1rem;
   }
   .main .sub a {

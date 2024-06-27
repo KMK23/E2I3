@@ -1093,11 +1093,11 @@
   .AI-text-img h1 {
     font-size: 1.2rem;
   }
-  .AI-desc1,
+  /* .AI-desc1,
   .AI-desc2,
   .AI-desc3 {
     width: 12rem;
-  }
+  } */
   .AI-main-title {
     font-size: 2rem;
   }
