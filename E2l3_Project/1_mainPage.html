@@ -752,11 +752,12 @@
       logoutBtn.style.display = "inline-block";
     }
 
-    logoutBtn.addEventListener("click", function () {
+    logoutBtn.addEventListener("click", logout);
+    function logout() {
       localStorage.removeItem("name");
       localStorage.removeItem("id");
       location.reload();
-    });
+    }
 
     if (userid != "") {
       mypageBtn.style.display = "block";
