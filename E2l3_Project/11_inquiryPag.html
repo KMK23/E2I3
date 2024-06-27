@@ -86,7 +86,7 @@
           </strong>
           <div class="emailInput">
             <input
-              type="text"
+              type="email"
               name="email-adder"
               id="email-adder"
               class="emailAdder"
@@ -126,7 +126,9 @@
           </div>
         </div>
         <div class="inquiry-btn">
-          <button class="inquiryBtn" id="click">문의접수</button>
+          <button class="inquiryBtn" id="click" onclick="submitForm()">
+            문의접수
+          </button>
         </div>
       </form>
     </div>
@@ -233,66 +235,60 @@
       }
     });
 
-    // 이메일 에러 코드 and 전화번호 에러//
-    document.addEventListener("DOMContentLoaded", function () {
+    // 이메일 에러 코드 and 전화번호 에러 코드//
+    function submitForm() {
       const form = document.getElementById("inquiryForm");
-      const emailInput = document.getElementById("email-adder");
-      const emailError = document.getElementById("email-error");
-      const phoneInput = document.getElementById("phon");
-      const phoneError = document.getElementById("telError");
 
-      form.addEventListener("submit", function (event) {
-        let valid = true;
-
-        if (!validateEmail(emailInput.value)) {
-          emailError.style.visibility = "visible";
-          valid = false;
-        } else {
-          emailError.style.visibility = "hidden";
-        }
-
-        if (!validatePhone(phoneInput.value)) {
-          phoneError.style.visibility = "visible";
-          valid = false;
-        } else {
-          phoneError.style.visibility = "hidden";
-        }
-
-        const requiredFields = document.querySelectorAll("[required]");
-        requiredFields.forEach(function (field) {
-          if (!field.value.trim()) {
-            field.classList.add("error");
-            valid = false;
-          } else {
-            field.classList.remove("error");
-          }
-        });
-
-        if (!valid) {
-          event.preventDefault();
-        }
-      });
-
-      emailInput.addEventListener("input", function () {
-        if (validateEmail(emailInput.value)) {
-          emailError.style.visibility = "hidden";
-        }
-      });
-
-      phoneInput.addEventListener("input", function () {
-        if (validatePhone(phoneInput.value)) {
-          phoneError.style.visibility = "hidden";
-        }
-      });
-
-      function validateEmail(email) {
-        const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-        return re.test(email);
+      if (!validateForm()) {
+        alert("모든 필수 항목을 작성해야 합니다.");
+        return;
       }
 
-      function validatePhone(phone) {
-        const re = /^010[0-9]{8}$/;
-        return re.test(phone);
+      form.submit();
+    }
+
+    function validateForm() {
+      const emailInput = document.getElementById("email-adder");
+      const emailError = document.querySelector(".email-error");
+      const phoneInput = document.getElementById("phon");
+      const phoneError = document.getElementById("Error");
+
+      let valid = true;
+
+      if (!validateEmail(emailInput.value)) {
+        emailError.style.visibility = "visible";
+        valid = false;
+      } else {
+        emailError.style.visibility = "hidden";
+      }
+
+      if (!validatePhone(phoneInput.value)) {
+        phoneError.style.visibility = "visible";
+        valid = false;
+      } else {
+        phoneError.style.visibility = "hidden";
+      }
+      return valid;
+    }
+
+    function validateEmail(email) {
+      const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      return re.test(email);
+    }
+
+    function validatePhone(phone) {
+      const re = /^010[0-9]{8}$/;
+      return re.test(phone);
+    }
+
+    const forms = document.getElementById("inquiryForm");
+    forms.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      if (validateForm()) {
+        alert("문의가 성공했습니다.");
+      } else {
+        alert("문의 도중 오류가 발생했습니다");
       }
     });
 
