@@ -118,3 +118,7 @@ document.querySelectorAll(".plan").forEach((plan) => {
 document.addEventListener("DOMContentLoaded", () => {
   showPaymentDetails();
 });
+const home = document.querySelector(".homeBtn");
+home.addEventListener("click", function () {
+  location.href = "1_mainPage.html";
+});

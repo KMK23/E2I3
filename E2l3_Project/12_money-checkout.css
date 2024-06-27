@@ -278,6 +278,14 @@ h1 {
 .annual-payment {
   margin: 1.25rem 0;
 }
+.homeBtn {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  filter: invert(14%) sepia(6%) saturate(2611%) hue-rotate(182deg)
+    brightness(98%) contrast(83%);
+  cursor: pointer;
+}
 /* 반응형 디자인 */
 @media (max-width: 1200px) {
   .container {
