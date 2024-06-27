@@ -37,6 +37,18 @@ function updateTotalAmount() {
   ).innerText = `${totalAmount.toLocaleString()}원`;
 }
 
+const openPay = document.querySelector(".pay-button");
+openPay.addEventListener("click", function () {
+  let user = localStorage.getItem("id");
+  let name = localStorage.getItem("name");
+  if (!user) {
+    alert("로그인이 필요합니다.");
+    location.href = "1_2_login.html";
+  } else {
+    openPaymentModal();
+  }
+});
+
 function openPaymentModal() {
   // 초기화
   document.getElementById("paymentModal").style.display = "block";
