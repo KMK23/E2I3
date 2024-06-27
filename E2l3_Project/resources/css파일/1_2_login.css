@@ -141,14 +141,16 @@ i {
 .forgot-text a {
   text-decoration: none;
   color: black;
-  font-size: 1.5rem; /* 24px -> 1.5rem */
+  font-size: 1.5rem;
+}
+a {
+  text-decoration: none;
+  color: gray;
+  font-size: 0.85rem;
 }
 
 a:hover {
-  background-color: black;
-  color: white;
-  border-radius: 0.9375rem; /* 15px -> 0.9375rem */
-  padding: 0.625rem; /* 10px -> 0.625rem */
+  text-decoration: underline;
 }
 
 .signInBtn {

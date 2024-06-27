@@ -111,7 +111,7 @@ img {
 /* 반응형 디자인 */
 @media screen and (max-width: 1200px) {
   .textBox {
-    margin-top: 5rem;
+    margin-top: 1rem;
   }
 
   #font-pop {
