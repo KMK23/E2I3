@@ -494,8 +494,8 @@ body {
     font-size: 1.4rem;
   }
   .aside-btns {
-    flex-direction: column;
-    padding-left: 0;
+    /* flex-direction: column; */
+    /* padding-left: 0; */
   }
 }
 .fir-btn {

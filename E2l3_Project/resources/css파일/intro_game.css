@@ -604,14 +604,17 @@
   .game-bar {
     width: 100%;
   }
-  .game-bar ul {
+  /* .game-bar ul {
     flex-direction: column;
-  }
+  } */
   .gameBtn1 {
     width: 5rem;
     height: 5rem;
     bottom: -27%;
     right: 0rem;
+  }
+  #img1 {
+    width: 31.25rem;
   }
 }
 
@@ -1101,8 +1104,16 @@
   .AI-sub-title {
     font-size: 1rem;
   }
+  .Ai-imgs {
+    justify-content: center;
+    align-items: center;
+  }
   .AI-img {
-    width: 14rem;
-    height: 14rem;
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .nav-bar ul {
+    font-size: 0.8rem;
   }
 }
