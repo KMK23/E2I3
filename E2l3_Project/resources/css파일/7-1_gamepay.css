@@ -102,6 +102,14 @@ body {
 .payBtn:hover {
   background-color: #66f8cc9c;
 }
+.homeBtn {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  filter: invert(14%) sepia(6%) saturate(2611%) hue-rotate(182deg)
+    brightness(98%) contrast(83%);
+  cursor: pointer;
+}
 
 @media screen and (max-width: 1200px) {
   .payBtn {

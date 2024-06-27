@@ -97,6 +97,9 @@
         </div>
       </div>
     </div>
+    <div class="homeBtn">
+      <img src="resources/img/홈버튼.svg" width="40" height="40" />
+    </div>
   </body>
   <script type="module">
     let list = document.querySelectorAll(".icon");
@@ -111,51 +114,6 @@
       });
     });
 
-    // import {
-    //   db,
-    //   getDatas,
-    //   addDatas,
-    //   deleteDatas,
-    //   updateDatas,
-    // } from "./resources/js/practice.js";
-    // async function getFAQ() {
-    //   const snapshot = await getDatas("FAQ_Best5");
-    //   console.log(snapshot);
-    //   const divTag = document.querySelector(".text-list");
-    //   snapshot.forEach((doc) => {
-    //     const { Q1, Q2 } = doc.data();
-    //     let listPTag = `
-    //       <p class="list-p">
-    //         <i class="fa-solid fa-magnifying-glass"></i>
-    //         <br />
-    //         ${Q1}
-    //       </p>
-    //       <p class="list-p">
-    //         <i class="fa-solid fa-magnifying-glass"></i>
-    //         <br />
-    //         ${Q2}
-    //       </p>
-    //       <p class="list-p">
-    //         <i class="fa-solid fa-magnifying-glass"></i>
-    //         <br />도서 구입 방법을 알고 싶습니다.
-    //       </p>
-    //       <p class="list-p">
-    //         <i class="fa-solid fa-magnifying-glass"></i>
-    //         <br />결제 방법에 대해 알고 싶습니다.
-    //       </p>
-    //       <p class="list-p">
-    //         <i class="fa-solid fa-magnifying-glass"></i>
-    //         <br />신청한 강의는 어디에서 수강할수 있나요?
-    //       </p>
-    //       <p class="list-p">
-    //         <i class="fa-solid fa-plus"></i>
-    //         <br />
-    //         자주하는 질문 <strong class="color">FAQ</strong><br />더보기
-    //       </p>`;
-    //     divTag.innerHTML = listPTag;
-    //   });
-    // }
-    // getFAQ();
     const textList = document.querySelector(".text-list");
 
     const Btns = document.querySelectorAll(".icon");
@@ -228,41 +186,9 @@
       });
     });
 
-    // best5Btn.addEventListener("click", function () {
-    //   faqArr.forEach((info, idx) => {
-    //     let ptag = `
-    //   <p class="list-p">
-    //         <i class="fa-solid fa-magnifying-glass"></i>
-    //         <br />
-    //         ${faqArr[0].Q1}
-    //       </p>
-    //       <p class="list-p">
-    //         <i class="fa-solid fa-magnifying-glass"></i>
-    //         <br />
-    //         ${faqArr[0].Q2}
-    //       </p><p class="list-p">
-    //         <i class="fa-solid fa-magnifying-glass"></i>
-    //         <br />
-    //         ${info.Q3}
-    //       </p><p class="list-p">
-    //         <i class="fa-solid fa-magnifying-glass"></i>
-    //         <br />
-    //         ${info.Q4}
-    //       </p><p class="list-p">
-    //         <i class="fa-solid fa-magnifying-glass"></i>
-    //         <br />
-    //         ${info.Q5}
-    //       </p><p class="list-p">
-    //         <i class="fa-solid fa-magnifying-glass"></i>
-    //         <br />
-    //         ${info.Q6}
-    //       </p>
-    //   `;
-    //     console.log(faqArr[0].Q1);
-    //     console.log(faqArr[1].Q1);
-
-    //     textList.innerHTML = ptag;
-    //   });
-    // });
+    const home = document.querySelector(".homeBtn");
+    home.addEventListener("click", function () {
+      location.href = "1_mainPage.html";
+    });
   </script>
 </html>

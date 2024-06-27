@@ -80,12 +80,19 @@
       ><span class="purple b5"></span><span class="yellow b3"></span
       ><span class="pink b4"></span>
     </div>
+    <div class="homeBtn">
+      <img src="resources/img/홈버튼.svg" width="40" height="40" />
+    </div>
   </body>
   <script>
     const btn = document.querySelector(".payBtn");
 
     btn.addEventListener("click", function () {
       location.href = "12_money-checkout.html";
+    });
+    const home = document.querySelector(".homeBtn");
+    home.addEventListener("click", function () {
+      location.href = "1_mainPage.html";
     });
   </script>
 </html>
