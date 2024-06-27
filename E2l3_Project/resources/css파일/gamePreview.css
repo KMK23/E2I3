@@ -294,9 +294,9 @@ img {
     --heightItem: 20rem;
   }
 
-  #gamePr {
+  /* #gamePr {
     height: 110vh;
-  }
+  } */
 }
 
 @media screen and (max-width: 992px) {
@@ -305,9 +305,9 @@ img {
     --heightItem: 18rem;
   }
 
-  #gamePr {
+  /* #gamePr {
     height: 100vh;
-  }
+  } */
 }
 
 @media screen and (max-width: 768px) {
@@ -316,9 +316,9 @@ img {
     --heightItem: 16rem;
   }
 
-  #gamePr {
+  /* #gamePr {
     height: 90vh;
-  }
+  } */
 }
 
 @media screen and (max-width: 576px) {
@@ -327,7 +327,7 @@ img {
     --heightItem: 14rem;
   }
 
-  #gamePr {
+  /* #gamePr {
     height: 80vh;
-  }
+  } */
 }
