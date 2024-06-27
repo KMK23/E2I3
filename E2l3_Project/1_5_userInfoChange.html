@@ -631,19 +631,11 @@
     //   return userId;
     // }
 
-    async function getUserEmail() {
-      const snapshot = await getDatas("user");
-      let userEmail = null;
-      snapshot.forEach((doc) => {
-        userEmail = doc.data().email;
-      });
-      return userEmail;
-    }
-
     const deleteBtn = document.querySelector(".deleteBtn");
     deleteBtn.addEventListener("click", async function (e) {
       e.preventDefault();
       const withdrawReason = document.getElementById("withdrawReason").value;
+      const userId = localStorage.getItem("id");
 
       if (withdrawReason === "") {
         alert("탈퇴 이유를 입력해주세요.");
@@ -651,7 +643,6 @@
       }
 
       try {
-        const userId = localStorage.getItem("id"); // 사용자 ID 가져오기
         const userEmail = await getUserEmail(); // 사용자 이메일 가져오기
         const withdrawDate = new Date().toISOString();
 
@@ -664,7 +655,7 @@
         };
 
         // Firestore에 탈퇴 이유 기록
-        const result = await addDatas("withdrawReasons", reasonObj);
+        await addDatas("withdrawReasons", reasonObj);
 
         // 사용자의 active 필드를 false로 업데이트
         const snapshot = await getUser(userId);
@@ -681,8 +672,18 @@
         // 사용자에게 탈퇴 처리 완료 메시지 표시
         alert("회원 탈퇴가 처리되었습니다.");
       } catch (error) {
-        console.error("Error during withdrawal process:", error);
+        console.error("회원 탈퇴 처리 중 오류 발생:", error);
+        alert("회원 탈퇴 처리 중 오류가 발생했습니다. 관리자에게 문의하세요.");
       }
     });
+
+    async function getUserEmail() {
+      const snapshot = await getDatas("user");
+      let userEmail = null;
+      snapshot.forEach((doc) => {
+        userEmail = doc.data().email;
+      });
+      return userEmail;
+    }
   </script>
 </html>
