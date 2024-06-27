@@ -130,7 +130,9 @@ section {
     padding: 1rem;
     max-width: 700px;
   }
-
+  .part p {
+    text-align: center;
+  }
   #about {
     grid-template-columns: 1fr;
     gap: 1rem;
