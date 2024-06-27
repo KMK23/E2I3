@@ -1,7 +1,7 @@
 @font-face {
-  font-family: 'LeferiBaseType-RegularA';
-  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiBaseType-RegularA.woff')
-    format('woff');
+  font-family: "LeferiBaseType-RegularA";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiBaseType-RegularA.woff")
+    format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -101,6 +101,7 @@ body {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
+  word-break: keep-all;
 }
 
 /* 반응형 디자인 */
