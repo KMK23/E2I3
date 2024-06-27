@@ -5,7 +5,7 @@ body {
   margin: 0;
   padding: 0;
   border: 0;
-  font-family: "NanumSquareRound";
+  font-family: 'NanumSquareRound';
   box-sizing: border-box;
 }
 body {
@@ -130,7 +130,9 @@ section {
     padding: 1rem;
     max-width: 700px;
   }
-
+  .part p {
+    text-align: center;
+  }
   #about {
     grid-template-columns: 1fr;
     gap: 1rem;
@@ -206,6 +208,7 @@ section h2 {
   height: 350px; /* Minimum height to ensure all items have the same height */
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-between; /* Ensures the items are spaced out evenly */
 }
 

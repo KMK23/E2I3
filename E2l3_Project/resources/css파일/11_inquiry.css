@@ -268,10 +268,6 @@ input.phome {
   border-radius: 0.1875rem;
 }
 
-.error {
-  border: 1px solid red;
-}
-
 @media screen and (max-width: 1200px) {
   .container {
     padding: 2rem 4rem;
