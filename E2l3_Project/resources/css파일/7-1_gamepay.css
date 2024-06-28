@@ -283,4 +283,8 @@ body {
   .list-tite {
     font-size: 0.625rem;
   }
+  .homeBtn {
+    top: 1rem;
+    width: 59%;
+  }
 }
