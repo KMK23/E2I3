@@ -659,6 +659,7 @@
         // 탈퇴 이유 및 날짜를 포함한 객체 생성
         const reasonObj = {
           userId: userId,
+
           reason: withdrawReason,
           date: withdrawDate,
         };
@@ -673,6 +674,7 @@
         console.log(userDocId);
         await updateDatas("user", userDocId, {
           active: false,
+          active: "false",
         });
         // 입력 필드 초기화
         document.getElementById("withdrawReason").value = "";
@@ -689,6 +691,11 @@
         console.error("회원 탈퇴 처리 중 오류 발생:", error);
         alert("회원 탈퇴 처리 중 오류가 발생했습니다. 관리자에게 문의하세요.");
       }
+    });
+
+    const home = document.querySelector(".homeBtn");
+    home.addEventListener("click", function () {
+      location.href = "1_mainPage.html";
     });
   </script>
 </html>
