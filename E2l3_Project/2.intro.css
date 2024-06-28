@@ -457,7 +457,10 @@ footer div p {
   #contact form textarea {
     font-size: 0.75rem;
   }
-
+  #team .team-member p {
+    margin: auto;
+  font-size: 0.875rem;
+  }
   #contact form button {
     font-size: 0.9rem;
   }

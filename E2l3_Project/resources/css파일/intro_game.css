@@ -604,14 +604,17 @@
   .game-bar {
     width: 100%;
   }
-  .game-bar ul {
+  /* .game-bar ul {
     flex-direction: column;
-  }
+  } */
   .gameBtn1 {
     width: 5rem;
     height: 5rem;
     bottom: -27%;
     right: 0rem;
+  }
+  #img1 {
+    width: 31.25rem;
   }
 }
 
@@ -1063,6 +1066,10 @@
   .AI-text-img h1 {
     font-size: 1.4rem;
   }
+  .Ai-imgs {
+    justify-content: center;
+    align-items: center;
+  }
   .AI-desc1,
   .AI-desc2,
   .AI-desc3 {
@@ -1090,19 +1097,27 @@
   .AI-text-img h1 {
     font-size: 1.2rem;
   }
-  .AI-desc1,
+  /* .AI-desc1,
   .AI-desc2,
   .AI-desc3 {
     width: 12rem;
-  }
+  } */
   .AI-main-title {
     font-size: 2rem;
   }
   .AI-sub-title {
     font-size: 1rem;
   }
+  .Ai-imgs {
+    justify-content: center;
+    align-items: center;
+  }
   .AI-img {
-    width: 14rem;
-    height: 14rem;
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .nav-bar ul {
+    font-size: 0.8rem;
   }
 }

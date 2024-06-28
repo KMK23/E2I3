@@ -93,6 +93,14 @@
         border-radius: 0.3125rem;
         box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
       }
+      .homeBtn {
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+        filter: invert(14%) sepia(6%) saturate(2611%) hue-rotate(182deg)
+          brightness(98%) contrast(83%);
+        cursor: pointer;
+      }
       /* Responsive design for different screen sizes */
       @media (max-width: 1200px) {
         .container {
@@ -434,6 +442,9 @@
         </form>
       </div>
     </div>
+    <div class="homeBtn">
+      <img src="resources/img/홈버튼.svg" width="40" height="40" />
+    </div>
   </body>
 
   <script type="module">
@@ -631,19 +642,11 @@
     //   return userId;
     // }
 
-    async function getUserEmail() {
-      const snapshot = await getDatas("user");
-      let userEmail = null;
-      snapshot.forEach((doc) => {
-        userEmail = doc.data().email;
-      });
-      return userEmail;
-    }
-
     const deleteBtn = document.querySelector(".deleteBtn");
     deleteBtn.addEventListener("click", async function (e) {
       e.preventDefault();
       const withdrawReason = document.getElementById("withdrawReason").value;
+      const userId = localStorage.getItem("id");
 
       if (withdrawReason === "") {
         alert("탈퇴 이유를 입력해주세요.");
@@ -651,20 +654,18 @@
       }
 
       try {
-        const userId = localStorage.getItem("id"); // 사용자 ID 가져오기
-        const userEmail = await getUserEmail(); // 사용자 이메일 가져오기
         const withdrawDate = new Date().toISOString();
 
         // 탈퇴 이유 및 날짜를 포함한 객체 생성
         const reasonObj = {
           userId: userId,
-          email: userEmail,
+
           reason: withdrawReason,
           date: withdrawDate,
         };
 
         // Firestore에 탈퇴 이유 기록
-        const result = await addDatas("withdrawReasons", reasonObj);
+        await addDatas("withdrawReasons", reasonObj);
 
         // 사용자의 active 필드를 false로 업데이트
         const snapshot = await getUser(userId);
@@ -680,8 +681,15 @@
 
         // 사용자에게 탈퇴 처리 완료 메시지 표시
         alert("회원 탈퇴가 처리되었습니다.");
+        // 로컬 스토리지에서 사용자 정보 삭제
+        localStorage.removeItem("name");
+        localStorage.removeItem("id");
+
+        // 메인 페이지로 이동
+        location.href = "1_mainPage.html";
       } catch (error) {
-        console.error("Error during withdrawal process:", error);
+        console.error("회원 탈퇴 처리 중 오류 발생:", error);
+        alert("회원 탈퇴 처리 중 오류가 발생했습니다. 관리자에게 문의하세요.");
       }
     });
   </script>
