@@ -285,6 +285,8 @@ body {
   }
   .homeBtn {
     top: 1rem;
-    width: 59%;
+  }
+  .homeBtn > img {
+    width: 70%;
   }
 }
