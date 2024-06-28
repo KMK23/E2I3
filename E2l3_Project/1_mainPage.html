@@ -32,9 +32,7 @@
       <span class="welcome">반갑습니다!</span>
       <a href="1_2_login.html" class="login-btn">로그인</a>
       <a href="1_3_joinMembership.html" class="signup-btn">회원가입</a>
-      <a href="1_4_myPage.html" class="mypage-btn" style="display: none"
-        >마이페이지</a
-      >
+      <a href="#" class="mypage-btn" style="display: none">마이페이지</a>
       <a href="#" class="logout-btn" style="display: none">로그아웃</a>
     </div>
     <div class="header">
@@ -762,6 +760,14 @@
     if (userid != "") {
       mypageBtn.style.display = "block";
     }
+    mypageBtn.addEventListener("click", function () {
+      if (localStorage.getItem("id")) {
+        location.href = "1_4_myPage.html";
+      } else {
+        alert("로그인을 해주세요.");
+        location.reload();
+      }
+    });
 
     const startBtn = document.querySelector(".fir-btn");
     startBtn.addEventListener("click", function (e) {
