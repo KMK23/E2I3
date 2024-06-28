@@ -67,15 +67,15 @@ body {
   object-fit: contain;
 }
 .list-tite {
-  padding: 0.3125rem;
-  margin: 0;
+  padding: 5px;
+  margin: 0px;
   color: #0b1b43;
-  font-size: 1rem;
+  font-size: 0.75rem;
   text-align: center;
 }
 .list-tite > strong {
   color: #0b1b43;
-  font-size: 1.125rem;
+  font-size: 1rem;
 }
 .payBtncontainer {
   text-align: center;
@@ -229,7 +229,7 @@ body {
   }
 }
 
-@media screen and (max-width: 768) {
+@media screen and (max-width: 768px) {
   .payBtn {
     width: auto;
     bottom: 2rem;
@@ -239,14 +239,18 @@ body {
   .container {
     max-width: 100%;
   }
-  .list {
-    width: 100%;
-  }
   .headerH2 {
     font-size: 1.25rem;
   }
   body {
     overflow-y: auto;
+  }
+  .content {
+    width: 100%;
+    font-size: 0.625rem;
+  }
+  .list-tite > strong {
+    font-size: 0.75rem;
   }
 }
 
